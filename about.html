@@ -1,0 +1,3291 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About | WeDoCodes</title>
+<meta content="About WeDoCodes — software and cybersecurity solutions built around business workflows, automation, dashboards, portals, integrations and secure digital systems." name="description"/>
+  <!-- FAVICON CODE START -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <!-- FAVICON CODE END -->
+
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<style>
+    :root{
+      --text:#1f1f1f;
+      --muted:#5f5f5f;
+      --soft:#f5f5f5;
+      --line:#e6e6e6;
+      --white:#ffffff;
+
+      --brand-orange:#FF9500;
+      --brand-orange-2:#FF6A00;
+      --brand-pink:#FF3D5E;
+      --brand-magenta:#E91E73;
+
+      --blue:#0067b8;
+      --blue-dark:#004b8d;
+      --green:#107c41;
+      --orange:#d83b01;
+      --purple:#5c2d91;
+      --red:#c4314b;
+      --ink:#111827;
+
+      --shadow:0 8px 28px rgba(0,0,0,.10);
+      --shadow-soft:0 3px 12px rgba(0,0,0,.08);
+      --max:1240px;
+      --radius:2px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      font-family:Inter,"Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
+      color:var(--text);
+      background:#fff;
+      overflow-x:hidden;
+    }
+
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+
+    .wrap{
+      width:min(var(--max),calc(100% - 48px));
+      margin:0 auto;
+    }
+
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:#fff;
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav{
+      height:64px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+    }
+
+    .brand-logo{
+      display:inline-flex;
+      align-items:center;
+      gap:4px;
+      height:54px;
+      min-width:245px;
+      text-decoration:none;
+      background:transparent;
+      flex:0 0 auto;
+    }
+
+    .brand-mark{
+      width:50px;
+      height:50px;
+      display:block;
+      flex:0 0 auto;
+    }
+
+    .brand-text{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      line-height:1;
+      min-width:0;
+    }
+
+    .brand-name{
+      display:block;
+      font-size:25px;
+      line-height:.94;
+      font-weight:760;
+      letter-spacing:-1.15px;
+      color:#050505;
+      white-space:nowrap;
+    }
+
+    .brand-name .codes{
+      background:linear-gradient(90deg,var(--brand-orange-2),var(--brand-pink),var(--brand-magenta));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+
+    .brand-subtitle{
+      display:block;
+      margin-top:5px;
+      font-size:12.5px;
+      line-height:1;
+      font-weight:500;
+      color:#555;
+      white-space:nowrap;
+      letter-spacing:-.1px;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:24px;
+      font-size:13px;
+      color:#262626;
+      font-weight:500;
+    }
+
+    .nav-links a{
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      min-height:64px;
+      border-bottom:2px solid transparent;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active{border-bottom-color:#111}
+
+    .home-icon{
+      width:16px;
+      height:16px;
+      display:inline-block;
+    }
+
+    .nav-actions{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-size:13px;
+      font-weight:600;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      min-height:40px;
+      padding:0 16px;
+      border-radius:var(--radius);
+      border:1px solid transparent;
+      font-weight:600;
+      font-size:13px;
+      cursor:pointer;
+      white-space:nowrap;
+      transition:.2s;
+    }
+
+    .btn-blue{background:var(--blue);color:#fff}
+    .btn-blue:hover{background:var(--blue-dark)}
+    .btn-light{background:#fff;color:#1f1f1f;border-color:#8a8a8a}
+    .btn-light:hover{background:#f2f2f2}
+    .btn-dark{background:#111827;color:#fff}
+    .btn-dark:hover{background:#000}
+    .menu-btn{display:none}
+
+    section{padding:56px 0}
+
+    .section-head{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:34px;
+      margin-bottom:30px;
+    }
+
+    .section-head.center{
+      display:block;
+      text-align:center;
+      max-width:920px;
+      margin:0 auto 34px;
+    }
+
+    .kicker{
+      font-size:12px;
+      font-weight:750;
+      color:var(--blue);
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      margin-bottom:9px;
+    }
+
+    .section-head h2,
+    .section-title{
+      font-size:clamp(30px,4vw,52px);
+      line-height:1.08;
+      letter-spacing:-1.6px;
+      margin:0;
+      color:#111;
+      font-weight:720;
+    }
+
+    .section-head p{
+      max-width:650px;
+      color:#5f5f5f;
+      line-height:1.65;
+      margin:0;
+      font-size:15px;
+    }
+
+    .icon{
+      width:24px;
+      height:24px;
+      display:block;
+      stroke:currentColor;
+    }
+
+    .icon-box{
+      width:44px;
+      height:44px;
+      display:grid;
+      place-items:center;
+      background:#f8fbff;
+      border:1px solid var(--line);
+      color:var(--blue);
+      position:relative;
+      flex:0 0 auto;
+    }
+
+    .icon-box::after{
+      content:"";
+      position:absolute;
+      left:9px;
+      right:9px;
+      bottom:-1px;
+      height:2px;
+      background:linear-gradient(90deg,var(--brand-orange),var(--brand-pink),var(--brand-magenta));
+    }
+
+    /* COMPANY IDENTITY STRIP */
+    .identity-strip{
+      background:
+        radial-gradient(circle at 88% -18%,rgba(0,103,184,.12),transparent 34%),
+        radial-gradient(circle at 12% 0%,rgba(255,149,0,.08),transparent 32%),
+        linear-gradient(180deg,#f8fbff 0%,#fff 100%);
+      border-bottom:1px solid var(--line);
+      padding:38px 0 26px;
+    }
+
+    .identity-grid{
+      display:grid;
+      grid-template-columns:1fr 420px;
+      gap:34px;
+      align-items:end;
+    }
+
+    .identity-strip h1{
+      font-size:clamp(36px,4.4vw,62px);
+      line-height:1.03;
+      letter-spacing:-2.1px;
+      margin:0 0 14px;
+      color:#111;
+      font-weight:730;
+      max-width:900px;
+    }
+
+    .identity-strip p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.68;
+      font-size:16px;
+      max-width:820px;
+    }
+
+    .identity-panel{
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+      padding:18px;
+      display:grid;
+      gap:10px;
+    }
+
+    .identity-item{
+      display:grid;
+      grid-template-columns:42px 1fr;
+      gap:12px;
+      align-items:center;
+      padding:11px;
+      border:1px solid var(--line);
+      background:#f8fbff;
+    }
+
+    .identity-symbol{
+      width:46px;
+      height:46px;
+      background:#111827;
+      position:relative;
+      display:grid;
+      place-items:center;
+      color:#fff;
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:0 8px 18px rgba(17,24,39,.16);
+      overflow:hidden;
+    }
+
+    .identity-symbol svg{
+      width:25px;
+      height:25px;
+      stroke:currentColor;
+      position:relative;
+      z-index:2;
+    }
+
+    .identity-symbol::before{
+      content:"";
+      position:absolute;
+      inset:-20px;
+      background:linear-gradient(135deg,rgba(255,149,0,.18),rgba(255,61,94,.14),rgba(0,103,184,.12));
+      transform:rotate(18deg);
+    }
+
+    .identity-symbol::after{
+      content:"";
+      position:absolute;
+      left:8px;
+      right:8px;
+      bottom:-1px;
+      height:2px;
+      background:linear-gradient(90deg,var(--brand-orange),var(--brand-pink),var(--brand-magenta));
+      z-index:3;
+    }
+
+    .identity-item:nth-child(1) .identity-symbol{
+      background:#003f7d;
+    }
+
+    .identity-item:nth-child(2) .identity-symbol{
+      background:#7f1d35;
+    }
+
+    .identity-item:nth-child(3) .identity-symbol{
+      background:#0f3f46;
+    }
+
+    .identity-item:nth-child(4) .identity-symbol{
+      background:#065f32;
+    }
+
+    .identity-item b{
+      display:block;
+      color:#111;
+      font-size:14px;
+      margin-bottom:4px;
+    }
+
+    .identity-item span{
+      display:block;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.45;
+    }
+
+    .identity-index{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      margin-top:24px;
+      padding-top:18px;
+      border-top:1px solid var(--line);
+    }
+
+    .identity-index a{
+      min-height:34px;
+      display:inline-flex;
+      align-items:center;
+      padding:0 12px;
+      border:1px solid var(--line);
+      background:#fff;
+      color:#333;
+      font-size:12px;
+      font-weight:750;
+      box-shadow:0 1px 4px rgba(0,0,0,.04);
+    }
+
+    .identity-index a:first-child{
+      background:var(--blue);
+      color:#fff;
+      border-color:var(--blue);
+    }
+
+    /* WHY EXISTS */
+    .why{
+      background:#fff;
+    }
+
+    .why-layout{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:28px;
+      align-items:stretch;
+    }
+
+    .editorial{
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      background:#fff;
+      padding:38px;
+      min-height:430px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .editorial::after{
+      content:"";
+      position:absolute;
+      right:-80px;
+      bottom:-80px;
+      width:230px;
+      height:230px;
+      border-radius:58px;
+      background:linear-gradient(135deg,rgba(255,149,0,.12),rgba(255,61,94,.09),rgba(233,30,115,.07));
+      transform:rotate(18deg);
+    }
+
+    .editorial h2{
+      margin:0 0 20px;
+      font-size:clamp(32px,4vw,56px);
+      line-height:1.06;
+      letter-spacing:-1.8px;
+      position:relative;
+      z-index:2;
+    }
+
+    .editorial p{
+      color:#3f3f46;
+      line-height:1.75;
+      font-size:17px;
+      margin:0 0 18px;
+      max-width:830px;
+      position:relative;
+      z-index:2;
+    }
+
+    .belief-notes{
+      display:grid;
+      gap:14px;
+    }
+
+    .belief-card{
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+      background:#fff;
+      padding:22px;
+      display:grid;
+      grid-template-columns:44px 1fr;
+      gap:14px;
+      align-items:start;
+      min-height:130px;
+    }
+
+    .belief-card h3{
+      margin:0 0 7px;
+      font-size:20px;
+      letter-spacing:-.6px;
+    }
+
+    .belief-card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.62;
+      font-size:13px;
+    }
+
+    /* LEDGER */
+    .ledger{
+      background:#f5f5f5;
+    }
+
+    .ledger-table{
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+      background:#fff;
+      overflow:hidden;
+    }
+
+    .ledger-row{
+      display:grid;
+      grid-template-columns:230px 1fr 1fr;
+      border-bottom:1px solid var(--line);
+    }
+
+    .ledger-row:last-child{
+      border-bottom:0;
+    }
+
+    .ledger-head{
+      background:#111827;
+      color:#fff;
+      font-size:12px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+
+    .ledger-cell{
+      padding:18px;
+      border-right:1px solid var(--line);
+      color:#3f3f46;
+      font-size:13px;
+      line-height:1.6;
+    }
+
+    .ledger-row .ledger-cell:last-child{
+      border-right:0;
+    }
+
+    .ledger-cell b{
+      display:block;
+      color:#111;
+      font-size:14px;
+      margin-bottom:5px;
+    }
+
+    .ledger-head .ledger-cell{
+      color:#fff;
+      border-right:1px solid rgba(255,255,255,.12);
+    }
+
+    .ledger-title{
+      background:#f8fbff;
+      font-weight:800;
+      color:#111;
+      position:relative;
+    }
+
+    .ledger-title::after{
+      content:"";
+      position:absolute;
+      left:18px;
+      right:18px;
+      bottom:-1px;
+      height:2px;
+      background:linear-gradient(90deg,var(--brand-orange),var(--brand-pink),var(--brand-magenta));
+    }
+
+    /* PRINCIPLES */
+    .principles{
+      background:#fff;
+    }
+
+    .principle-wall{
+      display:grid;
+      gap:14px;
+    }
+
+    .principle-item{
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+      background:#fff;
+      display:grid;
+      grid-template-columns:150px 1fr 280px;
+      min-height:145px;
+      overflow:hidden;
+    }
+
+    .principle-no{
+      background:#111827;
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:44px;
+      letter-spacing:-2px;
+      font-weight:760;
+      position:relative;
+    }
+
+    .principle-no::after{
+      content:"";
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      height:4px;
+      background:linear-gradient(90deg,var(--brand-orange),var(--brand-pink),var(--brand-magenta));
+    }
+
+    .principle-main{
+      padding:24px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .principle-main h3{
+      margin:0 0 9px;
+      font-size:26px;
+      line-height:1.12;
+      letter-spacing:-.85px;
+    }
+
+    .principle-main p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.62;
+      font-size:14px;
+      max-width:670px;
+    }
+
+    .principle-outcome{
+      background:#f8fbff;
+      border-left:1px solid var(--line);
+      padding:20px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      font-size:13px;
+      line-height:1.55;
+      color:#4b5563;
+    }
+
+    .principle-outcome b{
+      color:#111;
+      display:block;
+      margin-bottom:6px;
+    }
+
+    /* CAPABILITY RIBBON */
+    .capabilities{
+      background:#f5f5f5;
+    }
+
+    .capability-ribbon{
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+      background:#fff;
+      display:grid;
+      grid-template-columns:280px 1fr;
+      overflow:hidden;
+    }
+
+    .ribbon-core{
+      background:#111827;
+      color:#fff;
+      padding:30px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .ribbon-core::after{
+      content:"";
+      position:absolute;
+      right:-70px;
+      bottom:-70px;
+      width:190px;
+      height:190px;
+      border-radius:48px;
+      background:linear-gradient(135deg,rgba(255,149,0,.20),rgba(255,61,94,.16),rgba(233,30,115,.10));
+      transform:rotate(18deg);
+    }
+
+    .ribbon-core h2{
+      margin:0 0 14px;
+      font-size:34px;
+      line-height:1.08;
+      letter-spacing:-1.2px;
+      position:relative;
+      z-index:2;
+    }
+
+    .ribbon-core p{
+      margin:0;
+      color:#d1d5db;
+      line-height:1.65;
+      font-size:14px;
+      position:relative;
+      z-index:2;
+    }
+
+    .ribbon-list{
+      display:grid;
+    }
+
+    .ribbon-row{
+      display:grid;
+      grid-template-columns:260px 1fr 190px;
+      gap:16px;
+      align-items:center;
+      padding:17px 22px;
+      border-bottom:1px solid var(--line);
+    }
+
+    .ribbon-row:last-child{
+      border-bottom:0;
+    }
+
+    .ribbon-row b{
+      color:#111;
+      font-size:15px;
+    }
+
+    .ribbon-row span{
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.55;
+    }
+
+    .ribbon-tag{
+      justify-self:end;
+      background:#f2f2f2;
+      color:#4b5563;
+      font-size:11px;
+      font-weight:800;
+      padding:7px 9px;
+    }
+
+    /* HOW WE BUILD */
+    .build{
+      background:#fff;
+    }
+
+    .evidence-board{
+      display:grid;
+      gap:12px;
+    }
+
+    .evidence-row{
+      display:grid;
+      grid-template-columns:1fr 1fr 1fr;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+      background:#fff;
+    }
+
+    .evidence-row.heading{
+      background:#111827;
+      color:#fff;
+      box-shadow:none;
+    }
+
+    .evidence-row.heading div{
+      color:#fff;
+      font-size:12px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+
+    .evidence-cell{
+      padding:20px;
+      border-right:1px solid var(--line);
+      min-height:112px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      color:#4b5563;
+      font-size:13px;
+      line-height:1.58;
+    }
+
+    .evidence-cell:last-child{
+      border-right:0;
+    }
+
+    .evidence-cell b{
+      color:#111;
+      font-size:14px;
+      margin-bottom:6px;
+      display:block;
+    }
+
+    .heading .evidence-cell{
+      border-right:1px solid rgba(255,255,255,.12);
+      min-height:auto;
+      padding:15px 20px;
+    }
+
+    /* TRUST */
+    .trust{
+      background:#f5f5f5;
+    }
+
+    .trust-layout{
+      display:grid;
+      grid-template-columns:330px 1fr;
+      gap:24px;
+      align-items:stretch;
+    }
+
+    .trust-core{
+      background:#111827;
+      color:#fff;
+      padding:30px;
+      box-shadow:var(--shadow);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .trust-core::after{
+      content:"";
+      position:absolute;
+      right:-72px;
+      bottom:-76px;
+      width:210px;
+      height:210px;
+      border-radius:52px;
+      background:linear-gradient(135deg,rgba(255,149,0,.22),rgba(255,61,94,.18),rgba(233,30,115,.12));
+      transform:rotate(20deg);
+    }
+
+    .trust-core h2{
+      margin:0 0 14px;
+      font-size:36px;
+      line-height:1.08;
+      letter-spacing:-1.2px;
+      position:relative;
+      z-index:2;
+    }
+
+    .trust-core p{
+      color:#d1d5db;
+      line-height:1.65;
+      margin:0;
+      position:relative;
+      z-index:2;
+    }
+
+    .trust-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+
+    .trust-card{
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+      background:#fff;
+      padding:20px;
+      min-height:210px;
+      display:flex;
+      flex-direction:column;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .trust-card::after{
+      content:"";
+      position:absolute;
+      left:20px;
+      right:20px;
+      bottom:-1px;
+      height:3px;
+      background:linear-gradient(90deg,var(--brand-orange),var(--brand-pink),var(--brand-magenta));
+    }
+
+    .trust-card h3{
+      margin:14px 0 9px;
+      font-size:20px;
+      line-height:1.15;
+      letter-spacing:-.6px;
+    }
+
+    .trust-card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.58;
+      font-size:13px;
+    }
+
+    /* TIMELINE */
+    .timeline{
+      background:#fff;
+    }
+
+    .timeline-track{
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+      background:#fff;
+      display:grid;
+      grid-template-columns:repeat(6,1fr);
+      overflow:hidden;
+    }
+
+    .timeline-step{
+      padding:24px 18px;
+      min-height:250px;
+      border-right:1px solid var(--line);
+      position:relative;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .timeline-step:last-child{
+      border-right:0;
+    }
+
+    .timeline-icon{
+      width:52px;
+      height:52px;
+      display:grid;
+      place-items:center;
+      margin-bottom:18px;
+      color:#fff;
+      position:relative;
+      overflow:hidden;
+      box-shadow:0 8px 18px rgba(17,24,39,.14);
+    }
+
+    .timeline-icon::before{
+      content:"";
+      position:absolute;
+      inset:-18px;
+      background:linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,.04));
+      transform:rotate(18deg);
+      z-index:1;
+    }
+
+    .timeline-icon svg{
+      width:26px;
+      height:26px;
+      stroke:currentColor;
+      position:relative;
+      z-index:2;
+    }
+
+    .timeline-step:nth-child(1) .timeline-icon{
+      background:#003f7d;
+    }
+
+    .timeline-step:nth-child(2) .timeline-icon{
+      background:#5c2d91;
+    }
+
+    .timeline-step:nth-child(3) .timeline-icon{
+      background:#0f3f46;
+    }
+
+    .timeline-step:nth-child(4) .timeline-icon{
+      background:#7f1d35;
+    }
+
+    .timeline-step:nth-child(5) .timeline-icon{
+      background:#d83b01;
+    }
+
+    .timeline-step:nth-child(6) .timeline-icon{
+      background:#065f32;
+    }
+
+    .timeline-step::after{
+      content:"";
+      position:absolute;
+      left:18px;
+      right:18px;
+      bottom:-1px;
+      height:3px;
+      background:linear-gradient(90deg,var(--brand-orange),var(--brand-pink),var(--brand-magenta));
+    }
+
+    .timeline-step small{
+      color:var(--blue);
+      font-size:11px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      margin-bottom:9px;
+    }
+
+    .timeline-step h3{
+      margin:0 0 9px;
+      font-size:19px;
+      line-height:1.15;
+      letter-spacing:-.55px;
+    }
+
+    .timeline-step p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.55;
+      font-size:12px;
+    }
+
+    /* SERVE */
+    .serve{
+      background:#f5f5f5;
+    }
+
+    .serve-grid{
+      display:grid;
+      grid-template-columns:repeat(7,1fr);
+      gap:12px;
+    }
+
+    .serve-card{
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+      padding:18px;
+      min-height:215px;
+      display:flex;
+      flex-direction:column;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .serve-card::before{
+      content:"";
+      position:absolute;
+      top:-46px;
+      right:-46px;
+      width:116px;
+      height:116px;
+      border-radius:30px;
+      background:linear-gradient(135deg,rgba(0,103,184,.12),rgba(255,149,0,.09),rgba(233,30,115,.07));
+      transform:rotate(18deg);
+    }
+
+    .serve-card small{
+      color:var(--blue);
+      font-size:11px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      margin-bottom:12px;
+      position:relative;
+      z-index:2;
+    }
+
+    .serve-card h3{
+      margin:0 0 9px;
+      font-size:18px;
+      line-height:1.15;
+      letter-spacing:-.5px;
+      position:relative;
+      z-index:2;
+    }
+
+    .serve-card p{
+      margin:0;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.55;
+      position:relative;
+      z-index:2;
+    }
+
+    /* WORKING WITH */
+    .working{
+      background:#fff;
+    }
+
+    .engagement-board{
+      display:grid;
+      grid-template-columns:320px 1fr;
+      gap:24px;
+      align-items:start;
+    }
+
+    .engagement-panel{
+      background:#111827;
+      color:#fff;
+      padding:30px;
+      min-height:450px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      box-shadow:var(--shadow);
+      position:sticky;
+      top:88px;
+    }
+
+    .engagement-panel h2{
+      margin:0 0 14px;
+      font-size:34px;
+      line-height:1.08;
+      letter-spacing:-1.2px;
+    }
+
+    .engagement-panel p{
+      color:#d1d5db;
+      line-height:1.65;
+      margin:0 0 22px;
+      font-size:14px;
+    }
+
+    .engagement-steps{
+      display:grid;
+      gap:12px;
+    }
+
+    .engagement-step{
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+      background:#fff;
+      display:grid;
+      grid-template-columns:90px 1fr 220px;
+      min-height:130px;
+    }
+
+    .engagement-no{
+      background:#f8fbff;
+      border-right:1px solid var(--line);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#111;
+      font-size:26px;
+      font-weight:800;
+      letter-spacing:-1px;
+      position:relative;
+    }
+
+    .engagement-no::after{
+      content:"";
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:-1px;
+      height:3px;
+      background:linear-gradient(90deg,var(--brand-orange),var(--brand-pink),var(--brand-magenta));
+    }
+
+    .engagement-main{
+      padding:20px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .engagement-main h3{
+      margin:0 0 8px;
+      font-size:21px;
+      letter-spacing:-.6px;
+    }
+
+    .engagement-main p{
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.58;
+    }
+
+    .engagement-output{
+      border-left:1px solid var(--line);
+      padding:18px;
+      background:#fbfbfb;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      font-size:12px;
+      line-height:1.5;
+      color:#4b5563;
+    }
+
+    .engagement-output b{
+      color:#111;
+      display:block;
+      margin-bottom:6px;
+    }
+
+    /* PROFILE CTA */
+    .profile-cta{
+      background:#f5f5f5;
+    }
+
+    .profile-box{
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      padding:32px;
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:28px;
+      align-items:center;
+    }
+
+    .profile-box h2{
+      margin:0 0 12px;
+      font-size:clamp(30px,4vw,50px);
+      line-height:1.08;
+      letter-spacing:-1.6px;
+    }
+
+    .profile-box p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.65;
+      max-width:760px;
+    }
+
+    .profile-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .about-final{
+      background:#111827;
+      color:#fff;
+    }
+
+    .final-box{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:28px;
+      align-items:center;
+    }
+
+    .about-final h2{
+      font-size:clamp(32px,4vw,54px);
+      line-height:1.06;
+      letter-spacing:-1.8px;
+      margin:0 0 14px;
+      color:#fff;
+      font-weight:720;
+    }
+
+    .about-final p{
+      color:#d1d5db;
+      line-height:1.7;
+      max-width:690px;
+      margin:0;
+    }
+
+    .about-final .btn-light{
+      background:transparent;
+      color:#fff;
+      border-color:#9ca3af;
+    }
+
+    footer{
+      background:#f2f2f2;
+      border-top:1px solid #ddd;
+      padding:34px 0 20px;
+    }
+
+    .footer-mega{
+      display:grid;
+      grid-template-columns:1.35fr repeat(5,1fr);
+      gap:26px;
+    }
+
+    .footer-logo{
+      display:flex;
+      align-items:flex-start;
+      margin-bottom:12px;
+    }
+
+    .footer-logo .brand-logo{
+      height:auto;
+      min-width:0;
+      gap:4px;
+    }
+
+    .footer-logo .brand-mark{
+      width:44px;
+      height:44px;
+    }
+
+    .footer-logo .brand-name{font-size:22px}
+    .footer-logo .brand-subtitle{font-size:12.5px}
+
+    .footer-brand h4,
+    .footer-col h4{
+      font-size:15px;
+      line-height:1.3;
+      color:#616161;
+      margin:0 0 14px;
+      font-weight:700;
+    }
+
+    .footer-brand p{
+      color:#616161;
+      line-height:1.65;
+      font-size:12px;
+      max-width:320px;
+      margin:0 0 12px;
+    }
+
+    .footer-contact{margin-top:14px}
+
+    .footer-contact a{
+      display:block;
+      color:#616161;
+      font-size:11px;
+      margin-bottom:10px;
+    }
+
+    .footer-col a{
+      display:block;
+      color:#616161;
+      font-size:11px;
+      line-height:1.45;
+      margin:0 0 11px;
+    }
+
+    .footer-col a:hover,
+    .footer-contact a:hover{
+      text-decoration:underline;
+      color:#111;
+    }
+
+    .footer-bottom{
+      margin-top:26px;
+      padding-top:18px;
+      border-top:1px solid #d6d6d6;
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      align-items:center;
+      color:#616161;
+      font-size:11px;
+      flex-wrap:wrap;
+    }
+
+    .footer-bottom-left,
+    .footer-bottom-right{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    .footer-bottom a:hover{text-decoration:underline;color:#111}
+
+    @media (max-width:1180px){
+      .nav-links,
+      .nav-actions{display:none}
+
+      .menu-btn{display:inline-flex}
+
+      .identity-grid,
+      .why-layout,
+      .capability-ribbon,
+      .trust-layout,
+      .engagement-board,
+      .profile-box,
+      .final-box{
+        grid-template-columns:1fr;
+      }
+
+      .identity-panel{
+        max-width:680px;
+      }
+
+      .ledger-row{
+        grid-template-columns:1fr;
+      }
+
+      .ledger-cell{
+        border-right:0;
+        border-bottom:1px solid var(--line);
+      }
+
+      .ledger-row .ledger-cell:last-child{
+        border-bottom:0;
+      }
+
+      .principle-item{
+        grid-template-columns:110px 1fr;
+      }
+
+      .principle-outcome{
+        grid-column:1 / -1;
+        border-left:0;
+        border-top:1px solid var(--line);
+      }
+
+      .ribbon-row{
+        grid-template-columns:1fr;
+        gap:8px;
+      }
+
+      .ribbon-tag{
+        justify-self:start;
+      }
+
+      .trust-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .timeline-track{
+        grid-template-columns:repeat(3,1fr);
+      }
+
+      .serve-grid{
+        grid-template-columns:repeat(3,1fr);
+      }
+
+      .engagement-panel{
+        position:relative;
+        top:auto;
+        min-height:auto;
+      }
+
+      .engagement-step{
+        grid-template-columns:90px 1fr;
+      }
+
+      .engagement-output{
+        grid-column:1 / -1;
+        border-left:0;
+        border-top:1px solid var(--line);
+      }
+
+      .profile-actions{
+        justify-content:flex-start;
+      }
+
+      .footer-mega{grid-template-columns:repeat(3,1fr)}
+      .footer-brand{grid-column:span 3}
+    }
+
+    @media (max-width:760px){
+      .wrap{width:min(var(--max),calc(100% - 24px))}
+      .nav{height:64px}
+
+      .brand-logo{min-width:auto}
+      .brand-mark{width:44px;height:44px}
+      .brand-name{font-size:21px}
+      .brand-subtitle{display:none}
+
+      .identity-index{
+        overflow-x:auto;
+        flex-wrap:nowrap;
+        padding-bottom:4px;
+      }
+
+      .identity-index a{
+        white-space:nowrap;
+      }
+
+      .editorial{
+        padding:26px;
+      }
+
+      .belief-card{
+        grid-template-columns:1fr;
+      }
+
+      .principle-item,
+      .evidence-row,
+      .engagement-step{
+        grid-template-columns:1fr;
+      }
+
+      .principle-no{
+        min-height:90px;
+      }
+
+      .principle-outcome,
+      .engagement-output{
+        grid-column:auto;
+      }
+
+      .evidence-cell{
+        border-right:0;
+        border-bottom:1px solid var(--line);
+      }
+
+      .evidence-cell:last-child{
+        border-bottom:0;
+      }
+
+      .trust-grid,
+      .timeline-track,
+      .serve-grid,
+      .footer-mega{
+        grid-template-columns:1fr;
+      }
+
+      .footer-brand{grid-column:span 1}
+
+      .section-head{display:block}
+      .section-head p{margin-top:14px}
+
+      .footer-bottom{display:block}
+
+      .footer-bottom-left,
+      .footer-bottom-right{
+        display:flex;
+        gap:12px;
+        margin-top:12px;
+      }
+    }
+  
+    /* Mobile navigation fix */
+    .mobile-nav{
+      display:none;
+      position:sticky;
+      top:64px;
+      z-index:99;
+      background:#fff;
+      border-bottom:1px solid var(--line);
+      box-shadow:0 8px 18px rgba(0,0,0,.06);
+      padding:12px 24px 16px;
+    }
+
+    .mobile-nav a{
+      display:flex;
+      align-items:center;
+      min-height:42px;
+      border-bottom:1px solid var(--line);
+      color:#1f1f1f;
+      font-size:14px;
+      font-weight:650;
+    }
+
+    .mobile-nav a:last-child{
+      border-bottom:0;
+    }
+
+    .mobile-nav .mobile-cta{
+      margin-top:10px;
+      justify-content:center;
+      background:var(--blue);
+      color:#fff;
+      border-bottom:0;
+      min-height:40px;
+    }
+
+    .mobile-nav .mobile-secondary{
+      margin-top:8px;
+      justify-content:center;
+      border:1px solid #8a8a8a;
+      min-height:40px;
+    }
+
+    @media (max-width:1180px){
+      body.nav-open .mobile-nav{
+        display:grid;
+      }
+
+      .menu-btn{
+        display:inline-flex;
+      }
+    }
+
+  
+    /* Logo clockwise rotation */
+    .brand-mark{
+      animation: rotateLogo 10s linear infinite;
+    }
+
+    @keyframes rotateLogo{
+      0%{ transform:rotate(0deg); }
+      100%{ transform:rotate(360deg); }
+    }
+
+
+
+    
+    
+    /* Strict mobile layout correction: wrap text instead of clipping */
+    @media (max-width:760px){
+      html,
+      body{
+        width:100% !important;
+        max-width:100% !important;
+        overflow-x:hidden !important;
+      }
+
+      body{
+        position:relative;
+      }
+
+      *,
+      *::before,
+      *::after{
+        box-sizing:border-box !important;
+        min-width:0;
+      }
+
+      .wrap{
+        width:100% !important;
+        max-width:100vw !important;
+        padding-left:18px !important;
+        padding-right:18px !important;
+        margin-left:0 !important;
+        margin-right:0 !important;
+      }
+
+      main,
+      header,
+      footer,
+      nav,
+      section,
+      article,
+      aside{
+        width:100% !important;
+        max-width:100vw !important;
+        min-width:0 !important;
+      }
+
+      .nav{
+        padding-left:12px !important;
+        padding-right:12px !important;
+      }
+
+      .brand-logo{
+        max-width:calc(100vw - 118px) !important;
+        min-width:0 !important;
+      }
+
+      .brand-mark{
+        width:42px !important;
+        height:42px !important;
+        flex:0 0 42px !important;
+      }
+
+      .brand-name{
+        font-size:20px !important;
+        white-space:nowrap !important;
+        overflow:hidden !important;
+        text-overflow:ellipsis !important;
+      }
+
+      .brand-subtitle{
+        display:none !important;
+      }
+
+      .menu-btn{
+        min-width:74px !important;
+        padding-left:12px !important;
+        padding-right:12px !important;
+      }
+
+      h1,
+      .command h1,
+      .hero h1,
+      .hero-title,
+      .support-hero h1,
+      .industries-hero h1,
+      .about-hero h1,
+      .resource-hero h1,
+      .section-title,
+      .section-head h2{
+        font-size:clamp(30px,8.6vw,38px) !important;
+        line-height:1.12 !important;
+        letter-spacing:-0.7px !important;
+        width:100% !important;
+        max-width:100% !important;
+        min-width:0 !important;
+        white-space:normal !important;
+        overflow:visible !important;
+        overflow-wrap:break-word !important;
+        word-break:normal !important;
+      }
+
+      h2{
+        font-size:clamp(27px,7.8vw,34px) !important;
+        line-height:1.14 !important;
+        letter-spacing:-0.5px !important;
+        white-space:normal !important;
+        overflow-wrap:break-word !important;
+      }
+
+      h3{
+        font-size:clamp(22px,6.4vw,28px) !important;
+        line-height:1.18 !important;
+        white-space:normal !important;
+        overflow-wrap:break-word !important;
+      }
+
+      p,
+      li,
+      span,
+      .command p,
+      .hero p,
+      .section-head p,
+      .support-hero p,
+      .industries-hero p,
+      .about-hero p,
+      .resource-hero p,
+      .route-card p,
+      .industry-card p,
+      .resource-card p,
+      .support-card p,
+      .about-card p{
+        font-size:16px !important;
+        line-height:1.55 !important;
+        max-width:100% !important;
+        min-width:0 !important;
+        white-space:normal !important;
+        overflow:visible !important;
+        overflow-wrap:break-word !important;
+        word-break:normal !important;
+      }
+
+      .hero-grid,
+      .command-grid,
+      .cta-box,
+      .footer-mega,
+      .footer-bottom,
+      .footer-bottom-left,
+      .footer-bottom-right,
+      .finder-layout,
+      .finder-results,
+      .solution-panel,
+      .panel-stack,
+      .arch-canvas,
+      .arch-layer,
+      .arch-items,
+      .blueprint-grid,
+      .path-grid,
+      .receive-grid,
+      .faq-grid,
+      .metric-row,
+      .section-head,
+      .resource-dock,
+      .resource-layout,
+      .resource-grid,
+      .resource-cards,
+      .resource-actions,
+      .download-grid,
+      .knowledge-grid,
+      .support-hero-grid,
+      .support-grid,
+      .support-route-grid,
+      .support-card-grid,
+      .route-layout,
+      .route-cards,
+      .contact-grid,
+      .access-grid,
+      .about-hero-grid,
+      .about-split,
+      .about-card-grid,
+      .principle-grid,
+      .timeline-grid,
+      .industries-hero-grid,
+      .industry-layout,
+      .industry-grid,
+      .industry-cards,
+      .segment-grid,
+      .value-grid,
+      .proof-grid,
+      .process-grid,
+      .cards-grid,
+      .grid2,
+      .grid3,
+      .grid4,
+      .split,
+      .career-head,
+      .roles-grid,
+      .hire-flow,
+      .application-layout,
+      .track-hero,
+      .status-strip,
+      .two-col,
+      .ecosystem,
+      .partner-flow,
+      .partner-contact,
+      .map-matrix,
+      .journey-map,
+      .policy-layout,
+      .policy-content,
+      .terms-grid,
+      .terms-panel,
+      .trust-dashboard,
+      .security-matrix,
+      .report-layout,
+      .cookie-board,
+      .cookie-types,
+      .control-grid{
+        display:grid !important;
+        grid-template-columns:minmax(0,1fr) !important;
+        width:100% !important;
+        max-width:100% !important;
+        min-width:0 !important;
+      }
+
+      .footer-bottom,
+      .footer-bottom-left,
+      .footer-bottom-right{
+        display:flex !important;
+        flex-wrap:wrap !important;
+      }
+
+      article,
+      aside,
+      .card,
+      .panel,
+      .resource-card,
+      .support-card,
+      .route-card,
+      .about-card,
+      .industry-card,
+      .result-card,
+      .blueprint-card,
+      .path-card,
+      .check-panel,
+      .metric,
+      .rail-item,
+      .field,
+      form{
+        width:100% !important;
+        max-width:100% !important;
+        min-width:0 !important;
+        overflow:visible !important;
+      }
+
+      .route-card,
+      .support-card,
+      .industry-card,
+      .resource-card,
+      .about-card,
+      .rail-item{
+        grid-template-columns:auto minmax(0,1fr) !important;
+      }
+
+      .route-card > *,
+      .support-card > *,
+      .industry-card > *,
+      .resource-card > *,
+      .about-card > *,
+      .rail-item > *{
+        min-width:0 !important;
+        max-width:100% !important;
+      }
+
+      .solution-tabs,
+      .industry-tabs,
+      .route-tabs,
+      .resource-tabs,
+      .tab-row,
+      .command-actions,
+      .module-tags,
+      .result-pills,
+      .path-line{
+        display:flex !important;
+        flex-wrap:nowrap !important;
+        width:100% !important;
+        max-width:100% !important;
+        overflow-x:auto !important;
+        overflow-y:hidden !important;
+        -webkit-overflow-scrolling:touch;
+      }
+
+      .solution-tabs a,
+      .industry-tabs a,
+      .route-tabs a,
+      .resource-tabs a,
+      .tab-row a,
+      .tab-row button,
+      .command-actions a,
+      .module-tags span,
+      .result-pills span,
+      .path-line span{
+        flex:0 0 auto !important;
+        white-space:nowrap !important;
+        max-width:none !important;
+      }
+
+      .matrix-wrap,
+      .table-wrap,
+      .comparison-table,
+      .resource-table,
+      .support-table{
+        width:100% !important;
+        max-width:100% !important;
+        overflow-x:auto !important;
+        -webkit-overflow-scrolling:touch;
+      }
+
+      table{
+        width:100% !important;
+      }
+
+      input,
+      select,
+      textarea,
+      button{
+        max-width:100% !important;
+      }
+    }
+
+    @media (max-width:430px){
+      .wrap{
+        padding-left:14px !important;
+        padding-right:14px !important;
+      }
+
+      h1,
+      .command h1,
+      .hero h1,
+      .hero-title,
+      .support-hero h1,
+      .industries-hero h1,
+      .about-hero h1,
+      .resource-hero h1,
+      .section-title,
+      .section-head h2{
+        font-size:clamp(28px,8.2vw,34px) !important;
+        line-height:1.14 !important;
+      }
+
+      h2{
+        font-size:clamp(25px,7.4vw,31px) !important;
+      }
+
+      h3{
+        font-size:clamp(21px,6vw,25px) !important;
+      }
+
+      p,
+      li,
+      .command p,
+      .hero p,
+      .section-head p{
+        font-size:15.5px !important;
+      }
+    }
+
+
+    /* Mobile 2-column tab grid correction */
+    @media (max-width:760px){
+      .solution-tabs,
+      .industry-tabs,
+      .route-tabs,
+      .resource-tabs,
+      .tab-row{
+        display:grid !important;
+        grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
+        gap:10px !important;
+        width:100% !important;
+        max-width:100% !important;
+        overflow-x:visible !important;
+        overflow-y:visible !important;
+      }
+
+      .solution-tabs a,
+      .industry-tabs a,
+      .route-tabs a,
+      .resource-tabs a,
+      .tab-row a,
+      .tab-row button{
+        width:100% !important;
+        max-width:100% !important;
+        min-width:0 !important;
+        flex:none !important;
+        white-space:normal !important;
+        text-align:center !important;
+        justify-content:center !important;
+        align-items:center !important;
+        line-height:1.18 !important;
+        font-size:14px !important;
+        padding:12px 8px !important;
+        min-height:52px !important;
+        overflow-wrap:break-word !important;
+        word-break:normal !important;
+      }
+    }
+
+    @media (max-width:360px){
+      .solution-tabs,
+      .industry-tabs,
+      .route-tabs,
+      .resource-tabs,
+      .tab-row{
+        grid-template-columns:1fr !important;
+      }
+
+      .solution-tabs a,
+      .industry-tabs a,
+      .route-tabs a,
+      .resource-tabs a,
+      .tab-row a,
+      .tab-row button{
+        font-size:15px !important;
+        min-height:48px !important;
+      }
+    }
+
+
+    /* Actual mobile 2-column index/tabs correction */
+    @media (max-width:760px){
+      .sector-index,
+      .support-index,
+      .resource-index,
+      .identity-index,
+      .solution-tabs,
+      .industry-tabs,
+      .route-tabs,
+      .resource-tabs,
+      .tab-row{
+        display:grid !important;
+        grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
+        gap:10px !important;
+        width:100% !important;
+        max-width:100% !important;
+        min-width:0 !important;
+        overflow-x:visible !important;
+        overflow-y:visible !important;
+      }
+
+      .sector-index a,
+      .support-index a,
+      .resource-index a,
+      .identity-index a,
+      .solution-tabs a,
+      .industry-tabs a,
+      .route-tabs a,
+      .resource-tabs a,
+      .tab-row a,
+      .tab-row button{
+        width:100% !important;
+        max-width:100% !important;
+        min-width:0 !important;
+        flex:none !important;
+        white-space:normal !important;
+        text-align:center !important;
+        justify-content:center !important;
+        align-items:center !important;
+        line-height:1.18 !important;
+        font-size:14px !important;
+        padding:12px 8px !important;
+        min-height:52px !important;
+        overflow-wrap:break-word !important;
+        word-break:normal !important;
+      }
+    }
+
+    @media (max-width:360px){
+      .sector-index,
+      .support-index,
+      .resource-index,
+      .identity-index,
+      .solution-tabs,
+      .industry-tabs,
+      .route-tabs,
+      .resource-tabs,
+      .tab-row{
+        grid-template-columns:1fr !important;
+      }
+
+      .sector-index a,
+      .support-index a,
+      .resource-index a,
+      .identity-index a,
+      .solution-tabs a,
+      .industry-tabs a,
+      .route-tabs a,
+      .resource-tabs a,
+      .tab-row a,
+      .tab-row button{
+        font-size:15px !important;
+        min-height:48px !important;
+      }
+    }
+
+
+    /* Mobile brand balance and home hero order correction */
+    @media (max-width:760px){
+      .brand-name{
+        font-size:24px !important;
+        line-height:1 !important;
+        font-weight:850 !important;
+        letter-spacing:-.7px !important;
+      }
+
+      .brand-name .codes{
+        font-size:1em !important;
+        font-weight:900 !important;
+        letter-spacing:-.8px !important;
+        display:inline-block !important;
+        transform:translateY(.2px) scale(1.025) !important;
+        -webkit-text-stroke:.15px rgba(217,107,207,.18);
+      }
+    }
+
+    @media (max-width:420px){
+      .brand-name{
+        font-size:22px !important;
+      }
+    }
+
+
+    /* Microsoft-style mobile typography and centered header final */
+    @media (max-width:760px){
+      body{
+        font-family:"Segoe UI Variable","Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif !important;
+        font-size:16px !important;
+        line-height:1.5 !important;
+        font-weight:400 !important;
+      }
+
+      .nav{
+        display:grid !important;
+        grid-template-columns:48px minmax(0,1fr) 48px !important;
+        align-items:center !important;
+        width:100% !important;
+        max-width:100vw !important;
+        padding:10px 14px !important;
+        gap:0 !important;
+      }
+
+      .menu-btn{
+        grid-column:1 !important;
+        grid-row:1 !important;
+        justify-self:start !important;
+        align-self:center !important;
+        width:44px !important;
+        height:44px !important;
+        min-width:44px !important;
+        padding:0 !important;
+        margin:0 !important;
+        border:0 !important;
+        background:transparent !important;
+        box-shadow:none !important;
+        font-size:0 !important;
+        color:transparent !important;
+        position:relative !important;
+        border-radius:0 !important;
+      }
+
+      .menu-btn::before,
+      .menu-btn::after,
+      .menu-btn span{
+        content:"" !important;
+        position:absolute !important;
+        left:11px !important;
+        width:22px !important;
+        height:2px !important;
+        background:#1f1f1f !important;
+        border-radius:99px !important;
+        display:block !important;
+      }
+
+      .menu-btn::before{top:14px !important;}
+      .menu-btn span{top:21px !important;}
+      .menu-btn::after{top:28px !important;}
+
+      .brand-logo{
+        grid-column:2 !important;
+        grid-row:1 !important;
+        justify-self:center !important;
+        align-self:center !important;
+        display:flex !important;
+        align-items:center !important;
+        justify-content:center !important;
+        width:auto !important;
+        max-width:calc(100vw - 116px) !important;
+        min-width:0 !important;
+        gap:6px !important;
+        margin:0 auto !important;
+      }
+
+      .brand-logo::after{
+        content:"" !important;
+      }
+
+      .brand-mark{
+        width:42px !important;
+        height:42px !important;
+        flex:0 0 42px !important;
+      }
+
+      .brand-text{
+        min-width:0 !important;
+        max-width:100% !important;
+      }
+
+      .brand-name{
+        font-family:"Segoe UI Variable","Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif !important;
+        font-size:22px !important;
+        line-height:1 !important;
+        font-weight:700 !important;
+        letter-spacing:-.45px !important;
+        white-space:nowrap !important;
+        overflow:visible !important;
+        text-overflow:clip !important;
+      }
+
+      .brand-name .codes{
+        font-size:1em !important;
+        font-weight:700 !important;
+        letter-spacing:-.45px !important;
+        transform:none !important;
+        -webkit-text-stroke:0 !important;
+        display:inline !important;
+      }
+
+      .brand-subtitle{
+        display:none !important;
+      }
+
+      /* Microsoft/Fluent-inspired mobile type scale */
+      h1,
+      .command h1,
+      .hero h1,
+      .hero-title,
+      .support-hero h1,
+      .industries-hero h1,
+      .about-hero h1,
+      .resource-hero h1,
+      .section-title{
+        font-family:"Segoe UI Variable","Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif !important;
+        font-size:40px !important;
+        line-height:46px !important;
+        font-weight:600 !important;
+        letter-spacing:-1px !important;
+      }
+
+      h2,
+      .section-head h2{
+        font-family:"Segoe UI Variable","Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif !important;
+        font-size:32px !important;
+        line-height:38px !important;
+        font-weight:600 !important;
+        letter-spacing:-.6px !important;
+      }
+
+      h3{
+        font-family:"Segoe UI Variable","Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif !important;
+        font-size:22px !important;
+        line-height:28px !important;
+        font-weight:600 !important;
+        letter-spacing:-.2px !important;
+      }
+
+      p,
+      li,
+      .section-head p,
+      .hero p,
+      .command p,
+      .card p,
+      .panel p{
+        font-family:"Segoe UI Variable","Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif !important;
+        font-size:16px !important;
+        line-height:24px !important;
+        font-weight:400 !important;
+      }
+
+      .btn,
+      button,
+      .cta,
+      .nav a,
+      .sector-index a,
+      .resource-index a,
+      .identity-index a,
+      .support-index a,
+      .solution-tabs a,
+      .tab-row a,
+      .tab-row button{
+        font-family:"Segoe UI Variable","Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif !important;
+        font-size:14px !important;
+        line-height:18px !important;
+        font-weight:600 !important;
+      }
+
+      /* Keep the real tab groups as a clean 2-column mobile grid */
+      .sector-index,
+      .resource-index,
+      .identity-index,
+      .support-index,
+      .solution-tabs,
+      .industry-tabs,
+      .route-tabs,
+      .resource-tabs,
+      .tab-row{
+        display:grid !important;
+        grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+        gap:10px !important;
+        width:100% !important;
+        max-width:100% !important;
+        overflow:visible !important;
+      }
+
+      .sector-index a,
+      .resource-index a,
+      .identity-index a,
+      .support-index a,
+      .solution-tabs a,
+      .industry-tabs a,
+      .route-tabs a,
+      .resource-tabs a,
+      .tab-row a,
+      .tab-row button{
+        width:100% !important;
+        min-width:0 !important;
+        max-width:100% !important;
+        white-space:normal !important;
+        text-align:center !important;
+        justify-content:center !important;
+        align-items:center !important;
+        padding:12px 10px !important;
+        min-height:48px !important;
+        overflow-wrap:break-word !important;
+      }
+    }
+
+    @media (max-width:420px){
+      .brand-name{
+        font-size:21px !important;
+      }
+
+      h1,
+      .command h1,
+      .hero h1,
+      .hero-title,
+      .support-hero h1,
+      .industries-hero h1,
+      .about-hero h1,
+      .resource-hero h1,
+      .section-title{
+        font-size:36px !important;
+        line-height:42px !important;
+      }
+
+      h2,
+      .section-head h2{
+        font-size:30px !important;
+        line-height:36px !important;
+      }
+    }
+
+
+/* CLIENT LOGIN BUTTON REPLACE START */
+.btn-client-login{
+  background:#071a33 !important;
+  color:#ffffff !important;
+  border-color:#071a33 !important;
+}
+.btn-client-login:hover{
+  background:#0b2545 !important;
+  color:#ffffff !important;
+  border-color:#0b2545 !important;
+}
+.mobile-nav .mobile-login{
+  margin-top:8px;
+  justify-content:center !important;
+  background:#071a33 !important;
+  color:#ffffff !important;
+  border:1px solid #071a33 !important;
+  border-bottom:1px solid #071a33 !important;
+}
+.mobile-nav .mobile-login:hover{
+  background:#0b2545 !important;
+  color:#ffffff !important;
+}
+/* CLIENT LOGIN BUTTON REPLACE END */
+
+
+/* MOBILE HEADER LOGIN ICON START */
+.mobile-header-login-icon{
+  display:none;
+}
+@media (max-width:1180px){
+  .mobile-header-login-icon{
+    grid-column:3 !important;
+    grid-row:1 !important;
+    justify-self:end !important;
+    align-self:center !important;
+    width:42px !important;
+    height:42px !important;
+    min-width:42px !important;
+    border-radius:50% !important;
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    background:#071a33 !important;
+    color:#ffffff !important;
+    text-decoration:none !important;
+    border:1px solid #071a33 !important;
+  }
+  .mobile-header-login-icon svg{
+    width:20px !important;
+    height:20px !important;
+    fill:none !important;
+    stroke:currentColor !important;
+    stroke-width:2 !important;
+    stroke-linecap:round !important;
+    stroke-linejoin:round !important;
+  }
+}
+@media (min-width:1181px){
+  .mobile-header-login-icon{
+    display:none !important;
+  }
+}
+/* MOBILE HEADER LOGIN ICON END */
+
+</style>
+
+<!-- WEDOCODES THREE-LINE MENU FIX START -->
+<style>
+  @media (max-width: 1180px) {
+    .menu-btn {
+      display: inline-flex !important;
+      width: 44px !important;
+      height: 44px !important;
+      min-width: 44px !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      border: 0 !important;
+      background: transparent !important;
+      box-shadow: none !important;
+      font-size: 0 !important;
+      color: transparent !important;
+      position: relative !important;
+      border-radius: 0 !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+
+    .menu-btn::before,
+    .menu-btn::after,
+    .menu-btn span {
+      content: "" !important;
+      position: absolute !important;
+      left: 11px !important;
+      width: 22px !important;
+      height: 2px !important;
+      background: #1f1f1f !important;
+      border-radius: 99px !important;
+      display: block !important;
+    }
+
+    .menu-btn::before { top: 14px !important; }
+    .menu-btn span { top: 21px !important; }
+    .menu-btn::after { top: 28px !important; }
+  }
+</style>
+<!-- WEDOCODES THREE-LINE MENU FIX END -->
+
+<link rel="canonical" href="https://www.wedocodes.com/about">
+</head>
+<body>
+<header class="site-header">
+<div class="wrap nav">
+<a aria-label="WeDoCodes Home" class="brand-logo" href="/">
+<svg class="brand-mark" role="img" viewbox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="logoIconGradient" x1="12" x2="108" y1="12" y2="108">
+<stop offset="0" stop-color="#FF9500"></stop>
+<stop offset="0.32" stop-color="#FF6A00"></stop>
+<stop offset="0.68" stop-color="#FF3D5E"></stop>
+<stop offset="1" stop-color="#E91E73"></stop>
+</lineargradient>
+<filter height="140%" id="logoSoftShadow" width="140%" x="-20%" y="-20%">
+<fedropshadow dx="0" dy="4" flood-color="#000000" flood-opacity="0.12" stddeviation="7"></fedropshadow>
+</filter>
+</defs>
+<circle cx="60" cy="60" fill="url(#logoIconGradient)" filter="url(#logoSoftShadow)" r="48"></circle>
+<g fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.4" transform="translate(-3.5 -1)">
+<path d="M48 53 L35 60 L48 67"></path>
+<path d="M66 48 L55 74"></path>
+<path d="M78 53 L92 60 L78 67"></path>
+</g>
+</svg>
+<span class="brand-text">
+<span class="brand-name">WeDo<span class="codes">Codes</span></span>
+<span class="brand-subtitle">Software and Cyber Security Solutions</span>
+</span>
+</a>
+<nav aria-label="Main navigation" class="nav-links">
+<a href="/">
+<svg aria-hidden="true" class="home-icon" fill="none" viewbox="0 0 24 24">
+<path d="M3 10.8 12 3l9 7.8V21h-6v-6H9v6H3V10.8Z" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+          Home
+        </a>
+<a href="/solutions">Solutions</a>
+<a href="/industries">Industries</a>
+<a href="/resources">Resources</a>
+<a class="active" href="/about">About</a>
+<a href="/support">Support</a>
+</nav>
+<div class="nav-actions">
+<a class="btn btn-client-login" href="/login">Client Login</a>
+<a class="btn btn-blue" href="/support">Start Consultation</a>
+</div>
+<a class="mobile-header-login-icon" href="/login" aria-label="Client Login">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"></path>
+    <path d="M4.5 21a7.5 7.5 0 0 1 15 0"></path>
+  </svg>
+</a>
+<button class="btn btn-light menu-btn"><span></span></button>
+</div>
+</header>
+<nav aria-label="Mobile navigation" class="mobile-nav">
+<a href="/">Home</a>
+<a href="/solutions">Solutions</a>
+<a href="/industries">Industries</a>
+<a href="/resources">Resources</a>
+<a href="/about">About</a>
+<a href="/support">Support</a>
+<a class="mobile-secondary mobile-login" href="/login">Client Login</a>
+<a class="mobile-cta" href="/support">Start Consultation</a>
+</nav>
+<main>
+<section class="identity-strip">
+<div class="wrap">
+<div class="identity-grid">
+<div>
+<div class="kicker">About WeDoCodes</div>
+<h1>Software and cybersecurity solutions built around real business workflows.</h1>
+<p>
+              WeDoCodes designs digital systems, business automation, dashboards, portals, integrations and
+              secure access controls for companies that need practical software built around daily operations.
+            </p>
+<div class="identity-index">
+<a href="#why">Why WeDoCodes</a>
+<a href="#ledger">Company Ledger</a>
+<a href="#principles">Principles</a>
+<a href="#capabilities">Capabilities</a>
+<a href="#build">How We Build</a>
+<a href="#trust">Trust</a>
+<a href="#timeline">Growth Path</a>
+<a href="#working">Work With Us</a>
+</div>
+</div>
+<div class="identity-panel">
+<div class="identity-item">
+<div aria-hidden="true" class="identity-symbol">
+<svg fill="none" viewbox="0 0 24 24">
+<path d="M8 9 4.5 12 8 15" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path>
+<path d="M16 9 19.5 12 16 15" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path>
+<path d="M13.5 6.5 10.5 17.5" stroke-linecap="round" stroke-width="2.2"></path>
+</svg>
+</div>
+<div><b>Software Development</b><span>Custom systems, web apps, business platforms and dashboards.</span></div>
+</div>
+<div class="identity-item">
+<div aria-hidden="true" class="identity-symbol">
+<svg fill="none" viewbox="0 0 24 24">
+<path d="M12 3.5 19 7v5.2c0 4.6-3 7.4-7 8.3-4-.9-7-3.7-7-8.3V7l7-3.5Z" stroke-linejoin="round" stroke-width="2.1"></path>
+<path d="m8.7 12.2 2.1 2.1 4.7-5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path>
+</svg>
+</div>
+<div><b>Cybersecurity Focus</b><span>Role access, logs, backup planning and secure administration.</span></div>
+</div>
+<div class="identity-item">
+<div aria-hidden="true" class="identity-symbol">
+<svg fill="none" viewbox="0 0 24 24">
+<path d="M7 7h10v10H7V7Z" stroke-linejoin="round" stroke-width="2.1"></path>
+<path d="M4 12h3M17 12h3M12 4v3M12 17v3" stroke-linecap="round" stroke-width="2.1"></path>
+<path d="M10 12h4" stroke-linecap="round" stroke-width="2.1"></path>
+</svg>
+</div>
+<div><b>Business Automation</b><span>Manual processes converted into controlled digital workflows.</span></div>
+</div>
+<div class="identity-item">
+<div aria-hidden="true" class="identity-symbol">
+<svg fill="none" viewbox="0 0 24 24">
+<path d="M5 17.5h14" stroke-linecap="round" stroke-width="2.1"></path>
+<path d="M7 15V8.5h10V15" stroke-linejoin="round" stroke-width="2.1"></path>
+<path d="M9.5 11.5h5" stroke-linecap="round" stroke-width="2.1"></path>
+<path d="M12 5.2v3.3" stroke-linecap="round" stroke-width="2.1"></path>
+</svg>
+</div>
+<div><b>Digital Systems Delivery</b><span>From requirement mapping to launch, training and support.</span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="why" id="why">
+<div class="wrap">
+<div class="why-layout">
+<article class="editorial">
+<div class="kicker">Why WeDoCodes exists</div>
+<h2>Business effort should not be lost inside scattered tools.</h2>
+<p>
+              Many businesses do not struggle because they lack effort. They struggle because daily operations are spread
+              across Excel files, messages, manual approvals, disconnected records and reports that take too long to prepare.
+            </p>
+<p>
+              WeDoCodes exists to convert those scattered workflows into structured software systems, dashboards,
+              portals and secure digital processes that are easier to operate, review and improve.
+            </p>
+</article>
+<aside class="belief-notes">
+<div class="belief-card">
+<div class="icon-box">
+<svg class="icon" fill="none" viewbox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path></svg>
+</div>
+<div><h3>Structure before software</h3><p>Good systems start from clear workflows, not from screens alone.</p></div>
+</div>
+<div class="belief-card">
+<div class="icon-box">
+<svg class="icon" fill="none" viewbox="0 0 24 24"><path d="M12 3 20 7v5c0 5-3.4 8-8 9-4.6-1-8-4-8-9V7l8-4Z" stroke="currentColor" stroke-width="2"></path><path d="m8.5 12 2.2 2.2L15.8 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<div><h3>Security from the beginning</h3><p>User roles, permissions and audit logs should be planned early.</p></div>
+</div>
+<div class="belief-card">
+<div class="icon-box">
+<svg class="icon" fill="none" viewbox="0 0 24 24"><path d="M4 19V5M4 19h16M8 16v-5M12 16V8M16 16v-8" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path></svg>
+</div>
+<div><h3>Reports should guide action</h3><p>Dashboards and reports should help owners see status clearly.</p></div>
+</div>
+</aside>
+</div>
+</div>
+</section>
+<section class="ledger" id="ledger">
+<div class="wrap">
+<div class="section-head">
+<div>
+<div class="kicker">Company ledger</div>
+<h2>What guides the way WeDoCodes works.</h2>
+</div>
+<p>
+            This ledger explains what we build, how we think, how we deliver and what clients should expect from the engagement.
+          </p>
+</div>
+<div class="ledger-table">
+<div class="ledger-row ledger-head">
+<div class="ledger-cell">Principle</div>
+<div class="ledger-cell">Meaning</div>
+<div class="ledger-cell">Client outcome</div>
+</div>
+<div class="ledger-row">
+<div class="ledger-cell ledger-title">What we build</div>
+<div class="ledger-cell"><b>Business software and secure digital systems.</b> We create custom software, portals, dashboards, POS systems, healthcare tools, workflow automation and integrations.</div>
+<div class="ledger-cell"><b>Useful systems.</b> Clients receive software that supports real operations instead of disconnected screens.</div>
+</div>
+<div class="ledger-row">
+<div class="ledger-cell ledger-title">How we think</div>
+<div class="ledger-cell"><b>Workflow first, code second.</b> We understand the current process, users, approvals and reports before development begins.</div>
+<div class="ledger-cell"><b>Better fit.</b> The solution is planned around how the business actually works every day.</div>
+</div>
+<div class="ledger-row">
+<div class="ledger-cell ledger-title">How we deliver</div>
+<div class="ledger-cell"><b>Structured phases.</b> Requirement mapping, interface planning, database structure, development, testing, deployment and support.</div>
+<div class="ledger-cell"><b>Clear progress.</b> Each phase gives the client something specific to review and approve.</div>
+</div>
+<div class="ledger-row">
+<div class="ledger-cell ledger-title">How we secure</div>
+<div class="ledger-cell"><b>Access and control by design.</b> Roles, permissions, logs, backups and admin controls are considered during system planning.</div>
+<div class="ledger-cell"><b>Safer operation.</b> Users access what they need, and important actions can be reviewed.</div>
+</div>
+<div class="ledger-row">
+<div class="ledger-cell ledger-title">How we support</div>
+<div class="ledger-cell"><b>Launch is not the end.</b> Systems need training, improvements, maintenance and support after real users start working.</div>
+<div class="ledger-cell"><b>Continuous improvement.</b> The software can evolve as business requirements become clearer.</div>
+</div>
+</div>
+</div>
+</section>
+<section class="principles" id="principles">
+<div class="wrap">
+<div class="section-head center">
+<div class="kicker">Operating principles</div>
+<h2>Six principles behind every WeDoCodes project.</h2>
+<p>
+            These principles keep software practical, maintainable and aligned with the business process.
+          </p>
+</div>
+<div class="principle-wall">
+<article class="principle-item">
+<div class="principle-no">01</div>
+<div class="principle-main">
+<h3>Understand the workflow before writing code.</h3>
+<p>Every project starts by understanding users, approvals, records, reports, devices and daily operating steps.</p>
+</div>
+<div class="principle-outcome"><b>Client outcome</b>The system follows the real process instead of forcing users to work around it.</div>
+</article>
+<article class="principle-item">
+<div class="principle-no">02</div>
+<div class="principle-main">
+<h3>Build simple screens for complex operations.</h3>
+<p>Complex back-office logic should appear as clear screens, guided actions and readable dashboards.</p>
+</div>
+<div class="principle-outcome"><b>Client outcome</b>Staff can use the system with less confusion and fewer mistakes.</div>
+</article>
+<article class="principle-item">
+<div class="principle-no">03</div>
+<div class="principle-main">
+<h3>Secure access from the beginning.</h3>
+<p>User roles, data restrictions, audit logs and backups are planned before the system is launched.</p>
+</div>
+<div class="principle-outcome"><b>Client outcome</b>Business data is handled with clearer access rules and better control.</div>
+</article>
+<article class="principle-item">
+<div class="principle-no">04</div>
+<div class="principle-main">
+<h3>Make reports useful for decisions.</h3>
+<p>Reports should show status, exceptions, pending actions and business summaries in a way management can use.</p>
+</div>
+<div class="principle-outcome"><b>Client outcome</b>Owners and managers get visibility without waiting for manual report preparation.</div>
+</article>
+<article class="principle-item">
+<div class="principle-no">05</div>
+<div class="principle-main">
+<h3>Keep systems maintainable.</h3>
+<p>Good structure, naming, modular logic and clear data flow help systems remain easier to support and improve.</p>
+</div>
+<div class="principle-outcome"><b>Client outcome</b>The system can grow without becoming difficult to manage.</div>
+</article>
+<article class="principle-item">
+<div class="principle-no">06</div>
+<div class="principle-main">
+<h3>Improve after launch.</h3>
+<p>Real user feedback after launch helps refine screens, reports, permissions and workflow rules.</p>
+</div>
+<div class="principle-outcome"><b>Client outcome</b>The software becomes stronger as business usage becomes clearer.</div>
+</article>
+</div>
+</div>
+</section>
+<section class="capabilities" id="capabilities">
+<div class="wrap">
+<div class="capability-ribbon">
+<div class="ribbon-core">
+<h2>What WeDoCodes delivers.</h2>
+<p>Connected capabilities for companies that need software, automation, secure access and digital workflows.</p>
+</div>
+<div class="ribbon-list">
+<div class="ribbon-row"><b>Custom Software</b><span>Tailored applications for internal workflows, approvals, records and reports.</span><div class="ribbon-tag">Business apps</div></div>
+<div class="ribbon-row"><b>Business Systems</b><span>ERP, CRM, admin platforms, procurement tools and operational dashboards.</span><div class="ribbon-tag">Operations</div></div>
+<div class="ribbon-row"><b>POS &amp; Inventory</b><span>Product master, barcode, billing, stock, tax, low-stock alerts and sales reports.</span><div class="ribbon-tag">Retail</div></div>
+<div class="ribbon-row"><b>Healthcare Appointment Systems</b><span>Doctor schedules, patient records, reception flow, queue and reminders.</span><div class="ribbon-tag">Healthcare</div></div>
+<div class="ribbon-row"><b>Web &amp; Mobile Applications</b><span>Customer portals, order tracking, ticket systems, web apps and mobile-ready interfaces.</span><div class="ribbon-tag">Portals</div></div>
+<div class="ribbon-row"><b>Cloud &amp; Integrations</b><span>Databases, APIs, payments, messaging, exports and connected services.</span><div class="ribbon-tag">Connected data</div></div>
+<div class="ribbon-row"><b>Cybersecurity Controls</b><span>Access roles, audit logs, backup planning and secure administration.</span><div class="ribbon-tag">Trust</div></div>
+<div class="ribbon-row"><b>Dashboards &amp; Reports</b><span>PDF, Excel, charts, summaries and management visibility.</span><div class="ribbon-tag">Decision support</div></div>
+</div>
+</div>
+</div>
+</section>
+<section class="build" id="build">
+<div class="wrap">
+<div class="section-head">
+<div>
+<div class="kicker">How WeDoCodes builds</div>
+<h2>Client input becomes structured software output.</h2>
+</div>
+<p>
+            Each phase turns business information into clearer scope, screens, database structure, system logic and support readiness.
+          </p>
+</div>
+<div class="evidence-board">
+<div class="evidence-row heading">
+<div class="evidence-cell">Client input</div>
+<div class="evidence-cell">WeDoCodes action</div>
+<div class="evidence-cell">Output</div>
+</div>
+<div class="evidence-row">
+<div class="evidence-cell"><b>Current workflow</b>Manual steps, Excel files, reports, approvals and user roles.</div>
+<div class="evidence-cell"><b>Discovery and mapping</b>We identify the system modules, data flow and operating rules.</div>
+<div class="evidence-cell"><b>Software scope</b>Clear module list, screens, roles, reports and delivery path.</div>
+</div>
+<div class="evidence-row">
+<div class="evidence-cell"><b>Required screens</b>Forms, dashboards, customer views, admin panels and reports.</div>
+<div class="evidence-cell"><b>Interface planning</b>We design simple screens for staff, management and customer usage.</div>
+<div class="evidence-cell"><b>Usable layout</b>Clear navigation, readable actions and practical screen flow.</div>
+</div>
+<div class="evidence-row">
+<div class="evidence-cell"><b>Records and documents</b>Fields, files, invoices, product lists, patient records or requests.</div>
+<div class="evidence-cell"><b>Database structure</b>We organize records, relationships, history and required exports.</div>
+<div class="evidence-cell"><b>Controlled data</b>Searchable records, accurate reports and cleaner storage.</div>
+</div>
+<div class="evidence-row">
+<div class="evidence-cell"><b>Access needs</b>Admin, staff, manager, customer and approval roles.</div>
+<div class="evidence-cell"><b>Security planning</b>We define permissions, logs, backups and sensitive access restrictions.</div>
+<div class="evidence-cell"><b>Safer system use</b>Role-based screens, activity history and clearer admin control.</div>
+</div>
+<div class="evidence-row">
+<div class="evidence-cell"><b>Launch requirements</b>Users, training, hosting, support and improvement needs.</div>
+<div class="evidence-cell"><b>Deployment and support</b>We test, launch, train users and support improvements.</div>
+<div class="evidence-cell"><b>Working system</b>A launched solution with support path and future improvement options.</div>
+</div>
+</div>
+</div>
+</section>
+<section class="trust" id="trust">
+<div class="wrap">
+<div class="trust-layout">
+<div class="trust-core">
+<h2>Trust and security are part of the system design.</h2>
+<p>
+              Security is not treated as a final add-on. We plan access, permissions, logs, backup needs and admin control during the system design stage.
+            </p>
+</div>
+<div class="trust-grid">
+<article class="trust-card">
+<div class="icon-box">
+<svg class="icon" fill="none" viewbox="0 0 24 24"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM4 21a8 8 0 0 1 16 0" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path></svg>
+</div>
+<h3>Role access</h3>
+<p>Each user should see only the screens and actions required for their responsibility.</p>
+</article>
+<article class="trust-card">
+<div class="icon-box">
+<svg class="icon" fill="none" viewbox="0 0 24 24"><path d="M6 4h12v16H6V4Z" stroke="currentColor" stroke-width="2"></path><path d="M9 8h6M9 12h6M9 16h4" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path></svg>
+</div>
+<h3>Audit logs</h3>
+<p>Important actions can be recorded so administrators can review system activity.</p>
+</article>
+<article class="trust-card">
+<div class="icon-box">
+<svg class="icon" fill="none" viewbox="0 0 24 24"><path d="M5 7h14v10H5V7Z" stroke="currentColor" stroke-width="2"></path><path d="M8 20h8M12 17v3" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path></svg>
+</div>
+<h3>Admin control</h3>
+<p>Management can control users, settings, system records and approvals through structured admin screens.</p>
+</article>
+<article class="trust-card">
+<div class="icon-box">
+<svg class="icon" fill="none" viewbox="0 0 24 24"><path d="M12 3 20 7v5c0 5-3.4 8-8 9-4.6-1-8-4-8-9V7l8-4Z" stroke="currentColor" stroke-width="2"></path></svg>
+</div>
+<h3>Data restrictions</h3>
+<p>Sensitive records and documents can be limited based on department, role or responsibility.</p>
+</article>
+<article class="trust-card">
+<div class="icon-box">
+<svg class="icon" fill="none" viewbox="0 0 24 24"><path d="M7 7h10v10H7V7Z" stroke="currentColor" stroke-width="2"></path><path d="M4 4h16v16H4V4Z" stroke="currentColor" stroke-width="2"></path></svg>
+</div>
+<h3>Backup planning</h3>
+<p>Systems should include clear expectations for backup, recovery and continuity planning.</p>
+</article>
+<article class="trust-card">
+<div class="icon-box">
+<svg class="icon" fill="none" viewbox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14.5-4.7M20 12a8 8 0 0 1-14.5 4.7" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path><path d="M18 4v4h-4M6 20v-4h4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<h3>Support readiness</h3>
+<p>After launch, the system can be reviewed, maintained and improved based on real usage.</p>
+</article>
+</div>
+</div>
+</div>
+</section>
+<section class="timeline" id="timeline">
+<div class="wrap">
+<div class="section-head center">
+<div class="kicker">Company growth path</div>
+<h2>Focused growth toward secure digital systems.</h2>
+<p>
+            WeDoCodes continues to shape its work around software, automation, cybersecurity and connected business operations.
+          </p>
+</div>
+<div class="timeline-track">
+<div class="timeline-step">
+<div aria-hidden="true" class="timeline-icon">
+<svg fill="none" viewbox="0 0 24 24">
+<path d="M5 19.5h14" stroke-linecap="round" stroke-width="2.1"></path>
+<path d="M7 17V11.5h10V17" stroke-linejoin="round" stroke-width="2.1"></path>
+<path d="M9.5 9.5h5" stroke-linecap="round" stroke-width="2.1"></path>
+<path d="M12 5v4" stroke-linecap="round" stroke-width="2.1"></path>
+</svg>
+</div>
+<small>Foundation</small>
+<h3>Software and digital services</h3>
+<p>Building a company identity around digital solutions for business needs.</p>
+</div>
+<div class="timeline-step">
+<div aria-hidden="true" class="timeline-icon">
+<svg fill="none" viewbox="0 0 24 24">
+<path d="M8 9 4.5 12 8 15" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path>
+<path d="M16 9 19.5 12 16 15" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path>
+<path d="M13.5 6.5 10.5 17.5" stroke-linecap="round" stroke-width="2.2"></path>
+</svg>
+</div>
+<small>Direction</small>
+<h3>Web and application systems</h3>
+<p>Expanding into web apps, customer portals and business-facing platforms.</p>
+</div>
+<div class="timeline-step">
+<div aria-hidden="true" class="timeline-icon">
+<svg fill="none" viewbox="0 0 24 24">
+<path d="M7 7h10v10H7V7Z" stroke-linejoin="round" stroke-width="2.1"></path>
+<path d="M4 12h3M17 12h3M12 4v3M12 17v3" stroke-linecap="round" stroke-width="2.1"></path>
+<path d="M10 12h4" stroke-linecap="round" stroke-width="2.1"></path>
+</svg>
+</div>
+<small>Focus</small>
+<h3>Business automation</h3>
+<p>Turning repeated manual work into structured workflows and dashboards.</p>
+</div>
+<div class="timeline-step">
+<div aria-hidden="true" class="timeline-icon">
+<svg fill="none" viewbox="0 0 24 24">
+<path d="M12 3.5 19 7v5.2c0 4.6-3 7.4-7 8.3-4-.9-7-3.7-7-8.3V7l7-3.5Z" stroke-linejoin="round" stroke-width="2.1"></path>
+<path d="m8.7 12.2 2.1 2.1 4.7-5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path>
+</svg>
+</div>
+<small>Security</small>
+<h3>Cybersecurity controls</h3>
+<p>Planning access, permissions, logs and backup readiness as part of software delivery.</p>
+</div>
+<div class="timeline-step">
+<div aria-hidden="true" class="timeline-icon">
+<svg fill="none" viewbox="0 0 24 24">
+<path d="M4 18h16" stroke-linecap="round" stroke-width="2.1"></path>
+<path d="M6 18V8l6-3 6 3v10" stroke-linejoin="round" stroke-width="2.1"></path>
+<path d="M9 12h1M14 12h1M9 15h1M14 15h1" stroke-linecap="round" stroke-width="2.1"></path>
+</svg>
+</div>
+<small>Industries</small>
+<h3>Sector-specific systems</h3>
+<p>Creating solutions for retail, healthcare, construction, restaurants and service businesses.</p>
+</div>
+<div class="timeline-step">
+<div aria-hidden="true" class="timeline-icon">
+<svg fill="none" viewbox="0 0 24 24">
+<path d="M7 7h4v4H7V7ZM13 13h4v4h-4v-4ZM13 7h4v4h-4V7ZM7 13h4v4H7v-4Z" stroke-linejoin="round" stroke-width="2.1"></path>
+<path d="M11 9h2M15 11v2M9 11v2M11 15h2" stroke-linecap="round" stroke-width="2.1"></path>
+</svg>
+</div>
+<small>Connected systems</small>
+<h3>Cloud, portals and integrations</h3>
+<p>Connecting dashboards, APIs, payments, messaging and reports into practical platforms.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="serve" id="serve">
+<div class="wrap">
+<div class="section-head">
+<div>
+<div class="kicker">Who we serve</div>
+<h2>Client types that come to WeDoCodes.</h2>
+</div>
+<p>
+            This is not a repeated industry list. It explains the situations where clients usually need WeDoCodes support.
+          </p>
+</div>
+<div class="serve-grid">
+<article class="serve-card"><small>01</small><h3>Businesses using Excel and manual records</h3><p>They need structured forms, databases, reports and dashboards.</p></article>
+<article class="serve-card"><small>02</small><h3>Retail and trading companies</h3><p>They need POS, inventory, barcode, billing and stock visibility.</p></article>
+<article class="serve-card"><small>03</small><h3>Healthcare clinics</h3><p>They need appointment booking, reception flow, queue and reminders.</p></article>
+<article class="serve-card"><small>04</small><h3>Restaurants and service businesses</h3><p>They need QR menus, orders, payments, ticketing and customer status.</p></article>
+<article class="serve-card"><small>05</small><h3>Construction and procurement teams</h3><p>They need request tracking, approvals, vendor data and BOQ reporting.</p></article>
+<article class="serve-card"><small>06</small><h3>Companies needing customer portals</h3><p>They need login, requests, uploads, status tracking and admin dashboards.</p></article>
+<article class="serve-card"><small>07</small><h3>Teams needing secure access and reports</h3><p>They need roles, permissions, audit logs, backup planning and exports.</p></article>
+</div>
+</div>
+</section>
+<section class="working" id="working">
+<div class="wrap">
+<div class="engagement-board">
+<aside class="engagement-panel">
+<div class="kicker">Working with WeDoCodes</div>
+<h2>From discussion to working system.</h2>
+<p>
+              The engagement starts with your current workflow and moves toward a clear system path, defined modules,
+              development, testing, launch and support.
+            </p>
+<a class="btn btn-blue" href="/support">Start Consultation</a>
+</aside>
+<div class="engagement-steps">
+<article class="engagement-step">
+<div class="engagement-no">01</div>
+<div class="engagement-main"><h3>Start with consultation</h3><p>Share the problem, business process, user roles and expected result.</p></div>
+<div class="engagement-output"><b>Output</b>Initial understanding of project direction and priority.</div>
+</article>
+<article class="engagement-step">
+<div class="engagement-no">02</div>
+<div class="engagement-main"><h3>Share current workflow</h3><p>Provide Excel files, sample reports, screenshots, invoices, documents or manual steps.</p></div>
+<div class="engagement-output"><b>Output</b>Clear map of forms, data, approvals and reporting needs.</div>
+</article>
+<article class="engagement-step">
+<div class="engagement-no">03</div>
+<div class="engagement-main"><h3>Receive recommended system path</h3><p>We identify whether the project needs software, POS, portal, dashboard, automation or security controls.</p></div>
+<div class="engagement-output"><b>Output</b>Recommended modules and delivery approach.</div>
+</article>
+<article class="engagement-step">
+<div class="engagement-no">04</div>
+<div class="engagement-main"><h3>Confirm scope and modules</h3><p>Finalize the screens, users, reports, integrations, data fields and priority phase.</p></div>
+<div class="engagement-output"><b>Output</b>Defined scope ready for design and development.</div>
+</article>
+<article class="engagement-step">
+<div class="engagement-no">05</div>
+<div class="engagement-main"><h3>Build and test</h3><p>Develop the system, review with users, test real workflows and refine practical details.</p></div>
+<div class="engagement-output"><b>Output</b>System ready for launch and staff usage.</div>
+</article>
+<article class="engagement-step">
+<div class="engagement-no">06</div>
+<div class="engagement-main"><h3>Launch and support</h3><p>Deploy, train users, monitor usage and improve based on operational feedback.</p></div>
+<div class="engagement-output"><b>Output</b>Working solution with support and improvement path.</div>
+</article>
+</div>
+</div>
+</div>
+</section>
+<section class="about-final">
+<div class="wrap final-box">
+<div>
+<h2>Build with clarity. Operate with control. Secure what matters.</h2>
+<p>
+            Start with your workflow, share the current process and let WeDoCodes map the right digital system.
+          </p>
+</div>
+<div class="profile-actions">
+<a class="btn btn-blue" href="/support">Start Consultation</a>
+<a class="btn btn-light" href="/solutions">View Solutions</a>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap">
+<div class="footer-mega">
+<div class="footer-brand">
+<div class="footer-logo">
+<a aria-label="WeDoCodes Home" class="brand-logo" href="/">
+<svg class="brand-mark" role="img" viewbox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="footerLogoIconGradient" x1="12" x2="108" y1="12" y2="108">
+<stop offset="0" stop-color="#FF9500"></stop>
+<stop offset="0.32" stop-color="#FF6A00"></stop>
+<stop offset="0.68" stop-color="#FF3D5E"></stop>
+<stop offset="1" stop-color="#E91E73"></stop>
+</lineargradient>
+<filter height="140%" id="footerLogoSoftShadow" width="140%" x="-20%" y="-20%">
+<fedropshadow dx="0" dy="4" flood-color="#000000" flood-opacity="0.12" stddeviation="7"></fedropshadow>
+</filter>
+</defs>
+<circle cx="60" cy="60" fill="url(#footerLogoIconGradient)" filter="url(#footerLogoSoftShadow)" r="48"></circle>
+<g fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.4" transform="translate(-3.5 -1)">
+<path d="M48 53 L35 60 L48 67"></path>
+<path d="M66 48 L55 74"></path>
+<path d="M78 53 L92 60 L78 67"></path>
+</g>
+</svg>
+<span class="brand-text">
+<span class="brand-name">WeDo<span class="codes">Codes</span></span>
+<span class="brand-subtitle">Software and Cyber Security Solutions</span>
+</span>
+</a>
+</div>
+<p>Custom software, business automation, web and mobile apps, cloud-ready systems, dashboards and cybersecurity-focused digital solutions.</p>
+<div class="footer-contact">
+<a href="mailto:support@wedocodes.com">support@wedocodes.com</a>
+<a href="https://www.wedocodes.com">www.wedocodes.com</a>
+</div>
+</div>
+<div class="footer-col">
+<h4>What's new</h4>
+<a href="/solutions">Custom Software Packages</a>
+<a href="/solutions">Healthcare Appointment Systems</a>
+<a href="/solutions">POS &amp; Inventory Solutions</a>
+<a href="/solutions">QR Menu &amp; Restaurant Tools</a>
+<a href="assets/companyprofile.pdf" rel="noopener" target="_blank">Company Profile 2026</a>
+<a href="/resources">Consultation Checklist</a>
+</div>
+<div class="footer-col">
+<h4>Solutions</h4>
+<a href="/solutions">Business &amp; Enterprise Software</a>
+<a href="/solutions">ERP, CRM &amp; Admin Systems</a>
+<a href="/solutions">Healthcare &amp; Clinic Systems</a>
+<a href="/solutions">Web &amp; Mobile Applications</a>
+<a href="/solutions">Cloud, Data &amp; Integrations</a>
+<a href="/solutions">Cybersecurity &amp; Digital Trust</a>
+</div>
+<div class="footer-col">
+<h4>Industries</h4>
+<a href="/industries">Retail &amp; Trading</a>
+<a href="/industries">Restaurants &amp; Cafes</a>
+<a href="/industries">Construction</a>
+<a href="/industries">Healthcare Clinics</a>
+<a href="/industries">Real Estate</a>
+<a href="/industries">Logistics &amp; Delivery</a>
+</div>
+<div class="footer-col">
+<h4>For business</h4>
+<a href="/support">Request a Consultation</a>
+<a href="/order-tracking">Order Tracking</a>
+<a href="/resources">Downloads</a>
+<a href="/resources">FAQs</a>
+<a href="/resources">Service Brochures</a>
+<a href="/resources">Cybersecurity Checklist</a>
+</div>
+<div class="footer-col">
+<h4>Company</h4>
+<a href="/about">About WeDoCodes</a>
+<a href="/about">Mission &amp; Values</a>
+<a href="/careers">Careers</a>
+<a href="/partners">Partners</a>
+<a href="/support">Support Center</a>
+<a href="/support">Support</a>
+</div>
+</div>
+<div class="footer-bottom">
+<div class="footer-bottom-left">
+<span>🌐 English</span>
+<a href="/sitemap">Sitemap</a>
+<a href="/order-tracking">Order Tracking</a>
+<a href="/careers">Careers</a>
+</div>
+<div class="footer-bottom-right">
+<a href="/privacy">Privacy</a>
+<a href="/terms">Terms of Use</a>
+<a href="/security">Security</a>
+<a href="/cookies">Cookies</a>
+<span>© 2026 WeDoCodes</span>
+</div>
+</div>
+</div>
+</footer>
+<script>
+    (function(){
+      const menuBtn = document.querySelector('.menu-btn');
+      if(!menuBtn) return;
+
+      menuBtn.setAttribute('type','button');
+      menuBtn.setAttribute('aria-expanded','false');
+
+      menuBtn.addEventListener('click', function(){
+        const open = document.body.classList.toggle('nav-open');
+        menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+
+      document.querySelectorAll('.mobile-nav a').forEach(function(link){
+        link.addEventListener('click', function(){
+          document.body.classList.remove('nav-open');
+          menuBtn.setAttribute('aria-expanded','false');
+        });
+      });
+    })();
+  </script>
+  <script>
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      return false;
+    });
+
+    document.addEventListener('keydown', function(e) {
+      const key = (e.key || '').toLowerCase();
+
+      if (
+        e.key === 'F12' ||
+        (e.ctrlKey && e.shiftKey && ['i', 'j', 'c'].includes(key)) ||
+        (e.ctrlKey && ['u', 's'].includes(key))
+      ) {
+        e.preventDefault();
+        return false;
+      }
+    });
+
+    document.addEventListener('dragstart', function(e) {
+      e.preventDefault();
+      return false;
+    });
+  </script>
+
+<!-- WEDOCODES BRAND CURSOR START -->
+<style>
+  @media (hover: hover) and (pointer: fine) {
+    html,
+    body {
+      cursor: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22g%22%20x1%3D%223%22%20y1%3D%222%22%20x2%3D%2220%22%20y2%3D%2222%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23FF9500%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220.35%22%20stop-color%3D%22%23FF6A00%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220.68%22%20stop-color%3D%22%23FF3D5E%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23E91E73%22%2F%3E%0A%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%3C%2Fdefs%3E%0A%20%20%3Cpath%20d%3D%22M3%202.2%20L20.2%2015.6%20L13.3%2016.8%20L17%2022.2%20L13.6%2023.3%20L9.8%2017.6%20L5.4%2021.8%20Z%22%20fill%3D%22url%28%23g%29%22%2F%3E%0A%3C%2Fsvg%3E") 3 2, auto !important;
+    }
+
+    a,
+    button,
+    [role="button"],
+    input[type="submit"],
+    input[type="button"],
+    .btn,
+    select,
+    summary,
+    label[for] {
+      cursor: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22g%22%20x1%3D%223%22%20y1%3D%222%22%20x2%3D%2220%22%20y2%3D%2222%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23FF9500%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220.35%22%20stop-color%3D%22%23FF6A00%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220.68%22%20stop-color%3D%22%23FF3D5E%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23E91E73%22%2F%3E%0A%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%3C%2Fdefs%3E%0A%20%20%3Cpath%20d%3D%22M3%202.2%20L20.2%2015.6%20L13.3%2016.8%20L17%2022.2%20L13.6%2023.3%20L9.8%2017.6%20L5.4%2021.8%20Z%22%20fill%3D%22url%28%23g%29%22%2F%3E%0A%3C%2Fsvg%3E") 3 2, pointer !important;
+    }
+
+    input,
+    textarea {
+      cursor: auto !important;
+    }
+  }
+
+  .wdc-touch-ripple {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border-radius: 999px;
+    pointer-events: none;
+    z-index: 2147482500;
+    transform: translate(-50%, -50%) scale(0.35);
+    background:
+      radial-gradient(circle,
+        rgba(255, 149, 0, 0.95) 0%,
+        rgba(255, 106, 0, 0.78) 28%,
+        rgba(255, 61, 94, 0.62) 52%,
+        rgba(233, 30, 115, 0.18) 74%,
+        rgba(233, 30, 115, 0) 100%);
+    box-shadow:
+      0 0 0 1px rgba(255, 149, 0, 0.24),
+      0 0 20px rgba(255, 61, 94, 0.36);
+    animation: wdcTouchRipple 680ms ease-out forwards;
+  }
+
+  @keyframes wdcTouchRipple {
+    0% {
+      opacity: 0.98;
+      transform: translate(-50%, -50%) scale(0.35);
+    }
+    55% {
+      opacity: 0.72;
+      transform: translate(-50%, -50%) scale(2.45);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(3.2);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .wdc-touch-ripple {
+      animation: none !important;
+      display: none !important;
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    var supportsTouchEffect = false;
+
+    try {
+      supportsTouchEffect =
+        window.matchMedia &&
+        window.matchMedia("(hover: none), (pointer: coarse)").matches;
+    } catch (e) {
+      supportsTouchEffect = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+    }
+
+    if (!supportsTouchEffect) return;
+
+    function makeRipple(x, y) {
+      var ripple = document.createElement("span");
+      ripple.className = "wdc-touch-ripple";
+      ripple.style.left = x + "px";
+      ripple.style.top = y + "px";
+      document.body.appendChild(ripple);
+
+      window.setTimeout(function () {
+        if (ripple && ripple.parentNode) {
+          ripple.parentNode.removeChild(ripple);
+        }
+      }, 760);
+    }
+
+    document.addEventListener("pointerdown", function (event) {
+      if (event.pointerType && event.pointerType === "mouse") return;
+      makeRipple(event.clientX, event.clientY);
+    }, { passive: true });
+
+    document.addEventListener("touchstart", function (event) {
+      if (!event.touches || !event.touches.length) return;
+      var t = event.touches[0];
+      makeRipple(t.clientX, t.clientY);
+    }, { passive: true });
+  })();
+</script>
+<!-- WEDOCODES BRAND CURSOR END -->
+
+</body>
+</html>

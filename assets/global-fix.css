@@ -1,0 +1,37 @@
+
+/* Global Ultra Medical logo size fix */
+.site-header .brand img {
+  width: 190px !important;
+  height: auto !important;
+  max-height: 58px !important;
+  object-fit: contain !important;
+}
+
+@media (max-width: 760px) {
+  .site-header .brand img {
+    width: 160px !important;
+    max-height: 52px !important;
+  }
+}
+
+/* FINAL HOME PAGE HERO SIZE ONLY - DOES NOT TOUCH OVERFLOW FIXES */
+@media (max-width:760px){
+  body.home-page .hero-copy h1,
+  body.home-page .hero-title{
+    font-family:var(--ms-font, "Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif) !important;
+    font-size:48px !important;
+    line-height:54px !important;
+    font-weight:700 !important;
+    letter-spacing:-1.25px !important;
+  }
+}
+
+@media (max-width:420px){
+  body.home-page .hero-copy h1,
+  body.home-page .hero-title{
+    font-size:46px !important;
+    line-height:52px !important;
+    font-weight:700 !important;
+  }
+}
+

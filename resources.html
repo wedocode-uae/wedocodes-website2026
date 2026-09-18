@@ -1,0 +1,3570 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Resources | WeDoCodes</title>
+<meta content="WeDoCodes resource center with company profile, software planning checklists, POS system checklist, healthcare appointment guide, cybersecurity checklist, project preparation tools and support links." name="description"/>
+  <!-- FAVICON CODE START -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <!-- FAVICON CODE END -->
+
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<style>
+    :root{
+      --text:#1f1f1f;
+      --muted:#5f5f5f;
+      --soft:#f5f5f5;
+      --line:#e6e6e6;
+      --white:#ffffff;
+
+      --brand-orange:#FF9500;
+      --brand-orange-2:#FF6A00;
+      --brand-pink:#FF3D5E;
+      --brand-magenta:#E91E73;
+
+      --blue:#0067b8;
+      --blue-dark:#004b8d;
+      --green:#107c41;
+      --orange:#d83b01;
+      --purple:#5c2d91;
+      --red:#c4314b;
+      --ink:#111827;
+
+      --shadow:0 8px 28px rgba(0,0,0,.10);
+      --shadow-soft:0 3px 12px rgba(0,0,0,.08);
+      --max:1240px;
+      --radius:2px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      font-family:Inter,"Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
+      color:var(--text);
+      background:#fff;
+      overflow-x:hidden;
+    }
+
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+
+    .wrap{
+      width:min(var(--max),calc(100% - 48px));
+      margin:0 auto;
+    }
+
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:#fff;
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav{
+      height:64px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+    }
+
+    .brand-logo{
+      display:inline-flex;
+      align-items:center;
+      gap:4px;
+      height:54px;
+      min-width:245px;
+      text-decoration:none;
+      background:transparent;
+      flex:0 0 auto;
+    }
+
+    .brand-mark{
+      width:50px;
+      height:50px;
+      display:block;
+      flex:0 0 auto;
+    }
+
+    .brand-text{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      line-height:1;
+      min-width:0;
+    }
+
+    .brand-name{
+      display:block;
+      font-size:25px;
+      line-height:.94;
+      font-weight:760;
+      letter-spacing:-1.15px;
+      color:#050505;
+      white-space:nowrap;
+    }
+
+    .brand-name .codes{
+      background:linear-gradient(90deg,var(--brand-orange-2),var(--brand-pink),var(--brand-magenta));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+
+    .brand-subtitle{
+      display:block;
+      margin-top:5px;
+      font-size:12.5px;
+      line-height:1;
+      font-weight:500;
+      color:#555;
+      white-space:nowrap;
+      letter-spacing:-.1px;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:24px;
+      font-size:13px;
+      color:#262626;
+      font-weight:500;
+    }
+
+    .nav-links a{
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      min-height:64px;
+      border-bottom:2px solid transparent;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active{border-bottom-color:#111}
+
+    .home-icon{
+      width:16px;
+      height:16px;
+      display:inline-block;
+    }
+
+    .nav-actions{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-size:13px;
+      font-weight:600;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      min-height:40px;
+      padding:0 16px;
+      border-radius:var(--radius);
+      border:1px solid transparent;
+      font-weight:600;
+      font-size:13px;
+      cursor:pointer;
+      white-space:nowrap;
+      transition:.2s;
+    }
+
+    .btn-blue{background:var(--blue);color:#fff}
+    .btn-blue:hover{background:var(--blue-dark)}
+    .btn-light{background:#fff;color:#1f1f1f;border-color:#8a8a8a}
+    .btn-light:hover{background:#f2f2f2}
+    .btn-dark{background:#111827;color:#fff}
+    .btn-dark:hover{background:#000}
+    .menu-btn{display:none}
+
+    section{padding:56px 0}
+
+    .section-head{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:34px;
+      margin-bottom:30px;
+    }
+
+    .section-head.center{
+      display:block;
+      text-align:center;
+      max-width:920px;
+      margin:0 auto 34px;
+    }
+
+    .kicker{
+      font-size:12px;
+      font-weight:750;
+      color:var(--blue);
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      margin-bottom:9px;
+    }
+
+    .section-head h2,
+    .section-title{
+      font-size:clamp(30px,4vw,52px);
+      line-height:1.08;
+      letter-spacing:-1.6px;
+      margin:0;
+      color:#111;
+      font-weight:720;
+    }
+
+    .section-head p{
+      max-width:650px;
+      color:#5f5f5f;
+      line-height:1.65;
+      margin:0;
+      font-size:15px;
+    }
+
+    .icon{
+      width:24px;
+      height:24px;
+      display:block;
+      stroke:currentColor;
+    }
+
+    .icon-box{
+      width:44px;
+      height:44px;
+      display:grid;
+      place-items:center;
+      background:#f8fbff;
+      border:1px solid var(--line);
+      color:var(--blue);
+      position:relative;
+    }
+
+    .icon-box::after{
+      content:"";
+      position:absolute;
+      left:9px;
+      right:9px;
+      bottom:-1px;
+      height:2px;
+      background:linear-gradient(90deg,var(--brand-orange),var(--brand-pink),var(--brand-magenta));
+    }
+
+    /* RESOURCE DOCK */
+    .resource-dock{
+      background:
+        radial-gradient(circle at 90% -18%,rgba(0,103,184,.12),transparent 34%),
+        radial-gradient(circle at 12% 0%,rgba(255,149,0,.08),transparent 32%),
+        linear-gradient(180deg,#f8fbff 0%,#fff 100%);
+      border-bottom:1px solid var(--line);
+      padding:38px 0 26px;
+    }
+
+    .dock-grid{
+      display:grid;
+      grid-template-columns:1fr 380px;
+      gap:34px;
+      align-items:end;
+    }
+
+    .resource-dock h1{
+      font-size:clamp(34px,4vw,56px);
+      line-height:1.05;
+      letter-spacing:-1.9px;
+      margin:0 0 12px;
+      color:#111;
+      font-weight:730;
+      max-width:860px;
+    }
+
+    .resource-dock p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.68;
+      font-size:16px;
+      max-width:820px;
+    }
+
+    .dock-actions{
+      display:grid;
+      gap:10px;
+      border:1px solid var(--line);
+      background:#fff;
+      box-shadow:var(--shadow-soft);
+      padding:18px;
+    }
+
+    .dock-actions .btn{
+      width:100%;
+    }
+
+    .resource-index{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      margin-top:22px;
+      padding-top:18px;
+      border-top:1px solid var(--line);
+    }
+
+    .resource-index a{
+      min-height:34px;
+      display:inline-flex;
+      align-items:center;
+      padding:0 12px;
+      border:1px solid var(--line);
+      background:#fff;
+      color:#333;
+      font-size:12px;
+      font-weight:750;
+      box-shadow:0 1px 4px rgba(0,0,0,.04);
+    }
+
+    .resource-index a:first-child{
+      background:var(--blue);
+      border-color:var(--blue);
+      color:#fff;
+    }
+
+    /* SEARCH CONSOLE */
+    .search-console{
+      background:#fff;
+    }
+
+    .console-shell{
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      background:#fff;
+      display:grid;
+      grid-template-columns:1fr 360px;
+      gap:0;
+      overflow:hidden;
+    }
+
+    .console-main{
+      padding:28px;
+      border-right:1px solid var(--line);
+    }
+
+    .search-bar{
+      display:grid;
+      grid-template-columns:48px 1fr auto;
+      align-items:center;
+      border:1px solid var(--line);
+      background:#f8fbff;
+      min-height:58px;
+      margin-bottom:18px;
+    }
+
+    .search-icon{
+      display:grid;
+      place-items:center;
+      color:var(--blue);
+    }
+
+    .search-bar input{
+      border:0;
+      background:transparent;
+      font:inherit;
+      outline:0;
+      color:#111;
+      width:100%;
+      font-size:15px;
+    }
+
+    .search-bar button{
+      height:58px;
+      border:0;
+      border-left:1px solid var(--line);
+      padding:0 18px;
+      font-weight:750;
+      background:#111827;
+      color:#fff;
+      cursor:pointer;
+    }
+
+    .filter-chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+
+    .filter-chips span{
+      background:#fff;
+      border:1px solid var(--line);
+      padding:8px 10px;
+      font-size:12px;
+      font-weight:750;
+      color:#333;
+    }
+
+    .filter-chips span:first-child{
+      background:var(--blue);
+      color:#fff;
+      border-color:var(--blue);
+    }
+
+    .console-feature{
+      background:#111827;
+      color:#fff;
+      padding:28px;
+      position:relative;
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .console-feature::after{
+      content:"";
+      position:absolute;
+      right:-72px;
+      bottom:-76px;
+      width:210px;
+      height:210px;
+      border-radius:52px;
+      background:linear-gradient(135deg,rgba(255,149,0,.22),rgba(255,61,94,.18),rgba(233,30,115,.12));
+      transform:rotate(20deg);
+    }
+
+    .console-feature small{
+      color:#93c5fd;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-size:11px;
+      font-weight:800;
+      margin-bottom:12px;
+      position:relative;
+      z-index:2;
+    }
+
+    .console-feature h2{
+      margin:0 0 14px;
+      font-size:32px;
+      line-height:1.08;
+      letter-spacing:-1.1px;
+      position:relative;
+      z-index:2;
+    }
+
+    .console-feature p{
+      color:#d1d5db;
+      line-height:1.65;
+      font-size:14px;
+      margin:0 0 22px;
+      position:relative;
+      z-index:2;
+    }
+
+    .console-feature .btn{
+      width:max-content;
+      position:relative;
+      z-index:2;
+    }
+
+    /* DOWNLOAD SHELF */
+    .download-shelf{
+      background:#f5f5f5;
+    }
+
+    .shelf-grid{
+      display:grid;
+      grid-template-columns:repeat(6,1fr);
+      gap:14px;
+    }
+
+    .shelf-item{
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+      padding:18px;
+      min-height:285px;
+      display:flex;
+      flex-direction:column;
+      position:relative;
+      overflow:hidden;
+      transition:.2s;
+    }
+
+    .shelf-item:hover{
+      transform:translateY(-2px);
+      box-shadow:var(--shadow);
+    }
+
+    .shelf-item::before{
+      content:"";
+      position:absolute;
+      top:-46px;
+      right:-46px;
+      width:124px;
+      height:124px;
+      border-radius:34px;
+      background:linear-gradient(135deg,rgba(0,103,184,.14),rgba(255,149,0,.10),rgba(233,30,115,.08));
+      transform:rotate(18deg);
+    }
+
+    .doc-type{
+      font-size:11px;
+      font-weight:900;
+      color:var(--blue);
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      position:relative;
+      z-index:2;
+      margin-bottom:14px;
+    }
+
+    .shelf-item h3{
+      margin:0 0 10px;
+      font-size:20px;
+      line-height:1.14;
+      letter-spacing:-.6px;
+      position:relative;
+      z-index:2;
+    }
+
+    .shelf-item p{
+      color:var(--muted);
+      line-height:1.58;
+      font-size:13px;
+      margin:0 0 16px;
+      position:relative;
+      z-index:2;
+    }
+
+    .doc-meta{
+      display:flex;
+      gap:7px;
+      flex-wrap:wrap;
+      margin-top:auto;
+      margin-bottom:14px;
+      position:relative;
+      z-index:2;
+    }
+
+    .doc-meta span{
+      background:#f2f2f2;
+      color:#4b5563;
+      font-size:11px;
+      font-weight:750;
+      padding:6px 8px;
+    }
+
+    .shelf-item .btn{
+      width:100%;
+      position:relative;
+      z-index:2;
+    }
+
+    /* PLANNING TOOLKIT */
+    .toolkit{
+      background:#fff;
+    }
+
+    .toolkit-board{
+      display:grid;
+      grid-template-columns:300px 1fr;
+      gap:24px;
+    }
+
+    .toolkit-intro{
+      background:#111827;
+      color:#fff;
+      padding:28px;
+      min-height:420px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      position:relative;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+
+    .toolkit-intro::after{
+      content:"";
+      position:absolute;
+      right:-70px;
+      bottom:-70px;
+      width:190px;
+      height:190px;
+      border-radius:48px;
+      background:linear-gradient(135deg,rgba(255,149,0,.20),rgba(255,61,94,.16),rgba(233,30,115,.10));
+      transform:rotate(18deg);
+    }
+
+    .toolkit-intro h2{
+      font-size:36px;
+      line-height:1.08;
+      letter-spacing:-1.2px;
+      margin:0 0 14px;
+      position:relative;
+      z-index:2;
+    }
+
+    .toolkit-intro p{
+      color:#d1d5db;
+      line-height:1.65;
+      margin:0;
+      position:relative;
+      z-index:2;
+    }
+
+    .toolkit-list{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:14px;
+    }
+
+    .tool-card{
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+      background:#fff;
+      padding:20px;
+      min-height:190px;
+      display:flex;
+      flex-direction:column;
+      position:relative;
+    }
+
+    .tool-card::after{
+      content:"";
+      position:absolute;
+      left:20px;
+      right:20px;
+      bottom:-1px;
+      height:3px;
+      background:linear-gradient(90deg,var(--brand-orange),var(--brand-pink),var(--brand-magenta));
+    }
+
+    .tool-card small{
+      color:var(--blue);
+      font-size:11px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      margin-bottom:10px;
+    }
+
+    .tool-card h3{
+      margin:0 0 10px;
+      font-size:22px;
+      line-height:1.15;
+      letter-spacing:-.7px;
+    }
+
+    .tool-card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.6;
+      font-size:13px;
+    }
+
+    /* RESOURCE LIBRARY */
+    .library{
+      background:#f5f5f5;
+    }
+
+    .library-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .library-category{
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+      padding:22px;
+      min-height:340px;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .library-title{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      margin-bottom:17px;
+    }
+
+    .library-title h3{
+      margin:0;
+      font-size:22px;
+      line-height:1.12;
+      letter-spacing:-.7px;
+    }
+
+    .resource-list{
+      display:grid;
+      gap:9px;
+    }
+
+    .resource-row{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      align-items:center;
+      padding:11px;
+      background:#f8fbff;
+      border:1px solid var(--line);
+      font-size:12px;
+      line-height:1.45;
+      color:#333;
+    }
+
+    .resource-row b{
+      color:#111;
+      display:block;
+      margin-bottom:3px;
+      font-size:12px;
+    }
+
+    .resource-row a{
+      color:var(--blue);
+      font-weight:800;
+      font-size:11px;
+      white-space:nowrap;
+    }
+
+    .resource-row a:hover{
+      text-decoration:underline;
+    }
+
+    /* DECISION ASSISTANT */
+    .decision{
+      background:#fff;
+    }
+
+    .decision-board{
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      background:#fff;
+      display:grid;
+      grid-template-columns:320px 1fr;
+      overflow:hidden;
+    }
+
+    .decision-left{
+      background:#111827;
+      color:#fff;
+      padding:30px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .decision-left h2{
+      margin:0 0 14px;
+      font-size:34px;
+      line-height:1.08;
+      letter-spacing:-1.2px;
+    }
+
+    .decision-left p{
+      color:#d1d5db;
+      line-height:1.65;
+      margin:0;
+      font-size:14px;
+    }
+
+    .decision-flow{
+      padding:24px;
+      display:grid;
+      gap:10px;
+    }
+
+    .decision-row{
+      display:grid;
+      grid-template-columns:1fr 220px;
+      gap:12px;
+      align-items:center;
+      border:1px solid var(--line);
+      background:#f8fbff;
+      padding:12px;
+    }
+
+    .decision-row b{
+      color:#111;
+      font-size:14px;
+    }
+
+    .decision-row span{
+      display:block;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.45;
+      margin-top:3px;
+    }
+
+    .decision-row a{
+      justify-self:end;
+    }
+
+    /* KNOWLEDGE BASE */
+    .knowledge{
+      background:#f5f5f5;
+    }
+
+    .kb-layout{
+      display:grid;
+      grid-template-columns:280px 1fr;
+      gap:24px;
+      align-items:start;
+    }
+
+    .kb-categories{
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+      padding:14px;
+      display:grid;
+      gap:8px;
+    }
+
+    .kb-categories a{
+      display:block;
+      background:#f8fbff;
+      border:1px solid var(--line);
+      padding:12px;
+      font-size:13px;
+      font-weight:750;
+      color:#333;
+    }
+
+
+    .kb-categories a.active{
+      background:#111827;
+      color:#fff;
+      border-color:#111827;
+    }
+
+    .kb-card.kb-hidden{
+      display:none;
+    }
+
+    .kb-questions{
+      align-content:start;
+    }
+
+
+    .kb-questions{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:14px;
+    }
+
+    .kb-card{
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+      padding:20px;
+      min-height:180px;
+    }
+
+    .kb-card small{
+      color:var(--blue);
+      font-size:11px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      margin-bottom:10px;
+      display:block;
+    }
+
+    .kb-card h3{
+      margin:0 0 10px;
+      font-size:20px;
+      line-height:1.16;
+      letter-spacing:-.6px;
+    }
+
+    .kb-card ul{
+      margin:0;
+      padding:0;
+      list-style:none;
+      display:grid;
+      gap:7px;
+    }
+
+    .kb-card li{
+      font-size:12px;
+      line-height:1.45;
+      color:#4b5563;
+      display:flex;
+      gap:8px;
+    }
+
+    .kb-card li::before{
+      content:"";
+      width:7px;
+      height:7px;
+      background:var(--blue);
+      margin-top:5px;
+      flex:0 0 auto;
+    }
+
+    /* PREP CHECKLIST */
+    .prep{
+      background:#fff;
+    }
+
+    .prep-board{
+      display:grid;
+      grid-template-columns:1fr 360px;
+      gap:24px;
+      align-items:stretch;
+    }
+
+    .prep-list{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+    }
+
+    .prep-item{
+      border:1px solid var(--line);
+      background:#fff;
+      box-shadow:var(--shadow-soft);
+      padding:16px;
+      min-height:120px;
+      display:flex;
+      gap:11px;
+      align-items:flex-start;
+    }
+
+    .prep-item::before{
+      content:"";
+      width:10px;
+      height:10px;
+      margin-top:5px;
+      background:linear-gradient(135deg,var(--brand-orange),var(--brand-pink),var(--brand-magenta));
+      flex:0 0 auto;
+    }
+
+    .prep-item b{
+      display:block;
+      color:#111;
+      font-size:14px;
+      margin-bottom:5px;
+    }
+
+    .prep-item span{
+      display:block;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.45;
+    }
+
+    .prep-side{
+      background:#111827;
+      color:#fff;
+      padding:28px;
+      box-shadow:var(--shadow);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .prep-side h3{
+      margin:0 0 12px;
+      font-size:30px;
+      line-height:1.1;
+      letter-spacing:-1px;
+    }
+
+    .prep-side p{
+      color:#d1d5db;
+      line-height:1.65;
+      margin:0 0 20px;
+      font-size:14px;
+    }
+
+    /* SUPPORT HUB */
+    .support-hub{
+      background:#f5f5f5;
+    }
+
+    .support-grid{
+      display:grid;
+      grid-template-columns:repeat(6,1fr);
+      gap:14px;
+    }
+
+    .support-tile{
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+      padding:18px;
+      min-height:185px;
+      display:flex;
+      flex-direction:column;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .support-tile::after{
+      content:"";
+      position:absolute;
+      left:18px;
+      right:18px;
+      bottom:-1px;
+      height:3px;
+      background:linear-gradient(90deg,var(--brand-orange),var(--brand-pink),var(--brand-magenta));
+    }
+
+    .support-tile h3{
+      margin:12px 0 8px;
+      font-size:18px;
+      line-height:1.15;
+      letter-spacing:-.5px;
+    }
+
+    .support-tile p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.5;
+      font-size:12px;
+    }
+
+    .support-tile a{
+      margin-top:auto;
+      color:var(--blue);
+      font-size:12px;
+      font-weight:800;
+    }
+
+    .support-tile a:hover{
+      text-decoration:underline;
+    }
+
+    /* ARTICLE PREVIEW */
+    .updates{
+      background:#fff;
+    }
+
+    .article-list{
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+      background:#fff;
+      display:grid;
+    }
+
+    .article-row{
+      display:grid;
+      grid-template-columns:150px 1fr 150px;
+      gap:20px;
+      align-items:center;
+      padding:20px;
+      border-bottom:1px solid var(--line);
+    }
+
+    .article-row:last-child{
+      border-bottom:0;
+    }
+
+    .article-type{
+      color:var(--blue);
+      font-size:11px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+
+    .article-row h3{
+      margin:0 0 6px;
+      font-size:20px;
+      line-height:1.16;
+      letter-spacing:-.6px;
+    }
+
+    .article-row p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.5;
+      font-size:13px;
+    }
+
+    .article-row a{
+      justify-self:end;
+      color:var(--blue);
+      font-size:13px;
+      font-weight:800;
+    }
+
+    .article-row a:hover{
+      text-decoration:underline;
+    }
+
+    .resource-cta{
+      background:#111827;
+      color:#fff;
+    }
+
+    .resource-cta-box{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:28px;
+      align-items:center;
+    }
+
+    .resource-cta h2{
+      font-size:clamp(32px,4vw,54px);
+      line-height:1.06;
+      letter-spacing:-1.8px;
+      margin:0 0 14px;
+      color:#fff;
+      font-weight:720;
+    }
+
+    .resource-cta p{
+      color:#d1d5db;
+      line-height:1.7;
+      max-width:690px;
+      margin:0;
+    }
+
+    .resource-cta .btn-light{
+      background:transparent;
+      color:#fff;
+      border-color:#9ca3af;
+    }
+
+    footer{
+      background:#f2f2f2;
+      border-top:1px solid #ddd;
+      padding:34px 0 20px;
+    }
+
+    .footer-mega{
+      display:grid;
+      grid-template-columns:1.35fr repeat(5,1fr);
+      gap:26px;
+    }
+
+    .footer-logo{
+      display:flex;
+      align-items:flex-start;
+      margin-bottom:12px;
+    }
+
+    .footer-logo .brand-logo{
+      height:auto;
+      min-width:0;
+      gap:4px;
+    }
+
+    .footer-logo .brand-mark{
+      width:44px;
+      height:44px;
+    }
+
+    .footer-logo .brand-name{font-size:22px}
+    .footer-logo .brand-subtitle{font-size:12.5px}
+
+    .footer-brand h4,
+    .footer-col h4{
+      font-size:15px;
+      line-height:1.3;
+      color:#616161;
+      margin:0 0 14px;
+      font-weight:700;
+    }
+
+    .footer-brand p{
+      color:#616161;
+      line-height:1.65;
+      font-size:12px;
+      max-width:320px;
+      margin:0 0 12px;
+    }
+
+    .footer-contact{margin-top:14px}
+
+    .footer-contact a{
+      display:block;
+      color:#616161;
+      font-size:11px;
+      margin-bottom:10px;
+    }
+
+    .footer-col a{
+      display:block;
+      color:#616161;
+      font-size:11px;
+      line-height:1.45;
+      margin:0 0 11px;
+    }
+
+    .footer-col a:hover,
+    .footer-contact a:hover{
+      text-decoration:underline;
+      color:#111;
+    }
+
+    .footer-bottom{
+      margin-top:26px;
+      padding-top:18px;
+      border-top:1px solid #d6d6d6;
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      align-items:center;
+      color:#616161;
+      font-size:11px;
+      flex-wrap:wrap;
+    }
+
+    .footer-bottom-left,
+    .footer-bottom-right{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    .footer-bottom a:hover{text-decoration:underline;color:#111}
+
+    @media (max-width:1180px){
+      .nav-links,
+      .nav-actions{display:none}
+
+      .menu-btn{display:inline-flex}
+
+      .dock-grid,
+      .console-shell,
+      .toolkit-board,
+      .decision-board,
+      .kb-layout,
+      .prep-board,
+      .resource-cta-box{
+        grid-template-columns:1fr;
+      }
+
+      .console-main{
+        border-right:0;
+        border-bottom:1px solid var(--line);
+      }
+
+      .shelf-grid,
+      .support-grid{
+        grid-template-columns:repeat(3,1fr);
+      }
+
+      .library-grid,
+      .prep-list{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .footer-mega{grid-template-columns:repeat(3,1fr)}
+      .footer-brand{grid-column:span 3}
+    }
+
+    @media (max-width:760px){
+      .wrap{width:min(var(--max),calc(100% - 24px))}
+      .nav{height:64px}
+
+      .brand-logo{min-width:auto}
+      .brand-mark{width:44px;height:44px}
+      .brand-name{font-size:21px}
+      .brand-subtitle{display:none}
+
+      .resource-index{
+        overflow-x:auto;
+        flex-wrap:nowrap;
+        padding-bottom:4px;
+      }
+
+      .resource-index a{
+        white-space:nowrap;
+      }
+
+      .search-bar{
+        grid-template-columns:44px 1fr;
+      }
+
+      .search-bar button{
+        grid-column:1 / -1;
+        border-left:0;
+        border-top:1px solid var(--line);
+        width:100%;
+      }
+
+      .shelf-grid,
+      .toolkit-list,
+      .library-grid,
+      .decision-row,
+      .kb-questions,
+      .prep-list,
+      .support-grid,
+      .footer-mega{
+        grid-template-columns:1fr;
+      }
+
+      .footer-brand{grid-column:span 1}
+
+      .article-row{
+        grid-template-columns:1fr;
+        gap:10px;
+      }
+
+      .article-row a{
+        justify-self:start;
+      }
+
+      .section-head{display:block}
+      .section-head p{margin-top:14px}
+
+      .footer-bottom{display:block}
+
+      .footer-bottom-left,
+      .footer-bottom-right{
+        display:flex;
+        gap:12px;
+        margin-top:12px;
+      }
+    }
+  
+    /* RESOURCE DETAIL DOCUMENTS */
+    .resource-details{
+      background:#fff;
+    }
+
+    .detail-doc-stack{
+      display:grid;
+      gap:18px;
+    }
+
+    .detail-doc{
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+      background:#fff;
+      display:grid;
+      grid-template-columns:290px 1fr;
+      overflow:hidden;
+      min-height:300px;
+    }
+
+    .detail-doc-side{
+      background:#111827;
+      color:#fff;
+      padding:26px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .detail-doc-side::after{
+      content:"";
+      position:absolute;
+      right:-58px;
+      bottom:-58px;
+      width:160px;
+      height:160px;
+      border-radius:42px;
+      background:linear-gradient(135deg,rgba(255,149,0,.22),rgba(255,61,94,.18),rgba(233,30,115,.12));
+      transform:rotate(18deg);
+    }
+
+    .detail-doc-side small{
+      color:#93c5fd;
+      font-size:11px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.1em;
+      margin-bottom:12px;
+      position:relative;
+      z-index:2;
+    }
+
+    .detail-doc-side h3{
+      margin:0 0 12px;
+      font-size:28px;
+      line-height:1.1;
+      letter-spacing:-.9px;
+      position:relative;
+      z-index:2;
+    }
+
+    .detail-doc-side p{
+      margin:0;
+      color:#d1d5db;
+      line-height:1.62;
+      font-size:13px;
+      position:relative;
+      z-index:2;
+    }
+
+    .detail-doc-main{
+      padding:26px;
+      display:grid;
+      align-content:center;
+    }
+
+    .detail-doc-main h4{
+      margin:0 0 14px;
+      font-size:22px;
+      letter-spacing:-.6px;
+    }
+
+    .detail-check-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+      margin-bottom:18px;
+    }
+
+    .detail-check{
+      background:#f8fbff;
+      border:1px solid var(--line);
+      padding:12px;
+      min-height:92px;
+      font-size:12px;
+      line-height:1.45;
+      color:#4b5563;
+    }
+
+    .detail-check b{
+      display:block;
+      color:#111;
+      font-size:12px;
+      margin-bottom:5px;
+    }
+
+    .detail-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .search-hidden{
+      display:none !important;
+    }
+
+    .no-results{
+      display:none;
+      margin-top:18px;
+      padding:16px;
+      border:1px solid var(--line);
+      background:#fff8f8;
+      color:#7f1d1d;
+      font-size:13px;
+      line-height:1.55;
+      font-weight:650;
+    }
+
+    .no-results.show{
+      display:block;
+    }
+
+    @media (max-width:1180px){
+      .detail-doc{
+        grid-template-columns:1fr;
+      }
+
+      .detail-check-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+    }
+
+    @media (max-width:760px){
+      .detail-check-grid{
+        grid-template-columns:1fr;
+      }
+    }
+
+  
+    /* Mobile navigation fix */
+    .mobile-nav{
+      display:none;
+      position:sticky;
+      top:64px;
+      z-index:99;
+      background:#fff;
+      border-bottom:1px solid var(--line);
+      box-shadow:0 8px 18px rgba(0,0,0,.06);
+      padding:12px 24px 16px;
+    }
+
+    .mobile-nav a{
+      display:flex;
+      align-items:center;
+      min-height:42px;
+      border-bottom:1px solid var(--line);
+      color:#1f1f1f;
+      font-size:14px;
+      font-weight:650;
+    }
+
+    .mobile-nav a:last-child{
+      border-bottom:0;
+    }
+
+    .mobile-nav .mobile-cta{
+      margin-top:10px;
+      justify-content:center;
+      background:var(--blue);
+      color:#fff;
+      border-bottom:0;
+      min-height:40px;
+    }
+
+    .mobile-nav .mobile-secondary{
+      margin-top:8px;
+      justify-content:center;
+      border:1px solid #8a8a8a;
+      min-height:40px;
+    }
+
+    @media (max-width:1180px){
+      body.nav-open .mobile-nav{
+        display:grid;
+      }
+
+      .menu-btn{
+        display:inline-flex;
+      }
+    }
+
+  
+    /* Resources knowledge base tab fix */
+    .kb-categories a{
+      cursor:pointer;
+      user-select:none;
+    }
+
+    .kb-categories a.active{
+      background:#111827;
+      color:#fff;
+      border-color:#111827;
+    }
+
+    .kb-card.kb-hidden{
+      display:none !important;
+    }
+
+    .kb-questions{
+      grid-template-columns:1fr !important;
+    }
+
+  
+    /* Logo clockwise rotation */
+    .brand-mark{
+      animation: rotateLogo 10s linear infinite;
+    }
+
+    @keyframes rotateLogo{
+      0%{ transform:rotate(0deg); }
+      100%{ transform:rotate(360deg); }
+    }
+
+
+
+    
+    
+    /* Strict mobile layout correction: wrap text instead of clipping */
+    @media (max-width:760px){
+      html,
+      body{
+        width:100% !important;
+        max-width:100% !important;
+        overflow-x:hidden !important;
+      }
+
+      body{
+        position:relative;
+      }
+
+      *,
+      *::before,
+      *::after{
+        box-sizing:border-box !important;
+        min-width:0;
+      }
+
+      .wrap{
+        width:100% !important;
+        max-width:100vw !important;
+        padding-left:18px !important;
+        padding-right:18px !important;
+        margin-left:0 !important;
+        margin-right:0 !important;
+      }
+
+      main,
+      header,
+      footer,
+      nav,
+      section,
+      article,
+      aside{
+        width:100% !important;
+        max-width:100vw !important;
+        min-width:0 !important;
+      }
+
+      .nav{
+        padding-left:12px !important;
+        padding-right:12px !important;
+      }
+
+      .brand-logo{
+        max-width:calc(100vw - 118px) !important;
+        min-width:0 !important;
+      }
+
+      .brand-mark{
+        width:42px !important;
+        height:42px !important;
+        flex:0 0 42px !important;
+      }
+
+      .brand-name{
+        font-size:20px !important;
+        white-space:nowrap !important;
+        overflow:hidden !important;
+        text-overflow:ellipsis !important;
+      }
+
+      .brand-subtitle{
+        display:none !important;
+      }
+
+      .menu-btn{
+        min-width:74px !important;
+        padding-left:12px !important;
+        padding-right:12px !important;
+      }
+
+      h1,
+      .command h1,
+      .hero h1,
+      .hero-title,
+      .support-hero h1,
+      .industries-hero h1,
+      .about-hero h1,
+      .resource-hero h1,
+      .section-title,
+      .section-head h2{
+        font-size:clamp(30px,8.6vw,38px) !important;
+        line-height:1.12 !important;
+        letter-spacing:-0.7px !important;
+        width:100% !important;
+        max-width:100% !important;
+        min-width:0 !important;
+        white-space:normal !important;
+        overflow:visible !important;
+        overflow-wrap:break-word !important;
+        word-break:normal !important;
+      }
+
+      h2{
+        font-size:clamp(27px,7.8vw,34px) !important;
+        line-height:1.14 !important;
+        letter-spacing:-0.5px !important;
+        white-space:normal !important;
+        overflow-wrap:break-word !important;
+      }
+
+      h3{
+        font-size:clamp(22px,6.4vw,28px) !important;
+        line-height:1.18 !important;
+        white-space:normal !important;
+        overflow-wrap:break-word !important;
+      }
+
+      p,
+      li,
+      span,
+      .command p,
+      .hero p,
+      .section-head p,
+      .support-hero p,
+      .industries-hero p,
+      .about-hero p,
+      .resource-hero p,
+      .route-card p,
+      .industry-card p,
+      .resource-card p,
+      .support-card p,
+      .about-card p{
+        font-size:16px !important;
+        line-height:1.55 !important;
+        max-width:100% !important;
+        min-width:0 !important;
+        white-space:normal !important;
+        overflow:visible !important;
+        overflow-wrap:break-word !important;
+        word-break:normal !important;
+      }
+
+      .hero-grid,
+      .command-grid,
+      .cta-box,
+      .footer-mega,
+      .footer-bottom,
+      .footer-bottom-left,
+      .footer-bottom-right,
+      .finder-layout,
+      .finder-results,
+      .solution-panel,
+      .panel-stack,
+      .arch-canvas,
+      .arch-layer,
+      .arch-items,
+      .blueprint-grid,
+      .path-grid,
+      .receive-grid,
+      .faq-grid,
+      .metric-row,
+      .section-head,
+      .resource-dock,
+      .resource-layout,
+      .resource-grid,
+      .resource-cards,
+      .resource-actions,
+      .download-grid,
+      .knowledge-grid,
+      .support-hero-grid,
+      .support-grid,
+      .support-route-grid,
+      .support-card-grid,
+      .route-layout,
+      .route-cards,
+      .contact-grid,
+      .access-grid,
+      .about-hero-grid,
+      .about-split,
+      .about-card-grid,
+      .principle-grid,
+      .timeline-grid,
+      .industries-hero-grid,
+      .industry-layout,
+      .industry-grid,
+      .industry-cards,
+      .segment-grid,
+      .value-grid,
+      .proof-grid,
+      .process-grid,
+      .cards-grid,
+      .grid2,
+      .grid3,
+      .grid4,
+      .split,
+      .career-head,
+      .roles-grid,
+      .hire-flow,
+      .application-layout,
+      .track-hero,
+      .status-strip,
+      .two-col,
+      .ecosystem,
+      .partner-flow,
+      .partner-contact,
+      .map-matrix,
+      .journey-map,
+      .policy-layout,
+      .policy-content,
+      .terms-grid,
+      .terms-panel,
+      .trust-dashboard,
+      .security-matrix,
+      .report-layout,
+      .cookie-board,
+      .cookie-types,
+      .control-grid{
+        display:grid !important;
+        grid-template-columns:minmax(0,1fr) !important;
+        width:100% !important;
+        max-width:100% !important;
+        min-width:0 !important;
+      }
+
+      .footer-bottom,
+      .footer-bottom-left,
+      .footer-bottom-right{
+        display:flex !important;
+        flex-wrap:wrap !important;
+      }
+
+      article,
+      aside,
+      .card,
+      .panel,
+      .resource-card,
+      .support-card,
+      .route-card,
+      .about-card,
+      .industry-card,
+      .result-card,
+      .blueprint-card,
+      .path-card,
+      .check-panel,
+      .metric,
+      .rail-item,
+      .field,
+      form{
+        width:100% !important;
+        max-width:100% !important;
+        min-width:0 !important;
+        overflow:visible !important;
+      }
+
+      .route-card,
+      .support-card,
+      .industry-card,
+      .resource-card,
+      .about-card,
+      .rail-item{
+        grid-template-columns:auto minmax(0,1fr) !important;
+      }
+
+      .route-card > *,
+      .support-card > *,
+      .industry-card > *,
+      .resource-card > *,
+      .about-card > *,
+      .rail-item > *{
+        min-width:0 !important;
+        max-width:100% !important;
+      }
+
+      .solution-tabs,
+      .industry-tabs,
+      .route-tabs,
+      .resource-tabs,
+      .tab-row,
+      .command-actions,
+      .module-tags,
+      .result-pills,
+      .path-line{
+        display:flex !important;
+        flex-wrap:nowrap !important;
+        width:100% !important;
+        max-width:100% !important;
+        overflow-x:auto !important;
+        overflow-y:hidden !important;
+        -webkit-overflow-scrolling:touch;
+      }
+
+      .solution-tabs a,
+      .industry-tabs a,
+      .route-tabs a,
+      .resource-tabs a,
+      .tab-row a,
+      .tab-row button,
+      .command-actions a,
+      .module-tags span,
+      .result-pills span,
+      .path-line span{
+        flex:0 0 auto !important;
+        white-space:nowrap !important;
+        max-width:none !important;
+      }
+
+      .matrix-wrap,
+      .table-wrap,
+      .comparison-table,
+      .resource-table,
+      .support-table{
+        width:100% !important;
+        max-width:100% !important;
+        overflow-x:auto !important;
+        -webkit-overflow-scrolling:touch;
+      }
+
+      table{
+        width:100% !important;
+      }
+
+      input,
+      select,
+      textarea,
+      button{
+        max-width:100% !important;
+      }
+    }
+
+    @media (max-width:430px){
+      .wrap{
+        padding-left:14px !important;
+        padding-right:14px !important;
+      }
+
+      h1,
+      .command h1,
+      .hero h1,
+      .hero-title,
+      .support-hero h1,
+      .industries-hero h1,
+      .about-hero h1,
+      .resource-hero h1,
+      .section-title,
+      .section-head h2{
+        font-size:clamp(28px,8.2vw,34px) !important;
+        line-height:1.14 !important;
+      }
+
+      h2{
+        font-size:clamp(25px,7.4vw,31px) !important;
+      }
+
+      h3{
+        font-size:clamp(21px,6vw,25px) !important;
+      }
+
+      p,
+      li,
+      .command p,
+      .hero p,
+      .section-head p{
+        font-size:15.5px !important;
+      }
+    }
+
+
+    /* Mobile 2-column tab grid correction */
+    @media (max-width:760px){
+      .solution-tabs,
+      .industry-tabs,
+      .route-tabs,
+      .resource-tabs,
+      .tab-row{
+        display:grid !important;
+        grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
+        gap:10px !important;
+        width:100% !important;
+        max-width:100% !important;
+        overflow-x:visible !important;
+        overflow-y:visible !important;
+      }
+
+      .solution-tabs a,
+      .industry-tabs a,
+      .route-tabs a,
+      .resource-tabs a,
+      .tab-row a,
+      .tab-row button{
+        width:100% !important;
+        max-width:100% !important;
+        min-width:0 !important;
+        flex:none !important;
+        white-space:normal !important;
+        text-align:center !important;
+        justify-content:center !important;
+        align-items:center !important;
+        line-height:1.18 !important;
+        font-size:14px !important;
+        padding:12px 8px !important;
+        min-height:52px !important;
+        overflow-wrap:break-word !important;
+        word-break:normal !important;
+      }
+    }
+
+    @media (max-width:360px){
+      .solution-tabs,
+      .industry-tabs,
+      .route-tabs,
+      .resource-tabs,
+      .tab-row{
+        grid-template-columns:1fr !important;
+      }
+
+      .solution-tabs a,
+      .industry-tabs a,
+      .route-tabs a,
+      .resource-tabs a,
+      .tab-row a,
+      .tab-row button{
+        font-size:15px !important;
+        min-height:48px !important;
+      }
+    }
+
+
+    /* Actual mobile 2-column index/tabs correction */
+    @media (max-width:760px){
+      .sector-index,
+      .support-index,
+      .resource-index,
+      .identity-index,
+      .solution-tabs,
+      .industry-tabs,
+      .route-tabs,
+      .resource-tabs,
+      .tab-row{
+        display:grid !important;
+        grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
+        gap:10px !important;
+        width:100% !important;
+        max-width:100% !important;
+        min-width:0 !important;
+        overflow-x:visible !important;
+        overflow-y:visible !important;
+      }
+
+      .sector-index a,
+      .support-index a,
+      .resource-index a,
+      .identity-index a,
+      .solution-tabs a,
+      .industry-tabs a,
+      .route-tabs a,
+      .resource-tabs a,
+      .tab-row a,
+      .tab-row button{
+        width:100% !important;
+        max-width:100% !important;
+        min-width:0 !important;
+        flex:none !important;
+        white-space:normal !important;
+        text-align:center !important;
+        justify-content:center !important;
+        align-items:center !important;
+        line-height:1.18 !important;
+        font-size:14px !important;
+        padding:12px 8px !important;
+        min-height:52px !important;
+        overflow-wrap:break-word !important;
+        word-break:normal !important;
+      }
+    }
+
+    @media (max-width:360px){
+      .sector-index,
+      .support-index,
+      .resource-index,
+      .identity-index,
+      .solution-tabs,
+      .industry-tabs,
+      .route-tabs,
+      .resource-tabs,
+      .tab-row{
+        grid-template-columns:1fr !important;
+      }
+
+      .sector-index a,
+      .support-index a,
+      .resource-index a,
+      .identity-index a,
+      .solution-tabs a,
+      .industry-tabs a,
+      .route-tabs a,
+      .resource-tabs a,
+      .tab-row a,
+      .tab-row button{
+        font-size:15px !important;
+        min-height:48px !important;
+      }
+    }
+
+
+    /* Mobile brand balance and home hero order correction */
+    @media (max-width:760px){
+      .brand-name{
+        font-size:24px !important;
+        line-height:1 !important;
+        font-weight:850 !important;
+        letter-spacing:-.7px !important;
+      }
+
+      .brand-name .codes{
+        font-size:1em !important;
+        font-weight:900 !important;
+        letter-spacing:-.8px !important;
+        display:inline-block !important;
+        transform:translateY(.2px) scale(1.025) !important;
+        -webkit-text-stroke:.15px rgba(217,107,207,.18);
+      }
+    }
+
+    @media (max-width:420px){
+      .brand-name{
+        font-size:22px !important;
+      }
+    }
+
+
+    /* Microsoft-style mobile typography and centered header final */
+    @media (max-width:760px){
+      body{
+        font-family:"Segoe UI Variable","Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif !important;
+        font-size:16px !important;
+        line-height:1.5 !important;
+        font-weight:400 !important;
+      }
+
+      .nav{
+        display:grid !important;
+        grid-template-columns:48px minmax(0,1fr) 48px !important;
+        align-items:center !important;
+        width:100% !important;
+        max-width:100vw !important;
+        padding:10px 14px !important;
+        gap:0 !important;
+      }
+
+      .menu-btn{
+        grid-column:1 !important;
+        grid-row:1 !important;
+        justify-self:start !important;
+        align-self:center !important;
+        width:44px !important;
+        height:44px !important;
+        min-width:44px !important;
+        padding:0 !important;
+        margin:0 !important;
+        border:0 !important;
+        background:transparent !important;
+        box-shadow:none !important;
+        font-size:0 !important;
+        color:transparent !important;
+        position:relative !important;
+        border-radius:0 !important;
+      }
+
+      .menu-btn::before,
+      .menu-btn::after,
+      .menu-btn span{
+        content:"" !important;
+        position:absolute !important;
+        left:11px !important;
+        width:22px !important;
+        height:2px !important;
+        background:#1f1f1f !important;
+        border-radius:99px !important;
+        display:block !important;
+      }
+
+      .menu-btn::before{top:14px !important;}
+      .menu-btn span{top:21px !important;}
+      .menu-btn::after{top:28px !important;}
+
+      .brand-logo{
+        grid-column:2 !important;
+        grid-row:1 !important;
+        justify-self:center !important;
+        align-self:center !important;
+        display:flex !important;
+        align-items:center !important;
+        justify-content:center !important;
+        width:auto !important;
+        max-width:calc(100vw - 116px) !important;
+        min-width:0 !important;
+        gap:6px !important;
+        margin:0 auto !important;
+      }
+
+      .brand-logo::after{
+        content:"" !important;
+      }
+
+      .brand-mark{
+        width:42px !important;
+        height:42px !important;
+        flex:0 0 42px !important;
+      }
+
+      .brand-text{
+        min-width:0 !important;
+        max-width:100% !important;
+      }
+
+      .brand-name{
+        font-family:"Segoe UI Variable","Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif !important;
+        font-size:22px !important;
+        line-height:1 !important;
+        font-weight:700 !important;
+        letter-spacing:-.45px !important;
+        white-space:nowrap !important;
+        overflow:visible !important;
+        text-overflow:clip !important;
+      }
+
+      .brand-name .codes{
+        font-size:1em !important;
+        font-weight:700 !important;
+        letter-spacing:-.45px !important;
+        transform:none !important;
+        -webkit-text-stroke:0 !important;
+        display:inline !important;
+      }
+
+      .brand-subtitle{
+        display:none !important;
+      }
+
+      /* Microsoft/Fluent-inspired mobile type scale */
+      h1,
+      .command h1,
+      .hero h1,
+      .hero-title,
+      .support-hero h1,
+      .industries-hero h1,
+      .about-hero h1,
+      .resource-hero h1,
+      .section-title{
+        font-family:"Segoe UI Variable","Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif !important;
+        font-size:40px !important;
+        line-height:46px !important;
+        font-weight:600 !important;
+        letter-spacing:-1px !important;
+      }
+
+      h2,
+      .section-head h2{
+        font-family:"Segoe UI Variable","Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif !important;
+        font-size:32px !important;
+        line-height:38px !important;
+        font-weight:600 !important;
+        letter-spacing:-.6px !important;
+      }
+
+      h3{
+        font-family:"Segoe UI Variable","Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif !important;
+        font-size:22px !important;
+        line-height:28px !important;
+        font-weight:600 !important;
+        letter-spacing:-.2px !important;
+      }
+
+      p,
+      li,
+      .section-head p,
+      .hero p,
+      .command p,
+      .card p,
+      .panel p{
+        font-family:"Segoe UI Variable","Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif !important;
+        font-size:16px !important;
+        line-height:24px !important;
+        font-weight:400 !important;
+      }
+
+      .btn,
+      button,
+      .cta,
+      .nav a,
+      .sector-index a,
+      .resource-index a,
+      .identity-index a,
+      .support-index a,
+      .solution-tabs a,
+      .tab-row a,
+      .tab-row button{
+        font-family:"Segoe UI Variable","Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif !important;
+        font-size:14px !important;
+        line-height:18px !important;
+        font-weight:600 !important;
+      }
+
+      /* Keep the real tab groups as a clean 2-column mobile grid */
+      .sector-index,
+      .resource-index,
+      .identity-index,
+      .support-index,
+      .solution-tabs,
+      .industry-tabs,
+      .route-tabs,
+      .resource-tabs,
+      .tab-row{
+        display:grid !important;
+        grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+        gap:10px !important;
+        width:100% !important;
+        max-width:100% !important;
+        overflow:visible !important;
+      }
+
+      .sector-index a,
+      .resource-index a,
+      .identity-index a,
+      .support-index a,
+      .solution-tabs a,
+      .industry-tabs a,
+      .route-tabs a,
+      .resource-tabs a,
+      .tab-row a,
+      .tab-row button{
+        width:100% !important;
+        min-width:0 !important;
+        max-width:100% !important;
+        white-space:normal !important;
+        text-align:center !important;
+        justify-content:center !important;
+        align-items:center !important;
+        padding:12px 10px !important;
+        min-height:48px !important;
+        overflow-wrap:break-word !important;
+      }
+    }
+
+    @media (max-width:420px){
+      .brand-name{
+        font-size:21px !important;
+      }
+
+      h1,
+      .command h1,
+      .hero h1,
+      .hero-title,
+      .support-hero h1,
+      .industries-hero h1,
+      .about-hero h1,
+      .resource-hero h1,
+      .section-title{
+        font-size:36px !important;
+        line-height:42px !important;
+      }
+
+      h2,
+      .section-head h2{
+        font-size:30px !important;
+        line-height:36px !important;
+      }
+    }
+
+
+/* CLIENT LOGIN BUTTON REPLACE START */
+.btn-client-login{
+  background:#071a33 !important;
+  color:#ffffff !important;
+  border-color:#071a33 !important;
+}
+.btn-client-login:hover{
+  background:#0b2545 !important;
+  color:#ffffff !important;
+  border-color:#0b2545 !important;
+}
+.mobile-nav .mobile-login{
+  margin-top:8px;
+  justify-content:center !important;
+  background:#071a33 !important;
+  color:#ffffff !important;
+  border:1px solid #071a33 !important;
+  border-bottom:1px solid #071a33 !important;
+}
+.mobile-nav .mobile-login:hover{
+  background:#0b2545 !important;
+  color:#ffffff !important;
+}
+/* CLIENT LOGIN BUTTON REPLACE END */
+
+
+/* MOBILE HEADER LOGIN ICON START */
+.mobile-header-login-icon{
+  display:none;
+}
+@media (max-width:1180px){
+  .mobile-header-login-icon{
+    grid-column:3 !important;
+    grid-row:1 !important;
+    justify-self:end !important;
+    align-self:center !important;
+    width:42px !important;
+    height:42px !important;
+    min-width:42px !important;
+    border-radius:50% !important;
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    background:#071a33 !important;
+    color:#ffffff !important;
+    text-decoration:none !important;
+    border:1px solid #071a33 !important;
+  }
+  .mobile-header-login-icon svg{
+    width:20px !important;
+    height:20px !important;
+    fill:none !important;
+    stroke:currentColor !important;
+    stroke-width:2 !important;
+    stroke-linecap:round !important;
+    stroke-linejoin:round !important;
+  }
+}
+@media (min-width:1181px){
+  .mobile-header-login-icon{
+    display:none !important;
+  }
+}
+/* MOBILE HEADER LOGIN ICON END */
+
+</style>
+
+<!-- WEDOCODES THREE-LINE MENU FIX START -->
+<style>
+  @media (max-width: 1180px) {
+    .menu-btn {
+      display: inline-flex !important;
+      width: 44px !important;
+      height: 44px !important;
+      min-width: 44px !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      border: 0 !important;
+      background: transparent !important;
+      box-shadow: none !important;
+      font-size: 0 !important;
+      color: transparent !important;
+      position: relative !important;
+      border-radius: 0 !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+
+    .menu-btn::before,
+    .menu-btn::after,
+    .menu-btn span {
+      content: "" !important;
+      position: absolute !important;
+      left: 11px !important;
+      width: 22px !important;
+      height: 2px !important;
+      background: #1f1f1f !important;
+      border-radius: 99px !important;
+      display: block !important;
+    }
+
+    .menu-btn::before { top: 14px !important; }
+    .menu-btn span { top: 21px !important; }
+    .menu-btn::after { top: 28px !important; }
+  }
+</style>
+<!-- WEDOCODES THREE-LINE MENU FIX END -->
+
+<link rel="canonical" href="https://www.wedocodes.com/resources">
+</head>
+<body>
+<header class="site-header">
+<div class="wrap nav">
+<a aria-label="WeDoCodes Home" class="brand-logo" href="/">
+<svg class="brand-mark" role="img" viewbox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="logoIconGradient" x1="12" x2="108" y1="12" y2="108">
+<stop offset="0" stop-color="#FF9500"></stop>
+<stop offset="0.32" stop-color="#FF6A00"></stop>
+<stop offset="0.68" stop-color="#FF3D5E"></stop>
+<stop offset="1" stop-color="#E91E73"></stop>
+</lineargradient>
+<filter height="140%" id="logoSoftShadow" width="140%" x="-20%" y="-20%">
+<fedropshadow dx="0" dy="4" flood-color="#000000" flood-opacity="0.12" stddeviation="7"></fedropshadow>
+</filter>
+</defs>
+<circle cx="60" cy="60" fill="url(#logoIconGradient)" filter="url(#logoSoftShadow)" r="48"></circle>
+<g fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.4" transform="translate(-3.5 -1)">
+<path d="M48 53 L35 60 L48 67"></path>
+<path d="M66 48 L55 74"></path>
+<path d="M78 53 L92 60 L78 67"></path>
+</g>
+</svg>
+<span class="brand-text">
+<span class="brand-name">WeDo<span class="codes">Codes</span></span>
+<span class="brand-subtitle">Software and Cyber Security Solutions</span>
+</span>
+</a>
+<nav aria-label="Main navigation" class="nav-links">
+<a href="/">
+<svg aria-hidden="true" class="home-icon" fill="none" viewbox="0 0 24 24">
+<path d="M3 10.8 12 3l9 7.8V21h-6v-6H9v6H3V10.8Z" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+          Home
+        </a>
+<a href="/solutions">Solutions</a>
+<a href="/industries">Industries</a>
+<a class="active" href="/resources">Resources</a>
+<a href="/about">About</a>
+<a href="/support">Support</a>
+</nav>
+<div class="nav-actions">
+<a class="btn btn-client-login" href="/login">Client Login</a>
+<a class="btn btn-blue" href="/support">Start Consultation</a>
+</div>
+<a class="mobile-header-login-icon" href="/login" aria-label="Client Login">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"></path>
+    <path d="M4.5 21a7.5 7.5 0 0 1 15 0"></path>
+  </svg>
+</a>
+<button class="btn btn-light menu-btn"><span></span></button>
+</div>
+</header>
+<nav aria-label="Mobile navigation" class="mobile-nav">
+<a href="/">Home</a>
+<a href="/solutions">Solutions</a>
+<a href="/industries">Industries</a>
+<a href="/resources">Resources</a>
+<a href="/about">About</a>
+<a href="/support">Support</a>
+<a class="mobile-secondary" href="/about">Open About</a>
+<a class="mobile-cta" href="/support">Start Consultation</a>
+</nav>
+<main>
+<section class="resource-dock">
+<div class="wrap">
+<div class="dock-grid">
+<div>
+<div class="kicker">Resources</div>
+<h1>Practical guides, checklists and downloads for better digital systems.</h1>
+<p>
+              Prepare software requirements, POS workflows, healthcare appointment systems,
+              cybersecurity controls, website content, customer portals and project consultation details.
+            </p>
+<div class="resource-index">
+<a href="#search">Search Console</a>
+<a href="#downloads">Downloads</a>
+<a href="#toolkit">Planning Toolkit</a>
+<a href="#library">Resource Library</a>
+<a href="#decision">Decision Assistant</a>
+<a href="#knowledge">FAQ Hub</a>
+<a href="#prep">Project Checklist</a>
+<a href="#support">Support &amp; Tracking</a>
+</div>
+</div>
+<div class="dock-actions">
+<a class="btn btn-blue" href="assets/companyprofile.pdf" rel="noopener" target="_blank">View Company Profile</a>
+<a class="btn btn-light" href="/support">Submit Project Information</a>
+</div>
+</div>
+</div>
+</section>
+<section class="search-console" id="search">
+<div class="wrap">
+<div class="section-head">
+<div>
+<div class="kicker">Resource search console</div>
+<h2>Find the right guide before starting.</h2>
+</div>
+<p>Find the checklist, guide or company document that matches the project you want to plan.</p>
+</div>
+<div class="console-shell">
+<div class="console-main">
+<div class="search-bar">
+<div class="search-icon">
+<svg class="icon" fill="none" viewbox="0 0 24 24">
+<circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"></circle>
+<path d="m16.5 16.5 4 4" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</div>
+<input aria-label="Search resources" placeholder="Search resources, guides, checklists, FAQs..." type="search"/>
+<button type="button">Search</button>
+</div>
+<div aria-label="Resource filters" class="filter-chips">
+<span>All</span>
+<span>Downloads</span>
+<span>Checklists</span>
+<span>Guides</span>
+<span>FAQs</span>
+<span>Templates</span>
+<span>Cybersecurity</span>
+<span>POS</span>
+<span>Healthcare</span>
+<span>Business Systems</span>
+</div>
+<div class="no-results" id="noResults">No matching resource found. Try software, POS, healthcare, cybersecurity, portal, checklist or company profile.</div>
+</div>
+<div class="console-feature">
+<small>Featured resource</small>
+<h2>Project Preparation Checklist</h2>
+<p>Prepare workflow, users, reports, approvals and security details before starting a software project.</p>
+<a class="btn btn-blue" href="#software-requirements">Open Checklist</a>
+</div>
+</div>
+</div>
+</section>
+<section class="download-shelf" id="downloads">
+<div class="wrap">
+<div class="section-head center">
+<div class="kicker">Featured resource shelf</div>
+<h2>Start with the most useful business documents.</h2>
+<p>Open the company profile or use the planning guides to prepare project details.</p>
+</div>
+<div class="shelf-grid">
+<article class="shelf-item" data-search="software requirement checklist users screens reports database workflow">
+<div class="doc-type">Checklist</div>
+<h3>Software Requirement Checklist</h3>
+<p>Prepare users, screens, approvals, reports, database fields and workflow rules.</p>
+<div class="doc-meta"><span>Planning</span><span>Software</span></div>
+<a class="btn btn-light" href="#software-requirements">Open Checklist</a>
+</article>
+<article class="shelf-item" data-search="pos inventory checklist barcode sku stock tax billing">
+<div class="doc-type">Checklist</div>
+<h3>POS &amp; Inventory Checklist</h3>
+<p>Prepare product master, SKU/barcode, cost price, tax, stock and daily reports.</p>
+<div class="doc-meta"><span>POS</span><span>Inventory</span></div>
+<a class="btn btn-light" href="#pos-checklist">Open POS Guide</a>
+</article>
+<article class="shelf-item" data-search="healthcare appointment guide patient doctor schedule queue reminder">
+<div class="doc-type">Guide</div>
+<h3>Healthcare Appointment Guide</h3>
+<p>Plan patient registration, doctor schedules, appointment slots, queue and reminders.</p>
+<div class="doc-meta"><span>Healthcare</span><span>Appointments</span></div>
+<a class="btn btn-light" href="#healthcare-guide">Open Healthcare Guide</a>
+</article>
+<article class="shelf-item" data-search="cybersecurity readiness checklist roles permissions logs backup access">
+<div class="doc-type">Checklist</div>
+<h3>Cybersecurity Readiness</h3>
+<p>Review access roles, activity logs, backup, permissions and secure administration.</p>
+<div class="doc-meta"><span>Security</span><span>Access</span></div>
+<a class="btn btn-light" href="#cybersecurity-checklist">Open Security Checklist</a>
+</article>
+<article class="shelf-item" data-search="business automation starter workflow approvals dashboards notifications">
+<div class="doc-type">Guide</div>
+<h3>Business Automation Starter</h3>
+<p>Understand which manual workflow should be digitized first and how to start.</p>
+<div class="doc-meta"><span>Automation</span><span>Workflow</span></div>
+<a class="btn btn-light" href="#automation-guide">Open Automation Guide</a>
+</article>
+</div>
+</div>
+</section>
+<section class="resource-details" id="resource-details">
+<div class="wrap">
+<div class="section-head">
+<div>
+<div class="kicker">Resource documents</div>
+<h2>Every resource button opens a specific guide or action.</h2>
+</div>
+<p>
+            Company Profile opens the PDF file. Other resources open the relevant planning guide directly in the resource documents area until separate PDF files are prepared.
+          </p>
+</div>
+<div class="detail-doc-stack">
+<article class="detail-doc" data-search="software requirement checklist custom software users screens reports database workflow approvals" id="software-requirements">
+<div class="detail-doc-side">
+<small>Checklist</small>
+<h3>Software Requirement Checklist</h3>
+<p>For custom software, ERP, CRM, portals, dashboards and business automation projects.</p>
+</div>
+<div class="detail-doc-main">
+<h4>Prepare these before consultation</h4>
+<div class="detail-check-grid">
+<div class="detail-check"><b>Workflow steps</b>Write the current process from request to completion.</div>
+<div class="detail-check"><b>User roles</b>List admin, staff, manager, customer and approval users.</div>
+<div class="detail-check"><b>Required screens</b>Prepare forms, dashboards, reports and customer views.</div>
+<div class="detail-check"><b>Data fields</b>List important fields, documents and record history.</div>
+<div class="detail-check"><b>Approval rules</b>Define who can approve, reject, edit or export records.</div>
+<div class="detail-check"><b>Reports</b>Prepare sample PDF, Excel or dashboard reports.</div>
+</div>
+<div class="detail-actions">
+<a class="btn btn-blue" href="/support">Submit Requirements</a>
+<a class="btn btn-light" href="#prep">Project Preparation List</a>
+</div>
+</div>
+</article>
+<article class="detail-doc" data-search="pos inventory retail billing barcode sku stock cost price selling price vat cashier low stock" id="pos-checklist">
+<div class="detail-doc-side">
+<small>Checklist</small>
+<h3>POS &amp; Inventory System Checklist</h3>
+<p>For retail, trading, restaurants, stock-based operations, billing and inventory control.</p>
+</div>
+<div class="detail-doc-main">
+<h4>Required POS planning details</h4>
+<div class="detail-check-grid">
+<div class="detail-check"><b>Product master</b>Product name, category, unit, SKU/barcode and description.</div>
+<div class="detail-check"><b>Pricing</b>Cost price, selling price, discounts, VAT and price levels.</div>
+<div class="detail-check"><b>Stock control</b>Opening stock, stock in/out, low-stock alerts and reorder levels.</div>
+<div class="detail-check"><b>Billing screen</b>Cashier flow, payment types, receipts and return process.</div>
+<div class="detail-check"><b>Reports</b>Daily sales, product movement, stock summary and cashier report.</div>
+<div class="detail-check"><b>Access</b>Cashier, admin, manager, inventory user and audit logs.</div>
+</div>
+<div class="detail-actions">
+<a class="btn btn-blue" href="/solutions#pos-retail">View POS Solution</a>
+<a class="btn btn-light" href="/support">Discuss POS Project</a>
+</div>
+</div>
+</article>
+<article class="detail-doc" data-search="healthcare appointment clinic patient doctor schedule queue reception reminder booking medical" id="healthcare-guide">
+<div class="detail-doc-side">
+<small>Guide</small>
+<h3>Healthcare Appointment Planning Guide</h3>
+<p>For clinics, medical centers, reception teams and appointment-based service workflows.</p>
+</div>
+<div class="detail-doc-main">
+<h4>Required healthcare planning details</h4>
+<div class="detail-check-grid">
+<div class="detail-check"><b>Doctor schedule</b>Doctors, departments, availability and appointment duration.</div>
+<div class="detail-check"><b>Patient fields</b>Name, contact, file number, visit type and required documents.</div>
+<div class="detail-check"><b>Reception flow</b>Booking, check-in, waiting, queue status and visit completion.</div>
+<div class="detail-check"><b>Reminder rules</b>Email, SMS or WhatsApp reminders and timing rules.</div>
+<div class="detail-check"><b>Reports</b>Daily appointments, no-shows, doctor schedule and visit history.</div>
+<div class="detail-check"><b>Access</b>Reception, doctor, admin and management permission levels.</div>
+</div>
+<div class="detail-actions">
+<a class="btn btn-blue" href="/solutions#healthcare-systems">View Healthcare Solution</a>
+<a class="btn btn-light" href="/support">Discuss Appointment System</a>
+</div>
+</div>
+</article>
+<article class="detail-doc" data-search="cybersecurity security access control roles permissions audit logs backup login admin data protection" id="cybersecurity-checklist">
+<div class="detail-doc-side">
+<small>Checklist</small>
+<h3>Cybersecurity Readiness Checklist</h3>
+<p>For safer system access, permission planning, activity history and backup preparation.</p>
+</div>
+<div class="detail-doc-main">
+<h4>Required security planning details</h4>
+<div class="detail-check-grid">
+<div class="detail-check"><b>User roles</b>Admin, manager, staff, customer and restricted users.</div>
+<div class="detail-check"><b>Permissions</b>Who can view, create, approve, edit, delete or export data.</div>
+<div class="detail-check"><b>Audit logs</b>Actions that should be recorded for admin review.</div>
+<div class="detail-check"><b>Backup</b>Backup frequency, storage plan and recovery expectations.</div>
+<div class="detail-check"><b>Login security</b>Password rules, session handling and admin access.</div>
+<div class="detail-check"><b>Data protection</b>Sensitive records, attachments and access restrictions.</div>
+</div>
+<div class="detail-actions">
+<a class="btn btn-blue" href="/solutions#cybersecurity">View Security Solution</a>
+<a class="btn btn-light" href="/support">Request Security Review</a>
+</div>
+</div>
+</article>
+<article class="detail-doc" data-search="website portal customer login pages forms ticket order tracking document upload admin panel" id="website-portal-guide">
+<div class="detail-doc-side">
+<small>Guide</small>
+<h3>Website &amp; Customer Portal Planning Guide</h3>
+<p>For websites, customer portals, order tracking, ticket systems and online service workflows.</p>
+</div>
+<div class="detail-doc-main">
+<h4>Required website and portal planning details</h4>
+<div class="detail-check-grid">
+<div class="detail-check"><b>Page structure</b>Home, services, industries, resources, about, support and contact pages.</div>
+<div class="detail-check"><b>Customer actions</b>Login, submit request, upload file, track status or create ticket.</div>
+<div class="detail-check"><b>Forms</b>Required fields, attachments, categories and submission flow.</div>
+<div class="detail-check"><b>Admin panel</b>Manage requests, statuses, users, replies and reports.</div>
+<div class="detail-check"><b>Notifications</b>Email, SMS or WhatsApp update requirements.</div>
+<div class="detail-check"><b>Content</b>Brand logo, service text, images, FAQs and company profile.</div>
+</div>
+<div class="detail-actions">
+<a class="btn btn-blue" href="/solutions#web-mobile">View Web &amp; Portal Solution</a>
+<a class="btn btn-light" href="/support">Discuss Portal Project</a>
+</div>
+</div>
+</article>
+<article class="detail-doc" data-search="business automation workflow manual process approvals dashboard reports notifications integration" id="automation-guide">
+<div class="detail-doc-side">
+<small>Guide</small>
+<h3>Business Automation Starter Guide</h3>
+<p>For replacing repeated manual work with structured forms, dashboards, approvals and reports.</p>
+</div>
+<div class="detail-doc-main">
+<h4>Required automation planning details</h4>
+<div class="detail-check-grid">
+<div class="detail-check"><b>Manual tasks</b>Identify repeated work, duplicate entry and approval delays.</div>
+<div class="detail-check"><b>Input forms</b>Define what users submit and which fields are mandatory.</div>
+<div class="detail-check"><b>Status flow</b>Draft, submitted, approved, rejected, completed or closed.</div>
+<div class="detail-check"><b>Dashboard</b>Pending, completed, delayed, approved and rejected summaries.</div>
+<div class="detail-check"><b>Notifications</b>Alerts for request, approval, completion and follow-up.</div>
+<div class="detail-check"><b>Integration</b>Email, WhatsApp, payment, API, Excel or PDF export needs.</div>
+</div>
+<div class="detail-actions">
+<a class="btn btn-blue" href="/solutions#business-software">View Business Software</a>
+<a class="btn btn-light" href="/support">Start Automation Discussion</a>
+</div>
+</div>
+</article>
+</div>
+</div>
+<section class="toolkit" id="toolkit">
+<div class="wrap">
+<div class="toolkit-board">
+<div class="toolkit-intro">
+<h2>Planning toolkit for real projects.</h2>
+<p>
+              Before software development starts, the project becomes clearer when workflows,
+              users, reports and documents are prepared in advance.
+            </p>
+</div>
+<div class="toolkit-list">
+<article class="tool-card">
+<small>Before requesting software</small>
+<h3>Define the workflow first.</h3>
+<p>List the current manual steps, who handles them and what report is needed at the end.</p>
+</article>
+<article class="tool-card">
+<small>Before building POS</small>
+<h3>Prepare product and stock details.</h3>
+<p>Collect product names, SKU/barcode, cost price, selling price, tax rules, stock and reorder levels.</p>
+</article>
+<article class="tool-card">
+<small>Before healthcare system</small>
+<h3>Map appointment and reception flow.</h3>
+<p>Prepare doctor schedule, appointment duration, patient fields, queue rules and reminder requirements.</p>
+</article>
+<article class="tool-card">
+<small>Before website or portal</small>
+<h3>Prepare pages, access and content.</h3>
+<p>List page names, forms, customer actions, files, order status, ticket flow and admin access.</p>
+</article>
+<article class="tool-card">
+<small>Before cybersecurity controls</small>
+<h3>Identify users and permissions.</h3>
+<p>Define user roles, admin rights, data access, activity logs, backup needs and sensitive records.</p>
+</article>
+<article class="tool-card">
+<small>Before cloud or integrations</small>
+<h3>List systems to connect.</h3>
+<p>Prepare payment gateway, email, SMS, WhatsApp, APIs, existing databases and export needs.</p>
+</article>
+</div>
+</div>
+</div>
+</section>
+<section class="library" id="library">
+<div class="wrap">
+<div class="section-head">
+<div>
+<div class="kicker">Resource library</div>
+<h2>Organized by project type.</h2>
+</div>
+<p>Choose the category that matches your current project or business requirement.</p>
+</div>
+<div class="library-grid">
+<article class="library-category">
+<div class="library-title">
+<div class="icon-box">
+<svg class="icon" fill="none" viewbox="0 0 24 24"><path d="M6 4h12v16H6V4Z" stroke="currentColor" stroke-width="2"></path><path d="M9 8h6M9 12h6M9 16h4" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path></svg>
+</div>
+<h3>Company &amp; Service Documents</h3>
+</div>
+<div class="resource-list">
+<div class="resource-row"><div><b>Company Profile</b><span>Software and cybersecurity overview.</span></div><a href="/about" rel="noopener" target="_blank">Open</a></div>
+<div class="resource-row"><div><b>Service Overview</b><span>Software, cloud, security and support areas.</span></div><a href="/solutions">View</a></div>
+<div class="resource-row"><div><b>Engagement Models</b><span>Starter, growth and enterprise paths.</span></div><a href="/solutions#paths">View</a></div>
+<div class="resource-row"><div><b>Project Delivery Process</b><span>How systems are scoped, built and supported.</span></div><a href="#toolkit">View</a></div>
+</div>
+</article>
+<article class="library-category">
+<div class="library-title">
+<div class="icon-box">
+<svg class="icon" fill="none" viewbox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path></svg>
+</div>
+<h3>Software Planning</h3>
+</div>
+<div class="resource-list">
+<div class="resource-row"><div><b>Software Requirement Checklist</b><span>Users, screens, reports and rules.</span></div><a href="#software-requirements">Open</a></div>
+<div class="resource-row"><div><b>User Role Planning Sheet</b><span>Admin, staff, customer and manager roles.</span></div><a href="#cybersecurity-checklist">Open</a></div>
+<div class="resource-row"><div><b>Dashboard Requirement Sheet</b><span>Charts, KPIs, summaries and exports.</span></div><a href="#automation-guide">Open</a></div>
+<div class="resource-row"><div><b>Database Field Planning</b><span>Records, forms, attachments and history.</span></div><a href="#software-requirements">Open</a></div>
+</div>
+</article>
+<article class="library-category">
+<div class="library-title">
+<div class="icon-box">
+<svg class="icon" fill="none" viewbox="0 0 24 24"><path d="M6 7h15l-2 8H8L6 7Z" stroke="currentColor" stroke-width="2"></path><path d="M6 7 5 4H3M9 20h.01M18 20h.01" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path></svg>
+</div>
+<h3>POS &amp; Inventory</h3>
+</div>
+<div class="resource-list">
+<div class="resource-row"><div><b>POS Module Checklist</b><span>Billing, tax, cashier and receipts.</span></div><a href="#pos-checklist">Open</a></div>
+<div class="resource-row"><div><b>Product Master Template</b><span>Item, category, cost and selling price.</span></div><a href="#pos-checklist">Open</a></div>
+<div class="resource-row"><div><b>Barcode / SKU Planning</b><span>Code structure and product identification.</span></div><a href="#pos-checklist">Open</a></div>
+<div class="resource-row"><div><b>Inventory Report Checklist</b><span>Stock, low stock and movement reports.</span></div><a href="#pos-checklist">Open</a></div>
+</div>
+</article>
+<article class="library-category">
+<div class="library-title">
+<div class="icon-box">
+<svg class="icon" fill="none" viewbox="0 0 24 24"><path d="M8 3v4M16 3v4M4 8h16M6 5h12a2 2 0 0 1 2 2v13H4V7a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2"></path><path d="M12 12v5M9.5 14.5h5" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path></svg>
+</div>
+<h3>Healthcare Systems</h3>
+</div>
+<div class="resource-list">
+<div class="resource-row"><div><b>Appointment System Guide</b><span>Slots, reception, queue and reminders.</span></div><a href="#healthcare-guide">Open</a></div>
+<div class="resource-row"><div><b>Patient Flow Planning Sheet</b><span>Registration to visit completion.</span></div><a href="#healthcare-guide">Open</a></div>
+<div class="resource-row"><div><b>Reception Dashboard Checklist</b><span>Queue, status, doctor schedule and actions.</span></div><a href="#healthcare-guide">Open</a></div>
+<div class="resource-row"><div><b>Reminder Flow Guide</b><span>Email, SMS or WhatsApp reminder planning.</span></div><a href="#healthcare-guide">Open</a></div>
+</div>
+</article>
+<article class="library-category">
+<div class="library-title">
+<div class="icon-box">
+<svg class="icon" fill="none" viewbox="0 0 24 24"><path d="M12 3 20 7v5c0 5-3.4 8-8 9-4.6-1-8-4-8-9V7l8-4Z" stroke="currentColor" stroke-width="2"></path><path d="m8.5 12 2.2 2.2L15.8 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<h3>Cybersecurity</h3>
+</div>
+<div class="resource-list">
+<div class="resource-row"><div><b>Basic Security Checklist</b><span>Access, logs, backup and monitoring.</span></div><a href="#cybersecurity-checklist">Open</a></div>
+<div class="resource-row"><div><b>User Access Control Guide</b><span>Roles, permission levels and admin rights.</span></div><a href="#cybersecurity-checklist">Open</a></div>
+<div class="resource-row"><div><b>Backup Planning Checklist</b><span>Continuity and recovery planning.</span></div><a href="#cybersecurity-checklist">Open</a></div>
+<div class="resource-row"><div><b>Audit Log Checklist</b><span>Activity history and review controls.</span></div><a href="#cybersecurity-checklist">Open</a></div>
+</div>
+</article>
+<article class="library-category">
+<div class="library-title">
+<div class="icon-box">
+<svg class="icon" fill="none" viewbox="0 0 24 24"><path d="M4 5h16v11H4V5Z" stroke="currentColor" stroke-width="2"></path><path d="M8 20h8M12 16v4M8 9h8M8 12h5" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path></svg>
+</div>
+<h3>Website &amp; Portal</h3>
+</div>
+<div class="resource-list">
+<div class="resource-row"><div><b>Website Content Checklist</b><span>Pages, services, forms and contact flow.</span></div><a href="#website-portal-guide">Open</a></div>
+<div class="resource-row"><div><b>Customer Portal Planning</b><span>Login, status, requests and uploads.</span></div><a href="#website-portal-guide">Open</a></div>
+<div class="resource-row"><div><b>Support Ticket Workflow</b><span>Request categories, status and SLA.</span></div><a href="#support">View</a></div>
+<div class="resource-row"><div><b>Order Tracking Checklist</b><span>Customer tracking and internal updates.</span></div><a href="/order-tracking">View</a></div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section class="decision" id="decision">
+<div class="wrap">
+<div class="decision-board">
+<div class="decision-left">
+<h2>Not sure what to open first?</h2>
+<p>Choose the resource based on what you are planning. This path helps you move from idea to project preparation.</p>
+</div>
+<div class="decision-flow">
+<div class="decision-row">
+<div><b>I want a company overview</b><span>Open the WeDoCodes company profile for software, cybersecurity, systems and service capabilities.</span></div>
+<a class="btn btn-blue" href="/about" rel="noopener" target="_blank">Open About</a>
+</div>
+<div class="decision-row">
+<div><b>I want to build custom software</b><span>Start by preparing workflow, users, screens and report requirements.</span></div>
+<a class="btn btn-light" href="#software-requirements">Open Checklist</a>
+</div>
+<div class="decision-row">
+<div><b>I want POS or inventory software</b><span>Prepare product master, barcode, stock, tax and sales report needs.</span></div>
+<a class="btn btn-light" href="#pos-checklist">Open POS Guide</a>
+</div>
+<div class="decision-row">
+<div><b>I want a healthcare appointment system</b><span>Prepare doctors, appointment slots, reception flow, queue and reminders.</span></div>
+<a class="btn btn-light" href="#healthcare-guide">Open Healthcare Guide</a>
+</div>
+<div class="decision-row">
+<div><b>I want cybersecurity controls</b><span>Prepare user roles, access limitations, logs, backups and security review points.</span></div>
+<a class="btn btn-light" href="#cybersecurity-checklist">Security Checklist</a>
+</div>
+<div class="decision-row">
+<div><b>I want a website or customer portal</b><span>Prepare pages, forms, customer actions, file uploads and admin workflows.</span></div>
+<a class="btn btn-light" href="#website-portal-guide">Portal Guide</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="knowledge" id="knowledge">
+<div class="wrap">
+<div class="section-head">
+<div>
+<div class="kicker">FAQ knowledge base</div>
+<h2>Questions grouped by project area.</h2>
+</div>
+<p>Review these questions before starting a consultation.</p>
+</div>
+<div class="kb-layout">
+<div aria-label="Knowledge base categories" class="kb-categories" role="tablist">
+<a class="active" data-kb-filter="software" href="#kb-software">Software Development</a>
+<a data-kb-filter="pos" href="#kb-pos">POS &amp; Inventory</a>
+<a data-kb-filter="healthcare" href="#kb-healthcare">Healthcare Systems</a>
+<a data-kb-filter="portals" href="#kb-portals">Websites &amp; Portals</a>
+<a data-kb-filter="cloud" href="#kb-cloud">Cloud &amp; Integrations</a>
+<a data-kb-filter="security" href="#kb-security">Cybersecurity</a>
+<a data-kb-filter="support" href="#kb-support">Support &amp; Maintenance</a>
+<a data-kb-filter="billing" href="#kb-billing">Billing &amp; Project Process</a>
+</div>
+<div class="kb-questions">
+<article class="kb-card" data-kb-category="software" id="kb-software">
+<small>Software Development</small>
+<h3>Planning questions</h3>
+<ul>
+<li>Which workflow should be digitized first?</li>
+<li>Who will use the system every day?</li>
+<li>Which reports are required for management?</li>
+<li>Which screens, forms and approvals are required?</li>
+</ul>
+</article>
+<article class="kb-card kb-hidden" data-kb-category="pos" id="kb-pos">
+<small>POS &amp; Inventory</small>
+<h3>Retail questions</h3>
+<ul>
+<li>Do products need SKU or barcode?</li>
+<li>Should stock be tracked by branch?</li>
+<li>Are cost price, VAT and low-stock alerts required?</li>
+<li>Which payment methods and receipt format are needed?</li>
+</ul>
+</article>
+<article class="kb-card kb-hidden" data-kb-category="healthcare" id="kb-healthcare">
+<small>Healthcare Systems</small>
+<h3>Clinic questions</h3>
+<ul>
+<li>How are appointment slots created?</li>
+<li>Do doctors have different schedules?</li>
+<li>Are reminders needed by SMS, email or WhatsApp?</li>
+<li>Should the reception team manage queue status?</li>
+</ul>
+</article>
+<article class="kb-card kb-hidden" data-kb-category="portals" id="kb-portals">
+<small>Websites &amp; Portals</small>
+<h3>Portal questions</h3>
+<ul>
+<li>Will customers log in?</li>
+<li>Should users upload documents?</li>
+<li>Do customers need order or ticket status?</li>
+<li>Which admin users will manage portal requests?</li>
+</ul>
+</article>
+<article class="kb-card kb-hidden" data-kb-category="cloud" id="kb-cloud">
+<small>Cloud &amp; Integrations</small>
+<h3>Connection questions</h3>
+<ul>
+<li>Which systems should connect?</li>
+<li>Is payment gateway integration required?</li>
+<li>Are PDF, Excel or API exports needed?</li>
+<li>Should notifications be connected to email, SMS or WhatsApp?</li>
+</ul>
+</article>
+<article class="kb-card kb-hidden" data-kb-category="security" id="kb-security">
+<small>Cybersecurity</small>
+<h3>Access questions</h3>
+<ul>
+<li>Who can view, edit, approve or delete?</li>
+<li>Should user activity be logged?</li>
+<li>What backup routine is required?</li>
+<li>Which records should be restricted by role?</li>
+</ul>
+</article>
+<article class="kb-card kb-hidden" data-kb-category="support" id="kb-support">
+<small>Support &amp; Maintenance</small>
+<h3>Support questions</h3>
+<ul>
+<li>Who should report support issues?</li>
+<li>Which modules need regular updates?</li>
+<li>Should support include user training?</li>
+<li>What response priority is required for business-critical issues?</li>
+</ul>
+</article>
+<article class="kb-card kb-hidden" data-kb-category="billing" id="kb-billing">
+<small>Billing &amp; Project Process</small>
+<h3>Project questions</h3>
+<ul>
+<li>What is the expected project scope?</li>
+<li>Which deliverables should be completed first?</li>
+<li>Will the project be delivered in phases?</li>
+<li>Which approval is required before development starts?</li>
+</ul>
+</article>
+</div>
+</div>
+</div>
+</section>
+<section class="prep" id="prep">
+<div class="wrap">
+<div class="section-head">
+<div>
+<div class="kicker">Project preparation checklist</div>
+<h2>Prepare your project before consultation.</h2>
+</div>
+<p>The more clearly these points are prepared, the faster we can map the correct solution path.</p>
+</div>
+<div class="prep-board">
+<div class="prep-list">
+<div class="prep-item"><div><b>Current workflow</b><span>Step-by-step process from request to completion.</span></div></div>
+<div class="prep-item"><div><b>Current Excel files</b><span>Sheets used for stock, reports, approvals or tracking.</span></div></div>
+<div class="prep-item"><div><b>Sample reports</b><span>PDF, Excel or manual reports that must be generated.</span></div></div>
+<div class="prep-item"><div><b>User roles</b><span>Admin, staff, customer, manager and approval users.</span></div></div>
+<div class="prep-item"><div><b>Required screens</b><span>Forms, dashboards, customer views and admin panels.</span></div></div>
+<div class="prep-item"><div><b>Approval flow</b><span>Who requests, reviews, approves and receives status.</span></div></div>
+<div class="prep-item"><div><b>Communication method</b><span>Email, SMS, WhatsApp or internal notifications.</span></div></div>
+<div class="prep-item"><div><b>Existing software</b><span>Current tools, databases, hosting or manual systems.</span></div></div>
+<div class="prep-item"><div><b>Required devices</b><span>Desktop, tablet, mobile, cashier screen or display screen.</span></div></div>
+<div class="prep-item"><div><b>Launch timeline</b><span>Expected start date, priority and delivery phases.</span></div></div>
+<div class="prep-item"><div><b>Support expectation</b><span>Maintenance, training, updates and improvement needs.</span></div></div>
+<div class="prep-item"><div><b>Security needs</b><span>Roles, logs, backup, permissions and data restrictions.</span></div></div>
+</div>
+<div class="prep-side">
+<h3>Need help preparing these details?</h3>
+<p>Send the available files and describe your current process. WeDoCodes can help convert that into a structured software requirement plan.</p>
+<a class="btn btn-blue" href="/support">Start Consultation</a>
+</div>
+</div>
+</div>
+</section>
+<section class="support-hub" id="support">
+<div class="wrap">
+<div class="section-head center">
+<div class="kicker">Support and tracking center</div>
+<h2>Quick access for clients and project inquiries.</h2>
+<p>Open client actions for tracking, support, project information and company documents.</p>
+</div>
+<div class="support-grid">
+<article class="support-tile">
+<div class="icon-box">
+<svg class="icon" fill="none" viewbox="0 0 24 24"><path d="M4 7h16v10H4V7Z" stroke="currentColor" stroke-width="2"></path><path d="M8 12h8" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path></svg>
+</div>
+<h3>Track an Order</h3>
+<p>Check request or project status where order tracking is enabled.</p>
+<a href="/order-tracking">Open tracking →</a>
+</article>
+<article class="support-tile">
+<div class="icon-box">
+<svg class="icon" fill="none" viewbox="0 0 24 24"><path d="M12 3a8 8 0 0 0-8 8v3a3 3 0 0 0 3 3h1v-6H6a6 6 0 0 1 12 0h-2v6h1a3 3 0 0 0 3-3v-3a8 8 0 0 0-8-8Z" stroke="currentColor" stroke-width="2"></path></svg>
+</div>
+<h3>Request Support</h3>
+<p>Submit a support request for systems, websites or technical assistance.</p>
+<a href="/support">Request support →</a>
+</article>
+<article class="support-tile">
+<div class="icon-box">
+<svg class="icon" fill="none" viewbox="0 0 24 24"><path d="M5 4h14v16H5V4Z" stroke="currentColor" stroke-width="2"></path><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path></svg>
+</div>
+<h3>Project Information</h3>
+<p>Share workflow, documents, users and reports before consultation.</p>
+<a href="/support">Submit details →</a>
+</article>
+<article class="support-tile">
+<div class="icon-box">
+<svg class="icon" fill="none" viewbox="0 0 24 24">
+<path d="M5 4h14v16H5V4Z" stroke="currentColor" stroke-width="2"></path>
+<path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</div>
+<h3>Resource Center</h3>
+<p>Open WeDoCodes guides, checklists and project preparation resources.</p>
+<a href="/resources">Open Resources →</a>
+</article>
+<article class="support-tile">
+<div class="icon-box">
+<svg class="icon" fill="none" viewbox="0 0 24 24"><path d="M8 7a4 4 0 1 1 8 0v2H8V7ZM5 11h14v9H5v-9Z" stroke="currentColor" stroke-width="2"></path></svg>
+</div>
+<h3>Careers</h3>
+<p>Explore future opportunities and team-related information.</p>
+<a href="/careers">View careers →</a>
+</article>
+<article class="support-tile">
+<div class="icon-box">
+<svg class="icon" fill="none" viewbox="0 0 24 24"><path d="M4 5h16v14H4V5Z" stroke="currentColor" stroke-width="2"></path><path d="m4 7 8 6 8-6" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<h3>Contact Support</h3>
+<p>Reach the WeDoCodes support team by email.</p>
+<a href="mailto:support@wedocodes.com">support@wedocodes.com →</a>
+</article>
+</div>
+</div>
+</section>
+<section class="updates">
+<div class="wrap">
+<div class="section-head">
+<div>
+<div class="kicker">Guides and updates</div>
+<h2>Useful reading for better system planning.</h2>
+</div>
+<p>These guides explain common preparation points before starting a software, POS, portal or cybersecurity project.</p>
+</div>
+<div class="article-list">
+<article class="article-row">
+<div class="article-type">Guide</div>
+<div>
+<h3>How to prepare for custom software development</h3>
+<p>Understand the workflow, users, records and reports that should be prepared before development.</p>
+</div>
+<a href="#software-requirements">Open guide →</a>
+</article>
+<article class="article-row">
+<div class="article-type">Checklist</div>
+<div>
+<h3>What every POS system should include</h3>
+<p>Product master, barcode, tax, price, stock movement, low-stock alerts and daily sales reports.</p>
+</div>
+<a href="#pos-checklist">Open checklist →</a>
+</article>
+<article class="article-row">
+<div class="article-type">Security</div>
+<div>
+<h3>Why user roles matter in business software</h3>
+<p>Role-based access protects records, reduces mistakes and makes approval workflows clearer.</p>
+</div>
+<a href="#cybersecurity-checklist">Open checklist →</a>
+</article>
+<article class="article-row">
+<div class="article-type">Healthcare</div>
+<div>
+<h3>How appointment systems improve clinic reception</h3>
+<p>Booking slots, doctor schedules, queue visibility and reminders improve front-desk coordination.</p>
+</div>
+<a href="#healthcare-guide">Open guide →</a>
+</article>
+<article class="article-row">
+<div class="article-type">Portal</div>
+<div>
+<h3>What to prepare before building a customer portal</h3>
+<p>Customer login, request forms, ticket status, document uploads and admin controls should be planned early.</p>
+</div>
+<a href="#website-portal-guide">Open guide →</a>
+</article>
+</div>
+</div>
+</section>
+<section class="resource-cta">
+<div class="wrap resource-cta-box">
+<div>
+<h2>Ready to plan your system?</h2>
+<p>Download the right profile, prepare your checklist or start a consultation with WeDoCodes.</p>
+</div>
+<div class="dock-actions" style="background:transparent;border:0;box-shadow:none;padding:0;">
+<a class="btn btn-blue" href="/support">Start Consultation</a>
+<a class="btn btn-light" href="/about">Open About</a>
+</div>
+</div>
+</section>
+</section></main>
+<footer>
+<div class="wrap">
+<div class="footer-mega">
+<div class="footer-brand">
+<div class="footer-logo">
+<a aria-label="WeDoCodes Home" class="brand-logo" href="/">
+<svg class="brand-mark" role="img" viewbox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="footerLogoIconGradient" x1="12" x2="108" y1="12" y2="108">
+<stop offset="0" stop-color="#FF9500"></stop>
+<stop offset="0.32" stop-color="#FF6A00"></stop>
+<stop offset="0.68" stop-color="#FF3D5E"></stop>
+<stop offset="1" stop-color="#E91E73"></stop>
+</lineargradient>
+<filter height="140%" id="footerLogoSoftShadow" width="140%" x="-20%" y="-20%">
+<fedropshadow dx="0" dy="4" flood-color="#000000" flood-opacity="0.12" stddeviation="7"></fedropshadow>
+</filter>
+</defs>
+<circle cx="60" cy="60" fill="url(#footerLogoIconGradient)" filter="url(#footerLogoSoftShadow)" r="48"></circle>
+<g fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.4" transform="translate(-3.5 -1)">
+<path d="M48 53 L35 60 L48 67"></path>
+<path d="M66 48 L55 74"></path>
+<path d="M78 53 L92 60 L78 67"></path>
+</g>
+</svg>
+<span class="brand-text">
+<span class="brand-name">WeDo<span class="codes">Codes</span></span>
+<span class="brand-subtitle">Software and Cyber Security Solutions</span>
+</span>
+</a>
+</div>
+<p>Custom software, business automation, web and mobile apps, cloud-ready systems, dashboards and cybersecurity-focused digital solutions.</p>
+<div class="footer-contact">
+<a href="mailto:support@wedocodes.com">support@wedocodes.com</a>
+<a href="https://www.wedocodes.com">www.wedocodes.com</a>
+</div>
+</div>
+<div class="footer-col">
+<h4>What's new</h4>
+<a href="/solutions">Custom Software Packages</a>
+<a href="/solutions">Healthcare Appointment Systems</a>
+<a href="/solutions">POS &amp; Inventory Solutions</a>
+<a href="/solutions">QR Menu &amp; Restaurant Tools</a>
+<a href="assets/companyprofile.pdf" rel="noopener" target="_blank">Company Profile 2026</a>
+<a href="/resources">Consultation Checklist</a>
+</div>
+<div class="footer-col">
+<h4>Solutions</h4>
+<a href="/solutions">Business &amp; Enterprise Software</a>
+<a href="/solutions">ERP, CRM &amp; Admin Systems</a>
+<a href="/solutions">Healthcare &amp; Clinic Systems</a>
+<a href="/solutions">Web &amp; Mobile Applications</a>
+<a href="/solutions">Cloud, Data &amp; Integrations</a>
+<a href="/solutions">Cybersecurity &amp; Digital Trust</a>
+</div>
+<div class="footer-col">
+<h4>Industries</h4>
+<a href="/industries">Retail &amp; Trading</a>
+<a href="/industries">Restaurants &amp; Cafes</a>
+<a href="/industries">Construction</a>
+<a href="/industries">Healthcare Clinics</a>
+<a href="/industries">Real Estate</a>
+<a href="/industries">Logistics &amp; Delivery</a>
+</div>
+<div class="footer-col">
+<h4>For business</h4>
+<a href="/support">Request a Consultation</a>
+<a href="/order-tracking">Order Tracking</a>
+<a href="/resources">Downloads</a>
+<a href="/resources">FAQs</a>
+<a href="/resources">Service Brochures</a>
+<a href="/resources">Cybersecurity Checklist</a>
+</div>
+<div class="footer-col">
+<h4>Company</h4>
+<a href="/about">About WeDoCodes</a>
+<a href="/about">Mission &amp; Values</a>
+<a href="/careers">Careers</a>
+<a href="/partners">Partners</a>
+<a href="/support">Support Center</a>
+<a href="/support">Support</a>
+</div>
+</div>
+<div class="footer-bottom">
+<div class="footer-bottom-left">
+<span>🌐 English</span>
+<a href="/sitemap">Sitemap</a>
+<a href="/order-tracking">Order Tracking</a>
+<a href="/careers">Careers</a>
+</div>
+<div class="footer-bottom-right">
+<a href="/privacy">Privacy</a>
+<a href="/terms">Terms of Use</a>
+<a href="/security">Security</a>
+<a href="/cookies">Cookies</a>
+<span>© 2026 WeDoCodes</span>
+</div>
+</div>
+</div>
+</footer>
+<script>
+    const searchInput = document.querySelector('.search-bar input');
+    const searchButton = document.querySelector('.search-bar button');
+    const chips = document.querySelectorAll('.filter-chips span');
+    const searchableItems = document.querySelectorAll('[data-search]');
+    const noResults = document.getElementById('noResults');
+
+    function normalize(value){
+      return (value || '').toLowerCase().trim();
+    }
+
+    function filterResources(query){
+      const q = normalize(query);
+      let visible = 0;
+
+      searchableItems.forEach(item => {
+        const haystack = normalize(item.dataset.search + ' ' + item.textContent);
+        const matched = !q || haystack.includes(q);
+        item.classList.toggle('search-hidden', !matched);
+        if(matched) visible += 1;
+      });
+
+      if(noResults){
+        noResults.classList.toggle('show', !!q && visible === 0);
+      }
+
+      if(q){
+        document.getElementById('downloads')?.scrollIntoView({behavior:'smooth', block:'start'});
+      }
+    }
+
+    if(searchButton){
+      searchButton.addEventListener('click', () => filterResources(searchInput.value));
+    }
+
+    if(searchInput){
+      searchInput.addEventListener('keydown', event => {
+        if(event.key === 'Enter'){
+          event.preventDefault();
+          filterResources(searchInput.value);
+        }
+      });
+    }
+
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        const value = chip.textContent.trim();
+        if(searchInput){
+          searchInput.value = value === 'All' ? '' : value;
+        }
+        filterResources(value === 'All' ? '' : value);
+      });
+    });
+  </script>
+<script>
+    (function(){
+      const menuBtn = document.querySelector('.menu-btn');
+      if(!menuBtn) return;
+
+      menuBtn.setAttribute('type','button');
+      menuBtn.setAttribute('aria-expanded','false');
+
+      menuBtn.addEventListener('click', function(){
+        const open = document.body.classList.toggle('nav-open');
+        menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+
+      document.querySelectorAll('.mobile-nav a').forEach(function(link){
+        link.addEventListener('click', function(){
+          document.body.classList.remove('nav-open');
+          menuBtn.setAttribute('aria-expanded','false');
+        });
+      });
+    })();
+  </script>
+<script>
+    (function(){
+      const kbTabs = document.querySelectorAll('.kb-categories [data-kb-filter]');
+      const kbCards = document.querySelectorAll('.kb-card[data-kb-category]');
+      if(!kbTabs.length || !kbCards.length) return;
+
+      function showKbCategory(category){
+        kbTabs.forEach(function(tab){
+          const active = tab.dataset.kbFilter === category;
+          tab.classList.toggle('active', active);
+          tab.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+
+        kbCards.forEach(function(card){
+          card.classList.toggle('kb-hidden', card.dataset.kbCategory !== category);
+        });
+      }
+
+      kbTabs.forEach(function(tab){
+        tab.setAttribute('role','tab');
+        tab.addEventListener('click', function(event){
+          event.preventDefault();
+          showKbCategory(tab.dataset.kbFilter);
+        });
+      });
+
+      const firstActive = document.querySelector('.kb-categories [data-kb-filter].active') || kbTabs[0];
+      showKbCategory(firstActive.dataset.kbFilter);
+    })();
+  </script>
+  <script>
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      return false;
+    });
+
+    document.addEventListener('keydown', function(e) {
+      const key = (e.key || '').toLowerCase();
+
+      if (
+        e.key === 'F12' ||
+        (e.ctrlKey && e.shiftKey && ['i', 'j', 'c'].includes(key)) ||
+        (e.ctrlKey && ['u', 's'].includes(key))
+      ) {
+        e.preventDefault();
+        return false;
+      }
+    });
+
+    document.addEventListener('dragstart', function(e) {
+      e.preventDefault();
+      return false;
+    });
+  </script>
+
+<!-- WEDOCODES BRAND CURSOR START -->
+<style>
+  @media (hover: hover) and (pointer: fine) {
+    html,
+    body {
+      cursor: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22g%22%20x1%3D%223%22%20y1%3D%222%22%20x2%3D%2220%22%20y2%3D%2222%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23FF9500%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220.35%22%20stop-color%3D%22%23FF6A00%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220.68%22%20stop-color%3D%22%23FF3D5E%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23E91E73%22%2F%3E%0A%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%3C%2Fdefs%3E%0A%20%20%3Cpath%20d%3D%22M3%202.2%20L20.2%2015.6%20L13.3%2016.8%20L17%2022.2%20L13.6%2023.3%20L9.8%2017.6%20L5.4%2021.8%20Z%22%20fill%3D%22url%28%23g%29%22%2F%3E%0A%3C%2Fsvg%3E") 3 2, auto !important;
+    }
+
+    a,
+    button,
+    [role="button"],
+    input[type="submit"],
+    input[type="button"],
+    .btn,
+    select,
+    summary,
+    label[for] {
+      cursor: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22g%22%20x1%3D%223%22%20y1%3D%222%22%20x2%3D%2220%22%20y2%3D%2222%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23FF9500%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220.35%22%20stop-color%3D%22%23FF6A00%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220.68%22%20stop-color%3D%22%23FF3D5E%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23E91E73%22%2F%3E%0A%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%3C%2Fdefs%3E%0A%20%20%3Cpath%20d%3D%22M3%202.2%20L20.2%2015.6%20L13.3%2016.8%20L17%2022.2%20L13.6%2023.3%20L9.8%2017.6%20L5.4%2021.8%20Z%22%20fill%3D%22url%28%23g%29%22%2F%3E%0A%3C%2Fsvg%3E") 3 2, pointer !important;
+    }
+
+    input,
+    textarea {
+      cursor: auto !important;
+    }
+  }
+
+  .wdc-touch-ripple {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border-radius: 999px;
+    pointer-events: none;
+    z-index: 2147482500;
+    transform: translate(-50%, -50%) scale(0.35);
+    background:
+      radial-gradient(circle,
+        rgba(255, 149, 0, 0.95) 0%,
+        rgba(255, 106, 0, 0.78) 28%,
+        rgba(255, 61, 94, 0.62) 52%,
+        rgba(233, 30, 115, 0.18) 74%,
+        rgba(233, 30, 115, 0) 100%);
+    box-shadow:
+      0 0 0 1px rgba(255, 149, 0, 0.24),
+      0 0 20px rgba(255, 61, 94, 0.36);
+    animation: wdcTouchRipple 680ms ease-out forwards;
+  }
+
+  @keyframes wdcTouchRipple {
+    0% {
+      opacity: 0.98;
+      transform: translate(-50%, -50%) scale(0.35);
+    }
+    55% {
+      opacity: 0.72;
+      transform: translate(-50%, -50%) scale(2.45);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(3.2);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .wdc-touch-ripple {
+      animation: none !important;
+      display: none !important;
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    var supportsTouchEffect = false;
+
+    try {
+      supportsTouchEffect =
+        window.matchMedia &&
+        window.matchMedia("(hover: none), (pointer: coarse)").matches;
+    } catch (e) {
+      supportsTouchEffect = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+    }
+
+    if (!supportsTouchEffect) return;
+
+    function makeRipple(x, y) {
+      var ripple = document.createElement("span");
+      ripple.className = "wdc-touch-ripple";
+      ripple.style.left = x + "px";
+      ripple.style.top = y + "px";
+      document.body.appendChild(ripple);
+
+      window.setTimeout(function () {
+        if (ripple && ripple.parentNode) {
+          ripple.parentNode.removeChild(ripple);
+        }
+      }, 760);
+    }
+
+    document.addEventListener("pointerdown", function (event) {
+      if (event.pointerType && event.pointerType === "mouse") return;
+      makeRipple(event.clientX, event.clientY);
+    }, { passive: true });
+
+    document.addEventListener("touchstart", function (event) {
+      if (!event.touches || !event.touches.length) return;
+      var t = event.touches[0];
+      makeRipple(t.clientX, t.clientY);
+    }, { passive: true });
+  })();
+</script>
+<!-- WEDOCODES BRAND CURSOR END -->
+
+</body>
+</html>

@@ -1,0 +1,3824 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Industries | WeDoCodes</title>
+<meta content="WeDoCodes designs industry-focused software systems, portals, dashboards, automation workflows and cybersecurity controls for retail, restaurants, construction, healthcare, real estate, education, logistics and professional services." name="description"/>
+  <!-- FAVICON CODE START -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <!-- FAVICON CODE END -->
+
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<style>
+    :root{
+      --text:#1f1f1f;
+      --muted:#5f5f5f;
+      --soft:#f5f5f5;
+      --line:#e6e6e6;
+      --white:#ffffff;
+
+      --brand-orange:#FF9500;
+      --brand-orange-2:#FF6A00;
+      --brand-pink:#FF3D5E;
+      --brand-magenta:#E91E73;
+
+      --blue:#0067b8;
+      --blue-dark:#004b8d;
+      --green:#107c41;
+      --orange:#d83b01;
+      --purple:#5c2d91;
+      --red:#c4314b;
+      --ink:#111827;
+
+      --shadow:0 8px 28px rgba(0,0,0,.10);
+      --shadow-soft:0 3px 12px rgba(0,0,0,.08);
+      --max:1240px;
+      --radius:2px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      font-family:Inter,"Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
+      color:var(--text);
+      background:#fff;
+      overflow-x:hidden;
+    }
+
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+
+    .wrap{
+      width:min(var(--max),calc(100% - 48px));
+      margin:0 auto;
+    }
+
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:#fff;
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav{
+      height:64px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+    }
+
+    .brand-logo{
+      display:inline-flex;
+      align-items:center;
+      gap:4px;
+      height:54px;
+      min-width:245px;
+      text-decoration:none;
+      background:transparent;
+      flex:0 0 auto;
+    }
+
+    .brand-mark{
+      width:50px;
+      height:50px;
+      display:block;
+      flex:0 0 auto;
+    }
+
+    .brand-text{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      line-height:1;
+      min-width:0;
+    }
+
+    .brand-name{
+      display:block;
+      font-size:25px;
+      line-height:.94;
+      font-weight:760;
+      letter-spacing:-1.15px;
+      color:#050505;
+      white-space:nowrap;
+    }
+
+    .brand-name .codes{
+      background:linear-gradient(90deg,var(--brand-orange-2),var(--brand-pink),var(--brand-magenta));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+
+    .brand-subtitle{
+      display:block;
+      margin-top:5px;
+      font-size:12.5px;
+      line-height:1;
+      font-weight:500;
+      color:#555;
+      white-space:nowrap;
+      letter-spacing:-.1px;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:24px;
+      font-size:13px;
+      color:#262626;
+      font-weight:500;
+    }
+
+    .nav-links a{
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      min-height:64px;
+      border-bottom:2px solid transparent;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active{border-bottom-color:#111}
+
+    .home-icon{
+      width:16px;
+      height:16px;
+      display:inline-block;
+    }
+
+    .nav-actions{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-size:13px;
+      font-weight:600;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      min-height:40px;
+      padding:0 16px;
+      border-radius:var(--radius);
+      border:1px solid transparent;
+      font-weight:600;
+      font-size:13px;
+      cursor:pointer;
+      white-space:nowrap;
+      transition:.2s;
+    }
+
+    .btn-blue{background:var(--blue);color:#fff}
+    .btn-blue:hover{background:var(--blue-dark)}
+    .btn-light{background:#fff;color:#1f1f1f;border-color:#8a8a8a}
+    .btn-light:hover{background:#f2f2f2}
+    .menu-btn{display:none}
+
+    section{padding:56px 0}
+
+    .section-head{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:34px;
+      margin-bottom:30px;
+    }
+
+    .section-head.center{
+      display:block;
+      text-align:center;
+      max-width:920px;
+      margin:0 auto 34px;
+    }
+
+    .kicker{
+      font-size:12px;
+      font-weight:750;
+      color:var(--blue);
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      margin-bottom:9px;
+    }
+
+    .section-head h2,
+    .section-title{
+      font-size:clamp(30px,4vw,52px);
+      line-height:1.08;
+      letter-spacing:-1.6px;
+      margin:0;
+      color:#111;
+      font-weight:720;
+    }
+
+    .section-head p{
+      max-width:650px;
+      color:#5f5f5f;
+      line-height:1.65;
+      margin:0;
+      font-size:15px;
+    }
+
+    /* PAGE COMMAND AREA - NOT A HERO */
+    .command{
+      background:
+        radial-gradient(circle at 88% -18%,rgba(0,103,184,.12),transparent 32%),
+        radial-gradient(circle at 14% 0%,rgba(255,149,0,.08),transparent 31%),
+        linear-gradient(180deg,#f8fbff 0%,#fff 100%);
+      padding:38px 0 26px;
+      border-bottom:1px solid var(--line);
+    }
+
+    .command-grid{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:26px;
+      align-items:end;
+    }
+
+    .command h1{
+      font-size:clamp(34px,4vw,54px);
+      line-height:1.06;
+      letter-spacing:-1.8px;
+      margin:0 0 12px;
+      color:#111;
+      font-weight:720;
+      max-width:840px;
+    }
+
+    .command p{
+      margin:0;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.65;
+      max-width:820px;
+    }
+
+    .command-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .industry-switcher{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      margin-top:26px;
+      border-top:1px solid var(--line);
+      padding-top:18px;
+    }
+
+    .industry-switcher a{
+      display:inline-flex;
+      align-items:center;
+      min-height:34px;
+      padding:0 12px;
+      border:1px solid var(--line);
+      background:#fff;
+      color:#333;
+      font-size:12px;
+      font-weight:700;
+      box-shadow:0 1px 4px rgba(0,0,0,.04);
+    }
+
+    .industry-switcher a:first-child{
+      color:#fff;
+      background:var(--blue);
+      border-color:var(--blue);
+    }
+
+    .metric-row{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+      margin-top:20px;
+      max-width:740px;
+    }
+
+    .metric{
+      border:1px solid var(--line);
+      background:#fff;
+      padding:12px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .metric b{
+      display:block;
+      font-size:14px;
+      color:#111;
+      margin-bottom:5px;
+    }
+
+    .metric span{
+      display:block;
+      color:var(--muted);
+      font-size:11px;
+      line-height:1.45;
+    }
+
+    /* COCKPIT */
+    .cockpit{background:#fff}
+
+    .cockpit-board{
+      display:grid;
+      grid-template-columns:290px 1fr;
+      gap:22px;
+      align-items:stretch;
+    }
+
+    .industry-rail{
+      border:1px solid var(--line);
+      background:#f8fbff;
+      box-shadow:var(--shadow-soft);
+      padding:14px;
+      display:grid;
+      gap:8px;
+      align-content:start;
+    }
+
+    .rail-title{
+      font-size:12px;
+      font-weight:800;
+      color:#111;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      padding:4px 2px 7px;
+    }
+
+    .rail-item{
+      background:#fff;
+      border:1px solid var(--line);
+      padding:13px;
+      display:grid;
+      grid-template-columns:26px 1fr;
+      gap:10px;
+      align-items:center;
+      font-size:13px;
+      color:#333;
+      font-weight:700;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .rail-item.active{
+      background:#111827;
+      color:#fff;
+      border-color:#111827;
+    }
+
+    .rail-item::before{
+      content:"";
+      width:22px;
+      height:22px;
+      border:1px solid currentColor;
+      opacity:.55;
+      background:linear-gradient(135deg,rgba(255,149,0,.12),rgba(255,61,94,.08));
+    }
+
+    .cockpit-main{
+      display:grid;
+      grid-template-columns:1fr 360px;
+      gap:18px;
+    }
+
+    .cockpit-detail{
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+      background:#fff;
+      padding:28px;
+      min-height:510px;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .cockpit-detail small{
+      color:var(--blue);
+      font-size:12px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.1em;
+      margin-bottom:10px;
+    }
+
+    .cockpit-detail h2{
+      margin:0 0 14px;
+      font-size:clamp(30px,3vw,44px);
+      line-height:1.08;
+      letter-spacing:-1.4px;
+    }
+
+    .cockpit-detail p{
+      margin:0 0 20px;
+      color:var(--muted);
+      line-height:1.7;
+      font-size:15px;
+    }
+
+    .gap-map{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:10px;
+      margin-bottom:18px;
+    }
+
+    .gap-item{
+      background:#f8fbff;
+      border:1px solid var(--line);
+      padding:12px;
+      color:#333;
+      font-size:12px;
+      line-height:1.45;
+      font-weight:650;
+    }
+
+    .workflow-strip{
+      background:#111827;
+      color:#fff;
+      padding:18px;
+      margin-top:auto;
+    }
+
+    .workflow-strip b{
+      display:block;
+      font-size:14px;
+      margin-bottom:10px;
+    }
+
+    .workflow-flow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+
+    .workflow-flow span{
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.16);
+      color:#e5e7eb;
+      font-size:11px;
+      font-weight:800;
+      padding:7px 8px;
+    }
+
+    .cockpit-side{
+      display:grid;
+      gap:18px;
+    }
+
+    .side-image{
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+      background:#f8fbff;
+      min-height:245px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:14px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .side-image img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      object-position:center;
+      max-height:225px;
+    }
+
+    .side-box{
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+      padding:20px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .side-box::after{
+      content:"";
+      position:absolute;
+      left:20px;
+      right:20px;
+      bottom:-1px;
+      height:3px;
+      background:linear-gradient(90deg,var(--brand-orange),var(--brand-pink),var(--brand-magenta));
+    }
+
+    .side-box h3{
+      margin:0 0 10px;
+      font-size:22px;
+      letter-spacing:-.7px;
+    }
+
+    .side-box p{
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.6;
+      margin:0;
+    }
+
+    /* OPERATING CARDS */
+    .operating{background:#f5f5f5}
+
+    .operating-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+    }
+
+    .op-card{
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+      min-height:328px;
+      padding:20px;
+      display:flex;
+      flex-direction:column;
+      position:relative;
+      overflow:hidden;
+      transition:.2s;
+    }
+
+    .op-card:hover{
+      transform:translateY(-2px);
+      box-shadow:var(--shadow);
+    }
+
+    .op-card::before{
+      content:"";
+      position:absolute;
+      top:-52px;
+      right:-52px;
+      width:132px;
+      height:132px;
+      border-radius:36px;
+      background:linear-gradient(135deg,rgba(0,103,184,.14),rgba(255,149,0,.10),rgba(233,30,115,.08));
+      transform:rotate(18deg);
+    }
+
+    .op-card:nth-child(2)::before{background:linear-gradient(135deg,rgba(216,59,1,.16),rgba(255,149,0,.12),rgba(255,195,113,.08))}
+    .op-card:nth-child(3)::before{background:linear-gradient(135deg,rgba(17,24,39,.13),rgba(75,85,99,.10),rgba(156,163,175,.08))}
+    .op-card:nth-child(4)::before{background:linear-gradient(135deg,rgba(16,124,65,.15),rgba(52,211,153,.10),rgba(187,247,208,.08))}
+    .op-card:nth-child(5)::before{background:linear-gradient(135deg,rgba(92,45,145,.15),rgba(139,92,246,.10),rgba(196,181,253,.08))}
+    .op-card:nth-child(6)::before{background:linear-gradient(135deg,rgba(0,103,184,.12),rgba(16,124,65,.10),rgba(255,149,0,.08))}
+    .op-card:nth-child(7)::before{background:linear-gradient(135deg,rgba(196,49,75,.14),rgba(255,61,94,.10),rgba(233,30,115,.08))}
+    .op-card:nth-child(8)::before{background:linear-gradient(135deg,rgba(17,24,39,.12),rgba(0,103,184,.10),rgba(255,149,0,.08))}
+
+    .op-card small{
+      color:var(--blue);
+      font-size:11px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      margin-bottom:12px;
+      position:relative;
+      z-index:2;
+    }
+
+    .op-card h3{
+      margin:0 0 11px;
+      font-size:23px;
+      line-height:1.13;
+      letter-spacing:-.75px;
+      position:relative;
+      z-index:2;
+    }
+
+    .op-card p{
+      margin:0 0 15px;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.6;
+      position:relative;
+      z-index:2;
+    }
+
+    .op-meta{
+      display:grid;
+      gap:8px;
+      margin-top:auto;
+      position:relative;
+      z-index:2;
+    }
+
+    .op-meta div{
+      border:1px solid var(--line);
+      background:#f8fbff;
+      padding:9px;
+      font-size:11px;
+      line-height:1.45;
+      color:#4b5563;
+    }
+
+    .op-meta b{
+      color:#111;
+    }
+
+    /* WORKFLOW MAPS */
+    .workflow-maps{background:#fff}
+
+    .map-stack{
+      display:grid;
+      gap:12px;
+    }
+
+    .map-row{
+      display:grid;
+      grid-template-columns:210px 1fr 230px;
+      gap:12px;
+      align-items:stretch;
+      border:1px solid var(--line);
+      background:#fff;
+      box-shadow:var(--shadow-soft);
+      padding:12px;
+    }
+
+    .map-industry{
+      background:#111827;
+      color:#fff;
+      padding:16px;
+      display:flex;
+      align-items:center;
+      font-size:14px;
+      font-weight:800;
+    }
+
+    .map-flow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      align-items:center;
+    }
+
+    .map-flow span{
+      border:1px solid var(--line);
+      background:#f8fbff;
+      padding:9px 10px;
+      font-size:12px;
+      font-weight:750;
+      color:#333;
+    }
+
+    .map-start{
+      border:1px solid var(--line);
+      background:#fff;
+      padding:12px;
+      font-size:12px;
+      line-height:1.5;
+      color:#333;
+      display:flex;
+      align-items:center;
+    }
+
+    .map-start b{
+      color:#111;
+    }
+
+    /* MATRIX */
+    .matrix{background:#f5f5f5}
+
+    .matrix-wrap{
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+      overflow:auto;
+      background:#fff;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      min-width:980px;
+      font-size:13px;
+    }
+
+    th{
+      text-align:left;
+      background:#111827;
+      color:#fff;
+      padding:15px 14px;
+      font-size:12px;
+      border-right:1px solid rgba(255,255,255,.12);
+      white-space:nowrap;
+    }
+
+    td{
+      padding:13px 14px;
+      border-top:1px solid var(--line);
+      border-right:1px solid var(--line);
+      color:#3f3f46;
+    }
+
+    td:first-child{
+      font-weight:750;
+      color:#111;
+      background:#f8fbff;
+    }
+
+    .check{
+      display:inline-flex;
+      width:19px;
+      height:19px;
+      align-items:center;
+      justify-content:center;
+      background:#e9f6ee;
+      color:var(--green);
+      font-weight:900;
+      font-size:12px;
+      border:1px solid rgba(16,124,65,.18);
+    }
+
+    .dash{
+      color:#9ca3af;
+      font-weight:700;
+    }
+
+    /* PROBLEM ROUTER */
+    .router{background:#fff}
+
+    .router-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .route-card{
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+      padding:24px;
+      min-height:250px;
+      position:relative;
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .route-card::before{
+      content:"";
+      position:absolute;
+      right:-52px;
+      top:-52px;
+      width:142px;
+      height:142px;
+      border-radius:38px;
+      background:linear-gradient(135deg,rgba(255,149,0,.16),rgba(255,61,94,.11),rgba(233,30,115,.08));
+      transform:rotate(18deg);
+    }
+
+    .route-card small{
+      color:var(--blue);
+      font-size:11px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      margin-bottom:13px;
+      position:relative;
+      z-index:2;
+    }
+
+    .route-card h3{
+      margin:0 0 12px;
+      font-size:24px;
+      line-height:1.13;
+      letter-spacing:-.8px;
+      position:relative;
+      z-index:2;
+    }
+
+    .route-card p{
+      margin:0 0 16px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.62;
+      position:relative;
+      z-index:2;
+    }
+
+    .route-solution{
+      margin-top:auto;
+      background:#f8fbff;
+      border:1px solid var(--line);
+      padding:12px;
+      font-size:12px;
+      line-height:1.5;
+      color:#333;
+      position:relative;
+      z-index:2;
+    }
+
+    .route-solution b{
+      display:block;
+      color:#111;
+      margin-bottom:4px;
+    }
+
+    /* SYSTEM LAYERS */
+    .layers{background:#f5f5f5}
+
+    .layer-canvas{
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      padding:28px;
+      display:grid;
+      grid-template-columns:280px 1fr;
+      gap:26px;
+      align-items:center;
+    }
+
+    .layer-copy h2{
+      font-size:clamp(30px,4vw,50px);
+      line-height:1.08;
+      letter-spacing:-1.6px;
+      margin:0 0 16px;
+    }
+
+    .layer-copy p{
+      color:var(--muted);
+      line-height:1.7;
+      margin:0 0 22px;
+      font-size:15px;
+    }
+
+    .layer-flow{
+      display:grid;
+      gap:12px;
+    }
+
+    .system-layer{
+      display:grid;
+      grid-template-columns:210px 1fr;
+      gap:14px;
+      align-items:stretch;
+    }
+
+    .layer-label{
+      background:#111827;
+      color:#fff;
+      padding:16px;
+      font-size:13px;
+      font-weight:750;
+      display:flex;
+      align-items:center;
+    }
+
+    .layer-items{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+    }
+
+    .layer-item{
+      border:1px solid var(--line);
+      background:#f8fbff;
+      padding:14px;
+      min-height:75px;
+      position:relative;
+    }
+
+    .layer-item::after{
+      content:"";
+      position:absolute;
+      left:12px;
+      right:12px;
+      bottom:-1px;
+      height:2px;
+      background:linear-gradient(90deg,var(--brand-orange),var(--brand-pink),var(--brand-magenta));
+    }
+
+    .layer-item b{
+      display:block;
+      color:#111;
+      font-size:13px;
+      margin-bottom:5px;
+    }
+
+    .layer-item span{
+      color:var(--muted);
+      font-size:11px;
+      line-height:1.45;
+    }
+
+    /* START POINTS / ASSETS */
+    .starts{background:#fff}
+
+    .start-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .start-card{
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+      background:#fff;
+      padding:24px;
+      min-height:245px;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .start-card:nth-child(1){border-top:5px solid var(--blue)}
+    .start-card:nth-child(2){border-top:5px solid var(--green)}
+    .start-card:nth-child(3){border-top:5px solid var(--orange)}
+    .start-card:nth-child(4){border-top:5px solid var(--purple)}
+    .start-card:nth-child(5){border-top:5px solid var(--red)}
+    .start-card:nth-child(6){border-top:5px solid var(--ink)}
+
+    .start-card h3{
+      margin:0 0 12px;
+      font-size:23px;
+      line-height:1.15;
+      letter-spacing:-.7px;
+    }
+
+    .start-card p{
+      color:var(--muted);
+      line-height:1.65;
+      margin:0 0 16px;
+      font-size:14px;
+    }
+
+    .start-card b{
+      margin-top:auto;
+      font-size:13px;
+      color:#111;
+    }
+
+    .assets-needed{background:#f5f5f5}
+
+    .asset-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:12px;
+    }
+
+    .asset-item{
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+      padding:16px;
+      min-height:105px;
+      display:flex;
+      gap:11px;
+      align-items:flex-start;
+    }
+
+    .asset-item::before{
+      content:"";
+      width:10px;
+      height:10px;
+      margin-top:5px;
+      background:linear-gradient(135deg,var(--brand-orange),var(--brand-pink),var(--brand-magenta));
+      flex:0 0 auto;
+    }
+
+    .asset-item b{
+      display:block;
+      color:#111;
+      font-size:14px;
+      margin-bottom:5px;
+    }
+
+    .asset-item span{
+      display:block;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.45;
+    }
+
+    .faq{background:#fff}
+
+    .faq-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+
+    details{
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+      padding:18px 20px;
+    }
+
+    summary{
+      cursor:pointer;
+      font-size:15px;
+      font-weight:720;
+      color:#111;
+      list-style:none;
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+    }
+
+    summary::-webkit-details-marker{display:none}
+
+    summary::after{
+      content:"+";
+      color:var(--blue);
+      font-weight:800;
+      flex:0 0 auto;
+    }
+
+    details[open] summary::after{content:"–"}
+
+    details p{
+      margin:14px 0 0;
+      color:var(--muted);
+      line-height:1.65;
+      font-size:14px;
+    }
+
+    .cta{
+      background:#111827;
+      color:#fff;
+    }
+
+    .cta-box{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:28px;
+      align-items:center;
+    }
+
+    .cta h2{
+      font-size:clamp(32px,4vw,54px);
+      line-height:1.06;
+      letter-spacing:-1.8px;
+      margin:0 0 14px;
+      color:#fff;
+      font-weight:720;
+    }
+
+    .cta p{
+      color:#d1d5db;
+      line-height:1.7;
+      max-width:690px;
+      margin:0;
+    }
+
+    .cta .btn-light{
+      background:transparent;
+      color:#fff;
+      border-color:#9ca3af;
+    }
+
+    footer{
+      background:#f2f2f2;
+      border-top:1px solid #ddd;
+      padding:34px 0 20px;
+    }
+
+    .footer-mega{
+      display:grid;
+      grid-template-columns:1.35fr repeat(5,1fr);
+      gap:26px;
+    }
+
+    .footer-logo{
+      display:flex;
+      align-items:flex-start;
+      margin-bottom:12px;
+    }
+
+    .footer-logo .brand-logo{
+      height:auto;
+      min-width:0;
+      gap:4px;
+    }
+
+    .footer-logo .brand-mark{
+      width:44px;
+      height:44px;
+    }
+
+    .footer-logo .brand-name{font-size:22px}
+    .footer-logo .brand-subtitle{font-size:12.5px}
+
+    .footer-brand h4,
+    .footer-col h4{
+      font-size:15px;
+      line-height:1.3;
+      color:#616161;
+      margin:0 0 14px;
+      font-weight:700;
+    }
+
+    .footer-brand p{
+      color:#616161;
+      line-height:1.65;
+      font-size:12px;
+      max-width:320px;
+      margin:0 0 12px;
+    }
+
+    .footer-contact{margin-top:14px}
+
+    .footer-contact a{
+      display:block;
+      color:#616161;
+      font-size:11px;
+      margin-bottom:10px;
+    }
+
+    .footer-col a{
+      display:block;
+      color:#616161;
+      font-size:11px;
+      line-height:1.45;
+      margin:0 0 11px;
+    }
+
+    .footer-col a:hover,
+    .footer-contact a:hover{
+      text-decoration:underline;
+      color:#111;
+    }
+
+    .footer-bottom{
+      margin-top:26px;
+      padding-top:18px;
+      border-top:1px solid #d6d6d6;
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      align-items:center;
+      color:#616161;
+      font-size:11px;
+      flex-wrap:wrap;
+    }
+
+    .footer-bottom-left,
+    .footer-bottom-right{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    .footer-bottom a:hover{text-decoration:underline;color:#111}
+
+    @media (max-width:1180px){
+      .nav-links,
+      .nav-actions{display:none}
+
+      .menu-btn{display:inline-flex}
+
+      .command-grid,
+      .cockpit-board,
+      .cockpit-main,
+      .layer-canvas,
+      .cta-box{grid-template-columns:1fr}
+
+      .command-actions{justify-content:flex-start}
+
+      .operating-grid,
+      .router-grid,
+      .start-grid{grid-template-columns:repeat(2,1fr)}
+
+      .map-row{
+        grid-template-columns:1fr;
+      }
+
+      .system-layer{grid-template-columns:1fr}
+      .layer-items{grid-template-columns:repeat(2,1fr)}
+
+      .asset-grid{grid-template-columns:repeat(2,1fr)}
+
+      .footer-mega{grid-template-columns:repeat(3,1fr)}
+      .footer-brand{grid-column:span 3}
+    }
+
+    @media (max-width:760px){
+      .wrap{width:min(var(--max),calc(100% - 24px))}
+      .nav{height:64px}
+
+      .brand-logo{min-width:auto}
+      .brand-mark{width:44px;height:44px}
+      .brand-name{font-size:21px}
+      .brand-subtitle{display:none}
+
+      .metric-row,
+      .gap-map,
+      .operating-grid,
+      .router-grid,
+      .layer-items,
+      .start-grid,
+      .asset-grid,
+      .faq-grid,
+      .footer-mega{grid-template-columns:1fr}
+
+      .footer-brand{grid-column:span 1}
+
+      .command{padding-top:30px}
+      .industry-switcher{overflow-x:auto;flex-wrap:nowrap;padding-bottom:4px}
+      .industry-switcher a{white-space:nowrap}
+
+      .industry-rail{display:none}
+
+      .cockpit-detail{min-height:auto}
+      .side-image{min-height:220px}
+
+      .map-flow span{width:100%}
+
+      .section-head{display:block}
+      .section-head p{margin-top:14px}
+
+      .footer-bottom{display:block}
+
+      .footer-bottom-left,
+      .footer-bottom-right{
+        display:flex;
+        gap:12px;
+        margin-top:12px;
+      }
+    }
+  
+    /* UNIQUE INDUSTRIES PAGE V2 - WORKFLOW INTELLIGENCE HUB */
+    .sector-console{
+      background:
+        linear-gradient(180deg,#f8fbff 0%,#ffffff 82%),
+        radial-gradient(circle at 10% 10%,rgba(255,149,0,.08),transparent 32%),
+        radial-gradient(circle at 92% 0%,rgba(0,103,184,.12),transparent 34%);
+      border-bottom:1px solid var(--line);
+      padding:34px 0 24px;
+    }
+
+    .sector-console-grid{
+      display:grid;
+      grid-template-columns:1fr 380px;
+      gap:34px;
+      align-items:end;
+    }
+
+    .sector-console h1{
+      font-size:clamp(34px,4vw,56px);
+      line-height:1.05;
+      letter-spacing:-1.9px;
+      margin:0 0 12px;
+      color:#111;
+      font-weight:730;
+      max-width:860px;
+    }
+
+    .sector-console p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.68;
+      font-size:16px;
+      max-width:820px;
+    }
+
+    .sector-signal{
+      border:1px solid var(--line);
+      background:#fff;
+      box-shadow:var(--shadow-soft);
+      padding:18px;
+    }
+
+    .signal-row{
+      display:grid;
+      grid-template-columns:42px 1fr;
+      gap:12px;
+      align-items:center;
+      padding:12px 0;
+      border-bottom:1px solid var(--line);
+    }
+
+    .signal-row:last-child{border-bottom:0}
+
+    .signal-icon{
+      width:42px;
+      height:42px;
+      border:1px solid var(--line);
+      background:#f8fbff;
+      position:relative;
+    }
+
+    .signal-icon::after{
+      content:"";
+      position:absolute;
+      left:10px;
+      right:10px;
+      bottom:-1px;
+      height:2px;
+      background:linear-gradient(90deg,var(--brand-orange),var(--brand-pink),var(--brand-magenta));
+    }
+
+    .signal-row b{
+      display:block;
+      color:#111;
+      font-size:14px;
+      margin-bottom:4px;
+    }
+
+    .signal-row span{
+      display:block;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.45;
+    }
+
+    .sector-index{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      margin-top:22px;
+      padding-top:18px;
+      border-top:1px solid var(--line);
+    }
+
+    .sector-index a{
+      min-height:34px;
+      display:inline-flex;
+      align-items:center;
+      padding:0 12px;
+      border:1px solid var(--line);
+      background:#fff;
+      color:#333;
+      font-size:12px;
+      font-weight:750;
+      box-shadow:0 1px 4px rgba(0,0,0,.04);
+    }
+
+    .sector-index a:first-child{
+      background:var(--blue);
+      border-color:var(--blue);
+      color:#fff;
+    }
+
+    .atlas{
+      background:#fff;
+    }
+
+    .atlas-board{
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      background:
+        linear-gradient(90deg,rgba(0,103,184,.04) 1px,transparent 1px),
+        linear-gradient(180deg,rgba(0,103,184,.04) 1px,transparent 1px),
+        #fff;
+      background-size:34px 34px;
+      padding:26px;
+      display:grid;
+      grid-template-columns:1fr 300px 1fr;
+      gap:18px;
+      align-items:center;
+    }
+
+    .atlas-column{
+      display:grid;
+      gap:14px;
+    }
+
+    .atlas-hub{
+      min-height:392px;
+      border:1px solid #d9e2ec;
+      background:#111827;
+      color:#fff;
+      padding:28px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .atlas-hub::before{
+      content:"";
+      position:absolute;
+      inset:auto -60px -80px auto;
+      width:210px;
+      height:210px;
+      border-radius:52px;
+      background:linear-gradient(135deg,rgba(255,149,0,.22),rgba(255,61,94,.18),rgba(233,30,115,.12));
+      transform:rotate(20deg);
+    }
+
+    .atlas-hub small{
+      color:#93c5fd;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-size:11px;
+      font-weight:800;
+      margin-bottom:12px;
+      position:relative;
+      z-index:2;
+    }
+
+    .atlas-hub h2{
+      margin:0 0 14px;
+      font-size:34px;
+      line-height:1.08;
+      letter-spacing:-1.2px;
+      position:relative;
+      z-index:2;
+    }
+
+    .atlas-hub p{
+      color:#d1d5db;
+      line-height:1.65;
+      font-size:14px;
+      margin:0 0 22px;
+      position:relative;
+      z-index:2;
+    }
+
+    .hub-points{
+      display:grid;
+      gap:9px;
+      position:relative;
+      z-index:2;
+    }
+
+    .hub-points span{
+      display:flex;
+      gap:10px;
+      color:#f3f4f6;
+      font-size:13px;
+      line-height:1.45;
+    }
+
+    .hub-points span::before{
+      content:"";
+      width:8px;
+      height:8px;
+      background:linear-gradient(135deg,var(--brand-orange),var(--brand-pink));
+      margin-top:5px;
+      flex:0 0 auto;
+    }
+
+    .atlas-node{
+      border:1px solid var(--line);
+      background:#fff;
+      box-shadow:var(--shadow-soft);
+      padding:14px;
+      display:grid;
+      grid-template-columns:58px 1fr;
+      gap:12px;
+      min-height:104px;
+      align-items:center;
+      transition:.2s;
+    }
+
+    .atlas-node:hover{
+      transform:translateY(-2px);
+      box-shadow:var(--shadow);
+    }
+
+    .atlas-node img{
+      width:58px;
+      height:58px;
+      object-fit:contain;
+      object-position:center;
+      background:#f8fbff;
+      border:1px solid var(--line);
+      padding:5px;
+    }
+
+    .atlas-node b{
+      display:block;
+      color:#111;
+      font-size:14px;
+      margin-bottom:5px;
+    }
+
+    .atlas-node span{
+      display:block;
+      color:var(--muted);
+      font-size:11px;
+      line-height:1.45;
+    }
+
+    .dossiers{
+      background:#f5f5f5;
+    }
+
+    .dossier-grid{
+      display:grid;
+      gap:16px;
+    }
+
+    .dossier{
+      display:grid;
+      grid-template-columns:230px 1fr 265px;
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+      overflow:hidden;
+      min-height:210px;
+    }
+
+    .dossier-media{
+      background:#f8fbff;
+      border-right:1px solid var(--line);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:14px;
+    }
+
+    .dossier-media img{
+      width:100%;
+      height:100%;
+      max-height:180px;
+      object-fit:contain;
+    }
+
+    .dossier-main{
+      padding:24px;
+      display:grid;
+      align-content:center;
+    }
+
+    .dossier-main small{
+      color:var(--blue);
+      text-transform:uppercase;
+      letter-spacing:.1em;
+      font-size:11px;
+      font-weight:800;
+      margin-bottom:9px;
+    }
+
+    .dossier-main h3{
+      font-size:28px;
+      line-height:1.12;
+      letter-spacing:-.9px;
+      margin:0 0 10px;
+    }
+
+    .dossier-main p{
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.65;
+      margin:0 0 14px;
+      max-width:660px;
+    }
+
+    .dossier-flow{
+      display:flex;
+      gap:7px;
+      flex-wrap:wrap;
+    }
+
+    .dossier-flow span{
+      font-size:11px;
+      font-weight:800;
+      color:#333;
+      background:#f2f2f2;
+      padding:7px 8px;
+    }
+
+    .dossier-side{
+      border-left:1px solid var(--line);
+      background:#fbfbfb;
+      padding:20px;
+      display:grid;
+      align-content:center;
+      gap:10px;
+    }
+
+    .dossier-side div{
+      background:#fff;
+      border:1px solid var(--line);
+      padding:11px;
+      font-size:12px;
+      line-height:1.45;
+      color:#4b5563;
+    }
+
+    .dossier-side b{
+      color:#111;
+    }
+
+    .swimlane{
+      background:#fff;
+    }
+
+    .lane-board{
+      display:grid;
+      gap:12px;
+    }
+
+    .lane-row{
+      display:grid;
+      grid-template-columns:190px repeat(4,1fr);
+      gap:10px;
+      border:1px solid var(--line);
+      background:#fff;
+      box-shadow:var(--shadow-soft);
+      padding:10px;
+    }
+
+    .lane-industry{
+      background:#111827;
+      color:#fff;
+      display:flex;
+      align-items:center;
+      padding:14px;
+      font-size:13px;
+      font-weight:800;
+    }
+
+    .lane-cell{
+      background:#f8fbff;
+      border:1px solid var(--line);
+      padding:12px;
+      min-height:92px;
+      position:relative;
+    }
+
+    .lane-cell::after{
+      content:"";
+      position:absolute;
+      left:10px;
+      right:10px;
+      bottom:-1px;
+      height:2px;
+      background:linear-gradient(90deg,var(--brand-orange),var(--brand-pink),var(--brand-magenta));
+    }
+
+    .lane-cell b{
+      display:block;
+      color:#111;
+      font-size:12px;
+      margin-bottom:6px;
+    }
+
+    .lane-cell span{
+      color:var(--muted);
+      font-size:11px;
+      line-height:1.45;
+      display:block;
+    }
+
+    .heatmap{
+      background:#f5f5f5;
+    }
+
+    .heatmap-wrap{
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+      overflow:auto;
+      background:#fff;
+    }
+
+    .heatmap table{
+      width:100%;
+      border-collapse:collapse;
+      min-width:980px;
+      font-size:13px;
+    }
+
+    .heatmap th{
+      text-align:left;
+      background:#111827;
+      color:#fff;
+      padding:15px 14px;
+      font-size:12px;
+      border-right:1px solid rgba(255,255,255,.12);
+      white-space:nowrap;
+    }
+
+    .heatmap td{
+      padding:13px 14px;
+      border-top:1px solid var(--line);
+      border-right:1px solid var(--line);
+      color:#3f3f46;
+      text-align:left;
+    }
+
+    .heatmap td:first-child{
+      font-weight:750;
+      color:#111;
+      background:#f8fbff;
+    }
+
+    .level{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      font-size:11px;
+      font-weight:800;
+      color:#333;
+    }
+
+    .level::before{
+      content:"";
+      width:16px;
+      height:16px;
+      border-radius:50%;
+      display:inline-block;
+    }
+
+    .high::before{background:#107c41}
+    .mid::before{background:#ff9500}
+    .low::before{background:#9ca3af}
+
+    .risk{
+      background:#fff;
+    }
+
+    .risk-canvas{
+      display:grid;
+      grid-template-columns:320px 1fr;
+      gap:24px;
+      align-items:center;
+    }
+
+    .risk-core{
+      background:#111827;
+      color:#fff;
+      min-height:420px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      padding:30px;
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .risk-core::after{
+      content:"";
+      position:absolute;
+      right:-70px;
+      bottom:-70px;
+      width:190px;
+      height:190px;
+      border-radius:48px;
+      background:linear-gradient(135deg,rgba(255,149,0,.20),rgba(255,61,94,.16),rgba(233,30,115,.10));
+      transform:rotate(18deg);
+    }
+
+    .risk-core h2{
+      font-size:36px;
+      line-height:1.08;
+      letter-spacing:-1.2px;
+      margin:0 0 14px;
+      position:relative;
+      z-index:2;
+    }
+
+    .risk-core p{
+      color:#d1d5db;
+      line-height:1.65;
+      margin:0;
+      position:relative;
+      z-index:2;
+    }
+
+    .risk-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:14px;
+    }
+
+    .risk-card{
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+      padding:20px;
+      min-height:190px;
+      display:flex;
+      flex-direction:column;
+      position:relative;
+      overflow:hidden;
+      background:#fff;
+    }
+
+    .risk-card::after{
+      content:"";
+      position:absolute;
+      left:20px;
+      right:20px;
+      bottom:-1px;
+      height:3px;
+      background:linear-gradient(90deg,var(--brand-orange),var(--brand-pink),var(--brand-magenta));
+    }
+
+    .risk-card small{
+      color:var(--blue);
+      font-size:11px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      margin-bottom:10px;
+    }
+
+    .risk-card h3{
+      margin:0 0 10px;
+      font-size:22px;
+      line-height:1.15;
+      letter-spacing:-.7px;
+    }
+
+    .risk-card p{
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.6;
+    }
+
+    .rollout{
+      background:#f5f5f5;
+    }
+
+    .rollout-track{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+    }
+
+    .rollout-step{
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+      padding:22px;
+      min-height:265px;
+      position:relative;
+    }
+
+    .rollout-step::before{
+      content:attr(data-step);
+      display:inline-flex;
+      width:34px;
+      height:34px;
+      background:#111827;
+      color:#fff;
+      align-items:center;
+      justify-content:center;
+      font-size:12px;
+      font-weight:800;
+      margin-bottom:18px;
+    }
+
+    .rollout-step h3{
+      margin:0 0 10px;
+      font-size:23px;
+      letter-spacing:-.7px;
+    }
+
+    .rollout-step p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.62;
+      font-size:13px;
+    }
+
+    .discovery-kit{
+      background:#fff;
+    }
+
+    .kit-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:12px;
+    }
+
+    .kit-item{
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+      padding:16px;
+      min-height:108px;
+      display:flex;
+      gap:11px;
+      align-items:flex-start;
+    }
+
+    .kit-item::before{
+      content:"";
+      width:10px;
+      height:10px;
+      margin-top:5px;
+      background:linear-gradient(135deg,var(--brand-orange),var(--brand-pink),var(--brand-magenta));
+      flex:0 0 auto;
+    }
+
+    .kit-item b{
+      display:block;
+      color:#111;
+      font-size:14px;
+      margin-bottom:5px;
+    }
+
+    .kit-item span{
+      display:block;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.45;
+    }
+
+    .industry-faq{
+      background:#f5f5f5;
+    }
+
+    .faq-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+
+    details{
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+      padding:18px 20px;
+    }
+
+    summary{
+      cursor:pointer;
+      font-size:15px;
+      font-weight:720;
+      color:#111;
+      list-style:none;
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+    }
+
+    summary::-webkit-details-marker{display:none}
+    summary::after{
+      content:"+";
+      color:var(--blue);
+      font-weight:800;
+      flex:0 0 auto;
+    }
+
+    details[open] summary::after{content:"–"}
+
+    details p{
+      margin:14px 0 0;
+      color:var(--muted);
+      line-height:1.65;
+      font-size:14px;
+    }
+
+    .sector-cta{
+      background:#111827;
+      color:#fff;
+    }
+
+    .sector-cta-box{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:28px;
+      align-items:center;
+    }
+
+    .sector-cta h2{
+      font-size:clamp(32px,4vw,54px);
+      line-height:1.06;
+      letter-spacing:-1.8px;
+      margin:0 0 14px;
+      color:#fff;
+      font-weight:720;
+    }
+
+    .sector-cta p{
+      color:#d1d5db;
+      line-height:1.7;
+      max-width:690px;
+      margin:0;
+    }
+
+    .sector-cta .btn-light{
+      background:transparent;
+      color:#fff;
+      border-color:#9ca3af;
+    }
+
+    @media (max-width:1180px){
+      .sector-console-grid,
+      .atlas-board,
+      .risk-canvas,
+      .sector-cta-box{
+        grid-template-columns:1fr;
+      }
+
+      .dossier{
+        grid-template-columns:1fr;
+      }
+
+      .dossier-media{
+        border-right:0;
+        border-bottom:1px solid var(--line);
+      }
+
+      .dossier-side{
+        border-left:0;
+        border-top:1px solid var(--line);
+      }
+
+      .lane-row{
+        grid-template-columns:1fr;
+      }
+
+      .rollout-track,
+      .kit-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+    }
+
+    @media (max-width:760px){
+      .sector-index{
+        overflow-x:auto;
+        flex-wrap:nowrap;
+        padding-bottom:4px;
+      }
+
+      .sector-index a{
+        white-space:nowrap;
+      }
+
+      .atlas-board,
+      .risk-grid,
+      .rollout-track,
+      .kit-grid,
+      .faq-grid{
+        grid-template-columns:1fr;
+      }
+
+      .atlas-hub{
+        min-height:auto;
+      }
+
+      .lane-cell{
+        min-height:auto;
+      }
+    }
+
+  
+    /* INLINE INDUSTRY VISUALS - NO ASSET IMAGE FILES REQUIRED */
+    .sector-visual{
+      width:100%;
+      height:auto;
+      display:block;
+      overflow:visible;
+    }
+
+    .atlas-node .sector-visual{
+      width:58px;
+      height:58px;
+      background:#f8fbff;
+      border:1px solid var(--line);
+      padding:5px;
+      flex:0 0 auto;
+    }
+
+    .dossier-media .sector-visual{
+      width:100%;
+      height:100%;
+      max-height:180px;
+    }
+
+    .sector-visual .base-card{
+      fill:#ffffff;
+      stroke:#dfe6ef;
+      stroke-width:1.4;
+    }
+
+    .sector-visual .soft-bg{
+      fill:var(--v-soft);
+    }
+
+    .sector-visual .main{
+      fill:var(--v-main);
+    }
+
+    .sector-visual .accent{
+      fill:var(--v-accent);
+    }
+
+    .sector-visual .pink{
+      fill:var(--v-pink);
+    }
+
+    .sector-visual .line{
+      stroke:var(--v-main);
+      stroke-width:4;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+      fill:none;
+    }
+
+    .sector-visual .thin-line{
+      stroke:#6b7280;
+      stroke-width:2.4;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+      fill:none;
+      opacity:.72;
+    }
+
+    .sector-retail{--v-main:#0067b8;--v-accent:#ff9500;--v-pink:#ff3d5e;--v-soft:#eef6ff}
+    .sector-restaurants{--v-main:#d83b01;--v-accent:#ff9500;--v-pink:#ff6a00;--v-soft:#fff4e8}
+    .sector-construction{--v-main:#111827;--v-accent:#ff9500;--v-pink:#6b7280;--v-soft:#f3f4f6}
+    .sector-healthcare{--v-main:#107c41;--v-accent:#0067b8;--v-pink:#34d399;--v-soft:#ecfdf3}
+    .sector-real-estate{--v-main:#5c2d91;--v-accent:#0067b8;--v-pink:#8b5cf6;--v-soft:#f4f0ff}
+    .sector-education{--v-main:#0067b8;--v-accent:#107c41;--v-pink:#ff9500;--v-soft:#eef6ff}
+    .sector-logistics{--v-main:#c4314b;--v-accent:#ff9500;--v-pink:#0067b8;--v-soft:#fff1f3}
+    .sector-professional{--v-main:#111827;--v-accent:#0067b8;--v-pink:#ff3d5e;--v-soft:#f3f4f6}
+
+  
+    /* Mobile navigation fix */
+    .mobile-nav{
+      display:none;
+      position:sticky;
+      top:64px;
+      z-index:99;
+      background:#fff;
+      border-bottom:1px solid var(--line);
+      box-shadow:0 8px 18px rgba(0,0,0,.06);
+      padding:12px 24px 16px;
+    }
+
+    .mobile-nav a{
+      display:flex;
+      align-items:center;
+      min-height:42px;
+      border-bottom:1px solid var(--line);
+      color:#1f1f1f;
+      font-size:14px;
+      font-weight:650;
+    }
+
+    .mobile-nav a:last-child{
+      border-bottom:0;
+    }
+
+    .mobile-nav .mobile-cta{
+      margin-top:10px;
+      justify-content:center;
+      background:var(--blue);
+      color:#fff;
+      border-bottom:0;
+      min-height:40px;
+    }
+
+    .mobile-nav .mobile-secondary{
+      margin-top:8px;
+      justify-content:center;
+      border:1px solid #8a8a8a;
+      min-height:40px;
+    }
+
+    @media (max-width:1180px){
+      body.nav-open .mobile-nav{
+        display:grid;
+      }
+
+      .menu-btn{
+        display:inline-flex;
+      }
+    }
+
+  
+    /* Logo clockwise rotation */
+    .brand-mark{
+      animation: rotateLogo 10s linear infinite;
+    }
+
+    @keyframes rotateLogo{
+      0%{ transform:rotate(0deg); }
+      100%{ transform:rotate(360deg); }
+    }
+
+
+
+    
+    
+    /* Strict mobile layout correction: wrap text instead of clipping */
+    @media (max-width:760px){
+      html,
+      body{
+        width:100% !important;
+        max-width:100% !important;
+        overflow-x:hidden !important;
+      }
+
+      body{
+        position:relative;
+      }
+
+      *,
+      *::before,
+      *::after{
+        box-sizing:border-box !important;
+        min-width:0;
+      }
+
+      .wrap{
+        width:100% !important;
+        max-width:100vw !important;
+        padding-left:18px !important;
+        padding-right:18px !important;
+        margin-left:0 !important;
+        margin-right:0 !important;
+      }
+
+      main,
+      header,
+      footer,
+      nav,
+      section,
+      article,
+      aside{
+        width:100% !important;
+        max-width:100vw !important;
+        min-width:0 !important;
+      }
+
+      .nav{
+        padding-left:12px !important;
+        padding-right:12px !important;
+      }
+
+      .brand-logo{
+        max-width:calc(100vw - 118px) !important;
+        min-width:0 !important;
+      }
+
+      .brand-mark{
+        width:42px !important;
+        height:42px !important;
+        flex:0 0 42px !important;
+      }
+
+      .brand-name{
+        font-size:20px !important;
+        white-space:nowrap !important;
+        overflow:hidden !important;
+        text-overflow:ellipsis !important;
+      }
+
+      .brand-subtitle{
+        display:none !important;
+      }
+
+      .menu-btn{
+        min-width:74px !important;
+        padding-left:12px !important;
+        padding-right:12px !important;
+      }
+
+      h1,
+      .command h1,
+      .hero h1,
+      .hero-title,
+      .support-hero h1,
+      .industries-hero h1,
+      .about-hero h1,
+      .resource-hero h1,
+      .section-title,
+      .section-head h2{
+        font-size:clamp(30px,8.6vw,38px) !important;
+        line-height:1.12 !important;
+        letter-spacing:-0.7px !important;
+        width:100% !important;
+        max-width:100% !important;
+        min-width:0 !important;
+        white-space:normal !important;
+        overflow:visible !important;
+        overflow-wrap:break-word !important;
+        word-break:normal !important;
+      }
+
+      h2{
+        font-size:clamp(27px,7.8vw,34px) !important;
+        line-height:1.14 !important;
+        letter-spacing:-0.5px !important;
+        white-space:normal !important;
+        overflow-wrap:break-word !important;
+      }
+
+      h3{
+        font-size:clamp(22px,6.4vw,28px) !important;
+        line-height:1.18 !important;
+        white-space:normal !important;
+        overflow-wrap:break-word !important;
+      }
+
+      p,
+      li,
+      span,
+      .command p,
+      .hero p,
+      .section-head p,
+      .support-hero p,
+      .industries-hero p,
+      .about-hero p,
+      .resource-hero p,
+      .route-card p,
+      .industry-card p,
+      .resource-card p,
+      .support-card p,
+      .about-card p{
+        font-size:16px !important;
+        line-height:1.55 !important;
+        max-width:100% !important;
+        min-width:0 !important;
+        white-space:normal !important;
+        overflow:visible !important;
+        overflow-wrap:break-word !important;
+        word-break:normal !important;
+      }
+
+      .hero-grid,
+      .command-grid,
+      .cta-box,
+      .footer-mega,
+      .footer-bottom,
+      .footer-bottom-left,
+      .footer-bottom-right,
+      .finder-layout,
+      .finder-results,
+      .solution-panel,
+      .panel-stack,
+      .arch-canvas,
+      .arch-layer,
+      .arch-items,
+      .blueprint-grid,
+      .path-grid,
+      .receive-grid,
+      .faq-grid,
+      .metric-row,
+      .section-head,
+      .resource-dock,
+      .resource-layout,
+      .resource-grid,
+      .resource-cards,
+      .resource-actions,
+      .download-grid,
+      .knowledge-grid,
+      .support-hero-grid,
+      .support-grid,
+      .support-route-grid,
+      .support-card-grid,
+      .route-layout,
+      .route-cards,
+      .contact-grid,
+      .access-grid,
+      .about-hero-grid,
+      .about-split,
+      .about-card-grid,
+      .principle-grid,
+      .timeline-grid,
+      .industries-hero-grid,
+      .industry-layout,
+      .industry-grid,
+      .industry-cards,
+      .segment-grid,
+      .value-grid,
+      .proof-grid,
+      .process-grid,
+      .cards-grid,
+      .grid2,
+      .grid3,
+      .grid4,
+      .split,
+      .career-head,
+      .roles-grid,
+      .hire-flow,
+      .application-layout,
+      .track-hero,
+      .status-strip,
+      .two-col,
+      .ecosystem,
+      .partner-flow,
+      .partner-contact,
+      .map-matrix,
+      .journey-map,
+      .policy-layout,
+      .policy-content,
+      .terms-grid,
+      .terms-panel,
+      .trust-dashboard,
+      .security-matrix,
+      .report-layout,
+      .cookie-board,
+      .cookie-types,
+      .control-grid{
+        display:grid !important;
+        grid-template-columns:minmax(0,1fr) !important;
+        width:100% !important;
+        max-width:100% !important;
+        min-width:0 !important;
+      }
+
+      .footer-bottom,
+      .footer-bottom-left,
+      .footer-bottom-right{
+        display:flex !important;
+        flex-wrap:wrap !important;
+      }
+
+      article,
+      aside,
+      .card,
+      .panel,
+      .resource-card,
+      .support-card,
+      .route-card,
+      .about-card,
+      .industry-card,
+      .result-card,
+      .blueprint-card,
+      .path-card,
+      .check-panel,
+      .metric,
+      .rail-item,
+      .field,
+      form{
+        width:100% !important;
+        max-width:100% !important;
+        min-width:0 !important;
+        overflow:visible !important;
+      }
+
+      .route-card,
+      .support-card,
+      .industry-card,
+      .resource-card,
+      .about-card,
+      .rail-item{
+        grid-template-columns:auto minmax(0,1fr) !important;
+      }
+
+      .route-card > *,
+      .support-card > *,
+      .industry-card > *,
+      .resource-card > *,
+      .about-card > *,
+      .rail-item > *{
+        min-width:0 !important;
+        max-width:100% !important;
+      }
+
+      .solution-tabs,
+      .industry-tabs,
+      .route-tabs,
+      .resource-tabs,
+      .tab-row,
+      .command-actions,
+      .module-tags,
+      .result-pills,
+      .path-line{
+        display:flex !important;
+        flex-wrap:nowrap !important;
+        width:100% !important;
+        max-width:100% !important;
+        overflow-x:auto !important;
+        overflow-y:hidden !important;
+        -webkit-overflow-scrolling:touch;
+      }
+
+      .solution-tabs a,
+      .industry-tabs a,
+      .route-tabs a,
+      .resource-tabs a,
+      .tab-row a,
+      .tab-row button,
+      .command-actions a,
+      .module-tags span,
+      .result-pills span,
+      .path-line span{
+        flex:0 0 auto !important;
+        white-space:nowrap !important;
+        max-width:none !important;
+      }
+
+      .matrix-wrap,
+      .table-wrap,
+      .comparison-table,
+      .resource-table,
+      .support-table{
+        width:100% !important;
+        max-width:100% !important;
+        overflow-x:auto !important;
+        -webkit-overflow-scrolling:touch;
+      }
+
+      table{
+        width:100% !important;
+      }
+
+      input,
+      select,
+      textarea,
+      button{
+        max-width:100% !important;
+      }
+    }
+
+    @media (max-width:430px){
+      .wrap{
+        padding-left:14px !important;
+        padding-right:14px !important;
+      }
+
+      h1,
+      .command h1,
+      .hero h1,
+      .hero-title,
+      .support-hero h1,
+      .industries-hero h1,
+      .about-hero h1,
+      .resource-hero h1,
+      .section-title,
+      .section-head h2{
+        font-size:clamp(28px,8.2vw,34px) !important;
+        line-height:1.14 !important;
+      }
+
+      h2{
+        font-size:clamp(25px,7.4vw,31px) !important;
+      }
+
+      h3{
+        font-size:clamp(21px,6vw,25px) !important;
+      }
+
+      p,
+      li,
+      .command p,
+      .hero p,
+      .section-head p{
+        font-size:15.5px !important;
+      }
+    }
+
+
+    /* Mobile 2-column tab grid correction */
+    @media (max-width:760px){
+      .solution-tabs,
+      .industry-tabs,
+      .route-tabs,
+      .resource-tabs,
+      .tab-row{
+        display:grid !important;
+        grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
+        gap:10px !important;
+        width:100% !important;
+        max-width:100% !important;
+        overflow-x:visible !important;
+        overflow-y:visible !important;
+      }
+
+      .solution-tabs a,
+      .industry-tabs a,
+      .route-tabs a,
+      .resource-tabs a,
+      .tab-row a,
+      .tab-row button{
+        width:100% !important;
+        max-width:100% !important;
+        min-width:0 !important;
+        flex:none !important;
+        white-space:normal !important;
+        text-align:center !important;
+        justify-content:center !important;
+        align-items:center !important;
+        line-height:1.18 !important;
+        font-size:14px !important;
+        padding:12px 8px !important;
+        min-height:52px !important;
+        overflow-wrap:break-word !important;
+        word-break:normal !important;
+      }
+    }
+
+    @media (max-width:360px){
+      .solution-tabs,
+      .industry-tabs,
+      .route-tabs,
+      .resource-tabs,
+      .tab-row{
+        grid-template-columns:1fr !important;
+      }
+
+      .solution-tabs a,
+      .industry-tabs a,
+      .route-tabs a,
+      .resource-tabs a,
+      .tab-row a,
+      .tab-row button{
+        font-size:15px !important;
+        min-height:48px !important;
+      }
+    }
+
+
+    /* Actual mobile 2-column index/tabs correction */
+    @media (max-width:760px){
+      .sector-index,
+      .support-index,
+      .resource-index,
+      .identity-index,
+      .solution-tabs,
+      .industry-tabs,
+      .route-tabs,
+      .resource-tabs,
+      .tab-row{
+        display:grid !important;
+        grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
+        gap:10px !important;
+        width:100% !important;
+        max-width:100% !important;
+        min-width:0 !important;
+        overflow-x:visible !important;
+        overflow-y:visible !important;
+      }
+
+      .sector-index a,
+      .support-index a,
+      .resource-index a,
+      .identity-index a,
+      .solution-tabs a,
+      .industry-tabs a,
+      .route-tabs a,
+      .resource-tabs a,
+      .tab-row a,
+      .tab-row button{
+        width:100% !important;
+        max-width:100% !important;
+        min-width:0 !important;
+        flex:none !important;
+        white-space:normal !important;
+        text-align:center !important;
+        justify-content:center !important;
+        align-items:center !important;
+        line-height:1.18 !important;
+        font-size:14px !important;
+        padding:12px 8px !important;
+        min-height:52px !important;
+        overflow-wrap:break-word !important;
+        word-break:normal !important;
+      }
+    }
+
+    @media (max-width:360px){
+      .sector-index,
+      .support-index,
+      .resource-index,
+      .identity-index,
+      .solution-tabs,
+      .industry-tabs,
+      .route-tabs,
+      .resource-tabs,
+      .tab-row{
+        grid-template-columns:1fr !important;
+      }
+
+      .sector-index a,
+      .support-index a,
+      .resource-index a,
+      .identity-index a,
+      .solution-tabs a,
+      .industry-tabs a,
+      .route-tabs a,
+      .resource-tabs a,
+      .tab-row a,
+      .tab-row button{
+        font-size:15px !important;
+        min-height:48px !important;
+      }
+    }
+
+
+    /* Mobile brand balance and home hero order correction */
+    @media (max-width:760px){
+      .brand-name{
+        font-size:24px !important;
+        line-height:1 !important;
+        font-weight:850 !important;
+        letter-spacing:-.7px !important;
+      }
+
+      .brand-name .codes{
+        font-size:1em !important;
+        font-weight:900 !important;
+        letter-spacing:-.8px !important;
+        display:inline-block !important;
+        transform:translateY(.2px) scale(1.025) !important;
+        -webkit-text-stroke:.15px rgba(217,107,207,.18);
+      }
+    }
+
+    @media (max-width:420px){
+      .brand-name{
+        font-size:22px !important;
+      }
+    }
+
+
+    /* Microsoft-style mobile typography and centered header final */
+    @media (max-width:760px){
+      body{
+        font-family:"Segoe UI Variable","Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif !important;
+        font-size:16px !important;
+        line-height:1.5 !important;
+        font-weight:400 !important;
+      }
+
+      .nav{
+        display:grid !important;
+        grid-template-columns:48px minmax(0,1fr) 48px !important;
+        align-items:center !important;
+        width:100% !important;
+        max-width:100vw !important;
+        padding:10px 14px !important;
+        gap:0 !important;
+      }
+
+      .menu-btn{
+        grid-column:1 !important;
+        grid-row:1 !important;
+        justify-self:start !important;
+        align-self:center !important;
+        width:44px !important;
+        height:44px !important;
+        min-width:44px !important;
+        padding:0 !important;
+        margin:0 !important;
+        border:0 !important;
+        background:transparent !important;
+        box-shadow:none !important;
+        font-size:0 !important;
+        color:transparent !important;
+        position:relative !important;
+        border-radius:0 !important;
+      }
+
+      .menu-btn::before,
+      .menu-btn::after,
+      .menu-btn span{
+        content:"" !important;
+        position:absolute !important;
+        left:11px !important;
+        width:22px !important;
+        height:2px !important;
+        background:#1f1f1f !important;
+        border-radius:99px !important;
+        display:block !important;
+      }
+
+      .menu-btn::before{top:14px !important;}
+      .menu-btn span{top:21px !important;}
+      .menu-btn::after{top:28px !important;}
+
+      .brand-logo{
+        grid-column:2 !important;
+        grid-row:1 !important;
+        justify-self:center !important;
+        align-self:center !important;
+        display:flex !important;
+        align-items:center !important;
+        justify-content:center !important;
+        width:auto !important;
+        max-width:calc(100vw - 116px) !important;
+        min-width:0 !important;
+        gap:6px !important;
+        margin:0 auto !important;
+      }
+
+      .brand-logo::after{
+        content:"" !important;
+      }
+
+      .brand-mark{
+        width:42px !important;
+        height:42px !important;
+        flex:0 0 42px !important;
+      }
+
+      .brand-text{
+        min-width:0 !important;
+        max-width:100% !important;
+      }
+
+      .brand-name{
+        font-family:"Segoe UI Variable","Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif !important;
+        font-size:22px !important;
+        line-height:1 !important;
+        font-weight:700 !important;
+        letter-spacing:-.45px !important;
+        white-space:nowrap !important;
+        overflow:visible !important;
+        text-overflow:clip !important;
+      }
+
+      .brand-name .codes{
+        font-size:1em !important;
+        font-weight:700 !important;
+        letter-spacing:-.45px !important;
+        transform:none !important;
+        -webkit-text-stroke:0 !important;
+        display:inline !important;
+      }
+
+      .brand-subtitle{
+        display:none !important;
+      }
+
+      /* Microsoft/Fluent-inspired mobile type scale */
+      h1,
+      .command h1,
+      .hero h1,
+      .hero-title,
+      .support-hero h1,
+      .industries-hero h1,
+      .about-hero h1,
+      .resource-hero h1,
+      .section-title{
+        font-family:"Segoe UI Variable","Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif !important;
+        font-size:40px !important;
+        line-height:46px !important;
+        font-weight:600 !important;
+        letter-spacing:-1px !important;
+      }
+
+      h2,
+      .section-head h2{
+        font-family:"Segoe UI Variable","Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif !important;
+        font-size:32px !important;
+        line-height:38px !important;
+        font-weight:600 !important;
+        letter-spacing:-.6px !important;
+      }
+
+      h3{
+        font-family:"Segoe UI Variable","Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif !important;
+        font-size:22px !important;
+        line-height:28px !important;
+        font-weight:600 !important;
+        letter-spacing:-.2px !important;
+      }
+
+      p,
+      li,
+      .section-head p,
+      .hero p,
+      .command p,
+      .card p,
+      .panel p{
+        font-family:"Segoe UI Variable","Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif !important;
+        font-size:16px !important;
+        line-height:24px !important;
+        font-weight:400 !important;
+      }
+
+      .btn,
+      button,
+      .cta,
+      .nav a,
+      .sector-index a,
+      .resource-index a,
+      .identity-index a,
+      .support-index a,
+      .solution-tabs a,
+      .tab-row a,
+      .tab-row button{
+        font-family:"Segoe UI Variable","Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif !important;
+        font-size:14px !important;
+        line-height:18px !important;
+        font-weight:600 !important;
+      }
+
+      /* Keep the real tab groups as a clean 2-column mobile grid */
+      .sector-index,
+      .resource-index,
+      .identity-index,
+      .support-index,
+      .solution-tabs,
+      .industry-tabs,
+      .route-tabs,
+      .resource-tabs,
+      .tab-row{
+        display:grid !important;
+        grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+        gap:10px !important;
+        width:100% !important;
+        max-width:100% !important;
+        overflow:visible !important;
+      }
+
+      .sector-index a,
+      .resource-index a,
+      .identity-index a,
+      .support-index a,
+      .solution-tabs a,
+      .industry-tabs a,
+      .route-tabs a,
+      .resource-tabs a,
+      .tab-row a,
+      .tab-row button{
+        width:100% !important;
+        min-width:0 !important;
+        max-width:100% !important;
+        white-space:normal !important;
+        text-align:center !important;
+        justify-content:center !important;
+        align-items:center !important;
+        padding:12px 10px !important;
+        min-height:48px !important;
+        overflow-wrap:break-word !important;
+      }
+    }
+
+    @media (max-width:420px){
+      .brand-name{
+        font-size:21px !important;
+      }
+
+      h1,
+      .command h1,
+      .hero h1,
+      .hero-title,
+      .support-hero h1,
+      .industries-hero h1,
+      .about-hero h1,
+      .resource-hero h1,
+      .section-title{
+        font-size:36px !important;
+        line-height:42px !important;
+      }
+
+      h2,
+      .section-head h2{
+        font-size:30px !important;
+        line-height:36px !important;
+      }
+    }
+
+
+/* CLIENT LOGIN BUTTON REPLACE START */
+.btn-client-login{
+  background:#071a33 !important;
+  color:#ffffff !important;
+  border-color:#071a33 !important;
+}
+.btn-client-login:hover{
+  background:#0b2545 !important;
+  color:#ffffff !important;
+  border-color:#0b2545 !important;
+}
+.mobile-nav .mobile-login{
+  margin-top:8px;
+  justify-content:center !important;
+  background:#071a33 !important;
+  color:#ffffff !important;
+  border:1px solid #071a33 !important;
+  border-bottom:1px solid #071a33 !important;
+}
+.mobile-nav .mobile-login:hover{
+  background:#0b2545 !important;
+  color:#ffffff !important;
+}
+/* CLIENT LOGIN BUTTON REPLACE END */
+
+
+/* MOBILE HEADER LOGIN ICON START */
+.mobile-header-login-icon{
+  display:none;
+}
+@media (max-width:1180px){
+  .mobile-header-login-icon{
+    grid-column:3 !important;
+    grid-row:1 !important;
+    justify-self:end !important;
+    align-self:center !important;
+    width:42px !important;
+    height:42px !important;
+    min-width:42px !important;
+    border-radius:50% !important;
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    background:#071a33 !important;
+    color:#ffffff !important;
+    text-decoration:none !important;
+    border:1px solid #071a33 !important;
+  }
+  .mobile-header-login-icon svg{
+    width:20px !important;
+    height:20px !important;
+    fill:none !important;
+    stroke:currentColor !important;
+    stroke-width:2 !important;
+    stroke-linecap:round !important;
+    stroke-linejoin:round !important;
+  }
+}
+@media (min-width:1181px){
+  .mobile-header-login-icon{
+    display:none !important;
+  }
+}
+/* MOBILE HEADER LOGIN ICON END */
+
+</style>
+
+<!-- WEDOCODES THREE-LINE MENU FIX START -->
+<style>
+  @media (max-width: 1180px) {
+    .menu-btn {
+      display: inline-flex !important;
+      width: 44px !important;
+      height: 44px !important;
+      min-width: 44px !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      border: 0 !important;
+      background: transparent !important;
+      box-shadow: none !important;
+      font-size: 0 !important;
+      color: transparent !important;
+      position: relative !important;
+      border-radius: 0 !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+
+    .menu-btn::before,
+    .menu-btn::after,
+    .menu-btn span {
+      content: "" !important;
+      position: absolute !important;
+      left: 11px !important;
+      width: 22px !important;
+      height: 2px !important;
+      background: #1f1f1f !important;
+      border-radius: 99px !important;
+      display: block !important;
+    }
+
+    .menu-btn::before { top: 14px !important; }
+    .menu-btn span { top: 21px !important; }
+    .menu-btn::after { top: 28px !important; }
+  }
+</style>
+<!-- WEDOCODES THREE-LINE MENU FIX END -->
+
+<link rel="canonical" href="https://www.wedocodes.com/industries">
+</head>
+<body>
+<header class="site-header">
+<div class="wrap nav">
+<a aria-label="WeDoCodes Home" class="brand-logo" href="/">
+<svg class="brand-mark" role="img" viewbox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="logoIconGradient" x1="12" x2="108" y1="12" y2="108">
+<stop offset="0" stop-color="#FF9500"></stop>
+<stop offset="0.32" stop-color="#FF6A00"></stop>
+<stop offset="0.68" stop-color="#FF3D5E"></stop>
+<stop offset="1" stop-color="#E91E73"></stop>
+</lineargradient>
+<filter height="140%" id="logoSoftShadow" width="140%" x="-20%" y="-20%">
+<fedropshadow dx="0" dy="4" flood-color="#000000" flood-opacity="0.12" stddeviation="7"></fedropshadow>
+</filter>
+</defs>
+<circle cx="60" cy="60" fill="url(#logoIconGradient)" filter="url(#logoSoftShadow)" r="48"></circle>
+<g fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.4" transform="translate(-3.5 -1)">
+<path d="M48 53 L35 60 L48 67"></path>
+<path d="M66 48 L55 74"></path>
+<path d="M78 53 L92 60 L78 67"></path>
+</g>
+</svg>
+<span class="brand-text">
+<span class="brand-name">WeDo<span class="codes">Codes</span></span>
+<span class="brand-subtitle">Software and Cyber Security Solutions</span>
+</span>
+</a>
+<nav aria-label="Main navigation" class="nav-links">
+<a href="/">
+<svg aria-hidden="true" class="home-icon" fill="none" viewbox="0 0 24 24">
+<path d="M3 10.8 12 3l9 7.8V21h-6v-6H9v6H3V10.8Z" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+          Home
+        </a>
+<a href="/solutions">Solutions</a>
+<a class="active" href="/industries">Industries</a>
+<a href="/resources">Resources</a>
+<a href="/about">About</a>
+<a href="/support">Support</a>
+</nav>
+<div class="nav-actions">
+<a class="btn btn-client-login" href="/login">Client Login</a>
+<a class="btn btn-blue" href="/support">Start Consultation</a>
+</div>
+<a class="mobile-header-login-icon" href="/login" aria-label="Client Login">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"></path>
+    <path d="M4.5 21a7.5 7.5 0 0 1 15 0"></path>
+  </svg>
+</a>
+<button class="btn btn-light menu-btn"><span></span></button>
+</div>
+</header>
+<nav aria-label="Mobile navigation" class="mobile-nav">
+<a href="/">Home</a>
+<a href="/solutions">Solutions</a>
+<a href="/industries">Industries</a>
+<a href="/resources">Resources</a>
+<a href="/about">About</a>
+<a href="/support">Support</a>
+<a class="mobile-secondary mobile-login" href="/login">Client Login</a>
+<a class="mobile-cta" href="/support">Start Consultation</a>
+</nav>
+<main>
+<section class="sector-console">
+<div class="wrap">
+<div class="sector-console-grid">
+<div>
+<div class="kicker">Industries</div>
+<h1>Map your business sector to the right digital workflow.</h1>
+<p>
+              WeDoCodes helps businesses convert daily industry operations into software systems,
+              dashboards, customer portals, automation flows and secure role-based access.
+            </p>
+<div class="sector-index">
+<a href="#atlas">Sector Atlas</a>
+<a href="#dossiers">Industry Dossiers</a>
+<a href="#swimlane">Workflow Lanes</a>
+<a href="#heatmap">Capability Heatmap</a>
+<a href="#risk">Risk Router</a>
+<a href="#rollout">Rollout Map</a>
+<a href="#kit">Discovery Kit</a>
+</div>
+</div>
+<div class="sector-signal">
+<div class="signal-row">
+<div class="signal-icon"></div>
+<div><b>Workflow-first</b><span>Start with the process that causes delays, repeated work or reporting gaps.</span></div>
+</div>
+<div class="signal-row">
+<div class="signal-icon"></div>
+<div><b>Industry-aware modules</b><span>POS, bookings, procurement, portals and dashboards are mapped by sector.</span></div>
+</div>
+<div class="signal-row">
+<div class="signal-icon"></div>
+<div><b>Secure operation</b><span>User roles, audit logs, backups and permissions are planned with the system.</span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="atlas" id="atlas">
+<div class="wrap">
+<div class="section-head center">
+<div class="kicker">Sector atlas</div>
+<h2>One company, different operating realities.</h2>
+<p>Each industry needs a different starting point, different screens, different users and different reports.</p>
+</div>
+<div class="atlas-board">
+<div class="atlas-column">
+<div class="atlas-node"><svg aria-label="Retail POS and inventory illustration" class="sector-visual sector-retail" role="img" viewbox="0 0 160 120">
+<rect class="soft-bg" height="100" rx="18" width="144" x="8" y="10"></rect>
+<rect class="base-card" height="50" rx="7" width="72" x="28" y="28"></rect>
+<rect class="main" height="7" rx="3.5" width="42" x="36" y="36"></rect>
+<rect fill="#cbd5e1" height="4" rx="2" width="52" x="36" y="50"></rect>
+<rect fill="#cbd5e1" height="4" rx="2" width="34" x="36" y="60"></rect>
+<rect class="accent" height="32" rx="5" width="26" x="104" y="36"></rect>
+<rect fill="#fff" height="3" rx="1.5" width="14" x="110" y="43"></rect>
+<rect fill="#fff" height="3" rx="1.5" width="14" x="110" y="51"></rect>
+<path class="thin-line" d="M38 86h58M48 86v10M86 86v10"></path>
+<rect class="pink" height="22" rx="4" width="30" x="102" y="76"></rect>
+<path d="M108 83v8M114 83v8M121 83v8M127 83v8" stroke="#fff" stroke-width="2"></path>
+</svg><div><b>Retail &amp; Trading</b><span>POS, stock, barcode, customer accounts and sales dashboards.</span></div></div>
+<div class="atlas-node"><svg aria-label="Restaurant QR order flow illustration" class="sector-visual sector-restaurants" role="img" viewbox="0 0 160 120">
+<rect class="soft-bg" height="100" rx="18" width="144" x="8" y="10"></rect>
+<rect class="base-card" height="62" rx="8" width="48" x="24" y="28"></rect>
+<rect class="main" height="10" width="10" x="33" y="38"></rect>
+<rect class="main" height="10" width="10" x="52" y="38"></rect>
+<rect class="main" height="10" width="10" x="33" y="57"></rect>
+<rect class="accent" height="10" width="10" x="52" y="57"></rect>
+<rect class="pink" height="5" rx="2.5" width="19" x="43" y="72"></rect>
+<circle class="base-card" cx="104" cy="56" r="26"></circle>
+<circle cx="104" cy="56" fill="#fff" r="15" stroke="var(--v-main)" stroke-width="4"></circle>
+<path class="line" d="M130 32v52M137 32v52M130 56h12"></path>
+</svg><div><b>Restaurants &amp; Cafes</b><span>QR menu, order flow, cashier control and kitchen visibility.</span></div></div>
+<div class="atlas-node"><svg aria-label="Construction procurement workflow illustration" class="sector-visual sector-construction" role="img" viewbox="0 0 160 120">
+<rect class="soft-bg" height="100" rx="18" width="144" x="8" y="10"></rect>
+<path class="line" d="M30 38h80M42 38v50M98 38v50"></path>
+<path class="thin-line" d="M48 38l30-20 32 20"></path>
+<path d="M110 38v25l16 10" fill="none" stroke="var(--v-accent)" stroke-linecap="round" stroke-width="4"></path>
+<rect class="accent" height="18" rx="3" width="22" x="38" y="70"></rect>
+<rect class="main" height="26" rx="3" width="22" x="66" y="62"></rect>
+<rect class="pink" height="14" rx="3" width="22" x="94" y="74"></rect>
+<rect class="base-card" height="20" rx="4" width="28" x="112" y="75"></rect>
+<path class="thin-line" d="M119 82h14M119 88h10"></path>
+</svg><div><b>Construction</b><span>Material requests, approvals, BOQ reports and vendor tracking.</span></div></div>
+<div class="atlas-node"><svg aria-label="Healthcare appointment system illustration" class="sector-visual sector-healthcare" role="img" viewbox="0 0 160 120">
+<rect class="soft-bg" height="100" rx="18" width="144" x="8" y="10"></rect>
+<rect class="base-card" height="62" rx="8" width="60" x="27" y="28"></rect>
+<rect class="main" height="16" rx="8" width="60" x="27" y="28"></rect>
+<path class="thin-line" d="M40 56h34M40 68h24"></path>
+<rect class="accent" height="34" rx="9" width="34" x="98" y="34"></rect>
+<path d="M115 43v16M107 51h16" stroke="#fff" stroke-linecap="round" stroke-width="5"></path>
+<rect class="pink" height="14" rx="7" width="40" x="96" y="78"></rect>
+<circle cx="39" cy="36" fill="#fff" r="3"></circle>
+<circle cx="51" cy="36" fill="#fff" r="3"></circle>
+</svg><div><b>Healthcare Clinics</b><span>Appointments, queue, patient records and reminders.</span></div></div>
+</div>
+<div class="atlas-hub">
+<small>WeDoCodes Industry OS</small>
+<h2>From sector workflow to working software.</h2>
+<p>We identify the business flow, define modules, build screens, structure data, connect reports and secure access.</p>
+<div class="hub-points">
+<span>Workflow mapping for real daily operations</span>
+<span>Software modules selected by sector need</span>
+<span>Dashboards, portals and reports planned together</span>
+<span>Security and user access built into the flow</span>
+</div>
+</div>
+<div class="atlas-column">
+<div class="atlas-node"><svg aria-label="Real estate property and lead tracking illustration" class="sector-visual sector-real-estate" role="img" viewbox="0 0 160 120">
+<rect class="soft-bg" height="100" rx="18" width="144" x="8" y="10"></rect>
+<path class="base-card" d="M30 62 70 30l40 32v32H30V62Z"></path>
+<path d="M44 59 70 39l26 20" fill="none" stroke="var(--v-main)" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"></path>
+<rect class="accent" height="28" rx="3" width="20" x="60" y="66"></rect>
+<rect class="main" height="24" rx="5" width="38" x="90" y="72"></rect>
+<path d="M98 80h20M98 88h12" stroke="#fff" stroke-linecap="round" stroke-width="2.2"></path>
+<circle class="pink" cx="126" cy="42" r="12"></circle>
+<path d="M126 53v14" stroke="var(--v-pink)" stroke-linecap="round" stroke-width="4"></path>
+</svg><div><b>Real Estate</b><span>Properties, leads, viewings, tenancy and service requests.</span></div></div>
+<div class="atlas-node"><svg aria-label="Education student and course system illustration" class="sector-visual sector-education" role="img" viewbox="0 0 160 120">
+<rect class="soft-bg" height="100" rx="18" width="144" x="8" y="10"></rect>
+<rect class="base-card" height="44" rx="7" width="62" x="30" y="38"></rect>
+<path class="thin-line" d="M38 50h44M38 61h34M38 72h25"></path>
+<path class="main" d="M96 40l34 13-34 13-34-13 34-13Z"></path>
+<path d="M78 63v16c12 8 25 8 37 0V63" fill="none" stroke="var(--v-accent)" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"></path>
+<circle class="pink" cx="126" cy="80" r="8"></circle>
+<path d="M126 88v10" stroke="var(--v-pink)" stroke-linecap="round" stroke-width="4"></path>
+</svg><div><b>Education &amp; Training</b><span>Students, attendance, courses, fees and parent communication.</span></div></div>
+<div class="atlas-node"><svg aria-label="Logistics delivery tracking illustration" class="sector-visual sector-logistics" role="img" viewbox="0 0 160 120">
+<rect class="soft-bg" height="100" rx="18" width="144" x="8" y="10"></rect>
+<rect class="main" height="28" rx="5" width="58" x="28" y="52"></rect>
+<path class="accent" d="M86 60h22l14 20H86V60Z"></path>
+<circle cx="46" cy="84" fill="#fff" r="8" stroke="var(--v-main)" stroke-width="4"></circle>
+<circle cx="103" cy="84" fill="#fff" r="8" stroke="var(--v-main)" stroke-width="4"></circle>
+<path d="M38 38h34M31 44h28M122 35c10 0 18 8 18 18 0 13-18 31-18 31s-18-18-18-31c0-10 8-18 18-18Z" fill="none" stroke="var(--v-pink)" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"></path>
+<circle class="pink" cx="122" cy="53" r="5"></circle>
+</svg><div><b>Logistics &amp; Delivery</b><span>Dispatch, driver updates, delivery status and proof of delivery.</span></div></div>
+<div class="atlas-node"><svg aria-label="Professional services task and client portal illustration" class="sector-visual sector-professional" role="img" viewbox="0 0 160 120">
+<rect class="soft-bg" height="100" rx="18" width="144" x="8" y="10"></rect>
+<rect class="base-card" height="64" rx="8" width="72" x="28" y="28"></rect>
+<rect class="main" height="14" rx="3" width="18" x="38" y="40"></rect>
+<path class="thin-line" d="M64 45h24M64 52h14M38 66h50M38 76h36"></path>
+<rect class="accent" height="40" rx="7" width="32" x="104" y="42"></rect>
+<path d="M113 59l6 6 10-14" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"></path>
+<circle class="pink" cx="104" cy="34" r="8"></circle>
+</svg><div><b>Professional Services</b><span>Client requests, tasks, files, approvals and invoicing.</span></div></div>
+</div>
+</div>
+</div>
+</section>
+<section class="dossiers" id="dossiers">
+<div class="wrap">
+<div class="section-head">
+<div>
+<div class="kicker">Industry dossiers</div>
+<h2>Sector-specific system records.</h2>
+</div>
+<p>Each dossier shows the operating problem, workflow path, user groups and the recommended WeDoCodes system direction.</p>
+</div>
+<div class="dossier-grid">
+<article class="dossier">
+<div class="dossier-media"><svg aria-label="Retail POS and inventory illustration" class="sector-visual sector-retail" role="img" viewbox="0 0 160 120">
+<rect class="soft-bg" height="100" rx="18" width="144" x="8" y="10"></rect>
+<rect class="base-card" height="50" rx="7" width="72" x="28" y="28"></rect>
+<rect class="main" height="7" rx="3.5" width="42" x="36" y="36"></rect>
+<rect fill="#cbd5e1" height="4" rx="2" width="52" x="36" y="50"></rect>
+<rect fill="#cbd5e1" height="4" rx="2" width="34" x="36" y="60"></rect>
+<rect class="accent" height="32" rx="5" width="26" x="104" y="36"></rect>
+<rect fill="#fff" height="3" rx="1.5" width="14" x="110" y="43"></rect>
+<rect fill="#fff" height="3" rx="1.5" width="14" x="110" y="51"></rect>
+<path class="thin-line" d="M38 86h58M48 86v10M86 86v10"></path>
+<rect class="pink" height="22" rx="4" width="30" x="102" y="76"></rect>
+<path d="M108 83v8M114 83v8M121 83v8M127 83v8" stroke="#fff" stroke-width="2"></path>
+</svg></div>
+<div class="dossier-main">
+<small>Retail &amp; Trading</small>
+<h3>Stock, billing and branch visibility.</h3>
+<p>Suitable for businesses that need product master, barcode, sales records, stock movement and daily reports.</p>
+<div class="dossier-flow"><span>Product</span><span>Stock</span><span>Billing</span><span>Payment</span><span>Sales Report</span></div>
+</div>
+<div class="dossier-side">
+<div><b>Core users:</b> Cashier, inventory controller, branch manager.</div>
+<div><b>System path:</b> POS + Inventory + Sales Dashboard.</div>
+<div><b>Start with:</b> Product Master + Billing Screen.</div>
+</div>
+</article>
+<article class="dossier">
+<div class="dossier-media"><svg aria-label="Construction procurement workflow illustration" class="sector-visual sector-construction" role="img" viewbox="0 0 160 120">
+<rect class="soft-bg" height="100" rx="18" width="144" x="8" y="10"></rect>
+<path class="line" d="M30 38h80M42 38v50M98 38v50"></path>
+<path class="thin-line" d="M48 38l30-20 32 20"></path>
+<path d="M110 38v25l16 10" fill="none" stroke="var(--v-accent)" stroke-linecap="round" stroke-width="4"></path>
+<rect class="accent" height="18" rx="3" width="22" x="38" y="70"></rect>
+<rect class="main" height="26" rx="3" width="22" x="66" y="62"></rect>
+<rect class="pink" height="14" rx="3" width="22" x="94" y="74"></rect>
+<rect class="base-card" height="20" rx="4" width="28" x="112" y="75"></rect>
+<path class="thin-line" d="M119 82h14M119 88h10"></path>
+</svg></div>
+<div class="dossier-main">
+<small>Construction</small>
+<h3>Material requests, approvals and BOQ tracking.</h3>
+<p>Suitable for project teams that need procurement visibility, document control and reporting by project.</p>
+<div class="dossier-flow"><span>Request</span><span>Approval</span><span>Vendor</span><span>Purchase</span><span>BOQ Report</span></div>
+</div>
+<div class="dossier-side">
+<div><b>Core users:</b> Engineer, procurement, accounts, project manager.</div>
+<div><b>System path:</b> Procurement + Approval + Project Dashboard.</div>
+<div><b>Start with:</b> Material Request Workflow.</div>
+</div>
+</article>
+<article class="dossier">
+<div class="dossier-media"><svg aria-label="Healthcare appointment system illustration" class="sector-visual sector-healthcare" role="img" viewbox="0 0 160 120">
+<rect class="soft-bg" height="100" rx="18" width="144" x="8" y="10"></rect>
+<rect class="base-card" height="62" rx="8" width="60" x="27" y="28"></rect>
+<rect class="main" height="16" rx="8" width="60" x="27" y="28"></rect>
+<path class="thin-line" d="M40 56h34M40 68h24"></path>
+<rect class="accent" height="34" rx="9" width="34" x="98" y="34"></rect>
+<path d="M115 43v16M107 51h16" stroke="#fff" stroke-linecap="round" stroke-width="5"></path>
+<rect class="pink" height="14" rx="7" width="40" x="96" y="78"></rect>
+<circle cx="39" cy="36" fill="#fff" r="3"></circle>
+<circle cx="51" cy="36" fill="#fff" r="3"></circle>
+</svg></div>
+<div class="dossier-main">
+<small>Healthcare Clinics</small>
+<h3>Appointments, reception and queue flow.</h3>
+<p>Suitable for clinics and medical centers that need organized booking, patient flow and reminders.</p>
+<div class="dossier-flow"><span>Patient Request</span><span>Slot</span><span>Reception</span><span>Queue</span><span>Visit History</span></div>
+</div>
+<div class="dossier-side">
+<div><b>Core users:</b> Reception, doctor, patient, clinic admin.</div>
+<div><b>System path:</b> Appointment + Queue + Reminder System.</div>
+<div><b>Start with:</b> Booking Calendar + Reception Dashboard.</div>
+</div>
+</article>
+<article class="dossier">
+<div class="dossier-media"><svg aria-label="Professional services task and client portal illustration" class="sector-visual sector-professional" role="img" viewbox="0 0 160 120">
+<rect class="soft-bg" height="100" rx="18" width="144" x="8" y="10"></rect>
+<rect class="base-card" height="64" rx="8" width="72" x="28" y="28"></rect>
+<rect class="main" height="14" rx="3" width="18" x="38" y="40"></rect>
+<path class="thin-line" d="M64 45h24M64 52h14M38 66h50M38 76h36"></path>
+<rect class="accent" height="40" rx="7" width="32" x="104" y="42"></rect>
+<path d="M113 59l6 6 10-14" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"></path>
+<circle class="pink" cx="104" cy="34" r="8"></circle>
+</svg></div>
+<div class="dossier-main">
+<small>Professional Services</small>
+<h3>Client requests, tasks, files and invoices.</h3>
+<p>Suitable for service teams that need request tracking, task assignment, approval status and customer communication.</p>
+<div class="dossier-flow"><span>Client Request</span><span>Task</span><span>File Update</span><span>Approval</span><span>Invoice</span></div>
+</div>
+<div class="dossier-side">
+<div><b>Core users:</b> Client, admin, service team, accounts.</div>
+<div><b>System path:</b> Client Portal + Ticketing + Invoicing.</div>
+<div><b>Start with:</b> Request Portal + Task Board.</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section class="swimlane" id="swimlane">
+<div class="wrap">
+<div class="section-head">
+<div>
+<div class="kicker">Workflow lanes</div>
+<h2>Map each industry through users, operations, management and security.</h2>
+</div>
+<p>This layout separates each sector into operating lanes so the required software modules become clearer.</p>
+</div>
+<div class="lane-board">
+<div class="lane-row">
+<div class="lane-industry">Retail</div>
+<div class="lane-cell"><b>Front office</b><span>Cashier billing, customer account, receipt and payment.</span></div>
+<div class="lane-cell"><b>Operations</b><span>Product master, SKU, barcode, stock movement.</span></div>
+<div class="lane-cell"><b>Management</b><span>Daily sales, low stock, branch summary and reports.</span></div>
+<div class="lane-cell"><b>Security</b><span>Cashier role, admin control, audit log and backup.</span></div>
+</div>
+<div class="lane-row">
+<div class="lane-industry">Construction</div>
+<div class="lane-cell"><b>Front office</b><span>Material request, project reference and attachments.</span></div>
+<div class="lane-cell"><b>Operations</b><span>Approval flow, vendor tracking and purchase status.</span></div>
+<div class="lane-cell"><b>Management</b><span>BOQ usage, project spend and pending approvals.</span></div>
+<div class="lane-cell"><b>Security</b><span>Department roles, approval permissions and activity history.</span></div>
+</div>
+<div class="lane-row">
+<div class="lane-industry">Healthcare</div>
+<div class="lane-cell"><b>Front office</b><span>Patient booking, reception dashboard and queue status.</span></div>
+<div class="lane-cell"><b>Operations</b><span>Doctor schedule, appointment slots and reminder flow.</span></div>
+<div class="lane-cell"><b>Management</b><span>Daily appointments, no-shows and visit summaries.</span></div>
+<div class="lane-cell"><b>Security</b><span>Staff access, patient data limits and logs.</span></div>
+</div>
+<div class="lane-row">
+<div class="lane-industry">Logistics</div>
+<div class="lane-cell"><b>Front office</b><span>Customer request, order status and delivery updates.</span></div>
+<div class="lane-cell"><b>Operations</b><span>Dispatch, driver assignment and route status.</span></div>
+<div class="lane-cell"><b>Management</b><span>Pending orders, delivery performance and proof of delivery.</span></div>
+<div class="lane-cell"><b>Security</b><span>Driver access, admin control and delivery logs.</span></div>
+</div>
+</div>
+</div>
+</section>
+<section class="heatmap" id="heatmap">
+<div class="wrap">
+<div class="section-head">
+<div>
+<div class="kicker">Capability heatmap</div>
+<h2>See which modules are usually strongest for each sector.</h2>
+</div>
+<p>High, medium and low priority indicators help identify the first system module to build.</p>
+</div>
+<div class="heatmap-wrap">
+<table>
+<thead>
+<tr>
+<th>Industry</th>
+<th>POS / Billing</th>
+<th>Booking</th>
+<th>Procurement</th>
+<th>Portal</th>
+<th>Dashboard</th>
+<th>Notifications</th>
+<th>Security</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>Retail &amp; Trading</td><td><span class="level high">High</span></td><td><span class="level low">Low</span></td><td><span class="level mid">Medium</span></td><td><span class="level mid">Medium</span></td><td><span class="level high">High</span></td><td><span class="level mid">Medium</span></td><td><span class="level high">High</span></td></tr>
+<tr><td>Restaurants &amp; Cafes</td><td><span class="level high">High</span></td><td><span class="level low">Low</span></td><td><span class="level mid">Medium</span></td><td><span class="level high">High</span></td><td><span class="level high">High</span></td><td><span class="level mid">Medium</span></td><td><span class="level high">High</span></td></tr>
+<tr><td>Construction</td><td><span class="level low">Low</span></td><td><span class="level low">Low</span></td><td><span class="level high">High</span></td><td><span class="level mid">Medium</span></td><td><span class="level high">High</span></td><td><span class="level mid">Medium</span></td><td><span class="level high">High</span></td></tr>
+<tr><td>Healthcare Clinics</td><td><span class="level mid">Medium</span></td><td><span class="level high">High</span></td><td><span class="level low">Low</span></td><td><span class="level high">High</span></td><td><span class="level high">High</span></td><td><span class="level high">High</span></td><td><span class="level high">High</span></td></tr>
+<tr><td>Real Estate</td><td><span class="level low">Low</span></td><td><span class="level mid">Medium</span></td><td><span class="level low">Low</span></td><td><span class="level high">High</span></td><td><span class="level high">High</span></td><td><span class="level high">High</span></td><td><span class="level high">High</span></td></tr>
+<tr><td>Education &amp; Training</td><td><span class="level mid">Medium</span></td><td><span class="level high">High</span></td><td><span class="level low">Low</span></td><td><span class="level high">High</span></td><td><span class="level high">High</span></td><td><span class="level high">High</span></td><td><span class="level high">High</span></td></tr>
+<tr><td>Logistics &amp; Delivery</td><td><span class="level low">Low</span></td><td><span class="level low">Low</span></td><td><span class="level low">Low</span></td><td><span class="level high">High</span></td><td><span class="level high">High</span></td><td><span class="level high">High</span></td><td><span class="level high">High</span></td></tr>
+<tr><td>Professional Services</td><td><span class="level mid">Medium</span></td><td><span class="level mid">Medium</span></td><td><span class="level low">Low</span></td><td><span class="level high">High</span></td><td><span class="level high">High</span></td><td><span class="level mid">Medium</span></td><td><span class="level high">High</span></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section class="risk" id="risk">
+<div class="wrap">
+<div class="risk-canvas">
+<div class="risk-core">
+<h2>Operational risk router.</h2>
+<p>Many industry problems are caused by weak workflow visibility, scattered records or missing access control. The right module should target the real risk first.</p>
+</div>
+<div class="risk-grid">
+<article class="risk-card"><small>Stock risk</small><h3>Inventory does not match reality.</h3><p>Route to inventory, barcode, stock movement and low-stock alerts.</p></article>
+<article class="risk-card"><small>Booking risk</small><h3>Appointments are handled manually.</h3><p>Route to calendar, queue, reminders and reception dashboard.</p></article>
+<article class="risk-card"><small>Approval risk</small><h3>Requests are delayed or unclear.</h3><p>Route to approval workflow, status tracking and management dashboard.</p></article>
+<article class="risk-card"><small>Access risk</small><h3>Staff can access more than required.</h3><p>Route to roles, permissions, audit logs and backup planning.</p></article>
+</div>
+</div>
+</div>
+</section>
+<section class="rollout" id="rollout">
+<div class="wrap">
+<div class="section-head center">
+<div class="kicker">Industry rollout map</div>
+<h2>A practical way to digitize one sector workflow.</h2>
+<p>Start with the strongest operational pain point, test the workflow, then expand to additional modules.</p>
+</div>
+<div class="rollout-track">
+<div class="rollout-step" data-step="01"><h3>Map the current workflow</h3><p>Identify users, records, approvals, reports, devices and data sources.</p></div>
+<div class="rollout-step" data-step="02"><h3>Build the first module</h3><p>Start with POS, appointments, procurement, portal, dashboard or access control.</p></div>
+<div class="rollout-step" data-step="03"><h3>Test with real users</h3><p>Check daily actions, report accuracy, permissions and practical usability.</p></div>
+<div class="rollout-step" data-step="04"><h3>Expand the system</h3><p>Add dashboards, integrations, notifications, exports and advanced security controls.</p></div>
+</div>
+</div>
+</section>
+<section class="discovery-kit" id="kit">
+<div class="wrap">
+<div class="section-head">
+<div>
+<div class="kicker">Discovery kit</div>
+<h2>What we need from your industry workflow.</h2>
+</div>
+<p>These materials help WeDoCodes map the first module and avoid missing important business rules.</p>
+</div>
+<div class="kit-grid">
+<div class="kit-item"><div><b>Sample invoices</b><span>Sales, bills, receipts, LPOs or service documents.</span></div></div>
+<div class="kit-item"><div><b>Existing Excel files</b><span>Current sheets used for reports, stock or approvals.</span></div></div>
+<div class="kit-item"><div><b>User roles</b><span>Who creates, approves, edits, exports or views records.</span></div></div>
+<div class="kit-item"><div><b>Current workflow</b><span>Step-by-step process from request to completion.</span></div></div>
+<div class="kit-item"><div><b>Existing reports</b><span>PDF, Excel or manual reports currently prepared.</span></div></div>
+<div class="kit-item"><div><b>Approval flow</b><span>Required review and approval stages.</span></div></div>
+<div class="kit-item"><div><b>Product / service list</b><span>Items, services, departments or categories.</span></div></div>
+<div class="kit-item"><div><b>Integration needs</b><span>Payment, messaging, email, API or existing software.</span></div></div>
+</div>
+</div>
+</section>
+<section class="industry-faq">
+<div class="wrap">
+<div class="section-head center">
+<div class="kicker">FAQs</div>
+<h2>Common questions about industry systems.</h2>
+</div>
+<div class="faq-grid">
+<details><summary>Can WeDoCodes build software for my exact industry workflow?</summary><p>Yes. The system can be planned around your actual users, forms, approvals, records, reports and business rules.</p></details>
+<details><summary>Can one system support multiple branches?</summary><p>Yes. Branch-level access, reports, stock, users and dashboards can be planned based on the selected system.</p></details>
+<details><summary>Can staff access be limited by role?</summary><p>Yes. Role-based access can control who can create, approve, edit, export, delete or view records.</p></details>
+<details><summary>Can reports be exported to PDF or Excel?</summary><p>Yes. Reports can be designed for PDF printing, Excel export, dashboards and management summaries.</p></details>
+<details><summary>Can WhatsApp or SMS reminders be added?</summary><p>Yes. Notifications can be planned for appointments, orders, requests, delivery updates or approvals where supported.</p></details>
+<details><summary>Can we start with one module first?</summary><p>Yes. A phased approach is recommended when you want to digitize the most urgent workflow first.</p></details>
+</div>
+</div>
+</section>
+<section class="sector-cta">
+<div class="wrap sector-cta-box">
+<div>
+<h2>Tell us your industry workflow. We will map the right system.</h2>
+<p>Start from the current process, the users involved and the report you need at the end.</p>
+</div>
+<div class="command-actions">
+<a class="btn btn-blue" href="/support">Start Consultation</a>
+<a class="btn btn-light" href="/solutions">View Solutions</a>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap">
+<div class="footer-mega">
+<div class="footer-brand">
+<div class="footer-logo">
+<a aria-label="WeDoCodes Home" class="brand-logo" href="/">
+<svg class="brand-mark" role="img" viewbox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="footerLogoIconGradient" x1="12" x2="108" y1="12" y2="108">
+<stop offset="0" stop-color="#FF9500"></stop>
+<stop offset="0.32" stop-color="#FF6A00"></stop>
+<stop offset="0.68" stop-color="#FF3D5E"></stop>
+<stop offset="1" stop-color="#E91E73"></stop>
+</lineargradient>
+<filter height="140%" id="footerLogoSoftShadow" width="140%" x="-20%" y="-20%">
+<fedropshadow dx="0" dy="4" flood-color="#000000" flood-opacity="0.12" stddeviation="7"></fedropshadow>
+</filter>
+</defs>
+<circle cx="60" cy="60" fill="url(#footerLogoIconGradient)" filter="url(#footerLogoSoftShadow)" r="48"></circle>
+<g fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.4" transform="translate(-3.5 -1)">
+<path d="M48 53 L35 60 L48 67"></path>
+<path d="M66 48 L55 74"></path>
+<path d="M78 53 L92 60 L78 67"></path>
+</g>
+</svg>
+<span class="brand-text">
+<span class="brand-name">WeDo<span class="codes">Codes</span></span>
+<span class="brand-subtitle">Software and Cyber Security Solutions</span>
+</span>
+</a>
+</div>
+<p>Custom software, business automation, web and mobile apps, cloud-ready systems, dashboards and cybersecurity-focused digital solutions.</p>
+<div class="footer-contact">
+<a href="mailto:support@wedocodes.com">support@wedocodes.com</a>
+<a href="https://www.wedocodes.com">www.wedocodes.com</a>
+</div>
+</div>
+<div class="footer-col">
+<h4>What's new</h4>
+<a href="/solutions">Custom Software Packages</a>
+<a href="/solutions">Healthcare Appointment Systems</a>
+<a href="/solutions">POS &amp; Inventory Solutions</a>
+<a href="/solutions">QR Menu &amp; Restaurant Tools</a>
+<a href="assets/companyprofile.pdf" rel="noopener" target="_blank">Company Profile 2026</a>
+<a href="/resources">Consultation Checklist</a>
+</div>
+<div class="footer-col">
+<h4>Solutions</h4>
+<a href="/solutions">Business &amp; Enterprise Software</a>
+<a href="/solutions">ERP, CRM &amp; Admin Systems</a>
+<a href="/solutions">Healthcare &amp; Clinic Systems</a>
+<a href="/solutions">Web &amp; Mobile Applications</a>
+<a href="/solutions">Cloud, Data &amp; Integrations</a>
+<a href="/solutions">Cybersecurity &amp; Digital Trust</a>
+</div>
+<div class="footer-col">
+<h4>Industries</h4>
+<a href="/industries">Retail &amp; Trading</a>
+<a href="/industries">Restaurants &amp; Cafes</a>
+<a href="/industries">Construction</a>
+<a href="/industries">Healthcare Clinics</a>
+<a href="/industries">Real Estate</a>
+<a href="/industries">Logistics &amp; Delivery</a>
+</div>
+<div class="footer-col">
+<h4>For business</h4>
+<a href="/support">Request a Consultation</a>
+<a href="/order-tracking">Order Tracking</a>
+<a href="/resources">Downloads</a>
+<a href="/resources">FAQs</a>
+<a href="/resources">Service Brochures</a>
+<a href="/resources">Cybersecurity Checklist</a>
+</div>
+<div class="footer-col">
+<h4>Company</h4>
+<a href="/about">About WeDoCodes</a>
+<a href="/about">Mission &amp; Values</a>
+<a href="/careers">Careers</a>
+<a href="/partners">Partners</a>
+<a href="/support">Support Center</a>
+<a href="/support">Support</a>
+</div>
+</div>
+<div class="footer-bottom">
+<div class="footer-bottom-left">
+<span>🌐 English</span>
+<a href="/sitemap">Sitemap</a>
+<a href="/order-tracking">Order Tracking</a>
+<a href="/careers">Careers</a>
+</div>
+<div class="footer-bottom-right">
+<a href="/privacy">Privacy</a>
+<a href="/terms">Terms of Use</a>
+<a href="/security">Security</a>
+<a href="/cookies">Cookies</a>
+<span>© 2026 WeDoCodes</span>
+</div>
+</div>
+</div>
+</footer>
+<script>
+    (function(){
+      const menuBtn = document.querySelector('.menu-btn');
+      if(!menuBtn) return;
+
+      menuBtn.setAttribute('type','button');
+      menuBtn.setAttribute('aria-expanded','false');
+
+      menuBtn.addEventListener('click', function(){
+        const open = document.body.classList.toggle('nav-open');
+        menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+
+      document.querySelectorAll('.mobile-nav a').forEach(function(link){
+        link.addEventListener('click', function(){
+          document.body.classList.remove('nav-open');
+          menuBtn.setAttribute('aria-expanded','false');
+        });
+      });
+    })();
+  </script>
+  <script>
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      return false;
+    });
+
+    document.addEventListener('keydown', function(e) {
+      const key = (e.key || '').toLowerCase();
+
+      if (
+        e.key === 'F12' ||
+        (e.ctrlKey && e.shiftKey && ['i', 'j', 'c'].includes(key)) ||
+        (e.ctrlKey && ['u', 's'].includes(key))
+      ) {
+        e.preventDefault();
+        return false;
+      }
+    });
+
+    document.addEventListener('dragstart', function(e) {
+      e.preventDefault();
+      return false;
+    });
+  </script>
+
+<!-- WEDOCODES BRAND CURSOR START -->
+<style>
+  @media (hover: hover) and (pointer: fine) {
+    html,
+    body {
+      cursor: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22g%22%20x1%3D%223%22%20y1%3D%222%22%20x2%3D%2220%22%20y2%3D%2222%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23FF9500%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220.35%22%20stop-color%3D%22%23FF6A00%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220.68%22%20stop-color%3D%22%23FF3D5E%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23E91E73%22%2F%3E%0A%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%3C%2Fdefs%3E%0A%20%20%3Cpath%20d%3D%22M3%202.2%20L20.2%2015.6%20L13.3%2016.8%20L17%2022.2%20L13.6%2023.3%20L9.8%2017.6%20L5.4%2021.8%20Z%22%20fill%3D%22url%28%23g%29%22%2F%3E%0A%3C%2Fsvg%3E") 3 2, auto !important;
+    }
+
+    a,
+    button,
+    [role="button"],
+    input[type="submit"],
+    input[type="button"],
+    .btn,
+    select,
+    summary,
+    label[for] {
+      cursor: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22g%22%20x1%3D%223%22%20y1%3D%222%22%20x2%3D%2220%22%20y2%3D%2222%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23FF9500%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220.35%22%20stop-color%3D%22%23FF6A00%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220.68%22%20stop-color%3D%22%23FF3D5E%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23E91E73%22%2F%3E%0A%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%3C%2Fdefs%3E%0A%20%20%3Cpath%20d%3D%22M3%202.2%20L20.2%2015.6%20L13.3%2016.8%20L17%2022.2%20L13.6%2023.3%20L9.8%2017.6%20L5.4%2021.8%20Z%22%20fill%3D%22url%28%23g%29%22%2F%3E%0A%3C%2Fsvg%3E") 3 2, pointer !important;
+    }
+
+    input,
+    textarea {
+      cursor: auto !important;
+    }
+  }
+
+  .wdc-touch-ripple {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border-radius: 999px;
+    pointer-events: none;
+    z-index: 2147482500;
+    transform: translate(-50%, -50%) scale(0.35);
+    background:
+      radial-gradient(circle,
+        rgba(255, 149, 0, 0.95) 0%,
+        rgba(255, 106, 0, 0.78) 28%,
+        rgba(255, 61, 94, 0.62) 52%,
+        rgba(233, 30, 115, 0.18) 74%,
+        rgba(233, 30, 115, 0) 100%);
+    box-shadow:
+      0 0 0 1px rgba(255, 149, 0, 0.24),
+      0 0 20px rgba(255, 61, 94, 0.36);
+    animation: wdcTouchRipple 680ms ease-out forwards;
+  }
+
+  @keyframes wdcTouchRipple {
+    0% {
+      opacity: 0.98;
+      transform: translate(-50%, -50%) scale(0.35);
+    }
+    55% {
+      opacity: 0.72;
+      transform: translate(-50%, -50%) scale(2.45);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(3.2);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .wdc-touch-ripple {
+      animation: none !important;
+      display: none !important;
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    var supportsTouchEffect = false;
+
+    try {
+      supportsTouchEffect =
+        window.matchMedia &&
+        window.matchMedia("(hover: none), (pointer: coarse)").matches;
+    } catch (e) {
+      supportsTouchEffect = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+    }
+
+    if (!supportsTouchEffect) return;
+
+    function makeRipple(x, y) {
+      var ripple = document.createElement("span");
+      ripple.className = "wdc-touch-ripple";
+      ripple.style.left = x + "px";
+      ripple.style.top = y + "px";
+      document.body.appendChild(ripple);
+
+      window.setTimeout(function () {
+        if (ripple && ripple.parentNode) {
+          ripple.parentNode.removeChild(ripple);
+        }
+      }, 760);
+    }
+
+    document.addEventListener("pointerdown", function (event) {
+      if (event.pointerType && event.pointerType === "mouse") return;
+      makeRipple(event.clientX, event.clientY);
+    }, { passive: true });
+
+    document.addEventListener("touchstart", function (event) {
+      if (!event.touches || !event.touches.length) return;
+      var t = event.touches[0];
+      makeRipple(t.clientX, t.clientY);
+    }, { passive: true });
+  })();
+</script>
+<!-- WEDOCODES BRAND CURSOR END -->
+
+</body>
+</html>

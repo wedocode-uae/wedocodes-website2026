@@ -1,0 +1,2061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client Login | WeDoCodes</title>
+  <meta name="description" content="WeDoCodes client login page for project quotation access, reference verification and approval submission." />
+  <style>
+    :root{
+      --text:#111827;
+      --muted:#6b7280;
+      --light:#f5f6f8;
+      --line:#e5e7eb;
+      --white:#ffffff;
+      --navy:#071a33;
+      --navy-2:#0b2545;
+      --blue:#0067b8;
+      --brand-orange:#FF9500;
+      --brand-orange-2:#FF6A00;
+      --brand-pink:#FF3D5E;
+      --brand-magenta:#E91E73;
+      --shadow:0 18px 48px rgba(15,23,42,.10);
+      --soft-shadow:0 8px 24px rgba(15,23,42,.08);
+      --font:"Segoe UI",SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family:var(--font);
+      color:var(--text);
+      background:#f7f8fb;
+      overflow-x:hidden;
+      font-weight:400;
+    }
+    a{text-decoration:none;color:inherit}
+    button,input,textarea{font:inherit}
+    img{max-width:100%;display:block}
+
+    .login-shell{
+      min-height:100vh;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      background:#fff;
+    }
+
+    .brand-half{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:48px;
+      background:#ffffff;
+      border-right:1px solid var(--line);
+    }
+
+    .brand-lockup{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:18px;
+      transform:translateY(-8px);
+    }
+
+    .brand-mark{
+      width:118px;
+      height:118px;
+      display:block;
+      flex:0 0 118px;
+      animation:rotateLogo 10s linear infinite;
+    }
+
+    @keyframes rotateLogo{
+      0%{transform:rotate(0deg)}
+      100%{transform:rotate(360deg)}
+    }
+
+    .brand-name{
+      display:block;
+      font-size:64px;
+      line-height:.94;
+      font-weight:600;
+      letter-spacing:-3.4px;
+      color:#050505;
+      white-space:nowrap;
+    }
+
+    .brand-name .codes{
+      background:linear-gradient(90deg,var(--brand-orange-2),var(--brand-pink),var(--brand-magenta));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+
+    .login-half{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:48px;
+      background:#fafafa;
+    }
+
+    .login-card{
+      width:min(100%,440px);
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      padding:34px;
+      border-radius:2px;
+    }
+
+    .login-title{
+      margin:0 0 26px;
+      font-size:32px;
+      line-height:1.1;
+      letter-spacing:-1.1px;
+      color:#111827;
+      font-weight:400;
+    }
+
+    .field{
+      display:flex;
+      flex-direction:column;
+      gap:7px;
+      margin-bottom:14px;
+    }
+
+    .field label{
+      font-size:13px;
+      color:#374151;
+      font-weight:400;
+    }
+
+    .field input,
+    .field textarea{
+      width:100%;
+      min-height:46px;
+      border:1px solid #cfd6e4;
+      background:#fff;
+      border-radius:2px;
+      padding:11px 12px;
+      font-size:14px;
+      color:#111827;
+      outline:none;
+      font-weight:400;
+    }
+
+    .field textarea{
+      min-height:112px;
+      resize:vertical;
+      line-height:1.55;
+    }
+
+    .field input:focus,
+    .field textarea:focus{
+      border-color:#071a33;
+      box-shadow:0 0 0 3px rgba(7,26,51,.10);
+    }
+
+    .main-login-btn{
+      width:100%;
+      min-height:48px;
+      border:0;
+      border-radius:2px;
+      background:#071a33;
+      color:#fff;
+      font-size:15px;
+      font-weight:500;
+      cursor:pointer;
+      margin-top:4px;
+    }
+
+    .main-login-btn:hover{background:#0b2545}
+
+    .message-error{
+      display:none;
+      margin:12px 0 0;
+      padding:11px 12px;
+      border:1px solid #fecaca;
+      background:#fff1f2;
+      color:#b91c1c;
+      font-size:13px;
+      line-height:1.5;
+      font-weight:400;
+      border-radius:2px;
+    }
+    .message-error.is-visible{display:block}
+
+    .login-divider{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin:24px 0 14px;
+      color:#6b7280;
+      font-size:12px;
+      font-weight:400;
+    }
+    .login-divider:before,
+    .login-divider:after{
+      content:"";
+      flex:1;
+      height:1px;
+      background:#e5e7eb;
+    }
+
+    .provider-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+    }
+
+    .provider-btn{
+      min-height:58px;
+      border:1px solid #d6dce8;
+      background:#fff;
+      border-radius:2px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      cursor:pointer;
+      color:#111827;
+      font-size:14px;
+      font-weight:400;
+    }
+    .provider-btn:hover{background:#f8fafc}
+    .provider-btn img{width:32px;height:32px;object-fit:contain}
+    .provider-btn-wdr{justify-content:center;padding-inline:20px}
+    .provider-btn-wdr img{width:124px;height:40px;object-fit:contain}
+    .provider-fallback{display:none;width:34px;height:34px;border-radius:2px;background:#071a33;color:#fff;align-items:center;justify-content:center;font-size:11px;font-weight:500}
+
+    /* Dashboard */
+    .dashboard{
+      display:none;
+      min-height:100vh;
+      background:#f4f5f7;
+    }
+    body.portal-open .login-shell{display:none}
+    body.portal-open .dashboard{display:block}
+
+    .dashboard-shell{
+      min-height:100vh;
+      display:grid;
+      grid-template-columns:250px 1fr;
+    }
+
+    .side-nav{
+      background:#fff;
+      border-right:1px solid var(--line);
+      padding:22px 16px;
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+    }
+
+    .side-brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:0 6px 14px;
+      border-bottom:1px solid var(--line);
+    }
+    .side-mark{
+      width:42px;
+      height:42px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      color:#fff;
+      background:linear-gradient(135deg,var(--brand-orange),var(--brand-pink),var(--brand-magenta));
+      font-size:14px;
+      animation:rotateLogo 10s linear infinite;
+    }
+    .side-brand b{font-weight:500;font-size:17px;color:#111827;letter-spacing:-.3px}
+    .side-brand span{display:block;color:#6b7280;font-size:11px;margin-top:2px}
+
+    .nav-tab{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      min-height:42px;
+      padding:0 10px;
+      border-radius:2px;
+      color:#9ca3af;
+      font-size:13px;
+      border:1px solid transparent;
+      user-select:none;
+    }
+    .nav-tab.active{
+      color:#071a33;
+      background:#f1f5f9;
+      border-color:#e2e8f0;
+    }
+    .nav-tab.disabled{opacity:.38;filter:grayscale(1)}
+    .nav-tab small{font-size:10px;color:#9ca3af}
+
+    .dashboard-main{
+      padding:24px;
+      min-width:0;
+    }
+
+    .dash-topbar{
+      background:#fff;
+      border:1px solid var(--line);
+      min-height:70px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:14px 18px;
+      margin-bottom:18px;
+      box-shadow:0 3px 10px rgba(15,23,42,.04);
+    }
+    .dash-topbar h1{
+      margin:0;
+      font-size:24px;
+      line-height:1.15;
+      font-weight:400;
+      letter-spacing:-.7px;
+      color:#111827;
+    }
+    .dash-topbar p{
+      margin:4px 0 0;
+      color:#6b7280;
+      font-size:13px;
+      font-weight:400;
+    }
+    .logout-btn{
+      border:1px solid #d6dce8;
+      background:#fff;
+      min-height:38px;
+      padding:0 14px;
+      cursor:pointer;
+      color:#111827;
+      border-radius:2px;
+    }
+
+    .overview-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:12px;
+      margin-bottom:18px;
+    }
+    .metric-card{
+      background:#fff;
+      border:1px solid var(--line);
+      padding:16px;
+      min-height:110px;
+      box-shadow:0 3px 10px rgba(15,23,42,.03);
+    }
+    .metric-card.disabled{
+      opacity:.28;
+      filter:grayscale(1);
+      pointer-events:none;
+    }
+    .metric-card small{display:block;color:#6b7280;font-size:11px;margin-bottom:12px;text-transform:uppercase;letter-spacing:.08em}
+    .metric-card b{display:block;font-size:24px;font-weight:400;color:#111827;margin-bottom:5px}
+    .metric-card span{color:#6b7280;font-size:12px}
+
+    .dash-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) 360px;
+      gap:18px;
+      align-items:start;
+    }
+
+    .dash-panel{
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:0 3px 12px rgba(15,23,42,.04);
+      padding:20px;
+    }
+    .dash-panel h2{
+      margin:0 0 16px;
+      font-size:22px;
+      font-weight:400;
+      color:#111827;
+      letter-spacing:-.5px;
+    }
+
+    .client-banner{
+      background:#071a33;
+      color:#fff;
+      padding:22px;
+      margin-bottom:18px;
+    }
+    .client-banner h2{
+      margin:0 0 8px;
+      color:#fff;
+      font-size:32px;
+      font-weight:400;
+      letter-spacing:-1px;
+    }
+    .client-banner p{margin:0;color:rgba(255,255,255,.76);font-size:15px}
+
+    .details-table{display:grid;gap:0;border:1px solid var(--line)}
+    .details-row{
+      display:grid;
+      grid-template-columns:190px 1fr;
+      border-bottom:1px solid var(--line);
+      min-height:54px;
+    }
+    .details-row:last-child{border-bottom:0}
+    .details-label{
+      background:#f2f3f5;
+      padding:14px;
+      color:#111827;
+      font-weight:400;
+      border-right:1px solid var(--line);
+    }
+    .details-value{
+      padding:14px;
+      color:#111827;
+      font-weight:400;
+      line-height:1.5;
+    }
+
+    .disabled-area{
+      opacity:.22;
+      filter:grayscale(1);
+      pointer-events:none;
+      user-select:none;
+    }
+    .activity-list{display:grid;gap:10px;margin-top:14px}
+    .activity-item{padding:12px;border:1px solid var(--line);background:#f8fafc;color:#6b7280;font-size:13px}
+
+    .doc-card{
+      border:1px solid #d9dee8;
+      background:#fff;
+      padding:16px;
+      margin-bottom:14px;
+    }
+    .doc-card small{display:block;color:#6b7280;font-size:11px;margin-bottom:7px;text-transform:uppercase;letter-spacing:.08em}
+    .doc-card b{display:block;color:#111827;font-size:18px;font-weight:400;margin-bottom:8px}
+    .doc-card span{display:block;color:#6b7280;font-size:13px;line-height:1.5}
+
+    .doc-actions{display:grid;gap:10px;margin-top:14px}
+    .download-btn,
+    .approve-btn{
+      min-height:46px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:2px;
+      font-size:14px;
+      font-weight:500;
+      cursor:pointer;
+      border:0;
+    }
+    .download-btn{background:#071a33;color:#fff}
+    .approve-btn{background:linear-gradient(90deg,var(--brand-orange-2),var(--brand-pink),var(--brand-magenta));color:#fff}
+
+    .approval-panel{
+      display:none;
+      margin-top:18px;
+      border-top:1px solid var(--line);
+      padding-top:18px;
+    }
+    .approval-panel.is-visible{display:block}
+    .approval-form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .approval-form .full{grid-column:1/-1}
+    .file-note{
+      grid-column:1/-1;
+      background:#f8fafc;
+      border:1px solid #e2e8f0;
+      color:#6b7280;
+      font-size:12px;
+      line-height:1.55;
+      padding:12px;
+    }
+
+    .submit-btn{
+      grid-column:1/-1;
+      min-height:48px;
+      border:0;
+      background:#071a33;
+      color:#fff;
+      cursor:pointer;
+      border-radius:2px;
+      font-weight:500;
+    }
+
+    /* WDR modal */
+    .modal{
+      position:fixed;
+      inset:0;
+      z-index:50;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:22px;
+      background:rgba(17,24,39,.52);
+      backdrop-filter:blur(7px);
+    }
+    .modal.is-visible{display:flex}
+    .modal-card{
+      width:min(100%,560px);
+      background:#fff;
+      box-shadow:0 30px 80px rgba(0,0,0,.25);
+      padding:28px;
+      position:relative;
+    }
+    .modal-close{
+      position:absolute;
+      right:12px;
+      top:12px;
+      width:34px;
+      height:34px;
+      border:1px solid #d6dce8;
+      background:#fff;
+      cursor:pointer;
+      font-size:20px;
+      line-height:1;
+    }
+
+    .uae-pass-card{
+      width:min(100%,525px);
+      margin:0 auto;
+      padding:20px 0 0;
+      background:#fff;
+    }
+    .fingerprint{width:82px;height:82px;margin:0 auto 14px}
+    .uae-pass-card h2{
+      margin:0 0 22px;
+      font-size:28px;
+      text-align:center;
+      font-weight:400;
+      color:#2c3d58;
+      letter-spacing:-.5px;
+    }
+    .uae-pass-input{
+      width:100%;
+      min-height:74px;
+      border:1px solid #7c8ead;
+      border-radius:14px;
+      padding:0 18px;
+      outline:none;
+      color:#27364f;
+      font-size:15px;
+    }
+    .remember{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin:18px 0 14px;
+      color:#111827;
+      font-size:15px;
+      font-weight:400;
+    }
+    .remember input{width:15px;height:15px}
+    .uae-login-btn{
+      width:100%;
+      min-height:74px;
+      border:0;
+      border-radius:14px;
+      background:#7d8ba8;
+      color:#fff;
+      font-size:24px;
+      font-weight:500;
+      cursor:pointer;
+    }
+    .uae-error{
+      display:none;
+      margin-top:14px;
+      border:1px solid #fecaca;
+      background:#fff1f2;
+      color:#b91c1c;
+      border-radius:2px;
+      padding:12px 14px;
+      font-size:14px;
+      font-weight:400;
+      text-align:center;
+    }
+    .uae-error.is-visible{display:block}
+
+    .wdr-card h2{margin:0 0 8px;font-weight:400;font-size:28px;color:#111827}
+    .wdr-card p{margin:0 0 18px;color:#6b7280;font-size:14px;line-height:1.6}
+
+    @media(max-width:1100px){
+      .login-shell{grid-template-columns:1fr}
+      .brand-half{min-height:38vh;border-right:0;border-bottom:1px solid var(--line)}
+      .login-half{min-height:62vh}
+      .brand-name{font-size:48px}
+      .brand-mark{width:92px;height:92px;flex-basis:92px}
+      .dashboard-shell{grid-template-columns:1fr}
+      .side-nav{display:none}
+      .dash-grid{grid-template-columns:1fr}
+      .overview-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:640px){
+      .brand-half,.login-half,.dashboard-main{padding:18px}
+      .brand-lockup{gap:10px}
+      .brand-name{font-size:34px;letter-spacing:-1.6px}
+      .brand-mark{width:68px;height:68px;flex-basis:68px}
+      .login-card{padding:22px}
+      .provider-grid,.overview-grid,.approval-form{grid-template-columns:1fr}
+      .details-row{grid-template-columns:1fr}
+      .details-label{border-right:0;border-bottom:1px solid var(--line)}
+      .client-banner h2{font-size:26px}
+    }
+
+
+  
+
+  
+/* FINAL LOGIN + WDR ROW START */
+.login-action-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:4px;
+  align-items:stretch;
+}
+.login-black-btn{
+  width:100% !important;
+  min-height:52px !important;
+  margin-top:0 !important;
+  background:#000000 !important;
+  color:#ffffff !important;
+  border:1px solid #000000 !important;
+}
+.login-black-btn:hover{
+  background:#111111 !important;
+  color:#ffffff !important;
+}
+.login-action-row .provider-btn{
+  min-height:52px !important;
+}
+.provider-btn-wdr{
+  justify-content:center !important;
+  padding-inline:18px !important;
+}
+.provider-btn-wdr img{
+  width:132px !important;
+  height:42px !important;
+  object-fit:contain !important;
+}
+@media(max-width:640px){
+  .login-action-row{
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+  }
+  .provider-btn-wdr img{
+    width:112px !important;
+    height:36px !important;
+  }
+}
+/* FINAL LOGIN + WDR ROW END */
+
+  
+/* CLIENT LOGIN BRAND FIX START */
+.brand-half{
+  overflow:hidden !important;
+}
+
+.brand-lockup{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:12px !important;
+  max-width:min(92vw,560px) !important;
+  width:auto !important;
+  padding:8px 22px 8px 8px !important;
+  margin:0 auto !important;
+  overflow:visible !important;
+  transform:none !important;
+}
+
+.brand-lockup .brand-mark{
+  width:88px !important;
+  height:88px !important;
+  flex:0 0 88px !important;
+}
+
+.brand-text-login{
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:center !important;
+  align-items:flex-start !important;
+  min-width:0 !important;
+  max-width:100% !important;
+  overflow:visible !important;
+  padding-right:16px !important;
+}
+
+.brand-lockup .brand-name{
+  display:block !important;
+  font-size:48px !important;
+  line-height:1.02 !important;
+  font-weight:600 !important;
+  letter-spacing:-1.4px !important;
+  color:#050505 !important;
+  white-space:nowrap !important;
+  overflow:visible !important;
+  text-overflow:clip !important;
+  padding-right:16px !important;
+}
+
+.brand-lockup .brand-name .codes{
+  display:inline !important;
+  overflow:visible !important;
+  padding-right:6px !important;
+}
+
+.brand-lockup .brand-subtitle{
+  display:block !important;
+  margin-top:7px !important;
+  font-size:15px !important;
+  line-height:1.2 !important;
+  font-weight:400 !important;
+  color:#050505 !important;
+  white-space:nowrap !important;
+  letter-spacing:-.1px !important;
+}
+
+@media(max-width:1100px){
+  .brand-half{
+    min-height:34vh !important;
+    padding:26px 18px !important;
+  }
+
+  .brand-lockup .brand-mark{
+    width:74px !important;
+    height:74px !important;
+    flex-basis:74px !important;
+  }
+
+  .brand-lockup .brand-name{
+    font-size:40px !important;
+    letter-spacing:-1.1px !important;
+  }
+
+  .brand-lockup .brand-subtitle{
+    font-size:13px !important;
+  }
+}
+
+@media(max-width:640px){
+  .brand-half{
+    min-height:30vh !important;
+    padding:18px !important;
+  }
+
+  .brand-lockup{
+    max-width:calc(100vw - 28px) !important;
+    gap:9px !important;
+    padding:8px 12px 8px 6px !important;
+  }
+
+  .brand-lockup .brand-mark{
+    width:58px !important;
+    height:58px !important;
+    flex-basis:58px !important;
+  }
+
+  .brand-lockup .brand-name{
+    font-size:30px !important;
+    line-height:1.04 !important;
+    letter-spacing:-.7px !important;
+    padding-right:10px !important;
+  }
+
+  .brand-lockup .brand-subtitle{
+    font-size:12px !important;
+    line-height:1.25 !important;
+    white-space:normal !important;
+    max-width:230px !important;
+  }
+}
+
+@media(max-width:420px){
+  .brand-lockup .brand-mark{
+    width:52px !important;
+    height:52px !important;
+    flex-basis:52px !important;
+  }
+
+  .brand-lockup .brand-name{
+    font-size:27px !important;
+    letter-spacing:-.45px !important;
+  }
+
+  .brand-lockup .brand-subtitle{
+    font-size:11px !important;
+    max-width:210px !important;
+  }
+}
+/* CLIENT LOGIN BRAND FIX END */
+
+  
+
+
+
+
+
+
+/* CLIENT LOGIN DASHBOARD SPLIT LAYOUT START */
+body:not(.portal-open){
+  min-height:100vh!important;
+  overflow-x:hidden!important;
+  background:
+    radial-gradient(circle at 24% 18%,rgba(255,255,255,.06),transparent 28%),
+    linear-gradient(135deg,#202020 0%,#0b0b0b 100%)!important;
+}
+body:not(.portal-open) .brand-half,
+body:not(.portal-open) .login-half{
+  position:fixed!important;
+  top:50%!important;
+  height:min(72vh,650px)!important;
+  min-height:520px!important;
+  transform:translateY(-50%)!important;
+  overflow:hidden!important;
+}
+body:not(.portal-open) .login-half{
+  left:max(4vw,calc((100vw - 1180px)/2))!important;
+  width:min(46vw,590px)!important;
+  border-radius:26px 0 0 26px!important;
+  background:
+    linear-gradient(135deg,rgba(255,70,55,.72),rgba(189,20,93,.72)),
+    url("assets/login/hero.png") center/cover no-repeat!important;
+  box-shadow:0 34px 90px rgba(0,0,0,.42)!important;
+}
+body:not(.portal-open) .login-half:before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(0,0,0,.18));
+  pointer-events:none;
+}
+body:not(.portal-open) .login-half:after{
+  content:"WeDoCodes Client Portal";
+  position:absolute;left:34px;bottom:34px;z-index:2;
+  color:#fff;font-size:24px;font-weight:650;letter-spacing:-.5px;
+}
+body:not(.portal-open) .brand-half{
+  right:max(4vw,calc((100vw - 1180px)/2))!important;
+  width:min(46vw,590px)!important;
+  border-radius:0 26px 26px 0!important;
+  background:
+    radial-gradient(circle at 84% 28%,rgba(233,30,99,.09),transparent 28%),
+    radial-gradient(circle at 80% 48%,rgba(255,106,0,.06),transparent 31%),
+    #fff!important;
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:center!important;
+  align-items:center!important;
+  text-align:center!important;
+  padding:92px 60px 70px 160px!important;
+  box-shadow:0 34px 90px rgba(0,0,0,.28)!important;
+}
+body:not(.portal-open) .brand-lockup{
+  margin:0 auto!important;
+  transform:scale(.86)!important;
+  transform-origin:center!important;
+  z-index:3!important;
+}
+.portal-intro{
+  z-index:3!important;
+  margin:10px auto 0!important;
+  padding:0!important;
+  max-width:390px!important;
+  text-align:center!important;
+}
+.portal-kicker{
+  color:#071a33!important;
+  font-size:24px!important;
+  line-height:1.12!important;
+  font-weight:650!important;
+  letter-spacing:-.45px!important;
+  margin:0 0 9px!important;
+}
+.portal-kicker:after{
+  content:""!important;
+  display:block!important;
+  width:42px!important;
+  height:3px!important;
+  margin:10px auto 0!important;
+  border-radius:999px!important;
+  background:linear-gradient(90deg,#ff6a00,#e91e63)!important;
+}
+.portal-intro p{
+  margin:0 auto!important;
+  max-width:360px!important;
+  color:#536172!important;
+  font-size:13.5px!important;
+  line-height:1.55!important;
+}
+.portal-points{display:none!important;}
+body:not(.portal-open) .login-card{
+  position:fixed!important;
+  left:50%!important;
+  top:50%!important;
+  transform:translate(-50%,-50%)!important;
+  z-index:30!important;
+  width:min(370px,88vw)!important;
+  border-radius:20px!important;
+  background:rgba(255,255,255,.97)!important;
+  border:1px solid rgba(230,234,240,.95)!important;
+  box-shadow:0 26px 70px rgba(0,0,0,.22)!important;
+}
+.portal-top-nav{
+  position:fixed!important;
+  top:calc(50% - min(72vh,650px)/2 + 20px)!important;
+  right:max(4vw,calc((100vw - 1180px)/2 + 28px))!important;
+  left:calc(50% + 88px)!important;
+  z-index:40!important;
+  height:44px!important;
+  padding:0!important;
+  display:flex!important;
+  justify-content:flex-end!important;
+  align-items:center!important;
+  gap:18px!important;
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  backdrop-filter:none!important;
+}
+.portal-back-link,
+.portal-nav-links a{
+  color:#071a33!important;
+  font-size:13px!important;
+  font-weight:600!important;
+  text-decoration:none!important;
+}
+.portal-nav-links{display:flex!important;gap:18px!important;align-items:center!important;}
+.portal-back-link:hover,
+.portal-nav-links a:hover{color:#ff6a00!important;}
+.login-black-btn,.main-login-btn{background:#000!important;color:#fff!important;border-color:#000!important;}
+.provider-btn-wdr{background:#fff!important;border-color:#d7dde7!important;box-shadow:none!important;}
+@media(max-width:980px){
+  body:not(.portal-open){
+    background:#101010!important;
+    overflow:auto!important;
+  }
+  .portal-top-nav{
+    position:relative!important;
+    top:auto!important;left:auto!important;right:auto!important;
+    height:58px!important;
+    padding:0 16px!important;
+    background:#fff!important;
+    justify-content:space-between!important;
+  }
+  .portal-nav-links{gap:12px!important;}
+  .portal-nav-links a{font-size:12.5px!important;}
+  .portal-nav-links a:nth-child(2),.portal-nav-links a:nth-child(4){display:none!important;}
+  body:not(.portal-open) .login-half,
+  body:not(.portal-open) .brand-half{
+    position:relative!important;
+    top:auto!important;left:auto!important;right:auto!important;
+    transform:none!important;
+    width:min(94vw,520px)!important;
+    height:auto!important;
+    min-height:auto!important;
+    margin:0 auto!important;
+  }
+  body:not(.portal-open) .login-half{
+    height:220px!important;
+    border-radius:24px 24px 0 0!important;
+    margin-top:18px!important;
+  }
+  body:not(.portal-open) .login-half:after{
+    font-size:18px!important;left:22px!important;bottom:22px!important;
+  }
+  body:not(.portal-open) .brand-half{
+    border-radius:0 0 24px 24px!important;
+    padding:76px 20px 30px!important;
+  }
+  body:not(.portal-open) .brand-lockup{transform:scale(.78)!important;}
+  body:not(.portal-open) .login-card{
+    position:relative!important;
+    left:auto!important;top:auto!important;
+    transform:none!important;
+    width:min(88vw,390px)!important;
+    margin:-58px auto 0!important;
+    z-index:20!important;
+  }
+  .portal-kicker{font-size:21px!important;}
+  .portal-intro p{font-size:12.8px!important;max-width:315px!important;}
+}
+@media(max-width:520px){
+  body:not(.portal-open) .login-half,
+  body:not(.portal-open) .brand-half{width:94vw!important;}
+  body:not(.portal-open) .login-half{height:190px!important;}
+  body:not(.portal-open) .brand-half{padding:70px 16px 26px!important;}
+  body:not(.portal-open) .brand-lockup{transform:scale(.72)!important;}
+  body:not(.portal-open) .login-card{width:90vw!important;margin-top:-50px!important;}
+  .login-action-row{grid-template-columns:1fr 1fr!important;gap:10px!important;}
+  .provider-btn-wdr img{width:100px!important;height:32px!important;}
+}
+/* CLIENT LOGIN DASHBOARD SPLIT LAYOUT END */
+
+
+/* CLIENT LOGIN DASHBOARD FINAL CORRECTION START */
+html{
+  background:#161616 !important;
+}
+
+body:not(.portal-open){
+  min-height:100vh !important;
+  overflow-x:hidden !important;
+  background:
+    radial-gradient(circle at 50% 8%, rgba(255,255,255,.055), transparent 30%),
+    linear-gradient(135deg,#242424 0%,#111111 52%,#080808 100%) !important;
+}
+
+body:not(.portal-open)::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:linear-gradient(135deg,#242424,#090909);
+  z-index:-10;
+  pointer-events:none;
+}
+
+body:not(.portal-open) .login-half{
+  overflow:visible !important;
+  background:
+    linear-gradient(135deg,rgba(255,82,69,.72),rgba(188,22,91,.76)),
+    url("assets/login/hero.png") center/cover no-repeat !important;
+}
+
+body:not(.portal-open) .brand-half{
+  background:
+    radial-gradient(circle at 86% 34%,rgba(233,30,99,.085),transparent 27%),
+    radial-gradient(circle at 82% 54%,rgba(255,106,0,.06),transparent 30%),
+    #ffffff !important;
+  padding-left:205px !important;
+}
+
+body:not(.portal-open) .login-card{
+  position:absolute !important;
+  left:auto !important;
+  right:0 !important;
+  top:50% !important;
+  transform:translate(50%,-50%) !important;
+  z-index:80 !important;
+  width:min(380px,88vw) !important;
+  border-radius:20px !important;
+  background:rgba(255,255,255,.975) !important;
+  box-shadow:0 28px 78px rgba(0,0,0,.28) !important;
+}
+
+.portal-top-nav{
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+  backdrop-filter:none !important;
+  -webkit-backdrop-filter:none !important;
+}
+
+.portal-back-link,
+.portal-nav-links a{
+  color:#071a33 !important;
+}
+
+.portal-back-link:hover,
+.portal-nav-links a:hover{
+  color:#ff6a00 !important;
+}
+
+body:not(.portal-open) .brand-lockup{
+  transform:scale(.86) !important;
+  transform-origin:center center !important;
+}
+
+.portal-intro{
+  margin:10px auto 0 !important;
+  max-width:390px !important;
+  text-align:center !important;
+}
+
+.portal-kicker{
+  font-size:24px !important;
+  line-height:1.12 !important;
+  margin:0 0 9px !important;
+}
+
+.portal-intro p{
+  max-width:360px !important;
+  margin:0 auto !important;
+  font-size:13.5px !important;
+  line-height:1.55 !important;
+}
+
+.portal-points{
+  display:none !important;
+}
+
+@media(max-width:980px){
+  html,
+  body:not(.portal-open){
+    background:#111111 !important;
+    overflow:auto !important;
+  }
+
+  .portal-top-nav{
+    position:relative !important;
+    top:auto !important;
+    left:auto !important;
+    right:auto !important;
+    height:58px !important;
+    padding:0 16px !important;
+    background:#ffffff !important;
+    justify-content:space-between !important;
+  }
+
+  .portal-nav-links{
+    gap:12px !important;
+  }
+
+  .portal-nav-links a{
+    font-size:12.5px !important;
+  }
+
+  .portal-nav-links a:nth-child(2),
+  .portal-nav-links a:nth-child(4){
+    display:none !important;
+  }
+
+  body:not(.portal-open) .login-half,
+  body:not(.portal-open) .brand-half{
+    position:relative !important;
+    top:auto !important;
+    left:auto !important;
+    right:auto !important;
+    transform:none !important;
+    width:min(94vw,520px) !important;
+    height:auto !important;
+    min-height:auto !important;
+    margin:0 auto !important;
+  }
+
+  body:not(.portal-open) .login-half{
+    height:220px !important;
+    border-radius:24px 24px 0 0 !important;
+    margin-top:18px !important;
+    overflow:visible !important;
+  }
+
+  body:not(.portal-open) .brand-half{
+    border-radius:0 0 24px 24px !important;
+    padding:76px 20px 30px !important;
+  }
+
+  body:not(.portal-open) .login-card{
+    position:relative !important;
+    left:auto !important;
+    right:auto !important;
+    top:auto !important;
+    transform:none !important;
+    width:min(88vw,390px) !important;
+    margin:-58px auto 0 !important;
+    z-index:30 !important;
+  }
+
+  body:not(.portal-open) .brand-lockup{
+    transform:scale(.78) !important;
+  }
+
+  .portal-kicker{
+    font-size:21px !important;
+  }
+
+  .portal-intro p{
+    font-size:12.8px !important;
+    max-width:315px !important;
+  }
+}
+
+@media(max-width:520px){
+  body:not(.portal-open) .login-half,
+  body:not(.portal-open) .brand-half{
+    width:94vw !important;
+  }
+
+  body:not(.portal-open) .login-half{
+    height:190px !important;
+  }
+
+  body:not(.portal-open) .brand-half{
+    padding:70px 16px 26px !important;
+  }
+
+  body:not(.portal-open) .brand-lockup{
+    transform:scale(.72) !important;
+  }
+
+  body:not(.portal-open) .login-card{
+    width:90vw !important;
+    margin-top:-50px !important;
+  }
+
+  .login-action-row{
+    grid-template-columns:1fr 1fr !important;
+    gap:10px !important;
+  }
+
+  .provider-btn-wdr img{
+    width:100px !important;
+    height:32px !important;
+  }
+}
+/* CLIENT LOGIN DASHBOARD FINAL CORRECTION END */
+
+
+/* CLIENT LOGIN DARK BG TITLE TOP FIX START */
+
+/* 1) Make the outside page background clearly dark */
+html{
+  background:#090909 !important;
+}
+
+body:not(.portal-open){
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,255,255,.07), transparent 28%),
+    radial-gradient(circle at 12% 88%, rgba(255,106,0,.08), transparent 28%),
+    linear-gradient(135deg,#1f1f1f 0%,#101010 48%,#050505 100%) !important;
+}
+
+/* 2) Make the main split container visually smaller so dark background is visible */
+body:not(.portal-open) .brand-half,
+body:not(.portal-open) .login-half{
+  height:min(68vh,610px) !important;
+  min-height:500px !important;
+}
+
+/* 3) Move “WeDoCodes Client Portal” to left top of the hero image */
+body:not(.portal-open) .login-half:after{
+  content:"WeDoCodes Client Portal" !important;
+  left:34px !important;
+  top:34px !important;
+  bottom:auto !important;
+  z-index:5 !important;
+  color:#ffffff !important;
+  font-size:23px !important;
+  font-weight:650 !important;
+  letter-spacing:-.45px !important;
+  text-shadow:0 8px 24px rgba(0,0,0,.35) !important;
+}
+
+/* 4) Keep mobile clean */
+@media(max-width:980px){
+  html,
+  body:not(.portal-open){
+    background:#090909 !important;
+  }
+
+  body:not(.portal-open) .login-half,
+  body:not(.portal-open) .brand-half{
+    height:auto !important;
+    min-height:auto !important;
+  }
+
+  body:not(.portal-open) .login-half{
+    height:220px !important;
+    margin-top:18px !important;
+  }
+
+  body:not(.portal-open) .login-half:after{
+    left:22px !important;
+    top:22px !important;
+    bottom:auto !important;
+    font-size:18px !important;
+  }
+}
+
+@media(max-width:520px){
+  body:not(.portal-open) .login-half{
+    height:190px !important;
+  }
+
+  body:not(.portal-open) .login-half:after{
+    left:18px !important;
+    top:18px !important;
+    font-size:16px !important;
+  }
+}
+
+/* CLIENT LOGIN DARK BG TITLE TOP FIX END */
+
+
+
+
+
+
+
+/* WDR DASHBOARD NAV SAME ROW START */
+body.portal-open .portal-top-nav{
+  display:none !important;
+}
+
+body.portal-open .dashboard-action-row{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-end !important;
+  gap:8px !important;
+  flex-wrap:wrap !important;
+  margin-left:auto !important;
+}
+
+body.portal-open .dashboard-inline-nav{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-end !important;
+  gap:8px !important;
+  flex-wrap:wrap !important;
+}
+
+body.portal-open .dashboard-nav-link{
+  text-decoration:none !important;
+  white-space:nowrap !important;
+  line-height:1 !important;
+}
+
+body.portal-open .dashboard-mobile-menu-icon{
+  display:none !important;
+}
+
+@media(max-width:760px){
+  body.portal-open .dashboard-main{
+    position:relative !important;
+    padding-top:72px !important;
+  }
+
+  body.portal-open .dashboard-action-row{
+    position:absolute !important;
+    top:14px !important;
+    left:14px !important;
+    right:14px !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+    margin:0 !important;
+    z-index:80 !important;
+  }
+
+  body.portal-open .dashboard-inline-nav{
+    display:none !important;
+  }
+
+  body.portal-open .dashboard-mobile-menu-icon{
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    width:44px !important;
+    height:44px !important;
+    border-radius:14px !important;
+    background:#ffffff !important;
+    border:1px solid rgba(226,232,240,.95) !important;
+    color:#071a33 !important;
+    font-size:24px !important;
+    font-weight:800 !important;
+    text-decoration:none !important;
+    box-shadow:0 10px 26px rgba(15,23,42,.10) !important;
+  }
+
+  body.portal-open #logoutBtn{
+    width:44px !important;
+    height:44px !important;
+    min-width:44px !important;
+    padding:0 !important;
+    border-radius:14px !important;
+    font-size:0 !important;
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+  }
+
+  body.portal-open #logoutBtn::before{
+    content:"⎋" !important;
+    font-size:22px !important;
+    line-height:1 !important;
+  }
+}
+/* WDR DASHBOARD NAV SAME ROW END */
+
+
+/* WDR DASHBOARD PREMIUM BUTTON STYLE START */
+
+/* Premium black filled navigation buttons inside dashboard header */
+body.portal-open .dashboard-action-row{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-end !important;
+  gap:10px !important;
+  flex-wrap:wrap !important;
+}
+
+body.portal-open .dashboard-inline-nav{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-end !important;
+  gap:10px !important;
+  flex-wrap:wrap !important;
+}
+
+body.portal-open .dashboard-nav-link,
+body.portal-open #logoutBtn{
+  box-sizing:border-box !important;
+  height:38px !important;
+  min-height:38px !important;
+  padding:0 17px !important;
+  margin:0 !important;
+  border:1px solid rgba(255,255,255,.10) !important;
+  border-radius:12px !important;
+  background:#050505 !important;
+  color:#ffffff !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  font-family:inherit !important;
+  font-size:13px !important;
+  font-weight:650 !important;
+  line-height:1 !important;
+  letter-spacing:-.1px !important;
+  text-align:center !important;
+  text-decoration:none !important;
+  white-space:nowrap !important;
+  box-shadow:0 12px 28px rgba(0,0,0,.16) !important;
+  appearance:none !important;
+  -webkit-appearance:none !important;
+  cursor:pointer !important;
+  transition:transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease !important;
+}
+
+body.portal-open .dashboard-nav-link:hover,
+body.portal-open #logoutBtn:hover{
+  background:linear-gradient(135deg,#ff6a00,#e91e63) !important;
+  border-color:rgba(255,255,255,.20) !important;
+  color:#ffffff !important;
+  transform:translateY(-1px) !important;
+  box-shadow:0 16px 34px rgba(233,30,99,.20) !important;
+}
+
+body.portal-open .dashboard-nav-link:active,
+body.portal-open #logoutBtn:active{
+  transform:translateY(0) !important;
+}
+
+/* Slightly emphasize Logout without changing its position or logic */
+body.portal-open #logoutBtn{
+  min-width:92px !important;
+}
+
+/* Mobile/iPhone: keep 3-bar left and logout icon right, both premium black */
+@media(max-width:760px){
+  body.portal-open .dashboard-action-row{
+    top:14px !important;
+    left:14px !important;
+    right:14px !important;
+    justify-content:space-between !important;
+    gap:10px !important;
+  }
+
+  body.portal-open .dashboard-inline-nav,
+  body.portal-open .dashboard-nav-link{
+    display:none !important;
+  }
+
+  body.portal-open .dashboard-mobile-menu-icon,
+  body.portal-open #logoutBtn{
+    width:44px !important;
+    height:44px !important;
+    min-width:44px !important;
+    padding:0 !important;
+    border-radius:14px !important;
+    background:#050505 !important;
+    color:#ffffff !important;
+    border:1px solid rgba(255,255,255,.12) !important;
+    box-shadow:0 12px 28px rgba(0,0,0,.20) !important;
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+  }
+
+  body.portal-open .dashboard-mobile-menu-icon{
+    font-size:24px !important;
+    font-weight:800 !important;
+    text-decoration:none !important;
+  }
+
+  body.portal-open #logoutBtn{
+    font-size:0 !important;
+  }
+
+  body.portal-open #logoutBtn::before{
+    content:"⎋" !important;
+    font-size:22px !important;
+    line-height:1 !important;
+    color:#ffffff !important;
+  }
+}
+
+@media(max-width:420px){
+  body.portal-open .dashboard-mobile-menu-icon,
+  body.portal-open #logoutBtn{
+    width:42px !important;
+    height:42px !important;
+    min-width:42px !important;
+    border-radius:13px !important;
+  }
+}
+
+/* WDR DASHBOARD PREMIUM BUTTON STYLE END */
+
+
+/* WDR DASHBOARD BUTTON NO SHADOW START */
+
+/* Remove shadow effect from dashboard nav/logout buttons only */
+body.portal-open .dashboard-nav-link,
+body.portal-open #logoutBtn,
+body.portal-open .dashboard-mobile-menu-icon{
+  box-shadow:none !important;
+}
+
+body.portal-open .dashboard-nav-link:hover,
+body.portal-open #logoutBtn:hover,
+body.portal-open .dashboard-mobile-menu-icon:hover{
+  box-shadow:none !important;
+}
+
+/* WDR DASHBOARD BUTTON NO SHADOW END */
+
+
+/* LOGIN OUTER DARK BACKGROUND VISIBILITY FIX START */
+
+/* Let the dark body background show around the login split layout only */
+body:not(.portal-open) .login-shell{
+  background:transparent !important;
+}
+
+/* LOGIN OUTER DARK BACKGROUND VISIBILITY FIX END */
+
+
+
+/* VCOD SMALL TOP-LEFT LOGO + PREMIUM BLACK LOGIN BOX ONLY START */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800;900&family=Montserrat:wght@400;500;600;700&display=swap');
+
+/* Keep the existing left/right layout exactly as it is. Only add the small VCOD logo on top-left. */
+.vcod-top-left-logo{
+  position:fixed !important;
+  top:24px !important;
+  left:28px !important;
+  z-index:120 !important;
+  display:grid !important;
+  grid-template-columns:54px minmax(0,1fr) !important;
+  align-items:center !important;
+  gap:11px !important;
+  text-decoration:none !important;
+  pointer-events:auto !important;
+}
+.vcod-top-left-logo img{
+  width:54px !important;
+  height:54px !important;
+  object-fit:contain !important;
+  filter:drop-shadow(0 8px 16px rgba(0,0,0,.22)) !important;
+}
+.vcod-top-left-title{
+  display:block !important;
+  margin:0 !important;
+  color:#ffffff !important;
+  font-family:"Orbitron","Eurostile Extended","Bank Gothic",sans-serif !important;
+  font-size:17px !important;
+  line-height:1 !important;
+  letter-spacing:.08em !important;
+  font-weight:900 !important;
+  text-transform:uppercase !important;
+  white-space:nowrap !important;
+  text-shadow:0 7px 20px rgba(0,0,0,.42) !important;
+}
+.vcod-top-left-subtitle{
+  display:block !important;
+  margin-top:5px !important;
+  color:rgba(255,255,255,.82) !important;
+  font-family:"Montserrat",var(--font) !important;
+  font-size:10px !important;
+  line-height:1.22 !important;
+  font-weight:400 !important;
+  white-space:nowrap !important;
+  text-shadow:0 7px 20px rgba(0,0,0,.42) !important;
+}
+.vcod-top-left-subtitle .wedo{font-weight:700 !important;color:#ffffff !important;}
+.vcod-top-left-subtitle .codes{
+  font-weight:700 !important;
+  background:linear-gradient(90deg,var(--brand-orange-2),var(--brand-pink),var(--brand-magenta)) !important;
+  -webkit-background-clip:text !important;
+  background-clip:text !important;
+  color:transparent !important;
+}
+body.portal-open .vcod-top-left-logo{display:none !important;}
+
+/* Replace only the white login box with the premium black/glass login box. */
+body:not(.portal-open) .login-card{
+  background:linear-gradient(180deg, rgba(17,17,20,.94), rgba(4,4,7,.91)) !important;
+  border:1px solid rgba(255,255,255,.14) !important;
+  box-shadow:0 36px 100px rgba(0,0,0,.64), inset 0 1px 0 rgba(255,255,255,.08) !important;
+  border-radius:18px !important;
+  color:#ffffff !important;
+  backdrop-filter:blur(16px) !important;
+  -webkit-backdrop-filter:blur(16px) !important;
+  overflow:hidden !important;
+  padding:38px !important;
+}
+body:not(.portal-open) .login-card::before{
+  content:"" !important;
+  position:absolute !important;
+  left:0 !important;
+  right:0 !important;
+  top:0 !important;
+  height:3px !important;
+  background:linear-gradient(90deg,var(--brand-orange-2),var(--brand-pink),var(--brand-magenta)) !important;
+}
+body:not(.portal-open) .login-title{
+  margin:0 0 22px !important;
+  color:#ffffff !important;
+  font-size:31px !important;
+  line-height:1.1 !important;
+  letter-spacing:-.8px !important;
+  font-weight:600 !important;
+}
+body:not(.portal-open) .login-title::after{
+  content:"Secure access to your WeDoCodes client portal" !important;
+  display:block !important;
+  margin-top:10px !important;
+  font-size:13px !important;
+  line-height:1.45 !important;
+  color:rgba(255,255,255,.58) !important;
+  font-weight:400 !important;
+  letter-spacing:0 !important;
+}
+body:not(.portal-open) .login-card .field label{
+  color:rgba(255,255,255,.72) !important;
+  font-size:12px !important;
+  font-weight:500 !important;
+  letter-spacing:.02em !important;
+}
+body:not(.portal-open) .login-card .field input,
+body:not(.portal-open) .login-card .field textarea{
+  min-height:50px !important;
+  border:1px solid rgba(255,255,255,.16) !important;
+  background:rgba(255,255,255,.07) !important;
+  border-radius:12px !important;
+  padding:12px 14px !important;
+  color:#ffffff !important;
+  box-shadow:none !important;
+  transition:border-color .18s ease, box-shadow .18s ease, background .18s ease !important;
+}
+body:not(.portal-open) .login-card .field input::placeholder,
+body:not(.portal-open) .login-card .field textarea::placeholder{color:rgba(255,255,255,.38) !important;}
+body:not(.portal-open) .login-card .field input:focus,
+body:not(.portal-open) .login-card .field textarea:focus{
+  border-color:rgba(255,61,94,.62) !important;
+  background:rgba(255,255,255,.10) !important;
+  box-shadow:0 0 0 4px rgba(255,61,94,.11) !important;
+}
+body:not(.portal-open) .login-action-row{gap:12px !important;margin-top:8px !important;}
+body:not(.portal-open) .login-black-btn,
+body:not(.portal-open) .main-login-btn{
+  min-height:52px !important;
+  border:0 !important;
+  border-radius:12px !important;
+  background:linear-gradient(90deg,var(--brand-orange-2),var(--brand-pink),var(--brand-magenta)) !important;
+  color:#ffffff !important;
+  font-size:15px !important;
+  font-weight:700 !important;
+  cursor:pointer !important;
+  box-shadow:0 14px 34px rgba(233,30,115,.24) !important;
+}
+body:not(.portal-open) .login-black-btn:hover,
+body:not(.portal-open) .main-login-btn:hover{filter:brightness(1.06) !important;}
+body:not(.portal-open) .provider-btn{
+  min-height:52px !important;
+  border:1px solid rgba(255,255,255,.14) !important;
+  background:rgba(255,255,255,.065) !important;
+  border-radius:12px !important;
+  color:rgba(255,255,255,.88) !important;
+  transition:background .18s ease, border-color .18s ease, transform .18s ease !important;
+}
+body:not(.portal-open) .provider-btn:hover{
+  background:rgba(255,255,255,.10) !important;
+  border-color:rgba(255,255,255,.24) !important;
+  transform:translateY(-1px) !important;
+}
+body:not(.portal-open) .provider-btn-wdr img{
+  width:132px !important;
+  height:42px !important;
+  object-fit:contain !important;
+  filter:drop-shadow(0 2px 8px rgba(0,0,0,.20)) !important;
+}
+body:not(.portal-open) .message-error{
+  border-radius:10px !important;
+}
+
+@media(max-width:980px){
+  .vcod-top-left-logo{
+    position:relative !important;
+    top:auto !important;
+    left:auto !important;
+    z-index:20 !important;
+    margin:16px 0 0 18px !important;
+    grid-template-columns:48px minmax(0,1fr) !important;
+    gap:10px !important;
+  }
+  .vcod-top-left-logo img{width:48px !important;height:48px !important;}
+  .vcod-top-left-title{font-size:15px !important;}
+  .vcod-top-left-subtitle{font-size:9.5px !important;}
+  body:not(.portal-open) .login-card{padding:30px !important;}
+}
+@media(max-width:520px){
+  .vcod-top-left-logo{
+    margin:14px 0 0 16px !important;
+    grid-template-columns:42px minmax(0,1fr) !important;
+    gap:9px !important;
+  }
+  .vcod-top-left-logo img{width:42px !important;height:42px !important;}
+  .vcod-top-left-title{font-size:13px !important;letter-spacing:.06em !important;}
+  .vcod-top-left-subtitle{font-size:8.5px !important;}
+  body:not(.portal-open) .login-card{padding:24px !important;}
+  body:not(.portal-open) .login-title{font-size:27px !important;}
+}
+/* VCOD SMALL TOP-LEFT LOGO + PREMIUM BLACK LOGIN BOX ONLY END */
+
+</style>
+</head>
+<body>
+
+<!-- VCOD SENTINEL SMALL TOP-LEFT LOGO START -->
+<a class="vcod-top-left-logo" href="/" aria-label="VCOD Sentinel - WeDoCodes Cyber Division">
+  <img src="assets/login/eagle.png" alt="VCOD Sentinel eagle" />
+  <span>
+    <span class="vcod-top-left-title">VCOD SENTINEL</span>
+    <span class="vcod-top-left-subtitle">Secured by <span class="wedo">WeDo</span><span class="codes">Codes</span> Cyber Division</span>
+  </span>
+</a>
+<!-- VCOD SENTINEL SMALL TOP-LEFT LOGO END -->
+
+
+<!-- CLIENT LOGIN PREMIUM NAV START -->
+<header class="portal-top-nav" aria-label="Client login navigation">
+  <a class="portal-back-link" href="/">← Back to Website</a>
+  <nav class="portal-nav-links" aria-label="Client login quick links">
+    <a href="/">Home</a>
+    <a href="/solutions">Solutions</a>
+    <a href="/support">Support</a>
+</nav>
+</header>
+<!-- CLIENT LOGIN PREMIUM NAV END -->
+
+  <main class="login-shell" id="loginShell">
+    <section class="brand-half" aria-label="WeDoCodes brand">
+      <a class="brand-lockup" href="/" aria-label="WeDoCodes Home">
+        <svg class="brand-mark" role="img" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient gradientUnits="userSpaceOnUse" id="logoIconGradient" x1="12" x2="108" y1="12" y2="108">
+              <stop offset="0" stop-color="#FF9500"></stop>
+              <stop offset="0.32" stop-color="#FF6A00"></stop>
+              <stop offset="0.68" stop-color="#FF3D5E"></stop>
+              <stop offset="1" stop-color="#E91E73"></stop>
+            </linearGradient>
+            <filter height="140%" id="logoSoftShadow" width="140%" x="-20%" y="-20%">
+              <feDropShadow dx="0" dy="4" flood-color="#000000" flood-opacity="0.12" stdDeviation="7"></feDropShadow>
+            </filter>
+          </defs>
+          <circle cx="60" cy="60" fill="url(#logoIconGradient)" filter="url(#logoSoftShadow)" r="48"></circle>
+          <g fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.4" transform="translate(-3.5 -1)">
+            <path d="M48 53 L35 60 L48 67"></path>
+            <path d="M66 48 L55 74"></path>
+            <path d="M78 53 L92 60 L78 67"></path>
+          </g>
+        </svg>
+        <span class="brand-text brand-text-login">
+          <span class="brand-name">WeDo<span class="codes">Codes</span></span>
+          <span class="brand-subtitle">Software and Cyber Security Solutions</span>
+        </span>
+      </a>
+
+<!-- CLIENT LOGIN PORTAL INTRO START -->
+<div class="portal-intro">
+  <div class="portal-kicker">Client Access Portal</div>
+  <p>A secure access point for client transactions, deals, approvals, support requests, project updates, and business communications.</p>
+</div>
+<!-- CLIENT LOGIN PORTAL INTRO END -->
+
+    </section>
+
+    <section class="login-half" aria-label="Client secure login">
+      <div class="login-card">
+        <h1 class="login-title">Client Secure Login</h1>
+        <form id="standardLoginForm" autocomplete="off" novalidate>
+          <div class="field">
+            <label for="client-user">User</label>
+            <input id="client-user" type="text" placeholder="User name or email" />
+          </div>
+          <div class="field">
+            <label for="client-password">Password</label>
+            <input id="client-password" type="password" placeholder="Password" />
+          </div>
+          <div class="login-action-row">
+            <button class="main-login-btn login-black-btn" type="submit">Login</button>
+            <button class="provider-btn provider-btn-wdr" type="button" id="openWdr" aria-label="WDR Login">
+              <img src="assets/login/wdr.png?v=20260519184755" alt="WDR Login" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+              <span class="provider-fallback">WDR</span>
+            </button>
+          </div>
+          <div class="message-error" id="standardLoginError">Please enter valid credential.</div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <section class="dashboard" id="clientDashboard" aria-label="Client dashboard">
+    <div class="dashboard-shell">
+      <aside class="side-nav" aria-label="Dashboard navigation">
+        <div class="side-brand">
+          <div class="side-mark">&lt;/&gt;</div>
+          <div><b>WeDoCodes</b><span>Client Dashboard</span></div>
+        </div>
+        <div class="nav-tab active"><span>Project Overview</span><small>Active</small></div>
+        <div class="nav-tab disabled"><span>Messages</span><small>Locked</small></div>
+        <div class="nav-tab disabled"><span>Milestones</span><small>Locked</small></div>
+        <div class="nav-tab disabled"><span>Invoices</span><small>Locked</small></div>
+        <div class="nav-tab disabled"><span>Support Tickets</span><small>Locked</small></div>
+        <div class="nav-tab disabled"><span>Project Files</span><small>Locked</small></div>
+        <div class="nav-tab disabled"><span>Settings</span><small>Locked</small></div>
+      </aside>
+
+      <main class="dashboard-main">
+        <header class="dash-topbar">
+          <div>
+            <h1>Welcome Ultra Medical Center</h1>
+            <p>26400 - Al Ain, United Arab Emirates</p>
+          </div>
+
+<div class="dashboard-action-row">
+  <a class="dashboard-mobile-menu-icon" href="/" aria-label="Menu">☰</a>
+  <nav class="dashboard-inline-nav" aria-label="Dashboard navigation">
+    <a class="logout-btn dashboard-nav-link" href="/">Back to Website</a>
+    <a class="logout-btn dashboard-nav-link" href="/">Home</a>
+    <a class="logout-btn dashboard-nav-link" href="/solutions">Solutions</a>
+    <a class="logout-btn dashboard-nav-link" href="/support">Support</a>
+  </nav>
+  <button class="logout-btn" id="logoutBtn" type="button">Logout</button>
+</div>
+        </header>
+
+        <div class="overview-grid">
+          <div class="metric-card"><small>Document</small><b>WDC-264001</b><span>Quotation ready for approval</span></div>
+          <div class="metric-card disabled"><small>Messages</small><b>03</b><span>Module preview locked</span></div>
+          <div class="metric-card disabled"><small>Milestones</small><b>06</b><span>Module preview locked</span></div>
+          <div class="metric-card disabled"><small>Invoices</small><b>--</b><span>Module preview locked</span></div>
+        </div>
+
+        <div class="dash-grid">
+          <section>
+            <div class="client-banner">
+              <h2>Ultra Medical Center</h2>
+              <p>Premium Website Design, Development &amp; Digital-Presence Package</p>
+            </div>
+
+            <article class="dash-panel">
+              <h2>Project Details</h2>
+              <div class="details-table">
+                <div class="details-row"><div class="details-label">Document Ref</div><div class="details-value">WDC-264001</div></div>
+                <div class="details-row"><div class="details-label">Project</div><div class="details-value">Premium Website Design, Development &amp; Digital-Presence Package</div></div>
+                <div class="details-row"><div class="details-label">Sector</div><div class="details-value">Medical</div></div>
+                <div class="details-row"><div class="details-label">Emirates</div><div class="details-value">Abu Dhabi</div></div>
+                <div class="details-row"><div class="details-label">Client</div><div class="details-value">ULTRA MEDICAL CENTER</div></div>
+              </div>
+
+              <div class="disabled-area">
+                <h2 style="margin-top:24px;">Dashboard Preview</h2>
+                <div class="activity-list">
+                  <div class="activity-item">Design review board, comments and approval history will appear here.</div>
+                  <div class="activity-item">Project timeline, tasks, messages and delivery notes are reserved for the full client portal.</div>
+                  <div class="activity-item">Invoices, payment status, support tickets and handover files are currently disabled.</div>
+                </div>
+              </div>
+            </article>
+          </section>
+
+          <aside class="dash-panel">
+            <h2>Quotation</h2>
+            <div class="doc-card">
+              <small>DOC TYPE</small>
+              <b>QUOTATION</b>
+              <span>DOC REF: WDC-264001</span>
+              <span>ISSUE DATE: 19 MAY 2026</span>
+              <span>VALID TILL: 18 APR 2026</span>
+              <div class="doc-actions">
+                <a class="download-btn" href="assets/login/websiteproposal.pdf" download>Download Quotation Ref WDC264001</a>
+                <button class="approve-btn" type="button" id="showApproval">Approve WDC264001</button>
+              </div>
+            </div>
+
+            <div class="disabled-area">
+              <div class="doc-card">
+                <small>Other Documents</small>
+                <b>Invoice / Contract / Timeline</b>
+                <span>These dashboard modules are currently inactive.</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <section class="dash-panel approval-panel" id="approvalPanel">
+          <h2>Upload signed and stamped approval</h2>
+          <form class="approval-form" action="https://wedocodes-form-handler-ai5vy2oeqq-ww.a.run.app/submit" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="_form_page" value="client-approval" />
+            <input type="hidden" name="_source_site" value="wedocodes.com" />
+            <input type="hidden" name="_subject" value="Client Approval - WDC264001 - Ultra Medical Center" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+            <input type="hidden" name="Document Ref" value="WDC-264001" />
+            <input type="hidden" name="Client" value="ULTRA MEDICAL CENTER" />
+            <input type="hidden" name="Project" value="Premium Website Design, Development & Digital-Presence Package" />
+
+            <div class="field"><label for="approved-name">Approved Person Name</label><input id="approved-name" name="Approved Person Name" type="text" required /></div>
+            <div class="field"><label for="approved-email">Email</label><input id="approved-email" name="Email" type="email" required /></div>
+            <div class="field"><label for="approved-mobile">Mobile</label><input id="approved-mobile" name="Mobile" type="tel" required /></div>
+            <div class="field"><label for="approved-designation">Designation</label><input id="approved-designation" name="Designation" type="text" required /></div>
+            <div class="field full"><label for="approved-notes">Additional Notes</label><textarea id="approved-notes" name="Additional Notes" placeholder="Optional notes"></textarea></div>
+            <div class="field full"><label for="approved-file">Approved signed and stamped document</label><input id="approved-file" name="Approved Signed and Stamped Document" type="file" accept=".pdf,.doc,.docx,image/png,image/jpeg,image/webp" /></div>
+            <div class="file-note">Please upload the approved signed and stamped document. File size: unlimited for now.</div>
+            <button class="submit-btn" type="submit">Submit Approval</button>
+          </form>
+        </section>
+      </main>
+    </div>
+  </section>
+  <div class="modal" id="wdrModal" aria-hidden="true">
+    <div class="modal-card wdr-card">
+      <button class="modal-close" type="button" data-close-modal aria-label="Close">×</button>
+      <h2>Reference Login</h2>
+      <p>Enter your document reference.</p>
+      <div class="field"><label for="wdrRef">Reference</label><input id="wdrRef" type="text" placeholder="Reference" /></div>
+      <button class="main-login-btn" id="wdrLoginBtn" type="button">Continue</button>
+      <div class="message-error" id="wdrError">Invalid reference.</div>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      const standardForm = document.getElementById('standardLoginForm');
+      const standardError = document.getElementById('standardLoginError');
+      const wdrModal = document.getElementById('wdrModal');
+      const wdrError = document.getElementById('wdrError');
+      const wdrRef = document.getElementById('wdrRef');
+      const approvalPanel = document.getElementById('approvalPanel');
+
+      function openModal(modal){
+        if(!modal) return;
+        modal.classList.add('is-visible');
+        modal.setAttribute('aria-hidden','false');
+      }
+
+      function closeModals(){
+        if(!wdrModal) return;
+        wdrModal.classList.remove('is-visible');
+        wdrModal.setAttribute('aria-hidden','true');
+      }
+
+      if(standardForm){
+        standardForm.addEventListener('submit', function(e){
+          e.preventDefault();
+          if(standardError) standardError.classList.add('is-visible');
+        });
+      }
+
+      const openWdr = document.getElementById('openWdr');
+      if(openWdr){
+        openWdr.addEventListener('click', function(){
+          if(wdrError) wdrError.classList.remove('is-visible');
+          if(wdrRef) wdrRef.value='';
+          openModal(wdrModal);
+          setTimeout(function(){ if(wdrRef) wdrRef.focus(); },120);
+        });
+      }
+
+      const wdrLoginBtn = document.getElementById('wdrLoginBtn');
+      if(wdrLoginBtn){
+        wdrLoginBtn.addEventListener('click', function(){
+          const value=(wdrRef && wdrRef.value ? wdrRef.value : '').trim().toUpperCase();
+          if(value==='WDC26400121'){
+            closeModals();
+            document.body.classList.add('portal-open');
+            window.scrollTo({top:0,behavior:'smooth'});
+          } else {
+            if(wdrError) wdrError.classList.add('is-visible');
+          }
+        });
+      }
+
+      if(wdrRef){
+        wdrRef.addEventListener('keydown', function(e){
+          if(e.key==='Enter'){
+            e.preventDefault();
+            if(wdrLoginBtn) wdrLoginBtn.click();
+          }
+        });
+      }
+
+      document.querySelectorAll('[data-close-modal]').forEach(function(btn){
+        btn.addEventListener('click', closeModals);
+      });
+
+      if(wdrModal){
+        wdrModal.addEventListener('click', function(e){
+          if(e.target===wdrModal) closeModals();
+        });
+      }
+
+      document.addEventListener('keydown', function(e){
+        if(e.key==='Escape') closeModals();
+      });
+
+      const showApproval = document.getElementById('showApproval');
+      if(showApproval){
+        showApproval.addEventListener('click', function(){
+          if(approvalPanel){
+            approvalPanel.classList.add('is-visible');
+            approvalPanel.scrollIntoView({behavior:'smooth',block:'start'});
+          }
+        });
+      }
+
+      const logoutBtn = document.getElementById('logoutBtn');
+      if(logoutBtn){
+        logoutBtn.addEventListener('click', function(){
+          document.body.classList.remove('portal-open');
+          window.scrollTo({top:0,behavior:'smooth'});
+        });
+      }
+    })();
+  </script>
+
+  <script>
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      return false;
+    });
+    document.addEventListener('keydown', function(e) {
+      const key = (e.key || '').toLowerCase();
+      if (
+        e.key === 'F12' ||
+        (e.ctrlKey && e.shiftKey && ['i', 'j', 'c'].includes(key)) ||
+        (e.ctrlKey && ['u', 's'].includes(key))
+      ) {
+        e.preventDefault();
+        return false;
+      }
+    });
+    document.addEventListener('dragstart', function(e) {
+      e.preventDefault();
+      return false;
+    });
+  </script>
+
+
+</body>
+</html>

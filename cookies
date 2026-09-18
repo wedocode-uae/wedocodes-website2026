@@ -1,0 +1,1067 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Cookies | WeDoCodes</title><meta name="description" content="WeDoCodes cookie and browser technology information.">
+  <!-- FAVICON CODE START -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <!-- FAVICON CODE END -->
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"><style>
+:root{--text:#1f1f1f;--muted:#5f5f5f;--line:#e6e6e6;--soft:#f5f5f5;--blue:#0067b8;--blue-dark:#004b8d;--ink:#111827;--brand-orange:#FF9500;--brand-orange-2:#FF6A00;--brand-pink:#FF3D5E;--brand-magenta:#E91E73;--shadow:0 8px 28px rgba(0,0,0,.10);--shadow-soft:0 3px 12px rgba(0,0,0,.08);--max:1240px;--radius:2px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,"Segoe UI",system-ui,sans-serif;color:var(--text);background:#fff;overflow-x:hidden}a{text-decoration:none;color:inherit}.wrap{width:min(var(--max),calc(100% - 48px));margin:0 auto}
+.site-header{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid var(--line)}.nav{height:64px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand-logo{display:inline-flex;align-items:center;gap:5px;height:54px;min-width:245px}.brand-mark{width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,var(--brand-orange),var(--brand-orange-2),var(--brand-pink),var(--brand-magenta));display:grid;place-items:center;color:#fff;font-weight:800;font-size:16px;box-shadow:0 4px 14px rgba(0,0,0,.12)}.brand-text{display:flex;flex-direction:column;line-height:1}.brand-name{font-size:25px;line-height:.94;font-weight:760;letter-spacing:-1.15px;color:#050505;white-space:nowrap}.brand-name .codes{background:linear-gradient(90deg,var(--brand-orange-2),var(--brand-pink),var(--brand-magenta));-webkit-background-clip:text;background-clip:text;color:transparent}.brand-subtitle{margin-top:5px;font-size:12.5px;line-height:1;font-weight:500;color:#555;white-space:nowrap}
+.nav-links{display:flex;align-items:center;gap:24px;font-size:13px;color:#262626;font-weight:500}.nav-links a{display:inline-flex;align-items:center;min-height:64px;border-bottom:2px solid transparent}.nav-links a:hover,.nav-links a.active{border-bottom-color:#111}.nav-actions{display:flex;align-items:center;gap:10px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:40px;padding:0 16px;border-radius:var(--radius);border:1px solid transparent;font-weight:650;font-size:13px;cursor:pointer;white-space:nowrap}.btn-blue{background:var(--blue);color:#fff}.btn-blue:hover{background:var(--blue-dark)}.btn-light{background:#fff;color:#1f1f1f;border-color:#8a8a8a}.btn-light:hover{background:#f2f2f2}.btn-dark{background:#111827;color:#fff}.menu-btn{display:none}
+.mobile-nav{display:none;position:sticky;top:64px;z-index:99;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 8px 18px rgba(0,0,0,.06);padding:12px 24px 16px}.mobile-nav a{display:flex;align-items:center;min-height:42px;border-bottom:1px solid var(--line);font-size:14px;font-weight:650}.mobile-nav .mobile-secondary,.mobile-nav .mobile-cta{margin-top:8px;justify-content:center;min-height:40px;border:1px solid #8a8a8a}.mobile-nav .mobile-cta{background:var(--blue);color:#fff;border:0}
+section{padding:56px 0}.kicker{font-size:12px;font-weight:780;color:var(--blue);letter-spacing:.12em;text-transform:uppercase;margin-bottom:9px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:34px;margin-bottom:30px}.section-head.center{display:block;text-align:center;max-width:920px;margin:0 auto 34px}.section-head h2,.section-title{font-size:clamp(30px,4vw,52px);line-height:1.08;letter-spacing:-1.6px;margin:0;color:#111;font-weight:730}.section-head p{max-width:650px;color:var(--muted);line-height:1.65;margin:0;font-size:15px}
+input,select,textarea{width:100%;border:1px solid var(--line);background:#fff;min-height:44px;padding:11px 12px;font:inherit;font-size:13px;color:#111;outline:0}textarea{min-height:128px;resize:vertical;line-height:1.55}input:focus,select:focus,textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(0,103,184,.10)}.field{display:flex;flex-direction:column;gap:7px}.field label{font-size:12px;font-weight:800;color:#111}.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.field.full{grid-column:1/-1}.form-note{margin-top:16px;border:1px solid var(--line);background:#f8fbff;padding:13px;color:#4b5563;font-size:12px;line-height:1.55}
+.icon-box{width:44px;height:44px;display:grid;place-items:center;background:#f8fbff;border:1px solid var(--line);color:var(--blue);position:relative;flex:0 0 auto}.icon-box::after{content:"";position:absolute;left:9px;right:9px;bottom:-1px;height:2px;background:linear-gradient(90deg,var(--brand-orange),var(--brand-pink),var(--brand-magenta))}
+footer{background:#f2f2f2;border-top:1px solid #ddd;padding:34px 0 20px}.footer-mega{display:grid;grid-template-columns:1.35fr repeat(5,1fr);gap:26px}.footer-logo{display:flex;align-items:flex-start;margin-bottom:12px}.footer-logo .brand-logo{height:auto;min-width:0}.footer-logo .brand-mark{width:44px;height:44px}.footer-logo .brand-name{font-size:22px}.footer-logo .brand-subtitle{font-size:12.5px}.footer-brand h4,.footer-col h4{font-size:15px;color:#616161;margin:0 0 14px;font-weight:700}.footer-brand p{color:#616161;line-height:1.65;font-size:12px;max-width:320px;margin:0 0 12px}.footer-contact{margin-top:14px}.footer-contact a,.footer-col a{display:block;color:#616161;font-size:11px;line-height:1.45;margin:0 0 11px}.footer-col a:hover,.footer-contact a:hover{text-decoration:underline;color:#111}.footer-bottom{margin-top:26px;padding-top:18px;border-top:1px solid #d6d6d6;display:flex;justify-content:space-between;gap:20px;align-items:center;color:#616161;font-size:11px;flex-wrap:wrap}.footer-bottom-left,.footer-bottom-right{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+@media(max-width:1180px){.nav-links,.nav-actions{display:none}.menu-btn{display:inline-flex}body.nav-open .mobile-nav{display:grid}.section-head{display:block}.section-head p{margin-top:14px}.footer-mega{grid-template-columns:repeat(3,1fr)}.footer-brand{grid-column:span 3}.form-grid{grid-template-columns:1fr}}
+@media(max-width:760px){.wrap{width:min(var(--max),calc(100% - 24px))}.brand-logo{min-width:auto}.brand-mark{width:44px;height:44px}.brand-name{font-size:21px}.brand-subtitle{display:none}.footer-mega{grid-template-columns:1fr}.footer-brand{grid-column:span 1}.footer-bottom{display:block}.footer-bottom-left,.footer-bottom-right{gap:12px;margin-top:12px}section{padding:42px 0}}
+
+.page-hero{background:#fff;border-bottom:1px solid var(--line);padding:42px 0 30px}.page-hero.dark{background:#111827;color:#fff}.page-hero.soft{background:linear-gradient(180deg,#f8fbff 0%,#fff 100%)}.page-hero h1{font-size:clamp(38px,5vw,68px);line-height:1.02;letter-spacing:-2.2px;margin:0 0 14px;color:inherit}.page-hero p{max-width:830px;color:var(--muted);line-height:1.7;font-size:16px;margin:0}.page-hero.dark p{color:#d1d5db}
+
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.card{background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-soft);padding:24px;min-height:210px;position:relative}.card:after{content:"";position:absolute;left:24px;right:24px;bottom:-1px;height:3px;background:linear-gradient(90deg,var(--brand-orange),var(--brand-pink),var(--brand-magenta))}.card h2,.card h3{margin:0 0 12px;font-size:24px;letter-spacing:-.7px}.card p,.card li{color:var(--muted);line-height:1.65;font-size:13px}.split{display:grid;grid-template-columns:330px 1fr;gap:24px}.dark-panel{background:#111827;color:#fff;padding:30px;box-shadow:var(--shadow)}.dark-panel h2{font-size:36px;margin:0 0 14px;line-height:1.08}.dark-panel p{color:#d1d5db;line-height:1.7}@media(max-width:1180px){.grid2,.grid3,.grid4,.split{grid-template-columns:1fr}}
+
+    /* Logo clockwise rotation */
+    .brand-mark{
+      animation: rotateLogo 10s linear infinite;
+    }
+
+    @keyframes rotateLogo{
+      0%{ transform:rotate(0deg); }
+      100%{ transform:rotate(360deg); }
+    }
+
+
+    /* Logo icon optical center correction */
+    .brand-mark{
+      line-height:1;
+      text-align:center;
+      font-family:"Courier New", monospace;
+      letter-spacing:-1px;
+    }
+
+
+    
+    
+    /* Strict mobile layout correction: wrap text instead of clipping */
+    @media (max-width:760px){
+      html,
+      body{
+        width:100% !important;
+        max-width:100% !important;
+        overflow-x:hidden !important;
+      }
+
+      body{
+        position:relative;
+      }
+
+      *,
+      *::before,
+      *::after{
+        box-sizing:border-box !important;
+        min-width:0;
+      }
+
+      .wrap{
+        width:100% !important;
+        max-width:100vw !important;
+        padding-left:18px !important;
+        padding-right:18px !important;
+        margin-left:0 !important;
+        margin-right:0 !important;
+      }
+
+      main,
+      header,
+      footer,
+      nav,
+      section,
+      article,
+      aside{
+        width:100% !important;
+        max-width:100vw !important;
+        min-width:0 !important;
+      }
+
+      .nav{
+        padding-left:12px !important;
+        padding-right:12px !important;
+      }
+
+      .brand-logo{
+        max-width:calc(100vw - 118px) !important;
+        min-width:0 !important;
+      }
+
+      .brand-mark{
+        width:42px !important;
+        height:42px !important;
+        flex:0 0 42px !important;
+      }
+
+      .brand-name{
+        font-size:20px !important;
+        white-space:nowrap !important;
+        overflow:hidden !important;
+        text-overflow:ellipsis !important;
+      }
+
+      .brand-subtitle{
+        display:none !important;
+      }
+
+      .menu-btn{
+        min-width:74px !important;
+        padding-left:12px !important;
+        padding-right:12px !important;
+      }
+
+      h1,
+      .command h1,
+      .hero h1,
+      .hero-title,
+      .support-hero h1,
+      .industries-hero h1,
+      .about-hero h1,
+      .resource-hero h1,
+      .section-title,
+      .section-head h2{
+        font-size:clamp(30px,8.6vw,38px) !important;
+        line-height:1.12 !important;
+        letter-spacing:-0.7px !important;
+        width:100% !important;
+        max-width:100% !important;
+        min-width:0 !important;
+        white-space:normal !important;
+        overflow:visible !important;
+        overflow-wrap:break-word !important;
+        word-break:normal !important;
+      }
+
+      h2{
+        font-size:clamp(27px,7.8vw,34px) !important;
+        line-height:1.14 !important;
+        letter-spacing:-0.5px !important;
+        white-space:normal !important;
+        overflow-wrap:break-word !important;
+      }
+
+      h3{
+        font-size:clamp(22px,6.4vw,28px) !important;
+        line-height:1.18 !important;
+        white-space:normal !important;
+        overflow-wrap:break-word !important;
+      }
+
+      p,
+      li,
+      span,
+      .command p,
+      .hero p,
+      .section-head p,
+      .support-hero p,
+      .industries-hero p,
+      .about-hero p,
+      .resource-hero p,
+      .route-card p,
+      .industry-card p,
+      .resource-card p,
+      .support-card p,
+      .about-card p{
+        font-size:16px !important;
+        line-height:1.55 !important;
+        max-width:100% !important;
+        min-width:0 !important;
+        white-space:normal !important;
+        overflow:visible !important;
+        overflow-wrap:break-word !important;
+        word-break:normal !important;
+      }
+
+      .hero-grid,
+      .command-grid,
+      .cta-box,
+      .footer-mega,
+      .footer-bottom,
+      .footer-bottom-left,
+      .footer-bottom-right,
+      .finder-layout,
+      .finder-results,
+      .solution-panel,
+      .panel-stack,
+      .arch-canvas,
+      .arch-layer,
+      .arch-items,
+      .blueprint-grid,
+      .path-grid,
+      .receive-grid,
+      .faq-grid,
+      .metric-row,
+      .section-head,
+      .resource-dock,
+      .resource-layout,
+      .resource-grid,
+      .resource-cards,
+      .resource-actions,
+      .download-grid,
+      .knowledge-grid,
+      .support-hero-grid,
+      .support-grid,
+      .support-route-grid,
+      .support-card-grid,
+      .route-layout,
+      .route-cards,
+      .contact-grid,
+      .access-grid,
+      .about-hero-grid,
+      .about-split,
+      .about-card-grid,
+      .principle-grid,
+      .timeline-grid,
+      .industries-hero-grid,
+      .industry-layout,
+      .industry-grid,
+      .industry-cards,
+      .segment-grid,
+      .value-grid,
+      .proof-grid,
+      .process-grid,
+      .cards-grid,
+      .grid2,
+      .grid3,
+      .grid4,
+      .split,
+      .career-head,
+      .roles-grid,
+      .hire-flow,
+      .application-layout,
+      .track-hero,
+      .status-strip,
+      .two-col,
+      .ecosystem,
+      .partner-flow,
+      .partner-contact,
+      .map-matrix,
+      .journey-map,
+      .policy-layout,
+      .policy-content,
+      .terms-grid,
+      .terms-panel,
+      .trust-dashboard,
+      .security-matrix,
+      .report-layout,
+      .cookie-board,
+      .cookie-types,
+      .control-grid{
+        display:grid !important;
+        grid-template-columns:minmax(0,1fr) !important;
+        width:100% !important;
+        max-width:100% !important;
+        min-width:0 !important;
+      }
+
+      .footer-bottom,
+      .footer-bottom-left,
+      .footer-bottom-right{
+        display:flex !important;
+        flex-wrap:wrap !important;
+      }
+
+      article,
+      aside,
+      .card,
+      .panel,
+      .resource-card,
+      .support-card,
+      .route-card,
+      .about-card,
+      .industry-card,
+      .result-card,
+      .blueprint-card,
+      .path-card,
+      .check-panel,
+      .metric,
+      .rail-item,
+      .field,
+      form{
+        width:100% !important;
+        max-width:100% !important;
+        min-width:0 !important;
+        overflow:visible !important;
+      }
+
+      .route-card,
+      .support-card,
+      .industry-card,
+      .resource-card,
+      .about-card,
+      .rail-item{
+        grid-template-columns:auto minmax(0,1fr) !important;
+      }
+
+      .route-card > *,
+      .support-card > *,
+      .industry-card > *,
+      .resource-card > *,
+      .about-card > *,
+      .rail-item > *{
+        min-width:0 !important;
+        max-width:100% !important;
+      }
+
+      .solution-tabs,
+      .industry-tabs,
+      .route-tabs,
+      .resource-tabs,
+      .tab-row,
+      .command-actions,
+      .module-tags,
+      .result-pills,
+      .path-line{
+        display:flex !important;
+        flex-wrap:nowrap !important;
+        width:100% !important;
+        max-width:100% !important;
+        overflow-x:auto !important;
+        overflow-y:hidden !important;
+        -webkit-overflow-scrolling:touch;
+      }
+
+      .solution-tabs a,
+      .industry-tabs a,
+      .route-tabs a,
+      .resource-tabs a,
+      .tab-row a,
+      .tab-row button,
+      .command-actions a,
+      .module-tags span,
+      .result-pills span,
+      .path-line span{
+        flex:0 0 auto !important;
+        white-space:nowrap !important;
+        max-width:none !important;
+      }
+
+      .matrix-wrap,
+      .table-wrap,
+      .comparison-table,
+      .resource-table,
+      .support-table{
+        width:100% !important;
+        max-width:100% !important;
+        overflow-x:auto !important;
+        -webkit-overflow-scrolling:touch;
+      }
+
+      table{
+        width:100% !important;
+      }
+
+      input,
+      select,
+      textarea,
+      button{
+        max-width:100% !important;
+      }
+    }
+
+    @media (max-width:430px){
+      .wrap{
+        padding-left:14px !important;
+        padding-right:14px !important;
+      }
+
+      h1,
+      .command h1,
+      .hero h1,
+      .hero-title,
+      .support-hero h1,
+      .industries-hero h1,
+      .about-hero h1,
+      .resource-hero h1,
+      .section-title,
+      .section-head h2{
+        font-size:clamp(28px,8.2vw,34px) !important;
+        line-height:1.14 !important;
+      }
+
+      h2{
+        font-size:clamp(25px,7.4vw,31px) !important;
+      }
+
+      h3{
+        font-size:clamp(21px,6vw,25px) !important;
+      }
+
+      p,
+      li,
+      .command p,
+      .hero p,
+      .section-head p{
+        font-size:15.5px !important;
+      }
+    }
+
+
+    /* Mobile 2-column tab grid correction */
+    @media (max-width:760px){
+      .solution-tabs,
+      .industry-tabs,
+      .route-tabs,
+      .resource-tabs,
+      .tab-row{
+        display:grid !important;
+        grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
+        gap:10px !important;
+        width:100% !important;
+        max-width:100% !important;
+        overflow-x:visible !important;
+        overflow-y:visible !important;
+      }
+
+      .solution-tabs a,
+      .industry-tabs a,
+      .route-tabs a,
+      .resource-tabs a,
+      .tab-row a,
+      .tab-row button{
+        width:100% !important;
+        max-width:100% !important;
+        min-width:0 !important;
+        flex:none !important;
+        white-space:normal !important;
+        text-align:center !important;
+        justify-content:center !important;
+        align-items:center !important;
+        line-height:1.18 !important;
+        font-size:14px !important;
+        padding:12px 8px !important;
+        min-height:52px !important;
+        overflow-wrap:break-word !important;
+        word-break:normal !important;
+      }
+    }
+
+    @media (max-width:360px){
+      .solution-tabs,
+      .industry-tabs,
+      .route-tabs,
+      .resource-tabs,
+      .tab-row{
+        grid-template-columns:1fr !important;
+      }
+
+      .solution-tabs a,
+      .industry-tabs a,
+      .route-tabs a,
+      .resource-tabs a,
+      .tab-row a,
+      .tab-row button{
+        font-size:15px !important;
+        min-height:48px !important;
+      }
+    }
+
+
+    /* Actual mobile 2-column index/tabs correction */
+    @media (max-width:760px){
+      .sector-index,
+      .support-index,
+      .resource-index,
+      .identity-index,
+      .solution-tabs,
+      .industry-tabs,
+      .route-tabs,
+      .resource-tabs,
+      .tab-row{
+        display:grid !important;
+        grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
+        gap:10px !important;
+        width:100% !important;
+        max-width:100% !important;
+        min-width:0 !important;
+        overflow-x:visible !important;
+        overflow-y:visible !important;
+      }
+
+      .sector-index a,
+      .support-index a,
+      .resource-index a,
+      .identity-index a,
+      .solution-tabs a,
+      .industry-tabs a,
+      .route-tabs a,
+      .resource-tabs a,
+      .tab-row a,
+      .tab-row button{
+        width:100% !important;
+        max-width:100% !important;
+        min-width:0 !important;
+        flex:none !important;
+        white-space:normal !important;
+        text-align:center !important;
+        justify-content:center !important;
+        align-items:center !important;
+        line-height:1.18 !important;
+        font-size:14px !important;
+        padding:12px 8px !important;
+        min-height:52px !important;
+        overflow-wrap:break-word !important;
+        word-break:normal !important;
+      }
+    }
+
+    @media (max-width:360px){
+      .sector-index,
+      .support-index,
+      .resource-index,
+      .identity-index,
+      .solution-tabs,
+      .industry-tabs,
+      .route-tabs,
+      .resource-tabs,
+      .tab-row{
+        grid-template-columns:1fr !important;
+      }
+
+      .sector-index a,
+      .support-index a,
+      .resource-index a,
+      .identity-index a,
+      .solution-tabs a,
+      .industry-tabs a,
+      .route-tabs a,
+      .resource-tabs a,
+      .tab-row a,
+      .tab-row button{
+        font-size:15px !important;
+        min-height:48px !important;
+      }
+    }
+
+
+    /* Mobile brand balance and home hero order correction */
+    @media (max-width:760px){
+      .brand-name{
+        font-size:24px !important;
+        line-height:1 !important;
+        font-weight:850 !important;
+        letter-spacing:-.7px !important;
+      }
+
+      .brand-name .codes{
+        font-size:1em !important;
+        font-weight:900 !important;
+        letter-spacing:-.8px !important;
+        display:inline-block !important;
+        transform:translateY(.2px) scale(1.025) !important;
+        -webkit-text-stroke:.15px rgba(217,107,207,.18);
+      }
+    }
+
+    @media (max-width:420px){
+      .brand-name{
+        font-size:22px !important;
+      }
+    }
+
+
+    /* Microsoft-style mobile typography and centered header final */
+    @media (max-width:760px){
+      body{
+        font-family:"Segoe UI Variable","Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif !important;
+        font-size:16px !important;
+        line-height:1.5 !important;
+        font-weight:400 !important;
+      }
+
+      .nav{
+        display:grid !important;
+        grid-template-columns:48px minmax(0,1fr) 48px !important;
+        align-items:center !important;
+        width:100% !important;
+        max-width:100vw !important;
+        padding:10px 14px !important;
+        gap:0 !important;
+      }
+
+      .menu-btn{
+        grid-column:1 !important;
+        grid-row:1 !important;
+        justify-self:start !important;
+        align-self:center !important;
+        width:44px !important;
+        height:44px !important;
+        min-width:44px !important;
+        padding:0 !important;
+        margin:0 !important;
+        border:0 !important;
+        background:transparent !important;
+        box-shadow:none !important;
+        font-size:0 !important;
+        color:transparent !important;
+        position:relative !important;
+        border-radius:0 !important;
+      }
+
+      .menu-btn::before,
+      .menu-btn::after,
+      .menu-btn span{
+        content:"" !important;
+        position:absolute !important;
+        left:11px !important;
+        width:22px !important;
+        height:2px !important;
+        background:#1f1f1f !important;
+        border-radius:99px !important;
+        display:block !important;
+      }
+
+      .menu-btn::before{top:14px !important;}
+      .menu-btn span{top:21px !important;}
+      .menu-btn::after{top:28px !important;}
+
+      .brand-logo{
+        grid-column:2 !important;
+        grid-row:1 !important;
+        justify-self:center !important;
+        align-self:center !important;
+        display:flex !important;
+        align-items:center !important;
+        justify-content:center !important;
+        width:auto !important;
+        max-width:calc(100vw - 116px) !important;
+        min-width:0 !important;
+        gap:6px !important;
+        margin:0 auto !important;
+      }
+
+      .brand-logo::after{
+        content:"" !important;
+      }
+
+      .brand-mark{
+        width:42px !important;
+        height:42px !important;
+        flex:0 0 42px !important;
+      }
+
+      .brand-text{
+        min-width:0 !important;
+        max-width:100% !important;
+      }
+
+      .brand-name{
+        font-family:"Segoe UI Variable","Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif !important;
+        font-size:22px !important;
+        line-height:1 !important;
+        font-weight:700 !important;
+        letter-spacing:-.45px !important;
+        white-space:nowrap !important;
+        overflow:visible !important;
+        text-overflow:clip !important;
+      }
+
+      .brand-name .codes{
+        font-size:1em !important;
+        font-weight:700 !important;
+        letter-spacing:-.45px !important;
+        transform:none !important;
+        -webkit-text-stroke:0 !important;
+        display:inline !important;
+      }
+
+      .brand-subtitle{
+        display:none !important;
+      }
+
+      /* Microsoft/Fluent-inspired mobile type scale */
+      h1,
+      .command h1,
+      .hero h1,
+      .hero-title,
+      .support-hero h1,
+      .industries-hero h1,
+      .about-hero h1,
+      .resource-hero h1,
+      .section-title{
+        font-family:"Segoe UI Variable","Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif !important;
+        font-size:40px !important;
+        line-height:46px !important;
+        font-weight:600 !important;
+        letter-spacing:-1px !important;
+      }
+
+      h2,
+      .section-head h2{
+        font-family:"Segoe UI Variable","Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif !important;
+        font-size:32px !important;
+        line-height:38px !important;
+        font-weight:600 !important;
+        letter-spacing:-.6px !important;
+      }
+
+      h3{
+        font-family:"Segoe UI Variable","Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif !important;
+        font-size:22px !important;
+        line-height:28px !important;
+        font-weight:600 !important;
+        letter-spacing:-.2px !important;
+      }
+
+      p,
+      li,
+      .section-head p,
+      .hero p,
+      .command p,
+      .card p,
+      .panel p{
+        font-family:"Segoe UI Variable","Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif !important;
+        font-size:16px !important;
+        line-height:24px !important;
+        font-weight:400 !important;
+      }
+
+      .btn,
+      button,
+      .cta,
+      .nav a,
+      .sector-index a,
+      .resource-index a,
+      .identity-index a,
+      .support-index a,
+      .solution-tabs a,
+      .tab-row a,
+      .tab-row button{
+        font-family:"Segoe UI Variable","Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif !important;
+        font-size:14px !important;
+        line-height:18px !important;
+        font-weight:600 !important;
+      }
+
+      /* Keep the real tab groups as a clean 2-column mobile grid */
+      .sector-index,
+      .resource-index,
+      .identity-index,
+      .support-index,
+      .solution-tabs,
+      .industry-tabs,
+      .route-tabs,
+      .resource-tabs,
+      .tab-row{
+        display:grid !important;
+        grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+        gap:10px !important;
+        width:100% !important;
+        max-width:100% !important;
+        overflow:visible !important;
+      }
+
+      .sector-index a,
+      .resource-index a,
+      .identity-index a,
+      .support-index a,
+      .solution-tabs a,
+      .industry-tabs a,
+      .route-tabs a,
+      .resource-tabs a,
+      .tab-row a,
+      .tab-row button{
+        width:100% !important;
+        min-width:0 !important;
+        max-width:100% !important;
+        white-space:normal !important;
+        text-align:center !important;
+        justify-content:center !important;
+        align-items:center !important;
+        padding:12px 10px !important;
+        min-height:48px !important;
+        overflow-wrap:break-word !important;
+      }
+    }
+
+    @media (max-width:420px){
+      .brand-name{
+        font-size:21px !important;
+      }
+
+      h1,
+      .command h1,
+      .hero h1,
+      .hero-title,
+      .support-hero h1,
+      .industries-hero h1,
+      .about-hero h1,
+      .resource-hero h1,
+      .section-title{
+        font-size:36px !important;
+        line-height:42px !important;
+      }
+
+      h2,
+      .section-head h2{
+        font-size:30px !important;
+        line-height:36px !important;
+      }
+    }
+
+
+/* CLIENT LOGIN BUTTON REPLACE START */
+.btn-client-login{
+  background:#071a33 !important;
+  color:#ffffff !important;
+  border-color:#071a33 !important;
+}
+.btn-client-login:hover{
+  background:#0b2545 !important;
+  color:#ffffff !important;
+  border-color:#0b2545 !important;
+}
+.mobile-nav .mobile-login{
+  margin-top:8px;
+  justify-content:center !important;
+  background:#071a33 !important;
+  color:#ffffff !important;
+  border:1px solid #071a33 !important;
+  border-bottom:1px solid #071a33 !important;
+}
+.mobile-nav .mobile-login:hover{
+  background:#0b2545 !important;
+  color:#ffffff !important;
+}
+/* CLIENT LOGIN BUTTON REPLACE END */
+
+
+/* MOBILE HEADER LOGIN ICON START */
+.mobile-header-login-icon{
+  display:none;
+}
+@media (max-width:1180px){
+  .mobile-header-login-icon{
+    grid-column:3 !important;
+    grid-row:1 !important;
+    justify-self:end !important;
+    align-self:center !important;
+    width:42px !important;
+    height:42px !important;
+    min-width:42px !important;
+    border-radius:50% !important;
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    background:#071a33 !important;
+    color:#ffffff !important;
+    text-decoration:none !important;
+    border:1px solid #071a33 !important;
+  }
+  .mobile-header-login-icon svg{
+    width:20px !important;
+    height:20px !important;
+    fill:none !important;
+    stroke:currentColor !important;
+    stroke-width:2 !important;
+    stroke-linecap:round !important;
+    stroke-linejoin:round !important;
+  }
+}
+@media (min-width:1181px){
+  .mobile-header-login-icon{
+    display:none !important;
+  }
+}
+/* MOBILE HEADER LOGIN ICON END */
+
+</style>
+<!-- WEDOCODES THREE-LINE MENU FIX START -->
+<style>
+  @media (max-width: 1180px) {
+    .menu-btn {
+      display: inline-flex !important;
+      width: 44px !important;
+      height: 44px !important;
+      min-width: 44px !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      border: 0 !important;
+      background: transparent !important;
+      box-shadow: none !important;
+      font-size: 0 !important;
+      color: transparent !important;
+      position: relative !important;
+      border-radius: 0 !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+
+    .menu-btn::before,
+    .menu-btn::after,
+    .menu-btn span {
+      content: "" !important;
+      position: absolute !important;
+      left: 11px !important;
+      width: 22px !important;
+      height: 2px !important;
+      background: #1f1f1f !important;
+      border-radius: 99px !important;
+      display: block !important;
+    }
+
+    .menu-btn::before { top: 14px !important; }
+    .menu-btn span { top: 21px !important; }
+    .menu-btn::after { top: 28px !important; }
+  }
+</style>
+<!-- WEDOCODES THREE-LINE MENU FIX END -->
+
+<link rel="canonical" href="https://www.wedocodes.com/cookies">
+</head><body><header class="site-header"><div class="wrap nav"><a href="/" class="brand-logo" aria-label="WeDoCodes Home"><span class="brand-mark">&lt;/&gt;</span><span class="brand-text"><span class="brand-name">WeDo<span class="codes">Codes</span></span><span class="brand-subtitle">Software and Cyber Security Solutions</span></span></a><nav class="nav-links" aria-label="Main navigation"><a href="/">Home</a><a href="/solutions">Solutions</a><a href="/industries">Industries</a><a href="/resources">Resources</a><a href="/about">About</a><a href="/support">Support</a></nav><div class="nav-actions"><a class="btn btn-client-login" href="/client-login">Client Login</a><a class="btn btn-blue" href="/support">Start Consultation</a></div><a class="mobile-header-login-icon" href="/client-login" aria-label="Client Login">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"></path>
+    <path d="M4.5 21a7.5 7.5 0 0 1 15 0"></path>
+  </svg>
+</a>
+<button class="btn btn-light menu-btn"><span></span></button></div></header><nav class="mobile-nav" aria-label="Mobile navigation"><a href="/">Home</a><a href="/solutions">Solutions</a><a href="/industries">Industries</a><a href="/resources">Resources</a><a href="/about">About</a><a href="/support">Support</a><a class="mobile-secondary mobile-login" href="/client-login">Client Login</a><a class="mobile-cta" href="/support">Start Consultation</a></nav><main>
+<section class="page-hero"><div class="wrap"><div class="kicker">Cookies</div><h1>Cookie and browser technology information.</h1><p>This page explains how cookies and similar browser technologies may be used on the WeDoCodes website for essential operation, external resources, forms and future analytics.</p></div></section>
+<section><div class="wrap grid2"><div class="card"><h2>Essential browser functions</h2><p>Some browser behaviour is required for navigation, forms, responsive menus and normal website operation.</p></div><div class="card"><h2>External resources</h2><p>Fonts and form handling services may be loaded from external providers. Those providers may process technical request information according to their own policies.</p></div><div class="card"><h2>Form submissions</h2><p>When a form is submitted, the data entered by the visitor is sent through the form service configured on the website.</p></div><div class="card"><h2>Analytics readiness</h2><p>If analytics or advertising tools are added later, this page should be updated with the relevant categories and visitor controls.</p></div></div></section><section style="background:#f5f5f5"><div class="wrap grid3"><div class="card"><h3>Browser settings</h3><p>Visitors can clear cookies, block cookies or manage site data through their browser preferences.</p></div><div class="card"><h3>Form choice</h3><p>Visitors choose whether to submit forms and which information to include in the message or attachment.</p></div><div class="card"><h3>External services</h3><p>External service behaviour is controlled by the provider and by the visitor’s browser or privacy settings.</p></div></div></section></main><footer><div class="wrap"><div class="footer-mega"><div class="footer-brand"><div class="footer-logo"><a href="/" class="brand-logo" aria-label="WeDoCodes Home"><span class="brand-mark">&lt;/&gt;</span><span class="brand-text"><span class="brand-name">WeDo<span class="codes">Codes</span></span><span class="brand-subtitle">Software and Cyber Security Solutions</span></span></a></div><p>Custom software, business automation, web and mobile apps, cloud-ready systems, dashboards and cybersecurity-focused digital solutions.</p><div class="footer-contact"><a href="mailto:support@wedocodes.com">support@wedocodes.com</a><a href="https://www.wedocodes.com">www.wedocodes.com</a></div></div><div class="footer-col"><h4>What's new</h4><a href="/solutions">Custom Software Packages</a><a href="/solutions">Healthcare Appointment Systems</a><a href="/solutions">POS &amp; Inventory Solutions</a><a href="/solutions">QR Menu &amp; Restaurant Tools</a><a href="assets/companyprofile.pdf" target="_blank" rel="noopener">Company Profile 2026</a><a href="/resources">Consultation Checklist</a></div><div class="footer-col"><h4>Solutions</h4><a href="/solutions">Business &amp; Enterprise Software</a><a href="/solutions">ERP, CRM &amp; Admin Systems</a><a href="/solutions">Healthcare &amp; Clinic Systems</a><a href="/solutions">Web &amp; Mobile Applications</a><a href="/solutions">Cloud, Data &amp; Integrations</a><a href="/solutions">Cybersecurity &amp; Digital Trust</a></div><div class="footer-col"><h4>Industries</h4><a href="/industries">Retail &amp; Trading</a><a href="/industries">Restaurants &amp; Cafes</a><a href="/industries">Construction</a><a href="/industries">Healthcare Clinics</a><a href="/industries">Real Estate</a><a href="/industries">Logistics &amp; Delivery</a></div><div class="footer-col"><h4>For business</h4><a href="/support">Request a Consultation</a><a href="/order-tracking">Order Tracking</a><a href="/resources">Downloads</a><a href="/resources">FAQs</a><a href="/resources">Service Brochures</a><a href="/resources">Cybersecurity Checklist</a></div><div class="footer-col"><h4>Company</h4><a href="/about">About WeDoCodes</a><a href="/about">Mission &amp; Values</a><a href="/careers">Careers</a><a href="/partners">Partners</a><a href="/support">Support Center</a><a href="/support">Support</a></div></div><div class="footer-bottom"><div class="footer-bottom-left"><span>🌐 English</span><a href="/sitemap">Sitemap</a><a href="/order-tracking">Order Tracking</a><a href="/careers">Careers</a></div><div class="footer-bottom-right"><a href="/privacy">Privacy</a><a href="/terms">Terms of Use</a><a href="/security">Security</a><a href="/cookies">Cookies</a><span>© 2026 WeDoCodes</span></div></div></div></footer><script>(function(){const b=document.querySelector('.menu-btn');if(!b)return;b.type='button';b.setAttribute('aria-expanded','false');b.addEventListener('click',()=>{const o=document.body.classList.toggle('nav-open');b.setAttribute('aria-expanded',o?'true':'false')});document.querySelectorAll('.mobile-nav a').forEach(a=>a.addEventListener('click',()=>{document.body.classList.remove('nav-open');b.setAttribute('aria-expanded','false')}));})();</script>  <script>
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      return false;
+    });
+
+    document.addEventListener('keydown', function(e) {
+      const key = (e.key || '').toLowerCase();
+
+      if (
+        e.key === 'F12' ||
+        (e.ctrlKey && e.shiftKey && ['i', 'j', 'c'].includes(key)) ||
+        (e.ctrlKey && ['u', 's'].includes(key))
+      ) {
+        e.preventDefault();
+        return false;
+      }
+    });
+
+    document.addEventListener('dragstart', function(e) {
+      e.preventDefault();
+      return false;
+    });
+  </script>
+
+<!-- WEDOCODES BRAND CURSOR START -->
+<style>
+  @media (hover: hover) and (pointer: fine) {
+    html,
+    body {
+      cursor: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22g%22%20x1%3D%223%22%20y1%3D%222%22%20x2%3D%2220%22%20y2%3D%2222%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23FF9500%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220.35%22%20stop-color%3D%22%23FF6A00%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220.68%22%20stop-color%3D%22%23FF3D5E%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23E91E73%22%2F%3E%0A%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%3C%2Fdefs%3E%0A%20%20%3Cpath%20d%3D%22M3%202.2%20L20.2%2015.6%20L13.3%2016.8%20L17%2022.2%20L13.6%2023.3%20L9.8%2017.6%20L5.4%2021.8%20Z%22%20fill%3D%22url%28%23g%29%22%2F%3E%0A%3C%2Fsvg%3E") 3 2, auto !important;
+    }
+
+    a,
+    button,
+    [role="button"],
+    input[type="submit"],
+    input[type="button"],
+    .btn,
+    select,
+    summary,
+    label[for] {
+      cursor: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22g%22%20x1%3D%223%22%20y1%3D%222%22%20x2%3D%2220%22%20y2%3D%2222%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23FF9500%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220.35%22%20stop-color%3D%22%23FF6A00%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220.68%22%20stop-color%3D%22%23FF3D5E%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23E91E73%22%2F%3E%0A%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%3C%2Fdefs%3E%0A%20%20%3Cpath%20d%3D%22M3%202.2%20L20.2%2015.6%20L13.3%2016.8%20L17%2022.2%20L13.6%2023.3%20L9.8%2017.6%20L5.4%2021.8%20Z%22%20fill%3D%22url%28%23g%29%22%2F%3E%0A%3C%2Fsvg%3E") 3 2, pointer !important;
+    }
+
+    input,
+    textarea {
+      cursor: auto !important;
+    }
+  }
+
+  .wdc-touch-ripple {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border-radius: 999px;
+    pointer-events: none;
+    z-index: 2147482500;
+    transform: translate(-50%, -50%) scale(0.35);
+    background:
+      radial-gradient(circle,
+        rgba(255, 149, 0, 0.95) 0%,
+        rgba(255, 106, 0, 0.78) 28%,
+        rgba(255, 61, 94, 0.62) 52%,
+        rgba(233, 30, 115, 0.18) 74%,
+        rgba(233, 30, 115, 0) 100%);
+    box-shadow:
+      0 0 0 1px rgba(255, 149, 0, 0.24),
+      0 0 20px rgba(255, 61, 94, 0.36);
+    animation: wdcTouchRipple 680ms ease-out forwards;
+  }
+
+  @keyframes wdcTouchRipple {
+    0% {
+      opacity: 0.98;
+      transform: translate(-50%, -50%) scale(0.35);
+    }
+    55% {
+      opacity: 0.72;
+      transform: translate(-50%, -50%) scale(2.45);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(3.2);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .wdc-touch-ripple {
+      animation: none !important;
+      display: none !important;
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    var supportsTouchEffect = false;
+
+    try {
+      supportsTouchEffect =
+        window.matchMedia &&
+        window.matchMedia("(hover: none), (pointer: coarse)").matches;
+    } catch (e) {
+      supportsTouchEffect = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+    }
+
+    if (!supportsTouchEffect) return;
+
+    function makeRipple(x, y) {
+      var ripple = document.createElement("span");
+      ripple.className = "wdc-touch-ripple";
+      ripple.style.left = x + "px";
+      ripple.style.top = y + "px";
+      document.body.appendChild(ripple);
+
+      window.setTimeout(function () {
+        if (ripple && ripple.parentNode) {
+          ripple.parentNode.removeChild(ripple);
+        }
+      }, 760);
+    }
+
+    document.addEventListener("pointerdown", function (event) {
+      if (event.pointerType && event.pointerType === "mouse") return;
+      makeRipple(event.clientX, event.clientY);
+    }, { passive: true });
+
+    document.addEventListener("touchstart", function (event) {
+      if (!event.touches || !event.touches.length) return;
+      var t = event.touches[0];
+      makeRipple(t.clientX, t.clientY);
+    }, { passive: true });
+  })();
+</script>
+<!-- WEDOCODES BRAND CURSOR END -->
+
+</body></html>

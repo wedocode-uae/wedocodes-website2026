@@ -1,0 +1,2033 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>WeDoCodes | Software Solutions &amp; Cyber Security</title>
+<meta content="WeDoCodes builds custom business software, ERP systems, POS and inventory tools, healthcare platforms, web and mobile apps, cloud integrations, dashboards, automation and cybersecurity-first digital solutions." name="description"/>
+  <!-- FAVICON CODE START -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <!-- FAVICON CODE END -->
+
+<style>
+    :root{
+      --text:#1f1f1f;
+      --muted:#5f5f5f;
+      --soft:#f5f5f5;
+      --line:#e6e6e6;
+      --white:#ffffff;
+
+      --brand-orange:#FF9500;
+      --brand-orange-2:#FF6A00;
+      --brand-pink:#FF3D5E;
+      --brand-magenta:#E91E73;
+
+      --blue:#0067b8;
+      --blue-dark:#004b8d;
+      --green:#107c41;
+      --orange:#d83b01;
+      --purple:#5c2d91;
+      --red:#c4314b;
+      --ink:#111827;
+
+      --shadow:0 8px 28px rgba(0,0,0,.10);
+      --shadow-soft:0 3px 12px rgba(0,0,0,.08);
+      --max:1240px;
+      --radius:2px;
+      --ms-font:"Segoe UI",SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      font-family:var(--ms-font);
+      color:var(--text);
+      background:#fff;
+      overflow-x:hidden;
+    }
+
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+
+    .wrap{
+      width:min(var(--max),calc(100% - 48px));
+      margin:0 auto;
+    }
+
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:#fff;
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav{
+      height:64px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+    }
+
+    .brand-logo{
+      display:inline-flex;
+      align-items:center;
+      gap:4px;
+      height:54px;
+      min-width:245px;
+      text-decoration:none;
+      background:transparent;
+      flex:0 0 auto;
+    }
+
+    .brand-mark{
+      width:50px;
+      height:50px;
+      display:block;
+      flex:0 0 auto;
+    }
+
+    .brand-text{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      line-height:1;
+      min-width:0;
+    }
+
+    .brand-name{
+      display:block;
+      font-size:25px;
+      line-height:.94;
+      font-weight:760;
+      letter-spacing:-1.15px;
+      color:#050505;
+      white-space:nowrap;
+    }
+
+    .brand-name .codes{
+      background:linear-gradient(90deg,var(--brand-orange-2),var(--brand-pink),var(--brand-magenta));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+
+    .brand-subtitle{
+      display:block;
+      margin-top:5px;
+      font-size:12.5px;
+      line-height:1;
+      font-weight:500;
+      color:#555;
+      white-space:nowrap;
+      letter-spacing:-.1px;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:24px;
+      font-size:13px;
+      color:#262626;
+      font-weight:500;
+    }
+
+    .nav-links a{
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      min-height:64px;
+      border-bottom:2px solid transparent;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active{border-bottom-color:#111}
+
+    .home-icon{
+      width:16px;
+      height:16px;
+      display:inline-block;
+    }
+
+    .nav-actions{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-size:13px;
+      font-weight:600;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      min-height:40px;
+      padding:0 16px;
+      border-radius:var(--radius);
+      border:1px solid transparent;
+      font-weight:600;
+      font-size:13px;
+      cursor:pointer;
+      white-space:nowrap;
+      transition:.2s;
+    }
+
+    .btn-blue{background:var(--blue);color:#fff}
+    .btn-blue:hover{background:var(--blue-dark)}
+    .btn-light{background:#fff;color:#1f1f1f;border-color:#8a8a8a}
+    .btn-light:hover{background:#f2f2f2}
+    .menu-btn{display:none}
+
+    .hero{
+      position:relative;
+      overflow:hidden;
+      background:#ffffff;
+      border-bottom:0;
+    }
+
+    .hero-grid{
+      position:relative;
+      z-index:2;
+      display:grid;
+      grid-template-columns:minmax(0,1.03fr) minmax(480px,.97fr);
+      gap:40px;
+      align-items:center;
+      min-height:430px;
+      padding:24px 0 8px;
+    }
+
+    .hero-copy{
+      max-width:760px;
+    }
+
+    h1,
+    .hero-title{
+      font-family:var(--ms-font);
+      font-size:54px;
+      line-height:1.08;
+      letter-spacing:-1.45px;
+      margin:0 0 16px;
+      color:#111111;
+      font-weight:600;
+      max-width:780px;
+    }
+
+    .hero-title-line{
+      display:block;
+      white-space:nowrap;
+    }
+
+    .hero-blue{
+      color:#111111;
+      display:block;
+    }
+
+    .hero-code-gradient{
+      background:linear-gradient(90deg,var(--brand-orange-2),var(--brand-pink),var(--brand-magenta));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+
+    .hero-lead{
+      font-family:var(--ms-font);
+      font-size:16px;
+      line-height:1.5;
+      color:#3a3a3a;
+      max-width:720px;
+      margin:0 0 20px;
+      font-weight:400;
+    }
+
+    .hero-divider{
+      width:52px;
+      height:1px;
+      background:#d9d9d9;
+      margin:0 0 20px;
+    }
+
+    .hero-services{
+      display:grid;
+      grid-template-columns:repeat(6,1fr);
+      gap:0;
+      max-width:920px;
+      border-top:0;
+    }
+
+    .hero-service{
+      min-height:92px;
+      padding:0 18px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:flex-start;
+      text-align:center;
+      border-right:1px solid #dddddd;
+      color:#111111;
+    }
+
+    .hero-service:first-child{
+      padding-left:0;
+    }
+
+    .hero-service:last-child{
+      border-right:0;
+      padding-right:0;
+    }
+
+    .hero-service svg{
+      width:42px;
+      height:42px;
+      stroke:#0a5bd3;
+      stroke-width:1.85;
+      fill:none;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+      margin-bottom:11px;
+    }
+
+    .hero-service span{
+      font-family:var(--ms-font);
+      font-size:14px;
+      line-height:1.22;
+      color:#1a1a1a;
+      font-weight:400;
+    }
+
+    .hero-visual{
+      position:relative;
+      min-height:430px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:visible;
+      isolation:auto;
+      background:transparent;
+    }
+
+    .hero-image-wrap{
+      position:relative;
+      width:100%;
+      min-height:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border:0;
+      box-shadow:none;
+      background:transparent;
+      overflow:visible;
+      padding:0;
+      z-index:1;
+    }
+
+    .hero-image{
+      width:100%;
+      height:auto;
+      max-height:520px;
+      object-fit:contain;
+      object-position:center right;
+      filter:none !important;
+      position:relative;
+      z-index:1;
+      background:transparent;
+      border:0;
+      outline:0;
+      box-shadow:none;
+    }
+
+    section{padding:54px 0}
+
+    .section-head{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:34px;
+      margin-bottom:28px;
+    }
+
+    .section-head.center{
+      display:block;
+      text-align:center;
+      max-width:860px;
+      margin:0 auto 30px;
+    }
+
+    .kicker{
+      font-size:12px;
+      font-weight:700;
+      color:var(--blue);
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      margin-bottom:9px;
+    }
+
+    .section-head h2{
+      font-size:clamp(30px,4vw,52px);
+      line-height:1.08;
+      letter-spacing:-1.6px;
+      margin:0;
+      color:#111;
+      font-weight:700;
+    }
+
+    .section-head p{
+      max-width:620px;
+      color:#5f5f5f;
+      line-height:1.65;
+      margin:0;
+      font-size:15px;
+    }
+
+    .journey-products{
+      background:#fff;
+      padding-top:24px;
+    }
+
+    .product-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:28px;
+      align-items:stretch;
+    }
+
+    .product-card{
+      height:493px;
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+      overflow:hidden;
+      transition:.2s;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .product-card:hover{
+      box-shadow:var(--shadow);
+      transform:translateY(-2px);
+    }
+
+    .product-media{
+      height:238px;
+      flex:0 0 238px;
+      overflow:hidden;
+      background:#f8fbff;
+      border-bottom:1px solid var(--line);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:10px;
+    }
+
+    .product-media img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      object-position:center;
+    }
+
+    .product-body{
+      height:255px;
+      padding:26px 26px 26px;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .product-body h3{
+      font-size:21px;
+      line-height:1.15;
+      letter-spacing:-.65px;
+      margin:0 0 16px;
+      color:#111;
+      font-weight:750;
+      min-height:48px;
+    }
+
+    .product-body p{
+      font-size:14px;
+      line-height:1.65;
+      color:var(--muted);
+      margin:0;
+      min-height:78px;
+    }
+
+    .product-link{
+      display:inline-flex;
+      color:var(--blue);
+      font-size:13px;
+      font-weight:700;
+      margin-top:auto;
+    }
+
+    .product-link:hover{text-decoration:underline}
+
+    .feature-band{background:#f5f5f5}
+
+    .feature-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+    }
+
+    .feature-card{
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+      padding:28px;
+    }
+
+    .feature-card.dark{
+      background:#111827;
+      color:#fff;
+    }
+
+    .feature-card h3{
+      font-size:30px;
+      line-height:1.1;
+      letter-spacing:-1.1px;
+      margin:0 0 15px;
+      font-weight:700;
+    }
+
+    .feature-card p{
+      line-height:1.7;
+      color:#5f5f5f;
+      margin:0 0 16px;
+    }
+
+    .feature-card.dark p{color:#d1d5db}
+
+    .feature-list{
+      display:grid;
+      gap:10px;
+      margin-top:16px;
+    }
+
+    .feature-list span{
+      font-size:13px;
+      font-weight:600;
+      color:#424242;
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+    }
+
+    .feature-card.dark .feature-list span{color:#e5e7eb}
+
+    .feature-list span::before{
+      content:"";
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:linear-gradient(135deg,var(--brand-orange),var(--brand-pink),var(--brand-magenta));
+      margin-top:6px;
+      flex:0 0 auto;
+    }
+
+    .industries{background:#fff}
+
+    .industry-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:24px;
+      align-items:stretch;
+    }
+
+    .industry-card{
+      position:relative;
+      height:361px;
+      min-height:361px;
+      overflow:hidden;
+      border:1px solid #d9d9d9;
+      box-shadow:var(--shadow-soft);
+      transition:.2s;
+      background-size:contain;
+      background-position:center;
+      background-repeat:no-repeat;
+      background-color:#f8fbff;
+      display:flex;
+      align-items:flex-end;
+    }
+
+    .industry-card:hover{
+      transform:translateY(-2px);
+      box-shadow:var(--shadow);
+    }
+
+    .industry-card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(to top,
+          rgba(0,0,0,.88) 0%,
+          rgba(0,0,0,.74) 28%,
+          rgba(0,0,0,.48) 52%,
+          rgba(0,0,0,.20) 72%,
+          rgba(0,0,0,.05) 100%);
+    }
+
+    .industry-retail{background-image:url("assets/home/retail.png")}
+    .industry-restaurants{background-image:url("assets/home/restaurants.png")}
+    .industry-construction{background-image:url("assets/home/construction.png")}
+    .industry-healthcare{background-image:url("assets/home/healthcare2.png")}
+    .industry-real{background-image:url("assets/home/real.png")}
+    .industry-education{background-image:url("assets/home/education.png")}
+    .industry-logistics{background-image:url("assets/home/logistics.png")}
+    .industry-professional{background-image:url("assets/home/professional.png")}
+
+    .industry-content{
+      position:relative;
+      z-index:2;
+      width:100%;
+      padding:24px 27px 28px;
+      color:#fff;
+    }
+
+    .industry-content small{
+      display:block;
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:.03em;
+      color:rgba(255,255,255,.82);
+      margin:0 0 14px;
+    }
+
+    .industry-content h3{
+      margin:0 0 12px;
+      font-size:24px;
+      line-height:1.12;
+      letter-spacing:-.75px;
+      color:#fff;
+      font-weight:760;
+      min-height:54px;
+    }
+
+    .industry-content p{
+      margin:0;
+      font-size:14px;
+      line-height:1.62;
+      color:rgba(255,255,255,.90);
+    }
+
+    .process{background:#f5f5f5}
+
+    .process-grid{
+      display:grid;
+      grid-template-columns:repeat(6,1fr);
+      gap:12px;
+    }
+
+    .step{
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+      padding:18px;
+      min-height:190px;
+    }
+
+    .icon-premium{
+      width:42px;
+      height:42px;
+      display:grid;
+      place-items:center;
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--blue);
+      position:relative;
+      flex:0 0 auto;
+    }
+
+    .icon-premium::after{
+      content:"";
+      position:absolute;
+      left:9px;
+      right:9px;
+      bottom:-1px;
+      height:2px;
+      background:linear-gradient(90deg,var(--brand-orange),var(--brand-pink),var(--brand-magenta));
+    }
+
+    .icon-premium svg{
+      width:20px;
+      height:20px;
+      stroke:currentColor;
+      fill:none;
+      stroke-width:1.85;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+    }
+
+    .step small{
+      font-size:12px;
+      font-weight:700;
+      color:var(--blue);
+      display:block;
+      margin:14px 0 10px;
+    }
+
+    .step h3{
+      font-size:17px;
+      margin:0 0 10px;
+      color:#111;
+      font-weight:700;
+    }
+
+    .step p{
+      font-size:12px;
+      color:#5f5f5f;
+      line-height:1.58;
+      margin:0;
+    }
+
+    .engage-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .engage-card{
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+      padding:26px;
+      background:#fff;
+    }
+
+    .engage-card h3{
+      font-size:24px;
+      margin:0 0 12px;
+      letter-spacing:-.7px;
+      font-weight:700;
+    }
+
+    .engage-card p{
+      color:#5f5f5f;
+      line-height:1.65;
+      margin:0;
+    }
+
+    .engage-card:nth-child(1){border-top:5px solid var(--blue)}
+    .engage-card:nth-child(2){border-top:5px solid var(--green)}
+    .engage-card:nth-child(3){border-top:5px solid var(--orange)}
+
+    .cta{
+      background:#111827;
+      color:#fff;
+    }
+
+    .cta-box{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:28px;
+      align-items:center;
+    }
+
+    .cta h2{
+      font-size:clamp(32px,4vw,54px);
+      line-height:1.06;
+      letter-spacing:-1.8px;
+      margin:0 0 14px;
+      color:#fff;
+      font-weight:700;
+    }
+
+    .cta p{
+      color:#d1d5db;
+      line-height:1.7;
+      max-width:690px;
+      margin:0;
+    }
+
+    .cta .btn-light{
+      background:transparent;
+      color:#fff;
+      border-color:#9ca3af;
+    }
+
+    footer{
+      background:#f2f2f2;
+      border-top:1px solid #ddd;
+      padding:34px 0 20px;
+    }
+
+    .footer-mega{
+      display:grid;
+      grid-template-columns:1.35fr repeat(5,1fr);
+      gap:26px;
+    }
+
+    .footer-logo{
+      display:flex;
+      align-items:flex-start;
+      margin-bottom:12px;
+    }
+
+    .footer-logo .brand-logo{
+      height:auto;
+      min-width:0;
+      gap:4px;
+    }
+
+    .footer-logo .brand-mark{
+      width:44px;
+      height:44px;
+    }
+
+    .footer-logo .brand-name{font-size:22px}
+    .footer-logo .brand-subtitle{font-size:12.5px}
+
+    .footer-brand h4,
+    .footer-col h4{
+      font-size:15px;
+      line-height:1.3;
+      color:#616161;
+      margin:0 0 14px;
+      font-weight:700;
+    }
+
+    .footer-brand p{
+      color:#616161;
+      line-height:1.65;
+      font-size:12px;
+      max-width:320px;
+      margin:0 0 12px;
+    }
+
+    .footer-contact{margin-top:14px}
+
+    .footer-contact a{
+      display:block;
+      color:#616161;
+      font-size:11px;
+      margin-bottom:10px;
+    }
+
+    .footer-col a{
+      display:block;
+      color:#616161;
+      font-size:11px;
+      line-height:1.45;
+      margin:0 0 11px;
+    }
+
+    .footer-col a:hover,
+    .footer-contact a:hover{
+      text-decoration:underline;
+      color:#111;
+    }
+
+    .footer-bottom{
+      margin-top:26px;
+      padding-top:18px;
+      border-top:1px solid #d6d6d6;
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      align-items:center;
+      color:#616161;
+      font-size:11px;
+      flex-wrap:wrap;
+    }
+
+    .footer-bottom-left,
+    .footer-bottom-right{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    .footer-bottom a:hover{text-decoration:underline;color:#111}
+
+
+    /* ========== MEDIA QUERIES (LAYOUT ONLY) ========== */
+    @media (max-width:1180px){
+      .hero-grid{
+        grid-template-columns:1fr;
+        min-height:auto;
+        padding:24px 0 12px;
+      }
+      .hero-visual{min-height:330px;}
+      .hero-services{grid-template-columns:repeat(3,1fr); row-gap:22px;}
+      .hero-service:nth-child(3){border-right:0;}
+      .hero-service:nth-child(4){padding-left:0;}
+      .hero-image{max-height:460px;}
+      .nav-links, .nav-actions{display:none}
+      .menu-btn{display:inline-flex}
+      .feature-grid, .cta-box{grid-template-columns:1fr}
+      .product-grid, .industry-grid{grid-template-columns:repeat(2,1fr)}
+      .process-grid{grid-template-columns:repeat(3,1fr)}
+      .engage-grid{grid-template-columns:1fr}
+      .footer-mega{grid-template-columns:repeat(3,1fr)}
+      .footer-brand{grid-column:span 3}
+    }
+
+    @media (max-width:760px){
+      .wrap{width:min(var(--max),calc(100% - 24px));}
+      .nav{height:64px;}
+      .brand-logo{min-width:auto;}
+      .brand-mark{width:44px;height:44px;}
+      .brand-name{font-size:21px;}
+      .brand-subtitle{display:none;}
+      .hero-grid{padding:22px 0 10px;}
+      .hero-services{grid-template-columns:repeat(2,1fr);}
+      .hero-service{min-height:96px; padding:0 14px;}
+      .hero-service:nth-child(2), .hero-service:nth-child(4){border-right:0;}
+      .hero-service:nth-child(3){border-right:1px solid #dddddd;}
+      .hero-service:nth-child(5){padding-left:0;}
+      .hero-image{max-height:380px;}
+      .hero-visual{min-height:280px;}
+      .product-grid, .industry-grid, .process-grid, .footer-mega{grid-template-columns:1fr;}
+      .footer-brand{grid-column:span 1;}
+      .product-card{height:auto;}
+      .product-media{height:220px; flex:0 0 220px;}
+      .product-body{height:auto; min-height:238px;}
+      .industry-card{height:340px; min-height:340px; background-size:contain;}
+      .feature-card{padding:24px;}
+      .section-head{display:block;}
+      .section-head p{margin-top:14px;}
+      .footer-bottom{display:block;}
+      .footer-bottom-left, .footer-bottom-right{display:flex; gap:12px; margin-top:12px;}
+    }
+
+    /* Hero background cleanup */
+    .hero, .hero-visual, .hero-image-wrap{
+      background:#ffffff !important;
+      box-shadow:none !important;
+    }
+    .hero-image{
+      filter:none !important;
+      mix-blend-mode:normal !important;
+      box-shadow:none !important;
+    }
+
+    /* Mobile navigation */
+    .mobile-nav{
+      display:none;
+      position:sticky;
+      top:64px;
+      z-index:99;
+      background:#fff;
+      border-bottom:1px solid var(--line);
+      padding:12px 24px 16px;
+    }
+    .mobile-nav a{
+      display:flex;
+      align-items:center;
+      min-height:42px;
+      border-bottom:1px solid var(--line);
+      color:#1f1f1f;
+      font-size:14px;
+      font-weight:650;
+    }
+    .mobile-nav a:last-child{border-bottom:0;}
+    .mobile-nav .mobile-cta{
+      margin-top:10px;
+      justify-content:center;
+      background:var(--blue);
+      color:#fff;
+      border-bottom:0;
+    }
+    .mobile-nav .mobile-secondary{
+      margin-top:8px;
+      justify-content:center;
+      border:1px solid #8a8a8a;
+    }
+    @media (max-width:1180px){
+      body.nav-open .mobile-nav{display:grid;}
+      .menu-btn{display:inline-flex;}
+    }
+
+    /* Logo rotation */
+    .brand-mark{
+      animation: rotateLogo 10s linear infinite;
+    }
+    @keyframes rotateLogo{
+      0%{ transform:rotate(0deg); }
+      100%{ transform:rotate(360deg); }
+    }
+
+    /* ========== RESPONSIVE HERO TEXT – FIXES CROPPING AND MAINTAINS LARGE SIZE ========== */
+    @media (max-width: 760px) {
+      .hero .hero-title,
+      .hero-copy h1,
+      h1.hero-title {
+        font-size: clamp(38px, 10vw, 52px) !important;
+        line-height: 1.08 !important;
+        letter-spacing: -0.01em !important;
+        font-weight: 700 !important;
+        white-space: normal !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+      .section-head h2 {
+        font-size: clamp(24px, 6vw, 32px) !important;
+        line-height: 1.2 !important;
+        font-weight: 600 !important;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .hero-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 24px !important;
+      }
+      .hero-visual { order: 1; }
+      .hero-copy { order: 2; width: 100%; max-width: 100%; overflow-x: hidden; }
+      .hero-copy p { font-size: 17px !important; line-height: 1.55 !important; }
+      .hero-title-line {
+        white-space: normal !important;
+        word-break: break-word !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero .hero-title,
+      .hero-copy h1,
+      h1.hero-title {
+        font-size: clamp(34px, 9vw, 44px) !important;
+      }
+      .section-head h2 {
+        font-size: 22px !important;
+      }
+    }
+
+    /* ========== DESKTOP HERO TEXT – LARGE BUT FITS WITHOUT CROPPING ========== */
+    @media (min-width: 1181px) {
+      .hero .hero-title,
+      .hero-copy h1,
+      h1.hero-title {
+        font-size: clamp(48px, 4vw, 56px) !important;
+        line-height: 1.05 !important;
+        letter-spacing: -0.02em !important;
+        white-space: normal !important;
+        word-break: break-word !important;
+        padding-right: 20px !important;
+      }
+      .section-head h2 {
+        font-size: 52px !important;
+        line-height: 1.08 !important;
+      }
+      .feature-card h3 {
+        font-size: 32px !important;
+      }
+    }
+
+    /* ========== MOBILE HEADER FIX: RESTORE THREE-LINE HAMBURGER ICON & CENTERED LOGO ========== */
+    @media (max-width: 1180px) {
+      .nav {
+        display: grid !important;
+        grid-template-columns: 48px minmax(0, 1fr) 48px !important;
+        align-items: center !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+        padding: 10px 14px !important;
+        gap: 0 !important;
+      }
+
+      .menu-btn {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+        justify-self: start !important;
+        align-self: center !important;
+        width: 44px !important;
+        height: 44px !important;
+        min-width: 44px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        border: 0 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        font-size: 0 !important;
+        color: transparent !important;
+        position: relative !important;
+        border-radius: 0 !important;
+      }
+
+      .menu-btn::before,
+      .menu-btn::after,
+      .menu-btn span {
+        content: "" !important;
+        position: absolute !important;
+        left: 11px !important;
+        width: 22px !important;
+        height: 2px !important;
+        background: #1f1f1f !important;
+        border-radius: 99px !important;
+        display: block !important;
+      }
+
+      .menu-btn::before { top: 14px !important; }
+      .menu-btn span { top: 21px !important; }
+      .menu-btn::after { top: 28px !important; }
+
+      .brand-logo {
+        grid-column: 2 !important;
+        grid-row: 1 !important;
+        justify-self: center !important;
+        align-self: center !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: auto !important;
+        max-width: calc(100vw - 116px) !important;
+        min-width: 0 !important;
+        gap: 6px !important;
+        margin: 0 auto !important;
+      }
+
+      .brand-mark {
+        width: 42px !important;
+        height: 42px !important;
+        flex: 0 0 42px !important;
+      }
+
+      .brand-text {
+        min-width: 0 !important;
+        max-width: 100% !important;
+      }
+
+      .brand-name {
+        font-size: 22px !important;
+        line-height: 1 !important;
+        font-weight: 700 !important;
+        letter-spacing: -0.45px !important;
+        white-space: nowrap !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
+      }
+
+      .brand-name .codes {
+        font-size: 1em !important;
+        font-weight: 700 !important;
+        letter-spacing: -0.45px !important;
+        transform: none !important;
+        -webkit-text-stroke: 0 !important;
+        display: inline !important;
+      }
+
+      .brand-subtitle {
+        display: none !important;
+      }
+
+      /* Hide the original nav links and actions on mobile */
+      .nav-links, .nav-actions {
+        display: none !important;
+      }
+    }
+
+
+/* MOBILE-ONLY SECTION IMAGE OPTIMIZATION START */
+@media(max-width:760px){
+  .industry-retail{background-image:url("assets/home/mobile/retail-mobile.webp")}
+  .industry-restaurants{background-image:url("assets/home/mobile/restaurants-mobile.webp")}
+  .industry-construction{background-image:url("assets/home/mobile/construction-mobile.webp")}
+  .industry-healthcare{background-image:url("assets/home/mobile/healthcare2-mobile.webp")}
+  .industry-real{background-image:url("assets/home/mobile/real-mobile.webp")}
+  .industry-education{background-image:url("assets/home/mobile/education-mobile.webp")}
+  .industry-logistics{background-image:url("assets/home/mobile/logistics-mobile.webp")}
+  .industry-professional{background-image:url("assets/home/mobile/professional-mobile.webp")}
+}
+/* MOBILE-ONLY SECTION IMAGE OPTIMIZATION END */
+
+
+/* PRODUCT CARD PICTURE WRAPPER FIX START */
+.product-media picture{
+  width:100%;
+  height:100%;
+  display:block;
+}
+.product-media picture img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center;
+}
+/* PRODUCT CARD PICTURE WRAPPER FIX END */
+
+
+/* CLIENT LOGIN BUTTON REPLACE START */
+.btn-client-login{
+  background:#071a33 !important;
+  color:#ffffff !important;
+  border-color:#071a33 !important;
+}
+.btn-client-login:hover{
+  background:#0b2545 !important;
+  border-color:#0b2545 !important;
+}
+.mobile-nav .mobile-login{
+  background:#071a33 !important;
+  color:#ffffff !important;
+  border:0 !important;
+}
+/* CLIENT LOGIN BUTTON REPLACE END */
+
+
+/* MOBILE HEADER LOGIN ICON START */
+.mobile-header-login-icon{
+  display:none;
+}
+@media (max-width:1180px){
+  .mobile-header-login-icon{
+    grid-column:3 !important;
+    grid-row:1 !important;
+    justify-self:end !important;
+    align-self:center !important;
+    width:42px !important;
+    height:42px !important;
+    min-width:42px !important;
+    border-radius:50% !important;
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    background:#071a33 !important;
+    color:#ffffff !important;
+    text-decoration:none !important;
+    border:1px solid #071a33 !important;
+  }
+  .mobile-header-login-icon svg{
+    width:20px !important;
+    height:20px !important;
+    fill:none !important;
+    stroke:currentColor !important;
+    stroke-width:2 !important;
+    stroke-linecap:round !important;
+    stroke-linejoin:round !important;
+  }
+}
+@media (min-width:1181px){
+  .mobile-header-login-icon{
+    display:none !important;
+  }
+}
+/* MOBILE HEADER LOGIN ICON END */
+
+
+/* WEDOCODES HERO ZOOM OVERRIDE START */
+.hero-visual{
+  overflow: visible !important;
+}
+.hero-image-wrap{
+  overflow: visible !important;
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+}
+.hero-image{
+  width:112% !important;
+  max-width:none !important;
+  height:auto !important;
+  transform:none !important;
+}
+@media (max-width: 1100px){
+  .hero-image{
+    width:108% !important;
+  }
+}
+@media (max-width: 760px){
+  .hero-image{
+    width:104% !important;
+  }
+}
+/* WEDOCODES HERO ZOOM OVERRIDE END */
+
+
+/* WEDOCODES HERO TEXT VISIBILITY FIX START */
+@media (min-width: 981px){
+  .hero-grid{
+    grid-template-columns:minmax(0, 1.14fr) minmax(0, .86fr) !important;
+    column-gap:34px !important;
+  }
+
+  .hero-copy{
+    max-width:none !important;
+    overflow:visible !important;
+    position:relative !important;
+    z-index:3 !important;
+  }
+
+  .hero-title,
+  .hero-copy h1,
+  h1.hero-title{
+    font-size:clamp(58px, 4.85vw, 74px) !important;
+    line-height:1.08 !important;
+    letter-spacing:-2.2px !important;
+    max-width:none !important;
+    overflow:visible !important;
+  }
+
+  .hero-title-line{
+    display:block !important;
+    white-space:nowrap !important;
+    overflow:visible !important;
+  }
+
+  .hero-lead{
+    max-width:760px !important;
+    overflow:visible !important;
+  }
+
+  .hero-services{
+    max-width:760px !important;
+    overflow:visible !important;
+  }
+
+  .hero-service{
+    min-width:0 !important;
+  }
+
+  .hero-visual{
+    overflow:visible !important;
+    position:relative !important;
+    z-index:1 !important;
+    margin-left:22px !important;
+  }
+
+  .hero-image-wrap{
+    overflow:visible !important;
+    justify-content:flex-end !important;
+  }
+
+  .hero-image{
+    width:106% !important;
+    max-width:none !important;
+    height:auto !important;
+  }
+}
+
+@media (min-width: 981px) and (max-width: 1280px){
+  .hero-title,
+  .hero-copy h1,
+  h1.hero-title{
+    font-size:clamp(50px, 4.4vw, 62px) !important;
+    letter-spacing:-1.8px !important;
+  }
+
+  .hero-image{
+    width:102% !important;
+  }
+}
+/* WEDOCODES HERO TEXT VISIBILITY FIX END */
+
+</style>
+
+<!-- WEDOCODES THREE-LINE MENU FIX START -->
+<style>
+  @media (max-width: 1180px) {
+    .menu-btn {
+      display: inline-flex !important;
+      width: 44px !important;
+      height: 44px !important;
+      min-width: 44px !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      border: 0 !important;
+      background: transparent !important;
+      box-shadow: none !important;
+      font-size: 0 !important;
+      color: transparent !important;
+      position: relative !important;
+      border-radius: 0 !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+
+    .menu-btn::before,
+    .menu-btn::after,
+    .menu-btn span {
+      content: "" !important;
+      position: absolute !important;
+      left: 11px !important;
+      width: 22px !important;
+      height: 2px !important;
+      background: #1f1f1f !important;
+      border-radius: 99px !important;
+      display: block !important;
+    }
+
+    .menu-btn::before { top: 14px !important; }
+    .menu-btn span { top: 21px !important; }
+    .menu-btn::after { top: 28px !important; }
+  }
+</style>
+<!-- WEDOCODES THREE-LINE MENU FIX END -->
+
+<link rel="canonical" href="https://www.wedocodes.com/">
+</head>
+<body>
+<header class="site-header">
+<div class="wrap nav">
+<a aria-label="WeDoCodes Home" class="brand-logo" href="/">
+<svg class="brand-mark" role="img" viewbox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="logoIconGradient" x1="12" x2="108" y1="12" y2="108">
+<stop offset="0" stop-color="#FF9500"></stop>
+<stop offset="0.32" stop-color="#FF6A00"></stop>
+<stop offset="0.68" stop-color="#FF3D5E"></stop>
+<stop offset="1" stop-color="#E91E73"></stop>
+</lineargradient>
+<filter height="140%" id="logoSoftShadow" width="140%" x="-20%" y="-20%">
+<fedropshadow dx="0" dy="4" flood-color="#000000" flood-opacity="0.12" stddeviation="7"></fedropshadow>
+</filter>
+</defs>
+<circle cx="60" cy="60" fill="url(#logoIconGradient)" filter="url(#logoSoftShadow)" r="48"></circle>
+<g fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.4" transform="translate(-3.5 -1)">
+<path d="M48 53 L35 60 L48 67"></path>
+<path d="M66 48 L55 74"></path>
+<path d="M78 53 L92 60 L78 67"></path>
+</g>
+</svg>
+<span class="brand-text">
+<span class="brand-name">WeDo<span class="codes">Codes</span></span>
+<span class="brand-subtitle">Software and Cyber Security Solutions</span>
+</span>
+</a>
+<nav aria-label="Main navigation" class="nav-links">
+<a class="active" href="/">
+<svg aria-hidden="true" class="home-icon" fill="none" viewbox="0 0 24 24">
+<path d="M3 10.8 12 3l9 7.8V21h-6v-6H9v6H3V10.8Z" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+          Home
+        </a>
+<a href="/solutions">Solutions</a>
+<a href="/industries">Industries</a>
+<a href="/resources">Resources</a>
+<a href="/about">About</a>
+<a href="/support">Support</a>
+</nav>
+<div class="nav-actions">
+<a class="btn btn-client-login" href="/login">Client Login</a>
+<a class="btn btn-blue" href="/support">Start Consultation</a>
+</div>
+<a class="mobile-header-login-icon" href="/login" aria-label="Client Login">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"></path>
+    <path d="M4.5 21a7.5 7.5 0 0 1 15 0"></path>
+  </svg>
+</a>
+<button class="btn btn-light menu-btn"><span></span></button>
+</div>
+</header>
+<nav aria-label="Mobile navigation" class="mobile-nav">
+<a href="/">Home</a>
+<a href="/solutions">Solutions</a>
+<a href="/industries">Industries</a>
+<a href="/resources">Resources</a>
+<a href="/about">About</a>
+<a href="/support">Support</a>
+<a class="mobile-secondary mobile-login" href="/login">Client Login</a>
+<a class="mobile-cta" href="/support">Start Consultation</a>
+</nav>
+<main>
+<section class="hero">
+<div class="wrap hero-grid">
+<div class="hero-copy">
+<h1 class="hero-title">
+<span class="hero-title-line">Clarity in <span class="hero-code-gradient">Code</span>.</span>
+<span class="hero-title-line hero-blue">Confidence in Every Click.</span>
+</h1>
+<p class="hero-lead">
+            We build clean, reliable and secure digital solutions
+            that bring clarity to your operations and results.
+          </p>
+<div class="hero-divider"></div>
+<div aria-label="WeDoCodes core services" class="hero-services">
+<div class="hero-service">
+<svg aria-hidden="true" viewbox="0 0 48 48">
+<rect height="24" rx="3" width="30" x="9" y="10"></rect>
+<path d="M19 18l-5 5 5 5"></path>
+<path d="M29 18l5 5-5 5"></path>
+<path d="M26.5 16 21.5 30"></path>
+<path d="M18 39h12"></path>
+<path d="M24 34v5"></path>
+</svg>
+<span>Software<br/>Development</span>
+</div>
+<div class="hero-service">
+<svg aria-hidden="true" viewbox="0 0 48 48">
+<rect height="30" rx="3" width="30" x="9" y="9"></rect>
+<path d="M9 17h30"></path>
+<path d="M15 14h.1M20 14h.1"></path>
+<rect height="8" rx="1.5" width="9" x="15" y="23"></rect>
+<path d="M29 24h5"></path>
+<path d="M29 30h5"></path>
+</svg>
+<span>Web &amp; Portal<br/>Solutions</span>
+</div>
+<div class="hero-service">
+<svg aria-hidden="true" viewbox="0 0 48 48">
+<path d="M24 8v6"></path>
+<path d="M24 34v6"></path>
+<path d="M8 24h6"></path>
+<path d="M34 24h6"></path>
+<path d="M13 13l4.5 4.5"></path>
+<path d="M30.5 30.5 35 35"></path>
+<path d="M35 13l-4.5 4.5"></path>
+<path d="M17.5 30.5 13 35"></path>
+<circle cx="24" cy="24" r="9"></circle>
+<circle cx="24" cy="24" r="2.5"></circle>
+</svg>
+<span>Business<br/>Automation</span>
+</div>
+<div class="hero-service">
+<svg aria-hidden="true" viewbox="0 0 48 48">
+<path d="M24 6 37 12v10c0 9.2-5.4 15.4-13 18-7.6-2.6-13-8.8-13-18V12l13-6Z"></path>
+<rect height="10" rx="2" width="12" x="18" y="22"></rect>
+<path d="M21 22v-4a3 3 0 0 1 6 0v4"></path>
+</svg>
+<span>Cybersecurity<br/>&amp; Privacy</span>
+</div>
+<div class="hero-service">
+<svg aria-hidden="true" viewbox="0 0 48 48">
+<path d="M9 38h30"></path>
+<path d="M13 34V24"></path>
+<path d="M21 34V18"></path>
+<path d="M29 34V26"></path>
+<path d="M37 34V14"></path>
+<path d="M13 21l8-7 8 8 10-12"></path>
+<path d="M35 10h4v4"></path>
+</svg>
+<span>Reporting &amp;<br/>Analytics</span>
+</div>
+<div class="hero-service">
+<svg aria-hidden="true" viewbox="0 0 48 48">
+<path d="M18 34h17a8 8 0 0 0 .8-15.95A12 12 0 0 0 12.8 20.7 6.8 6.8 0 0 0 18 34Z"></path>
+<path d="M24 34v6"></path>
+<path d="M19 40h10"></path>
+<path d="M24 24v5"></path>
+</svg>
+<span>Cloud &amp;<br/>Integration</span>
+</div>
+</div>
+</div>
+<div class="hero-visual">
+<div class="hero-image-wrap">
+<img alt="WeDoCodes secure dashboard, cloud and reporting system illustration" class="hero-image" src="assets/home/hero.webp"/>
+</div>
+</div>
+</div>
+</section>
+<section class="journey-products">
+<div class="wrap">
+<div class="section-head">
+<div>
+<div class="kicker">Start your digital system journey here</div>
+<h2>Choose the right starting point for your business system.</h2>
+</div>
+<p>
+            Start with a focused module, then expand into a connected system as your operations grow.
+          </p>
+</div>
+<div class="product-grid">
+<article class="product-card">
+<div class="product-media">
+<picture>
+              <source media="(max-width:760px)" type="image/webp" srcset="assets/home/mobile/business-mobile.webp"/>
+              <img alt="Business and enterprise software" src="assets/home/business.png"/>
+            </picture>
+</div>
+<div class="product-body">
+<h3>Business &amp; Enterprise Software</h3>
+<p>ERP, CRM, procurement, inventory, HR, approvals, reports and management dashboards.</p>
+<a class="product-link" href="/solutions">Explore business systems →</a>
+</div>
+</article>
+<article class="product-card">
+<div class="product-media">
+<picture>
+              <source media="(max-width:760px)" type="image/webp" srcset="assets/home/mobile/healthcare-mobile.webp"/>
+              <img alt="Healthcare and appointment systems" src="assets/home/healthcare.png"/>
+            </picture>
+</div>
+<div class="product-body">
+<h3>Healthcare &amp; Appointment Systems</h3>
+<p>Appointment booking, reception flow, queue status, reminders and clinic dashboards.</p>
+<a class="product-link" href="/solutions">Explore healthcare tools →</a>
+</div>
+</article>
+<article class="product-card">
+<div class="product-media">
+<picture>
+              <source media="(max-width:760px)" type="image/webp" srcset="assets/home/mobile/web-mobile.webp"/>
+              <img alt="Web mobile and customer portals" src="assets/home/web.png"/>
+            </picture>
+</div>
+<div class="product-body">
+<h3>Web, Mobile &amp; Customer Portals</h3>
+<p>Websites, portals, mobile apps, PWAs, customer access and admin control panels.</p>
+<a class="product-link" href="/solutions">Explore digital platforms →</a>
+</div>
+</article>
+<article class="product-card">
+<div class="product-media">
+<picture>
+              <source media="(max-width:760px)" type="image/webp" srcset="assets/home/mobile/cloud-mobile.webp"/>
+              <img alt="Cloud data and cybersecurity" src="assets/home/cloud.png"/>
+            </picture>
+</div>
+<div class="product-body">
+<h3>Cloud, Data &amp; Cybersecurity</h3>
+<p>Cloud hosting, APIs, databases, reports, access control, logs, backup and continuity.</p>
+<a class="product-link" href="/solutions">Explore secure systems →</a>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section class="feature-band">
+<div class="wrap feature-grid">
+<article class="feature-card dark">
+<h3>Business automation that replaces scattered work.</h3>
+<p>Modular systems can replace Excel sheets, WhatsApp-only coordination and repeated manual entries with controlled workflows and clear information access.</p>
+<div class="feature-list">
+<span>Sales, quotations, invoices, receipts and payment tracking</span>
+<span>Inventory, stock movements, low-stock alerts and barcode support</span>
+<span>Procurement requests, vendor records and approval workflows</span>
+<span>Audit history, activity logs and document attachments</span>
+</div>
+</article>
+<article class="feature-card">
+<h3>Cloud-ready systems with secure data flow.</h3>
+<p>Applications can be planned with structured databases, integrations, reporting layers and backup routines to improve accuracy and reduce business risk.</p>
+<div class="feature-list">
+<span>Deployment planning for web apps, dashboards and APIs</span>
+<span>Structured storage for customers, products, invoices and logs</span>
+<span>Live summaries, charts, PDF exports and printable reports</span>
+<span>Backup routines and recovery planning</span>
+</div>
+</article>
+</div>
+</section>
+<section class="industries">
+<div class="wrap">
+<div class="section-head center">
+<div class="kicker">Industries</div>
+<h2>Industry-focused digital systems.</h2>
+<p>Digital workflows for sales, services, bookings, projects, operations and customer communication across different business sectors.</p>
+</div>
+<div class="industry-grid">
+<article class="industry-card industry-retail">
+<div class="industry-content">
+<small>Retail &amp; Trading</small>
+<h3>POS and stock control</h3>
+<p>POS, inventory, barcode billing, customer accounts, quotations and branch reporting.</p>
+</div>
+</article>
+<article class="industry-card industry-restaurants">
+<div class="industry-content">
+<small>Restaurants &amp; Cafes</small>
+<h3>QR and order flow</h3>
+<p>QR menus, order flow, cashier screens, table orders and kitchen coordination.</p>
+</div>
+</article>
+<article class="industry-card industry-construction">
+<div class="industry-content">
+<small>Construction</small>
+<h3>Procurement and projects</h3>
+<p>Procurement tracking, project dashboards, BOQ reporting, approvals and document control.</p>
+</div>
+</article>
+<article class="industry-card industry-healthcare">
+<div class="industry-content">
+<small>Healthcare Clinics</small>
+<h3>Appointments and reception</h3>
+<p>Appointments, reception workflow, patient records, queue status and automated reminders.</p>
+</div>
+</article>
+<article class="industry-card industry-real">
+<div class="industry-content">
+<small>Real Estate</small>
+<h3>Property and lead tracking</h3>
+<p>Property listings, leads, tenancy records, maintenance requests and client follow-up.</p>
+</div>
+</article>
+<article class="industry-card industry-education">
+<div class="industry-content">
+<small>Education &amp; Training</small>
+<h3>Student and fee records</h3>
+<p>Student registration, attendance, fee records, course portals and parent communication.</p>
+</div>
+</article>
+<article class="industry-card industry-logistics">
+<div class="industry-content">
+<small>Logistics &amp; Delivery</small>
+<h3>Delivery visibility</h3>
+<p>Delivery assignment, route status, driver updates, proof of delivery and live summaries.</p>
+</div>
+</article>
+<article class="industry-card industry-professional">
+<div class="industry-content">
+<small>Professional Services</small>
+<h3>Client and task systems</h3>
+<p>Client portals, ticketing, project tracking, invoices, files and internal collaboration.</p>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section class="process">
+<div class="wrap">
+<div class="section-head">
+<div>
+<div class="kicker">Delivery Process</div>
+<h2>From idea to interface, from workflow to secure deployment.</h2>
+</div>
+<p>A clear process keeps projects practical, phased and easier for clients to understand.</p>
+</div>
+<div class="process-grid">
+<div class="step">
+<div class="icon-premium">
+<svg viewbox="0 0 24 24"><path d="M11 19a8 8 0 1 1 5.7-2.3L21 21"></path><path d="M8 11h6M8 14h4"></path></svg>
+</div>
+<small>01</small>
+<h3>Discover</h3>
+<p>Understand business goals, current workflow, pain points, users and required outputs.</p>
+</div>
+<div class="step">
+<div class="icon-premium">
+<svg viewbox="0 0 24 24"><path d="M4 19h16"></path><path d="M7 16V8M12 16V5M17 16v-3"></path><path d="M7 8h10"></path></svg>
+</div>
+<small>02</small>
+<h3>Plan</h3>
+<p>Prepare modules, screens, user roles, database structure and delivery phases.</p>
+</div>
+<div class="step">
+<div class="icon-premium">
+<svg viewbox="0 0 24 24"><rect height="16" rx="2" width="16" x="4" y="4"></rect><path d="M8 9h8M8 13h8M8 17h5"></path></svg>
+</div>
+<small>03</small>
+<h3>Design</h3>
+<p>Create clean UI concepts, dashboards, forms and approval flows before development.</p>
+</div>
+<div class="step">
+<div class="icon-premium">
+<svg viewbox="0 0 24 24"><path d="M8 9 5 12l3 3M16 9l3 3-3 3"></path><path d="M13 7 11 17"></path></svg>
+</div>
+<small>04</small>
+<h3>Develop</h3>
+<p>Build the application, APIs, database, reports and admin tools with security basics.</p>
+</div>
+<div class="step">
+<div class="icon-premium">
+<svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="m8.5 12.5 2.5 2.5 5-6"></path></svg>
+</div>
+<small>05</small>
+<h3>Test</h3>
+<p>Check usability, data accuracy, permissions, reports, devices and browser compatibility.</p>
+</div>
+<div class="step">
+<div class="icon-premium">
+<svg viewbox="0 0 24 24"><path d="M12 3 7 8l3 1-4 7 7-4 1 3 5-5-7-7Z"></path><path d="M5 19h14"></path></svg>
+</div>
+<small>06</small>
+<h3>Launch &amp; Support</h3>
+<p>Deploy, train users, monitor feedback and improve the system after real usage.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="engagement">
+<div class="wrap">
+<div class="section-head center">
+<div class="kicker">Engagement Models</div>
+<h2>Flexible ways to build, support and improve digital systems.</h2>
+</div>
+<div class="engage-grid">
+<article class="engage-card">
+<h3>Project-Based Development</h3>
+<p>For clearly defined software, website, portal or dashboard projects with agreed scope, milestones and delivery plan.</p>
+</article>
+<article class="engage-card">
+<h3>Monthly Support &amp; Improvement</h3>
+<p>For ongoing maintenance, small enhancements, content updates, monitoring and technical support.</p>
+</article>
+<article class="engage-card">
+<h3>Phased Digital Transformation</h3>
+<p>For growing businesses that want to digitize step by step, starting from the most urgent workflow.</p>
+</article>
+</div>
+</div>
+</section>
+<section class="cta">
+<div class="wrap cta-box">
+<div>
+<h2>Let us build your next system.</h2>
+<p>Start with the workflow, define the modules, design the interface and move toward a secure deployment.</p>
+</div>
+<div class="hero-actions">
+<a class="btn btn-blue" href="/support">Start Consultation</a>
+<a class="btn btn-light" href="/resources">View Resources</a>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap">
+<div class="footer-mega">
+<div class="footer-brand">
+<div class="footer-logo">
+<a aria-label="WeDoCodes Home" class="brand-logo" href="/">
+<svg class="brand-mark" role="img" viewbox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="footerLogoIconGradient" x1="12" x2="108" y1="12" y2="108">
+<stop offset="0" stop-color="#FF9500"></stop>
+<stop offset="0.32" stop-color="#FF6A00"></stop>
+<stop offset="0.68" stop-color="#FF3D5E"></stop>
+<stop offset="1" stop-color="#E91E73"></stop>
+</lineargradient>
+<filter height="140%" id="footerLogoSoftShadow" width="140%" x="-20%" y="-20%">
+<fedropshadow dx="0" dy="4" flood-color="#000000" flood-opacity="0.12" stddeviation="7"></fedropshadow>
+</filter>
+</defs>
+<circle cx="60" cy="60" fill="url(#footerLogoIconGradient)" filter="url(#footerLogoSoftShadow)" r="48"></circle>
+<g fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.4" transform="translate(-3.5 -1)">
+<path d="M48 53 L35 60 L48 67"></path>
+<path d="M66 48 L55 74"></path>
+<path d="M78 53 L92 60 L78 67"></path>
+</g>
+</svg>
+<span class="brand-text">
+<span class="brand-name">WeDo<span class="codes">Codes</span></span>
+<span class="brand-subtitle">Software and Cyber Security Solutions</span>
+</span>
+</a>
+</div>
+<p>Custom software, business automation, web and mobile apps, cloud-ready systems, dashboards and cybersecurity-focused digital solutions.</p>
+<div class="footer-contact">
+<a href="mailto:support@wedocodes.com">support@wedocodes.com</a>
+<a href="https://www.wedocodes.com">www.wedocodes.com</a>
+</div>
+</div>
+<div class="footer-col">
+<h4>What's new</h4>
+<a href="/solutions">Custom Software Packages</a>
+<a href="/solutions">Healthcare Appointment Systems</a>
+<a href="/solutions">POS &amp; Inventory Solutions</a>
+<a href="/solutions">QR Menu &amp; Restaurant Tools</a>
+<a href="assets/companyprofile.pdf" rel="noopener" target="_blank">Company Profile 2026</a>
+<a href="/resources">Consultation Checklist</a>
+</div>
+<div class="footer-col">
+<h4>Solutions</h4>
+<a href="/solutions">Business &amp; Enterprise Software</a>
+<a href="/solutions">ERP, CRM &amp; Admin Systems</a>
+<a href="/solutions">Healthcare &amp; Clinic Systems</a>
+<a href="/solutions">Web &amp; Mobile Applications</a>
+<a href="/solutions">Cloud, Data &amp; Integrations</a>
+<a href="/solutions">Cybersecurity &amp; Digital Trust</a>
+</div>
+<div class="footer-col">
+<h4>Industries</h4>
+<a href="/industries">Retail &amp; Trading</a>
+<a href="/industries">Restaurants &amp; Cafes</a>
+<a href="/industries">Construction</a>
+<a href="/industries">Healthcare Clinics</a>
+<a href="/industries">Real Estate</a>
+<a href="/industries">Logistics &amp; Delivery</a>
+</div>
+<div class="footer-col">
+<h4>For business</h4>
+<a href="/support">Request a Consultation</a>
+<a href="/order-tracking">Order Tracking</a>
+<a href="/resources">Downloads</a>
+<a href="/resources">FAQs</a>
+<a href="/resources">Service Brochures</a>
+<a href="/resources">Cybersecurity Checklist</a>
+</div>
+<div class="footer-col">
+<h4>Company</h4>
+<a href="/about">About WeDoCodes</a>
+<a href="/about">Mission &amp; Values</a>
+<a href="/careers">Careers</a>
+<a href="/partners">Partners</a>
+<a href="/support">Support Center</a>
+<a href="/support">Support</a>
+</div>
+</div>
+<div class="footer-bottom">
+<div class="footer-bottom-left">
+<span>🌐 English</span>
+<a href="/sitemap">Sitemap</a>
+<a href="/order-tracking">Order Tracking</a>
+<a href="/careers">Careers</a>
+</div>
+<div class="footer-bottom-right">
+<a href="/privacy">Privacy</a>
+<a href="/terms">Terms of Use</a>
+<a href="/security">Security</a>
+<a href="/cookies">Cookies</a>
+<span>© 2026 WeDoCodes</span>
+</div>
+</div>
+</div>
+</footer>
+<script>
+    (function(){
+      const menuBtn = document.querySelector('.menu-btn');
+      if(!menuBtn) return;
+      menuBtn.setAttribute('type','button');
+      menuBtn.setAttribute('aria-expanded','false');
+      menuBtn.addEventListener('click', function(){
+        const open = document.body.classList.toggle('nav-open');
+        menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      document.querySelectorAll('.mobile-nav a').forEach(function(link){
+        link.addEventListener('click', function(){
+          document.body.classList.remove('nav-open');
+          menuBtn.setAttribute('aria-expanded','false');
+        });
+      });
+    })();
+  </script>
+  <script>
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      return false;
+    });
+    document.addEventListener('keydown', function(e) {
+      const key = (e.key || '').toLowerCase();
+      if (
+        e.key === 'F12' ||
+        (e.ctrlKey && e.shiftKey && ['i', 'j', 'c'].includes(key)) ||
+        (e.ctrlKey && ['u', 's'].includes(key))
+      ) {
+        e.preventDefault();
+        return false;
+      }
+    });
+    document.addEventListener('dragstart', function(e) {
+      e.preventDefault();
+      return false;
+    });
+  </script>
+
+<!-- WEDOCODES BRAND CURSOR START -->
+<style>
+  @media (hover: hover) and (pointer: fine) {
+    html,
+    body {
+      cursor: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22g%22%20x1%3D%223%22%20y1%3D%222%22%20x2%3D%2220%22%20y2%3D%2222%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23FF9500%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220.35%22%20stop-color%3D%22%23FF6A00%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220.68%22%20stop-color%3D%22%23FF3D5E%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23E91E73%22%2F%3E%0A%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%3C%2Fdefs%3E%0A%20%20%3Cpath%20d%3D%22M3%202.2%20L20.2%2015.6%20L13.3%2016.8%20L17%2022.2%20L13.6%2023.3%20L9.8%2017.6%20L5.4%2021.8%20Z%22%20fill%3D%22url%28%23g%29%22%2F%3E%0A%3C%2Fsvg%3E") 3 2, auto !important;
+    }
+
+    a,
+    button,
+    [role="button"],
+    input[type="submit"],
+    input[type="button"],
+    .btn,
+    select,
+    summary,
+    label[for] {
+      cursor: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22g%22%20x1%3D%223%22%20y1%3D%222%22%20x2%3D%2220%22%20y2%3D%2222%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23FF9500%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220.35%22%20stop-color%3D%22%23FF6A00%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220.68%22%20stop-color%3D%22%23FF3D5E%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23E91E73%22%2F%3E%0A%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%3C%2Fdefs%3E%0A%20%20%3Cpath%20d%3D%22M3%202.2%20L20.2%2015.6%20L13.3%2016.8%20L17%2022.2%20L13.6%2023.3%20L9.8%2017.6%20L5.4%2021.8%20Z%22%20fill%3D%22url%28%23g%29%22%2F%3E%0A%3C%2Fsvg%3E") 3 2, pointer !important;
+    }
+
+    input,
+    textarea {
+      cursor: auto !important;
+    }
+  }
+
+  .wdc-touch-ripple {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border-radius: 999px;
+    pointer-events: none;
+    z-index: 2147482500;
+    transform: translate(-50%, -50%) scale(0.35);
+    background:
+      radial-gradient(circle,
+        rgba(255, 149, 0, 0.95) 0%,
+        rgba(255, 106, 0, 0.78) 28%,
+        rgba(255, 61, 94, 0.62) 52%,
+        rgba(233, 30, 115, 0.18) 74%,
+        rgba(233, 30, 115, 0) 100%);
+    box-shadow:
+      0 0 0 1px rgba(255, 149, 0, 0.24),
+      0 0 20px rgba(255, 61, 94, 0.36);
+    animation: wdcTouchRipple 680ms ease-out forwards;
+  }
+
+  @keyframes wdcTouchRipple {
+    0% {
+      opacity: 0.98;
+      transform: translate(-50%, -50%) scale(0.35);
+    }
+    55% {
+      opacity: 0.72;
+      transform: translate(-50%, -50%) scale(2.45);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(3.2);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .wdc-touch-ripple {
+      animation: none !important;
+      display: none !important;
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    var supportsTouchEffect = false;
+
+    try {
+      supportsTouchEffect =
+        window.matchMedia &&
+        window.matchMedia("(hover: none), (pointer: coarse)").matches;
+    } catch (e) {
+      supportsTouchEffect = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+    }
+
+    if (!supportsTouchEffect) return;
+
+    function makeRipple(x, y) {
+      var ripple = document.createElement("span");
+      ripple.className = "wdc-touch-ripple";
+      ripple.style.left = x + "px";
+      ripple.style.top = y + "px";
+      document.body.appendChild(ripple);
+
+      window.setTimeout(function () {
+        if (ripple && ripple.parentNode) {
+          ripple.parentNode.removeChild(ripple);
+        }
+      }, 760);
+    }
+
+    document.addEventListener("pointerdown", function (event) {
+      if (event.pointerType && event.pointerType === "mouse") return;
+      makeRipple(event.clientX, event.clientY);
+    }, { passive: true });
+
+    document.addEventListener("touchstart", function (event) {
+      if (!event.touches || !event.touches.length) return;
+      var t = event.touches[0];
+      makeRipple(t.clientX, t.clientY);
+    }, { passive: true });
+  })();
+</script>
+<!-- WEDOCODES BRAND CURSOR END -->
+
+</body>
+</html>
