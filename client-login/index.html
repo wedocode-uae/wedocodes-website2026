@@ -1720,13 +1720,35 @@ body:not(.portal-open) .message-error{
 }
 /* VCOD SMALL TOP-LEFT LOGO + PREMIUM BLACK LOGIN BOX ONLY END */
 
+
+/* VCOD + WDR IMAGE VISIBILITY FIX 20260919 */
+.vcod-top-left-logo{
+  z-index:9999 !important;
+}
+
+.vcod-top-left-logo img{
+  display:block !important;
+  visibility:visible !important;
+  opacity:1 !important;
+}
+
+body:not(.portal-open) .provider-btn-wdr img{
+  display:block !important;
+  visibility:visible !important;
+  opacity:1 !important;
+  width:132px !important;
+  height:42px !important;
+  object-fit:contain !important;
+}
+/* VCOD + WDR IMAGE VISIBILITY FIX 20260919 END */
+
 </style>
 </head>
 <body>
 
 <!-- VCOD SENTINEL SMALL TOP-LEFT LOGO START -->
 <a class="vcod-top-left-logo" href="/" aria-label="VCOD Sentinel - WeDoCodes Cyber Division">
-  <img src="/assets/login/eagle.png" alt="VCOD Sentinel eagle" />
+  <img src="/assets/login/eagle.png?v=20260919-2" alt="VCOD Sentinel eagle" />
   <span>
     <span class="vcod-top-left-title">VCOD SENTINEL</span>
     <span class="vcod-top-left-subtitle">Secured by <span class="wedo">WeDo</span><span class="codes">Codes</span> Cyber Division</span>
@@ -1798,7 +1820,7 @@ body:not(.portal-open) .message-error{
           <div class="login-action-row">
             <button class="main-login-btn login-black-btn" type="submit">Login</button>
             <button class="provider-btn provider-btn-wdr" type="button" id="openWdr" aria-label="WDR Login">
-              <img src="/assets/login/wdr.png?v=20260519184755" alt="WDR Login" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+              <img src="/assets/login/wdr.png?v=20260919-2" alt="WDR Login" />
               <span class="provider-fallback">WDR</span>
             </button>
           </div>
